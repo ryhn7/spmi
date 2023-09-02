@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $id_bk
  * @property string $bk
  */
-class 2020Bk extends Model
+class Bk2020 extends Model
 {
     /**
      * The table associated with the model.
