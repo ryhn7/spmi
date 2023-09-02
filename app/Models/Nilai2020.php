@@ -56,7 +56,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $uas_sub_cpmk_13
  * @property string $uas_sub_cpmk_14
  */
-class 2020Nilai extends Model
+class Nilai2020 extends Model
 {
     /**
      * The table associated with the model.

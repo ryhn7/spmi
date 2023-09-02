@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $id_cpl_prodi
  * @property string $cpl_prodi
  */
-class 2020CplProdi extends Model
+class CplProdi2020 extends Model
 {
     /**
      * The table associated with the model.

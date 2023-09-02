@@ -13,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $bobot_uts
  * @property string $bobot_uas
  */
-class 2020SubCpmk extends Model
+class SubCpmk2020 extends Model
 {
     /**
      * The table associated with the model.
