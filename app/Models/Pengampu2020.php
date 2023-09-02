@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $kelas
  * @property string $pengampu
  */
-class 2020Pengampu extends Model
+class Pengampu2020 extends Model
 {
     /**
      * The table associated with the model.

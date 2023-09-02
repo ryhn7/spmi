@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $sks_praktikum
  * @property string $sks
  */
-class 2020Mk extends Model
+class Mk2020 extends Model
 {
     /**
      * The table associated with the model.

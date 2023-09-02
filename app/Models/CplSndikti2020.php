@@ -7,20 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $program_studi
- * @property string $id_pl
- * @property string $pl
+ * @property string $aspek
+ * @property string $id_cpl_sndikti
+ * @property string $cpl_sndikti
  */
-class 2020Pl extends Model
+class CplSndikti2020 extends Model
 {
     /**
      * The table associated with the model.
      * 
      * @var string
      */
-    protected $table = '2020_pl';
+    protected $table = '2020_cpl_sndikti';
 
     /**
      * @var array
      */
-    protected $fillable = ['program_studi', 'id_pl', 'pl'];
+    protected $fillable = ['program_studi', 'aspek', 'id_cpl_sndikti', 'cpl_sndikti'];
 }

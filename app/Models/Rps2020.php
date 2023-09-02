@@ -16,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $penilaian
  * @property string $bobot
  */
-class 2020Rps extends Model
+class Rps2020 extends Model
 {
     /**
      * @var array
