@@ -42,8 +42,8 @@
 
 <body class="m-0 font-open antialiased font-normal text-base leading-default bg-gray-50 text-slate-500">
 
-    @if (Request::is('oke'))
-        @yield('tes')
+    @if (Request::is('login'))
+        @yield('login')
     @endif
 
 
