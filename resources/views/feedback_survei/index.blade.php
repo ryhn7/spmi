@@ -1,60 +1,24 @@
 <section class="sectionSize bg-white">
     <div>
-        <h2 class="secondaryTitle bg-underline3 bg-100%">Features</h2>
+        <h2 class="secondaryTitle bg-underline3 bg-100%">Upaya Tindak Lanjut dan Perbaikan</h2>
     </div>
-    <div class="md:grid md:grid-cols-2 md:grid-rows-2">
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #1</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #2</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #4</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
+    <div class="mb-4">
+        <h3>
+            <a href="/feedbackdosen">
+                1. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Dosen
+            </a><br>
+            <a href="/feedbacktendik">
+                2. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Tenaga Kependidikan
+            </a><br>
+            <a href="/feedbackmahasiswa">
+                3. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mahasiswa
+            </a><br>
+            <a href="/feedbackmitra">
+                4. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mitra Kerjasama
+            </a><br>
+            <a href="/feedbackstakeholder">
+                5. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Pengguna Lulusan
+            </a><br>
+        </h3>
     </div>
 </section>
