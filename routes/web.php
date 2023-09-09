@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index', []);
 });
-Route::get('/hero', function () {
-    return view('hero.index', []);
+Route::get('/survei', function () {
+    return view('survei.survei_mhs', []);
 });
 

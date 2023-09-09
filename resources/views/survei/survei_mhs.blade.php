@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="bg-white border rounded-lg px-8 py-6 mx-auto my-8 max-w-2xl">
+    <div class="bg-green-700 border rounded-lg px-8 py-6 mx-auto mb-8 max-w-2xl">
         <h2 class="text-2xl font-medium mb-4">Survey</h2>
         <form>
             <div class="mb-4">
@@ -23,6 +23,266 @@
                     <option value="female">Female</option>
                     <option value="other">Other</option>
                 </select>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
+                <div class="flex flex-wrap -mx-2">
+                    <div class="px-2 w-1/3">
+                        <label for="color-red" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Red
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-blue" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Blue
+                        </label>
+                    </div>
+                    <div class="px-2 w-1/3">
+                        <label for="color-green" class="block text-gray-700 font-medium mb-2">
+                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Green
+                        </label>
+                    </div>
+                </div>
             </div>
             <div class="mb-4">
                 <label class="block text-gray-700 font-medium mb-2">What is your favorite color?</label>
