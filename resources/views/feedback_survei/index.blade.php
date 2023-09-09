@@ -2,7 +2,7 @@
     <div>
         <h2 class="secondaryTitle bg-underline3 bg-100%">Upaya Tindak Lanjut dan Perbaikan</h2>
     </div>
-    <div class="mb-4">
+    <div class="mb-4" style="color: blue">
         <h3>
             <a href="/feedbackdosen">
                 1. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Dosen
