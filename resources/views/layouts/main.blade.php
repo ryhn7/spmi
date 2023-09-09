@@ -11,24 +11,9 @@
 <body>
     @include('partials.navbar')
 
-    <!-- Hero -->
-    @include('hero.index')
-
-    <!-- Informasi Survei -->
-    @include('survei.informasi')
-
-    <!-- Isi Survei -->
-    @include('survei.index')
-
-    <!-- Hasil Survei -->
-    @include('hasil_survei.index')
-
-    <!-- Upaya Tindak Lanjut -->
-    @include('feedback_survei.index')
-
+    @yield('container')
 
     @include('partials.footer')
-
 
     <script src="{{ asset('assets/js/script.js') }}"></script>
 

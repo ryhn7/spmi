@@ -7,13 +7,11 @@
         <div class="flex items-start font-open my-6 mr-10">
             <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
             <div>
-                <h3 class="font-semibold text-2xl">Feature #1</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
+                <a href="/survei">
+                    <button class="py-2 px-4 text-white bg-darkBlue rounded-3xl">
+                        Contoh ke Survei
+                    </button>
+                </a>
             </div>
         </div>
 
