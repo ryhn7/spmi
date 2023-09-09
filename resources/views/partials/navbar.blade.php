@@ -17,7 +17,7 @@
             </li>
         </ul>
         <div class="font-open hidden md:block">
-            <button class="py-2 px-4 text-white bg-darkBlue rounded-3xl">
+            <button class="py-2 px-4 text-white bg-[#1f2f5f] rounded-3xl">
                 Login
             </button>
         </div>

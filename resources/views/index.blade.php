@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('container')
+@section('container')   
     <!-- Hero -->
     @include('hero.index')
 
