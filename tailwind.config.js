@@ -4,13 +4,8 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
-    colors: {
-      darkBlue: "#1f2f5f",
-      black: "black",
-      white: "white",
-    },
     fontFamily: {
-      open : ["Open Sans", "sans-serif"],
+      open: ["Open Sans", "sans-serif"],
     },
     backgroundSize: {
       auto: "auto",

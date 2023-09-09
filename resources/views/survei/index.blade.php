@@ -8,7 +8,7 @@
             <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
             <div>
                 <a href="/survei">
-                    <button class="py-2 px-4 text-white bg-darkBlue rounded-3xl">
+                    <button class="py-2 px-4 text-white bg-[#1f2f5f] rounded-3xl">
                         Contoh ke Survei
                     </button>
                 </a>
