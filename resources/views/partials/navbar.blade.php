@@ -1,5 +1,5 @@
     <!-- Navigation -->
-    <nav class="fixed flex justify-between py-6 w-full lg:px-48 md:px-12 px-4 content-center bg-white z-10">
+    <nav class="h-[70px] fixed flex justify-between pt-6 w-full lg:px-48 md:px-12 px-4 content-center bg-white z-10">
         <div class="flex items-center">
             <img src='{{ asset('assets/Logo_black.svg') }}' alt="Logo" class="h-4" />
         </div>
@@ -17,7 +17,7 @@
             </li>
         </ul>
         <div class="font-open hidden md:block">
-            <button class="py-2 px-4 text-white bg-[#1f2f5f] rounded-3xl">
+            <button class="py-1.5 px-4 mt-2 text-white bg-[#1f2f5f] rounded-3xl">
                 Login
             </button>
         </div>
