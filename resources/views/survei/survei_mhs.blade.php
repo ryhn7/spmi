@@ -4,29 +4,29 @@
 <div class="pt-32">
     <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1 ">
         <!-- <h2 class="text-2xl font-medium mb-4 ">Survei Kepuasan Mahasiswa</h2> -->
-        <form>
+        <form method="POST" action="{{route('survei.store') }}">
             <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Keandalan (Reliability)</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">
                 <label class="block text-gray-700 font-medium mb-2  ">1. Kejelasan Materi yang disampaikan oleh dosen</label>
                 <div class="flex flex-wrap -mx-2 ">
                     <div class="px-2 w-1/4">
                         <label for="color-red" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-red" name="color" value="red" class="mr-2 ">Sangat Baik
+                            <input type="radio" id="color1" name="color1" value="red" class="mr-2 ">Sangat Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-blue" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Baik
+                            <input type="radio" id="color2" name="color1" value="blue" class="mr-2">Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Cukup
+                            <input type="radio" id="color3" name="color1" value="green" class="mr-2">Cukup
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Kurang
+                            <input type="radio" id="color4" name="color1" value="green" class="mr-2">Kurang
                         </label>
                     </div>
                 </div>
@@ -36,22 +36,22 @@
                 <div class="flex flex-wrap -mx-2 ">
                     <div class="px-2 w-1/4">
                         <label for="color-red" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Sangat Baik
+                            <input type="radio" id="2a" name="color" value="red" class="mr-2">Sangat Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-blue" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Baik
+                            <input type="radio" id="2b" name="color" value="blue" class="mr-2">Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Cukup
+                            <input type="radio" id="2c" name="color" value="green" class="mr-2">Cukup
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Kurang
+                            <input type="radio" id="2d" name="color" value="green" class="mr-2">Kurang
                         </label>
                     </div>
                 </div>
@@ -61,22 +61,22 @@
                 <div class="flex flex-wrap -mx-2 ">
                     <div class="px-2 w-1/4">
                         <label for="color-red" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Sangat Baik
+                            <input type="radio" id="3a" name="color" value="red" class="mr-2">Sangat Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-blue" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Baik
+                            <input type="radio" id="3b" name="color" value="blue" class="mr-2">Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Cukup
+                            <input type="radio" id="3c" name="color" value="green" class="mr-2">Cukup
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Kurang
+                            <input type="radio" id="3d" name="color" value="green" class="mr-2">Kurang
                         </label>
                     </div>
                 </div>
@@ -86,22 +86,22 @@
                 <div class="flex flex-wrap -mx-2 ">
                     <div class="px-2 w-1/4">
                         <label for="color-red" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-red" name="color" value="red" class="mr-2">Sangat Baik
+                            <input type="radio" id="4a" name="color" value="red" class="mr-2">Sangat Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-blue" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-blue" name="color" value="blue" class="mr-2">Baik
+                            <input type="radio" id="4b" name="color" value="blue" class="mr-2">Baik
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Cukup
+                            <input type="radio" id="4c" name="color" value="green" class="mr-2">Cukup
                         </label>
                     </div>
                     <div class="px-2 w-1/4">
                         <label for="color-green" class="block text-gray-700 font-medium mb-2">
-                            <input type="radio" id="color-green" name="color" value="green" class="mr-2">Kurang
+                            <input type="radio" id="4d" name="color" value="green" class="mr-2">Kurang
                         </label>
                     </div>
                 </div>

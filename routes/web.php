@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SurveiKepuasaanController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,8 @@ Route::get('/', function () {
 });
 Route::get('/surveiMhs', function () {
     return view('survei.survei_mhs', []);
+Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
+
 });
 Route::get('/surveiDsn', function () {
     return view('survei.survei_dosen', []);
@@ -41,4 +44,8 @@ Route::get('/feedbacktendik', function () {
 Route::get('/tes', function () {
     return view('tes', []);
 });
+
+// Route::get('/survei/surveiMhs', 'SurveiKepuasaanController@create')->name('survei.survei_mhs');
+
+Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
 
