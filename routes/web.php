@@ -22,4 +22,19 @@ Route::get('/surveiMhs', function () {
 Route::get('/surveiDsn', function () {
     return view('survei.survei_dosen', []);
 });
+Route::get('/feedbackdosen', function () {
+    return view('feedback_survei.feedback_dosen', []);
+});
+Route::get('/feedbackmahasiswa', function () {
+    return view('feedback_survei.feedback_mahasiswa', []);
+});
+Route::get('/feedbackstakeholder', function () {
+    return view('feedback_survei.feedback_stakeholder', []);
+});
+Route::get('/feedbackmitra', function () {
+    return view('feedback_survei.feedback_mitra', []);
+});
+Route::get('/feedbacktendik', function () {
+    return view('feedback_survei.feedback_tendik', []);
+});
 

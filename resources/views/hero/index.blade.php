@@ -1,32 +1,18 @@
 <section
-    class="pt-24 md:mt-0 md:h-screen flex flex-col justify-center text-center md:text-left md:flex-row md:justify-between md:items-center lg:px-48 md:px-12 px-4 bg-white">
-    <div class="md:flex-1 md:mr-10">
-        <h1 class="font-open text-5xl font-bold mb-7">
-            A headline for your
-            <span class="bg-underline1 bg-left-bottom bg-no-repeat pb-2 bg-100%">
-                cool website
-            </span>
-        </h1>
-        <p class="font-open font-normal mb-7">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum harum
-            tempore consectetur voluptas, cumque nobis laboriosam voluptatem.
-        </p>
-        <div class="font-open">
-            <button class="bg-black px-6 py-4 rounded-lg border-2 border-black border-solid text-white mr-2 mb-2">
-                Call to action
-            </button>
-            <button class="px-6 py-4 border-2 border-black border-solid rounded-lg">
-                Secondary action
-            </button>
-        </div>
-    </div>
-    <div class="flex justify-around md:block mt-8 md:mt-0 md:flex-1">
-        <div class="relative">
-            <img src='{{ asset('assets/Highlight1.svg') }}' alt="" class="absolute -top-16 -left-10" />
-        </div>
-        <img src='{{ asset('assets/MacBook Pro.png') }}' alt="Macbook" />
-        <div class="relative">
-            <img src='{{ asset('assets/Highlight2.svg') }}' alt="" class="absolute -bottom-10 -right-6" />
+    class="pt-[97px] md:mt-0 md:h-screen justify-center text-center md:text-left md:flex-row md:justify-between md:items-center">
+    <div class="tpmf">
+        <div class="w-full h-full bg-gradient-to-b from-black opacity-95 to-[rgba(0,0,0,0.6)] m-auto z-10">
+            <div class="flex flex-col items-center justify-center">
+                <h3 class="font-rubik font-medium text-[#098cf2] text-sm text-center tracking-wider pt-16 pb-5">SEMARANG,
+                    INDONESIA</h3>
+                <h1 class="md:w-[750px] lg:w-[500px] h-auto text-center"><strong><span
+                            class="font-exo font-bold text-white text-5xl leading-[70px]">Tim Penjaminan Mutu Fakultas
+                            Sains dan
+                            Matematika</span>
+                    </strong></h1>
+                <div class="w-36 h-1 bg-[#098cf2] my-10"></div>
+                <h2 class="font-exo text-[26px] text-white text-center">Universitas Diponegoro</h2>
+            </div>
         </div>
     </div>
 </section>
