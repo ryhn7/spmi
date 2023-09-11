@@ -38,3 +38,7 @@ Route::get('/feedbacktendik', function () {
     return view('feedback_survei.feedback_tendik', []);
 });
 
+Route::get('/tes', function () {
+    return view('tes', []);
+});
+
