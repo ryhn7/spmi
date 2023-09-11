@@ -181,6 +181,7 @@
                     </div>
                 </div>
             </div>
+            <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Daya Tanggap (Responsiveness)</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);"">
                 <label class="block text-gray-700 font-medium mb-2">8. Kesediaan Dosen dan Karyawan memberikan Pelayanan setiap Waktu</label>
                 <div class="flex flex-wrap -mx-2 ">
@@ -281,6 +282,7 @@
                     </div>
                 </div>
             </div>
+            <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Kepastian (Assurance)</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);"">
                 <label class="block text-gray-700 font-medium mb-2">12. Permasalahan Akademik dikonsultasikan dan ditangani oleh Dosen Pembimbing Akademik</label>
                 <div class="flex flex-wrap -mx-2 ">
@@ -406,6 +408,7 @@
                     </div>
                 </div>
             </div>
+            <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Empati (Empathy)</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);"">
                 <label class="block text-gray-700 font-medium mb-2">17. Kepedulian Dosen dan Staf dalam Memahami Kepentingan dan Kesulitan Mahasiswa</label>
                 <div class="flex flex-wrap -mx-2 ">
@@ -506,6 +509,7 @@
                     </div>
                 </div>
             </div>
+            <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Tangible</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);"">
                 <label class="block text-gray-700 font-medium mb-2">21. Kerapian dan Kebersihan Ruang Kuliah</label>
                 <div class="flex flex-wrap -mx-2 ">
@@ -656,6 +660,7 @@
                     </div>
                 </div>
             </div>
+            <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Ketersediaan Layanan Mahasiswa  </label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);"">
                 <label class="block text-gray-700 font-medium mb-2">27. Ketersediaan Informasi Beasiswa</label>
                 <div class="flex flex-wrap -mx-2 ">
@@ -781,6 +786,7 @@
                     </div>
                 </div>
             </div>
+            <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Proses Belajar Mengajar</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);"">
                 <label class="block text-gray-700 font-medium mb-2">32. Penyampaian Kontrak Kuliah di Awal Perkuliahan</label>
                 <div class="flex flex-wrap -mx-2 ">
