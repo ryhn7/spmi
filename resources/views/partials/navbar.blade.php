@@ -4,16 +4,16 @@
             <img src='{{ asset('assets/Logo_black.svg') }}' alt="Logo" class="h-4" />
         </div>
         <ul class="font-open items-center hidden md:flex">
-            <li class="mx-3 ">
-                <a class="growing-underline" href="howitworks">
-                    How it works
+            <li class="mx-3">
+                <a class="font-medium growing-underline" href="howitworks">
+                    Beranda
                 </a>
             </li>
-            <li class="growing-underline mx-3">
-                <a href="features">Features</a>
+            <li class="font-medium growing-underline mx-3">
+                <a href="features">Beranda</a>
             </li>
-            <li class="growing-underline mx-3">
-                <a href="pricing">Pricing</a>
+            <li class="font-medium growing-underline mx-3">
+                <a href="pricing">Beranda</a>
             </li>
         </ul>
         <div class="font-open hidden md:block">
@@ -26,7 +26,7 @@
         </div>
     </nav>
     <div id='mobileNav'
-        class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-secondary z-20 animate-fade-in-down">
+        class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-white z-20 animate-fade-in-down">
         <div id="hideMenu" class="flex justify-end">
             <img src='{{ asset('assets/logos/Cross.svg') }}' alt="" class="h-16 w-16" />
         </div>

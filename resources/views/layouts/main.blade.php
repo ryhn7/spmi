@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tailwind CSS Starter</title>
+    <link rel="icon" type="image/png" href={{ asset('assets/img/logo-undip.png') }} />
+    <title>Beranda - Tim Penjaminan Mutu</title>
     <link href={{ asset('css/style.css') }} rel="stylesheet" />
+    {{-- custom css --}}
+    <link href={{ asset('css/custom-css.css') }} rel="stylesheet" />
 </head>
 
 <body>

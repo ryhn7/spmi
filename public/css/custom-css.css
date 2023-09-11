@@ -1,19 +1,22 @@
-/*  trix-editor */
-trix-toolbar [data-trix-button-group="file-tools"] {
-    display: none;
-}
-
-/* multilevel dropdown */
-.dropdown:hover>.dropdown-content {
-    display: block;
-}
-
-.jaya {
+/* 
+.hero {
     position: fixed;
     inset: 0;
-    background-image: linear-gradient(to top left, #060764, #00b7dd);
+    background-color: aqua;
     width: 100%;
     height: 100vh;
     z-index: -1;
 }
+ */
 
+.tpmf {
+    background-image: url(../assets/img/Widya-Puraya.jpg);
+    width: 100%;
+    height: 85vh;
+    background-repeat: no-repeat;
+    /* scale image to fill the entire element */
+    background-size: cover;
+    /* move the image to the left slightly */
+    background-position: center;
+    z-index: 1;
+}

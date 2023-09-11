@@ -6,6 +6,8 @@ module.exports = {
   theme: {
     fontFamily: {
       open: ["Open Sans", "sans-serif"],
+      rubik: ["Rubik", "sans-serif"],
+      exo: ["Exo", "sans-serif"],
     },
     backgroundSize: {
       auto: "auto",
