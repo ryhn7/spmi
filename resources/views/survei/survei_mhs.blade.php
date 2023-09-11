@@ -4,7 +4,8 @@
 <div class="pt-32">
     <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1 ">
         <!-- <h2 class="text-2xl font-medium mb-4 ">Survei Kepuasan Mahasiswa</h2> -->
-        <form>
+        <form action="/surveiMhs" method="POST">
+            @csrf
             <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Keandalan (Reliability)</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">
                 <label class="block text-gray-700 font-medium mb-2  ">1. Kejelasan Materi yang disampaikan oleh dosen</label>
