@@ -7,10 +7,10 @@
             Survei Kepuasan Pengguna Lulusan Fakultas Sains dan Matematika</h2>
             <table class="shadow-lg bg-white">
             <tr>
-                <th class="bg-blue-100 border text-left px-8 py-4">No.</th>
-                <th class="bg-blue-100 border text-left px-8 py-4">Pernyataan</th>
-                <th class="bg-blue-100 border text-left px-8 py-4">Upaya Tindak Lanjut</th>
-                <th class="bg-blue-100 border text-left px-8 py-4">Upaya Perbaikan</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">No.</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">Pernyataan</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Tindak Lanjut</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Perbaikan</th>
             </tr>
             <tr>
                 <td class="border px-8 py-4">1.</td>
