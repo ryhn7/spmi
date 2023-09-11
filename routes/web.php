@@ -25,6 +25,15 @@ Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
 Route::get('/surveiDsn', function () {
     return view('survei.survei_dosen', []);
 });
+Route::get('/surveiTendik', function () {
+    return view('survei.survei_tendik', []);
+});
+Route::get('/surveiMitra', function () {
+    return view('survei.survei_mitra', []);
+});
+Route::get('/surveiPenggunaLulusan', function () {
+    return view('survei.survei_pengguna_lulusan', []);
+});
 Route::get('/feedbackdosen', function () {
     return view('feedback_survei.feedback_dosen', []);
 });
