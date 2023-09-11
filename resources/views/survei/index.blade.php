@@ -1,58 +1,36 @@
 <section class="sectionSize bg-white">
     <div>
-        <h2 class="secondaryTitle bg-underline3 bg-100%">Features</h2>
+        <h2 class="secondaryTitle bg-underline3 bg-100%">Isi Survei</h2>
     </div>
-    <div class="md:grid md:grid-cols-2 md:grid-rows-2">
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
-            <div>
-                <a href="/survei">
-                    <button class="py-2 px-4 text-white bg-[#1f2f5f] rounded-3xl">
-                        Contoh ke Survei
-                    </button>
+    
+    <div class="w-full max-w-sm p-4 bg-white rounded-lg sm:p-6">
+    <!-- <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700"> -->
+        <ul class="my-4 space-y-3">
+            <li>
+                <a href="/surveiDsn" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
                 </a>
-            </div>
-        </div>
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #2</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='{{ asset('assets/logos/Heart.svg') }}' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #3</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
-        <div class="flex items-start font-open my-6 mr-10">
-            <img src='dist/assets/logos/Heart.svg' alt='' class="h-7 mr-4" />
-            <div>
-                <h3 class="font-semibold text-2xl">Feature #4</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Quisquam voluptate praesentium tenetur earum repellendus! Dicta
-                    culpa consequuntur saepe quibusdam labore, est ex ducimus
-                    tempore, quos illum officiis, pariatur ea placeat.
-                </p>
-            </div>
-        </div>
-
+            </li>
+            <li>
+                <a href="/surveiTendik" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
+                </a>
+            </li>
+            <li>
+                <a href="/surveiMhs" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
+                </a>
+            </li>
+            <li>
+                <a href="/surveiMitra" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama </span>
+                </a>
+            </li>
+            <li>
+                <a href="/surveiPenggunaLulusan" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
+                </a>
+            </li>
+        </ul>
     </div>
 </section>
