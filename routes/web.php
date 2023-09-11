@@ -17,11 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index', []);
 });
-Route::get('/surveiMhs', function () {
-    return view('survei.survei_mhs', []);
-Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
 
-});
+Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'create']);
+Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
+
+
 Route::get('/surveiDsn', function () {
     return view('survei.survei_dosen', []);
 });
@@ -46,6 +46,4 @@ Route::get('/tes', function () {
 });
 
 // Route::get('/survei/surveiMhs', 'SurveiKepuasaanController@create')->name('survei.survei_mhs');
-
-Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
 
