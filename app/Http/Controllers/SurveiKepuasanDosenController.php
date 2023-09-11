@@ -2,27 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kepuasan_mahasiswa;
-use Carbon\Carbon;
+use App\Models\kepuasan_dosen;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
-class SurveiKepuasaanController extends Controller
+class SurveiKepuasanDosenController extends Controller
 {
     public function create()
     {
-        return view('survei.survei_mhs');
+        return view('survei.survei_dosen');
     }
-
-    // public function store(Request $request)
-    // {
-    //     $question = new kepuasan_mahasiswa();
-    //     $question->nama_mahasiswa = $request->input('color1');
-    //     // $question->option = $request->input('option');
-    //     $question->save();
-
-    //     return redirect('/questions')->with('success', 'Multiple-Choice Question created successfully.');
-    // }
-
     public function store(Request $request)
     {
         // $validated = $request->validate([
@@ -35,10 +24,10 @@ class SurveiKepuasaanController extends Controller
         // $nim = "240";
         // $prodi = "Informatics Engineering";
 
-        $mahasiswa = [
-            'nama_mahasiswa' => "oke",
-            'NIM' => '240',
-            'program_studi' => 'informatic',
+        $dosen = [
+            'nama_dosen' => "oke",
+            'NIP' => '240',
+            // 'program_studi' => 'informatic',
             'date_time' => Carbon::now(),
             '1' => $request->satu,
             '2' => $request->dua,
@@ -82,9 +71,6 @@ class SurveiKepuasaanController extends Controller
             '40' => $request->empat_puluh,
             '41' => $request->empat_satu,
             '42' => $request->empat_dua,
-            '43' => $request->empat_tiga,
-            '44' => $request->empat_empat,
-            '45' => $request->empat_lima,
         ];
 
         // $question_one = $request->satu;
@@ -92,7 +78,8 @@ class SurveiKepuasaanController extends Controller
         // dd($tes);
 
         // kepuasan_mahasiswa::create($validated);
-        kepuasan_mahasiswa::create($mahasiswa);
+        kepuasan_dosen::create($dosen);
+        // kepuasan_dosen::create($dosen);
 
         return redirect('/')->with('success', 'berhasil save');
     }
