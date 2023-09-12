@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('mahasiswa', function (Blueprint $table) {
             $table->string('nama_mahasiswa', 100);
             $table->string('id_mahasiswa', 20)->primary();
+            $table->foreignId('role_id');
             $table->string('program_studi', 100);
             $table->string('periode', 100);
             $table->string('lulus', 0);

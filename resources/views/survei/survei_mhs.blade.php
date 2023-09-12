@@ -1141,7 +1141,7 @@
 
 
             <div class="flex justify-center items-center">
-                <button type="submit" class="bg-b-500 text-white px-4 py-2 rounded-lg hover:bg-b-600">Submit</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-b-600">Submit</button>
             </div>
 
         </form>

@@ -1,7 +1,7 @@
 <section
     class="pt-24 md:mt-0 md:h-screen justify-center text-center md:text-left md:flex-row md:justify-between md:items-center">
     <div class="tpmf">
-        <div class="w-full h-full bg-gradient-to-b from-black opacity-95 to-[rgba(0,0,0,0.6)] m-auto z-10">
+        <div class="w-full h-full bg-gradient-to-b from-black opacity-95 to-[rgba(0,0,0,0.6)] m-auto">
             <!-- component -->
             {{-- <div class="flex items-center justify-center h-screen">
                 <!-- Login Container -->

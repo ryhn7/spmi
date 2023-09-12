@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\SurveiKepuasaanController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,6 +21,10 @@ Route::get('/', function () {
 
 Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'create']);
 Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
+
+// Route::get('/login', [AuthenticationController::class, 'index']);
+Route::post('/login', [AuthenticationController::class, 'login']);
+Route::post('/logout', [AuthenticationController::class, 'logout']);
 
 
 Route::get('/surveiDsn', function () {
