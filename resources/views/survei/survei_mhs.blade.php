@@ -9,7 +9,7 @@
             <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Keandalan (Reliability)</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">
                 <label class="block text-gray-700 font-medium mb-2  ">1. Kejelasan Materi yang disampaikan oleh dosen</label>
-                <div class="flex flex-wrap -mx-2" id="1">
+                <div class="flex flex-wrap -mx-2 ">
                     <div class="px-2 w-1/4">
                         <label for="satu"  class="block text-gray-700 font-medium mb-2">
                             <input type="radio" id="1a" name="satu" value="Sangat Baik" class="mr-2 ">Sangat Baik
@@ -34,7 +34,7 @@
             </div>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">
                 <label class="block text-gray-700 font-medium mb-2">2. Ketepatan Waktu Pelaksanaan Perkuliahan</label>
-                <div class="flex flex-wrap -mx-2 " id="2">
+                <div class="flex flex-wrap -mx-2 ">
                     <div class="px-2 w-1/4">
                         <label for="dua"  class="block text-gray-700 font-medium mb-2">
                             <input type="radio" id="2a" name="dua" value="Sangat Baik" class="mr-2">Sangat Baik
@@ -1141,8 +1141,9 @@
 
 
             <div class="flex justify-center items-center">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-b-600">Submit</button>
             </div>
+            
 
         </form>
     </div>
