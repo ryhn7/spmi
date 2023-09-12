@@ -1,6 +1,6 @@
 <section class="bg-[#1f2f5f] text-white sectionSize">
     <div>
-        <h2 class="secondaryTitle bg-underline2 bg-100%">How it works</h2>
+        <h2 class="secondaryTitle bg-underline2 bg-100%">Hasil Survei</h2>
     </div>
     <div class="flex flex-col md:flex-row">
         <div class="flex-1 mx-8 flex flex-col items-center my-4">
