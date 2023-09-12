@@ -6,7 +6,7 @@ use App\Models\kepuasan_mahasiswa;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class SurveiKepuasaanController extends Controller
+class SurveiKepuasanMahasiswaController extends Controller
 {
     public function create()
     {
