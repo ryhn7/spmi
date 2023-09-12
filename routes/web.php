@@ -61,6 +61,22 @@ Route::get('/feedbacktendik', function () {
     return view('feedback_survei.feedback_tendik', []);
 });
 
+Route::get('/hasildosen', function () {
+    return view('hasil_survei.hasil_survei_dosen', []);
+});
+Route::get('/hasilmahasiswa', function () {
+    return view('hasil_survei.hasil_survei_mhs', []);
+});
+Route::get('/hasilstakeholder', function () {
+    return view('hasil_survei.hasil_survei_pengguna_lulusan', []);
+});
+Route::get('/hasilmitra', function () {
+    return view('hasil_survei.hasil_survei_mitra', []);
+});
+Route::get('/hasiltendik', function () {
+    return view('hasil_survei.hasil_survei_tendik', []);
+});
+
 Route::get('/tes', function () {
     return view('tes', []);
 });
