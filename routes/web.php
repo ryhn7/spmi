@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\SurveiKepuasanMahasiswaController;
+use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
 use App\Http\Controllers\SurveiKepuasanPenggunaLulusanController;
 use App\Http\Controllers\SurveiKepuasanTendikController;
@@ -29,7 +30,8 @@ Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::c
 Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store']);
 Route::get('/surveiTendik', [SurveiKepuasanTendikController::class, 'create']);
 Route::post('/surveiTendik', [SurveiKepuasanTendikController::class, 'store']);
-
+Route::get('/surveiDsn', [SurveiKepuasanDosenController::class,'create']);
+Route::post('/surveiDsn', [SurveiKepuasanDosenController::class, 'store']);
 
 Route::get('/surveiDsn', function () {
     return view('survei.survei_dosen', []);
