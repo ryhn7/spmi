@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\SurveiKepuasaanController;
-use App\Http\Controllers\SurveiKepuasanDosenController;
+use App\Http\Controllers\SurveiKepuasanMahasiswaController;
+use App\Http\Controllers\SurveiKepuasanMitraController;
+use App\Http\Controllers\SurveiKepuasanPenggunaLulusanController;
+use App\Http\Controllers\SurveiKepuasanTendikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,11 +21,15 @@ Route::get('/', function () {
     return view('index', []);
 });
 
-Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'create']);
-Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
+Route::get('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'create']);
+Route::post('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'store']);
+Route::get('/surveiMitra', [SurveiKepuasanMitraController::class, 'create']);
+Route::post('/surveiMitra', [SurveiKepuasanMitraController::class, 'store']);
+Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'create']);
+Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store']);
+Route::get('/surveiTendik', [SurveiKepuasanTendikController::class, 'create']);
+Route::post('/surveiTendik', [SurveiKepuasanTendikController::class, 'store']);
 
-Route::get('/surveiDsn', [SurveiKepuasanDosenController::class,'create']);
-Route::post('/surveiDsn', [SurveiKepuasanDosenController::class, 'store']);
 
 Route::get('/surveiDsn', function () {
     return view('survei.survei_dosen', []);
@@ -53,9 +59,9 @@ Route::get('/feedbacktendik', function () {
     return view('feedback_survei.feedback_tendik', []);
 });
 
-Route::get('/mahasiswa', function () {
-    return view('mahasiswa', []);
+Route::get('/tes', function () {
+    return view('tes', []);
 });
 
-
+// Route::get('/survei/surveiMhs', 'SurveiKepuasanMahasiswaController@create')->name('survei.survei_mhs');
 
