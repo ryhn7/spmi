@@ -16,7 +16,7 @@
                         <div class="mb-8 flex justify-center">
                             <img class="w-24" src="{{ asset('assets/img/logo-undip.png') }}" alt="logo-undip" />
                         </div>
-                        <form action="/login" method="POST">
+                        <form action="{{route('login')}}" method="POST">
                             @csrf
                             @if (session()->has('loginError'))
                                 <div class="mb-2 ml-1.5 text-sm text-red-700">{{ session('loginError') }}</div>

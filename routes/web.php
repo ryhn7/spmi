@@ -24,7 +24,7 @@ Route::get('/', function () {
 })->middleware('guest')->name('dashboard');
 
 
-Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest');
+Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
 
 Route::middleware(['auth:mahasiswa,dosen'])->group(function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');

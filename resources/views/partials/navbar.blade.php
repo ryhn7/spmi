@@ -33,7 +33,7 @@
                     {{ Auth::guard('mahasiswa')->check() ? ucwords(strtolower(Auth::guard('mahasiswa')->user()->nama_mahasiswa)) : ucwords(strtolower(Auth::guard('dosen')->user()->nama_tanpa_gelar)) }}
                 </span>
             </div>
-            <form action="/logout" method="POST">
+            <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button class="flex items-center ml-4">
                     <span class="hidden md:block ml-1">Logout
@@ -49,7 +49,7 @@
         </div>
     @endif
 
-    
+
     <div id="showMenu" class="md:hidden">
         <img src='{{ asset('assets/logos/Menu.svg') }}' alt="Menu icon" />
     </div>
