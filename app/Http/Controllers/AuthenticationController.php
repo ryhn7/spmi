@@ -35,6 +35,7 @@ class AuthenticationController extends Controller
         } else {
             if (Auth::guard('dosen')->attempt(['user_dosen' => $credentials['username'], 'password' => $credentials['password']])) {
                 $request->session()->regenerate();
+                
                 $intended_url = $request->intended_url;
                 if ($intended_url) {
                     return redirect($intended_url);

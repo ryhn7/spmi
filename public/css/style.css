@@ -1211,6 +1211,10 @@ input[type="range"]:active::-webkit-slider-thumb{
   margin-top: 0.15rem;
 }
 
+.mt-7{
+  margin-top: 1.75rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -1417,6 +1421,14 @@ input[type="range"]:active::-webkit-slider-thumb{
 
 .h-screen{
   height: 100vh;
+}
+
+.h-\[500px\]{
+  height: 500px;
+}
+
+.h-\[00px\]{
+  height: 00px;
 }
 
 .max-h-\[calc\(100\%-64px\)\]{

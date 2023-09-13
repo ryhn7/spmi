@@ -15,15 +15,18 @@ class CheckRole
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
 
-    // create a multi role middleware from $request->user() & $request->dose
-    public function handle(Request $request, Closure $next, ...$roles)
-    {
-        $user = $request->user();
-        // dd($user->mahasiswa->pluck('role_id')->toArray());
-        $allowedRoles = array_merge($user->dosen->pluck('role_id')->toArray(), $user->mahasiswa->pluck('role_id')->toArray());
 
-        if (count(array_intersect($allowedRoles, $roles)) > 0) {
-            return $next($request);
+    // create a multi role middleware from $guard mahasiswa and dosen
+    public function handle(Request $request, Closure $next, $guard)
+    {
+        if ($guard == 'mahasiswa') {
+            if (auth()->guard($guard)->check()) {
+                return $next($request);
+            }
+        } else if ($guard == 'dosen') {
+            if (auth()->guard($guard)->check()) {
+                return $next($request);
+            }
         }
 
         abort(403);
