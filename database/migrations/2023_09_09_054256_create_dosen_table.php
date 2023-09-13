@@ -15,7 +15,6 @@ return new class extends Migration
     {
         Schema::create('dosen', function (Blueprint $table) {
             $table->string('nama_tanpa_gelar', 100)->primary();
-            $table->foreignId('role_id');
             $table->string('nama_dosen');
             $table->string('NIP_dosen', 22);
             $table->string('NIDN', 20);

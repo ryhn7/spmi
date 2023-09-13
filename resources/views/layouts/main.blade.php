@@ -24,6 +24,7 @@
     <script src="{{ asset('assets/js/script.js') }}"></script>
 
     <script src="{{ asset('assets/js/tw-elements.umd.min.js') }}"></script>
+    @yield('scripts')
 
 </body>
 

@@ -18,13 +18,14 @@ class CheckRole
     // create a multi role middleware from $request->user() & $request->dose
     public function handle(Request $request, Closure $next, ...$roles)
     {
-        // $user = $request->user();
-        // $allowedRoles = array_merge($user->dosen->pluck('role_id')->toArray(), $user->mahasiswa->pluck('role_id')->toArray());
+        $user = $request->user();
+        // dd($user->mahasiswa->pluck('role_id')->toArray());
+        $allowedRoles = array_merge($user->dosen->pluck('role_id')->toArray(), $user->mahasiswa->pluck('role_id')->toArray());
 
-        // if (count(array_intersect($allowedRoles, $roles)) > 0) {
-        //     return $next($request);
-        // }
+        if (count(array_intersect($allowedRoles, $roles)) > 0) {
+            return $next($request);
+        }
 
-        // abort(403);
+        abort(403);
     }
 }

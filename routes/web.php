@@ -17,14 +17,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('index', []);
+})->name('dashboard');
+
+Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'create'])->middleware('auth:mahasiswa');
+Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store'])->middleware('auth:mahasiswa');
+
+Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest');
+// Route::post('/logout', [AuthenticationController::class, 'logout']);
+
+Route::middleware(['auth:mahasiswa,dosen'])->group(function () {
+    Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
-
-Route::get('/surveiMhs', [SurveiKepuasaanController::class, 'create']);
-Route::post('/surveiMhs', [SurveiKepuasaanController::class, 'store']);
-
-// Route::get('/login', [AuthenticationController::class, 'index']);
-Route::post('/login', [AuthenticationController::class, 'login']);
-Route::post('/logout', [AuthenticationController::class, 'logout']);
 
 
 Route::get('/surveiDsn', function () {
@@ -60,4 +63,3 @@ Route::get('/tes', function () {
 });
 
 // Route::get('/survei/surveiMhs', 'SurveiKepuasaanController@create')->name('survei.survei_mhs');
-
