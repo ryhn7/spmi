@@ -1,4 +1,4 @@
-<section class="bg-[#1f2f5f] text-white sectionSize">
+<section class="bg-[#1f2f5f] text-white sectionSize" id="hasilsurvey">
     <div>
         <h2 class="secondaryTitle bg-underline2 bg-100%">Hasil Survei</h2>
     </div>

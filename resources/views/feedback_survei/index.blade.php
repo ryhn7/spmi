@@ -1,4 +1,4 @@
-<section class="sectionSize bg-white">
+<section class="sectionSize bg-white" id="tindaklanjut">
     <div>
         <h2 class="secondaryTitle bg-underline3 bg-100%">Upaya Tindak Lanjut dan Perbaikan</h2>
     </div>

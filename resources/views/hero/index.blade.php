@@ -1,5 +1,4 @@
-<section
-    class="pt-24 md:mt-0 md:h-screen justify-center text-center md:text-left md:flex-row md:justify-between md:items-center">
+<section class="pt-24 md:mt-0 md:h-screen justify-center text-center md:text-left md:flex-row md:justify-between md:items-center" id="hero">
     <div class="tpmf">
         <div class="w-full h-full bg-gradient-to-b from-black opacity-95 to-[rgba(0,0,0,0.6)] m-auto z-10">
             <!-- component -->

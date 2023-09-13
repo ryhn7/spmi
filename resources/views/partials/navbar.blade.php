@@ -5,21 +5,21 @@
         </div>
         <ul class="font-open items-center hidden md:flex">
             <li class="mx-3">
-                <a class="font-medium growing-underline" href="howitworks">
+                <a class="font-medium growing-underline" href="#hero">
                     Beranda
                 </a>
             </li>
             <li class="font-medium growing-underline mx-3">
-                <a href="features">Informasi Survei</a>
+                <a href="#informasi">Informasi Survei</a>
             </li>
             <li class="font-medium growing-underline mx-3">
-                <a href="pricing">Isi Survei</a>
+                <a href="#isisurvey">Isi Survei</a>
             </li>
             <li class="font-medium growing-underline mx-3">
-                <a href="pricing">Hasil Survei</a>
+                <a href="#hasilsurvey">Hasil Survei</a>
             </li>
             <li class="font-medium growing-underline mx-3">
-                <a href="pricing">Tindak Lanjut</a>
+                <a href="#tindaklanjut">Tindak Lanjut</a>
             </li>
         </ul>
         <div class="font-open hidden md:block">
