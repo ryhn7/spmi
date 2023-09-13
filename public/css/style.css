@@ -1708,6 +1708,10 @@ input[type="range"]:active::-webkit-slider-thumb{
   flex-basis: auto;
 }
 
+.border-collapse{
+  border-collapse: collapse;
+}
+
 .origin-\[0_0\]{
   transform-origin: 0 0;
 }
@@ -2376,6 +2380,11 @@ input[type="range"]:active::-webkit-slider-thumb{
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-slate-400{
+  --tw-border-opacity: 1;
+  border-color: rgb(148 163 184 / var(--tw-border-opacity));
+}
+
 .border-t-transparent{
   border-top-color: transparent;
 }
@@ -2942,6 +2951,10 @@ input[type="range"]:active::-webkit-slider-thumb{
 
 .text-right{
   text-align: right;
+}
+
+.text-justify{
+  text-align: justify;
 }
 
 .align-middle{
