@@ -12,17 +12,13 @@ class AuthenticationController extends Controller
 
     public function login(Request $request)
     {
-
         $credentials = $request->validate([
             'username' => 'required|string',
             'password' => 'required|string'
         ]);
 
-
         $isStudent = preg_match('/^\d{14}$/', $credentials['username']);
         $isLecturer = preg_match('/^(?:\d{18}|H\.7\.\d{18})$/', $credentials['username']);
-
-
 
         if ($isStudent) {
             if (Auth::guard('mahasiswa')->attempt(['user_mahasiswa' => $credentials['username'], 'password' => $credentials['password']])) {
@@ -30,9 +26,9 @@ class AuthenticationController extends Controller
 
                 $intended_url = $request->intended_url;
                 if ($intended_url) {
-                    return redirect($intended_url);
+                    return response()->json(['redirect_url' => $intended_url]);
                 } else {
-                    return redirect()->intended('/');
+                    return response()->json(['redirect_url' => '/']);
                 }
             }
         } else if ($isLecturer) {
@@ -41,13 +37,13 @@ class AuthenticationController extends Controller
 
                 $intended_url = $request->intended_url;
                 if ($intended_url) {
-                    return redirect($intended_url);
+                    return response()->json(['redirect_url' => $intended_url]);
                 } else {
-                    return redirect()->intended('/');
+                    return response()->json(['redirect_url' => '/']);
                 }
             }
         }
-        return back()->with('loginError', 'Login anda gagal. Harap coba kembali.');
+        return response()->json(['error_message' => 'Invalid username or password'], 422);
     }
 
     public function logout(Request $request)

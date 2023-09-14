@@ -1,4 +1,4 @@
-<section class="sectionSize bg-white">
+<section id="isi-survei" class="sectionSize bg-white">
     <div>
         <h2 class="secondaryTitle bg-underline3 bg-100%">Isi Survei</h2>
     </div>

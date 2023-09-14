@@ -5,21 +5,21 @@
     </div>
     <ul class="font-open items-center hidden md:flex">
         <li class="mx-3">
-            <a class="font-medium growing-underline" href="howitworks">
+            <a class="font-medium growing-underline" href="{{ route('dashboard') }}#beranda">
                 Beranda
             </a>
         </li>
         <li class="font-medium growing-underline mx-3">
-            <a href="features">Informasi Survei</a>
+            <a href="{{ route('dashboard') }}#informasi-survei">Informasi Survei</a>
         </li>
         <li class="font-medium growing-underline mx-3">
-            <a href="pricing">Isi Survei</a>
+            <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
         </li>
         <li class="font-medium growing-underline mx-3">
-            <a href="pricing">Hasil Survei</a>
+            <a href="{{ route('dashboard') }}#hasil-survei">Hasil Survei</a>
         </li>
         <li class="font-medium growing-underline mx-3">
-            <a href="pricing">Tindak Lanjut</a>
+            <a href="{{ route('dashboard') }}#tindak-lanjut">Tindak Lanjut</a>
         </li>
     </ul>
 
@@ -72,3 +72,31 @@
 </div>
 
 @include('partials.modal_login')
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const formLogin = document.getElementById('form-login');
+
+        formLogin.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+
+            const response = await fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+            });
+
+            const responseData = await response.json();
+
+            console.log(responseData);
+
+            if (response.ok) {
+                window.location.href = responseData.redirect_url;
+            } else {
+                const errorElement = document.getElementById('loginError');
+                errorElement.innerHTML = responseData.error_message;
+                errorElement.classList.remove('hidden');
+            }
+        });
+    });
+</script>

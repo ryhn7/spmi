@@ -16,11 +16,10 @@
                         <div class="mb-8 flex justify-center">
                             <img class="w-24" src="{{ asset('assets/img/logo-undip.png') }}" alt="logo-undip" />
                         </div>
-                        <form action="{{route('login')}}" method="POST">
+                        <form id="form-login" action="{{ route('login') }}" method="POST">
                             @csrf
-                            @if (session()->has('loginError'))
-                                <div class="mb-2 ml-1.5 text-sm text-red-700">{{ session('loginError') }}</div>
-                            @endif
+                            <div id="loginError" class="hidden mb-2 ml-1.5 text-sm text-red-700">
+                            </div>
                             <div class="flex flex-col text-sm rounded-md">
                                 <input type="hidden" name="intended_url" id="intendedUrl">
                                 <input
@@ -40,7 +39,18 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
+
+{{-- <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modalLogin = document.getElementById('modalLogin');
+        const loginError =
+            '{{ session('loginError') }}'; // Assuming this class is used for displaying login errors
+
+        if (loginError) {
+            console.log(loginError);
+        }
+    });
+</script> --}}
