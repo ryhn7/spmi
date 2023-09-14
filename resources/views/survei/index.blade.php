@@ -12,7 +12,7 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
                     </a>
-                @elseif (!Auth::guard('dosen')->check())
+                @elseif (Auth::guard('mahasiswa')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
@@ -38,7 +38,7 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
                     </a>
-                @elseif (!Auth::guard('mahasiswa')->check())
+                @elseif (Auth::guard('dosen')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
