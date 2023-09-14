@@ -20,8 +20,9 @@ class AuthenticationController extends Controller
 
 
         $isStudent = preg_match('/^\d{14}$/', $credentials['username']);
-        // isLecturer username minimum 18 - 22 characters
-        $isLecturer = preg_match('/^\d{18,22}$/', $credentials['username']);
+        $isLecturer = preg_match('/^(?:\d{18}|H\.7\.\d{18})$/', $credentials['username']);
+
+
 
         if ($isStudent) {
             if (Auth::guard('mahasiswa')->attempt(['user_mahasiswa' => $credentials['username'], 'password' => $credentials['password']])) {
