@@ -33,9 +33,9 @@
                                 class="mt-5 w-full border p-2 bg-gradient-to-r from-gray-800 bg-gray-500 text-white rounded-[4px] hover:bg-slate-400 scale-105 duration-300"
                                 type="submit">Masuk</button>
                         </form>
-                        <div class="mt-5 flex justify-between text-sm text-gray-600">
+                        <!-- <div class="mt-5 flex justify-between text-sm text-gray-600">
                             <a href="#">Masuk sebagai tamu?</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
