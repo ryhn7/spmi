@@ -42,15 +42,4 @@
         </div>
     </div>
 </div>
-
-{{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const modalLogin = document.getElementById('modalLogin');
-        const loginError =
-            '{{ session('loginError') }}'; // Assuming this class is used for displaying login errors
-
-        if (loginError) {
-            console.log(loginError);
-        }
-    });
-</script> --}}
+<!-- End Modal -->
