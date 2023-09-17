@@ -6,6 +6,8 @@ use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
 use App\Http\Controllers\SurveiKepuasanPenggunaLulusanController;
 use App\Http\Controllers\SurveiKepuasanTendikController;
+use App\Http\Controllers\TanggapanTPMFTendikController;
+use App\Http\Controllers\TanggapanGPMMitraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -81,6 +83,45 @@ Route::get('/tes', function () {
     return view('tes', []);
 });
 
+//route tanggapan
+Route::get('/tanggapantendik', function () {
+    return view('tanggapan.tanggapan_tendik', []);
+});
 
-Route::get('select2-autocomplete', 'SurveiKepuasanPenggunaLulusanController@create');
-Route::get('select2-autocomplete-ajax', 'SurveiKepuasanPenggunaLulusanController@dataAjax');
+Route::get('/tanggapandosen', function () {
+    return view('tanggapan.tanggapan_dosen', []);
+});
+
+Route::get('/tanggapanmahasiswa', function () {
+    return view('tanggapan.tanggapan_mahasiswa', []);
+});
+
+Route::get('/tanggapanmitra', function () {
+    return view('tanggapan.tanggapan_mitra', []);
+});
+
+Route::get('/tanggapanpenggunalulusan', function () {
+    return view('tanggapan.tanggapan_pengguna_lulusan', []);
+});
+
+//tanggapan tpmf
+Route::get('/tanggapantpmftendik', function () {
+    return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_tendik', []);
+});
+Route::get('/tanggapangpmmitra', function () {
+    return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mitra', []);
+});
+
+//tanggapan dekan
+Route::get('/tanggapandekantendik', function () {
+    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_tendik', []);
+});
+Route::get('/tanggapandekanmitra', function () {
+    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_mitra', []);
+});
+
+//create tanggapan
+Route::get('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'create']);
+Route::post('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'store']);
+Route::get('/TanggapanGPMMitra', [TanggapanGPMMitraController::class, 'create']);
+Route::post('/TanggapanGPMMitra', [TanggapanGPMMitraController::class, 'store']);
