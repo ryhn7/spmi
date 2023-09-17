@@ -5,6 +5,30 @@
     <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1">
         <form action="/surveiMitra" method="POST">
             @csrf
+            <label class="block text-gray-700 font-medium mb-2">Nama:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <input type="text" id="nama" name="nama" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </label>
+                </div>
+            </div>
+            <label class="block text-gray-700 font-medium mb-2">Jabatan:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <input type="text" id="jabatan" name="jabatan" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </label>
+                </div>
+            </div>
+            <label class="block text-gray-700 font-medium mb-2">Nama Instansi/Perusahaan:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="nama_perusahaan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <input type="text" id="nama_perusahaan" name="nama_perusahaan" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </label>
+                </div>
+            </div>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">
                 <label class="block text-gray-700 font-medium mb-2">1. Kejelasan Materi yang disampaikan oleh dosen</label>
                 <div class="flex flex-wrap -mx-2 ">
