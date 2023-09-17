@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 /**
  * @property string $nama_tanpa_gelar
@@ -35,7 +37,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $status_dosen
  * @property string $foto_dosen
  */
-class Dosen extends Model
+class Dosen extends Authenticatable
 {
     /**
      * The table associated with the model.
@@ -69,4 +71,9 @@ class Dosen extends Model
      * @var array
      */
     protected $fillable = ['nama_tanpa_gelar', 'nama_dosen', 'NIDN', 'jabatan_fungsional', 'pangkat_golongan', 'keahlian', 'pendidikan_magister', 'pendidikan_doktor', 'ijazah_magister', 'ijazah_doktor', 'serdos', 'upload_serdos', 'profesi1', 'profesi2', 'profesi3', 'profesi4', 'profesi5', 'sinta', 'scholar', 'scopus', 'garuda', 'wos', 'orcid', 'instansi_dosen', 'user_dosen', 'password_dosen', 'status_dosen', 'foto_dosen'];
+
+    public function getAuthPassword()
+    {
+        return $this->password_dosen;
+    }
 }

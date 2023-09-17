@@ -13,14 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('nama_tabel', function (Blueprint $table) {
-            $table->id(); // Kolom ID Auto-increment
-            $table->string('nama_kolom1');
-            $table->integer('nama_kolom2');
-            $table->timestamps(); // Kolom created_at dan updated_at
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
         });
     }
-
 
     /**
      * Reverse the migrations.
@@ -29,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('roles');
     }
 };

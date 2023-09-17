@@ -4,8 +4,6 @@
     <!-- Hero -->
     @include('hero.index')
 
-    
-
     <!-- Informasi Survei -->
     @include('survei.informasi')
 

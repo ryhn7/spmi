@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('kepuasan_dosen', function (Blueprint $table) {
             $table->integer('id', true);
             $table->string('nama_dosen', 100);
-            $table->string('NIP', 20);
+            $table->string('NIP', 30);
             $table->string('date_time', 0);
             $table->string('1', 100);
             $table->string('2', 100);

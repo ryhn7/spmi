@@ -475,7 +475,7 @@
     "ts-interface-checker": "^0.1.13",
     "tslib": "^2.6.2",
     "tty-browserify": "^0.0.0",
-    "tw-elements": "^1.0.0-rc.1",
+    "tw-elements": "^1.0.0",
     "type-is": "^1.6.18",
     "unicode-canonical-property-names-ecmascript": "^2.0.0",
     "unicode-match-property-ecmascript": "^2.0.0",
