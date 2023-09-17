@@ -50,6 +50,11 @@ return [
             'driver' => 'session',
             'provider' => 'dosen_provider',
         ],
+
+        'tendik' => [
+            'driver' => 'session',
+            'provider' => 'tendik_provider',
+        ],
     ],
 
     /*
@@ -83,6 +88,11 @@ return [
         'dosen_provider' => [
             'driver' => 'eloquent',
             'model' => App\Models\Dosen::class,
+        ],
+
+        'tendik_provider' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pegawai::class,
         ],
 
         // 'users' => [

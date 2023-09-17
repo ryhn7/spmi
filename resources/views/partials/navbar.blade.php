@@ -1,3 +1,6 @@
+{{-- @dd(Auth::guard('dosen')->check()) --}}
+
+
 <!-- Navigation -->
 <nav class="fixed flex justify-between pt-7 pb-4 w-full lg:px-48 md:px-12 px-4 content-center bg-white z-10">
     <div class="flex items-center">
@@ -25,12 +28,16 @@
 
 
     {{-- if user is logged in show hello user, else show login button --}}
-    @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check())
+    @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
         <div class="flex items-center">
             <div class="flex items-center">
                 {{-- <img src='{{ asset('assets/logos/User.svg') }}' alt="User icon" /> --}}
                 <span class="hidden md:block ml-1">Hello,
-                    {{ Auth::guard('mahasiswa')->check() ? ucwords(strtolower(Auth::guard('mahasiswa')->user()->nama_mahasiswa)) : ucwords(strtolower(Auth::guard('dosen')->user()->nama_tanpa_gelar)) }}
+                    {{ Auth::guard('mahasiswa')->check()
+                        ? ucwords(strtolower(Auth::guard('mahasiswa')->user()->nama_mahasiswa))
+                        : (Auth::guard('dosen')->check()
+                            ? ucwords(strtolower(Auth::guard('dosen')->user()->nama_tanpa_gelar))
+                            : ucwords(strtolower(Auth::guard('tendik')->user()->nama_tanpa_gelar))) }}
                 </span>
             </div>
             <form action="{{ route('logout') }}" method="POST">
