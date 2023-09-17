@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 use App\Models\kepuasan_pengguna_lulusan;
+use App\Models\Mahasiswa;
 use Carbon\Carbon;
+use DB;
 use Illuminate\Http\Request;
 
 class SurveiKepuasanPenggunaLulusanController extends Controller
@@ -10,7 +12,9 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
     //
     public function create()
     {
-        return view('survei.survei_pengguna_lulusan');
+        return view('survei.survei_pengguna_lulusan', [
+            'mahasiswas' => Mahasiswa::where('lulus', '!=', '0000-00-00')->get(),
+        ]);
     }
 
     public function store(Request $request)
@@ -26,10 +30,10 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
         // $prodi = "Informatics Engineering";
 
         $tes = [
-            'nama' => "OKe",
-            'jabatan' => "OKe",
-            'nama_perusahaan' => "ABC",
-            'alumni' => "oke",
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'nama_perusahaan' => $request->nama_perusahaan,
+            'alumni' => $request->alumni,
             'date_time' => Carbon::now(),
             '1' => $request->satu,
             '2' => $request->dua,

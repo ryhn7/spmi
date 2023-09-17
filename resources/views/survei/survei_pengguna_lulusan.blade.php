@@ -1,10 +1,57 @@
 @extends('layouts.main')
 
 @section('container')
+<div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+</div>
 <div class="pt-32">
     <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1">
         <form action="/surveiPenggunaLulusan" method="POST">
             @csrf
+            <label class="block text-gray-700 font-medium mb-2">Nama:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <input type="text" id="nama" name="nama" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </label>
+                </div>
+            </div>
+            <label class="block text-gray-700 font-medium mb-2">Jabatan:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <input type="text" id="jabatan" name="jabatan" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </label>
+                </div>
+            </div>
+            <label class="block text-gray-700 font-medium mb-2">Nama Perusahaan:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="nama_perusahaan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <input type="text" id="nama_perusahaan" name="nama_perusahaan" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </label>
+                </div>
+            </div>
+            <label class="block text-gray-700 font-medium mb-2">Alumni:</label>
+            <div class="flex flex-wrap -mx-2 ">
+                <div class="px-2 w-1/4">
+                    <label for="alumni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                        <!-- <input type="text" id="alumni" name="alumni" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"> -->
+                        <select name="alumni" id="alumni" required
+                        class="block w-full mt-1 mb-2 text-sm form-select px-2 py-1 border border-gray-500 rounded focus:border-sky-800 focus:outline-none focus:shadow-sm focus:shadow-[#2c3e50] focus:transition-shadow">
+                            <option value="" class="font-semibold">Pilih Mahasiswa</option>
+                            @foreach ($mahasiswas as $mahasiswa)
+                                <option value="{{ $mahasiswa->nama_mahasiswa }}">{{ $mahasiswa->nama_mahasiswa}}</option>
+                            @endforeach
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="container">
+            <!-- <select class="itemName form-control" style="width:500px;" name="itemName"></select> -->
+            </div>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">
                 <label class="block text-gray-700 font-medium mb-2">1. Etika</label>
                 <div class="flex flex-wrap -mx-2 ">
@@ -238,5 +285,18 @@
         </form>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script>
+        const name = document.getElementById('alumni');
 
+            $('#alumni').select2(
+                {
+                    placeholder: 'Nama Mahasiswa',
+                    allowClear: true,
+                }
+            );
+        
+        
+    </script>
 @endsection

@@ -80,3 +80,7 @@ Route::get('/forbidden', function () {
 Route::get('/tes', function () {
     return view('tes', []);
 });
+
+
+Route::get('select2-autocomplete', 'SurveiKepuasanPenggunaLulusanController@create');
+Route::get('select2-autocomplete-ajax', 'SurveiKepuasanPenggunaLulusanController@dataAjax');
