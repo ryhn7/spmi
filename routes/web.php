@@ -6,6 +6,7 @@ use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
 use App\Http\Controllers\SurveiKepuasanPenggunaLulusanController;
 use App\Http\Controllers\SurveiKepuasanTendikController;
+use App\Http\Controllers\HasilSurveiKepuasanDosenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,9 +58,10 @@ Route::get('/feedbacktendik', function () {
     return view('feedback_survei.feedback_tendik', []);
 });
 
-Route::get('/hasildosen', function () {
-    return view('hasil_survei.hasil_survei_dosen', []);
-});
+// Route::get('/hasildosen', function () {
+//     return view('hasil_survei.hasil_survei_dosen', [HasilSurveiKepuasanDosenController::class]);
+// });
+Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'index'])->name('hasil_survei.hasil_survei_dosen');
 Route::get('/hasilmahasiswa', function () {
     return view('hasil_survei.hasil_survei_mhs', []);
 });
