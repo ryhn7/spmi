@@ -36,6 +36,8 @@ class HasilSurveiKepuasanDosenController extends Controller
                 'Total' => $total,
             ];
 
+            // dd($results);
+
         }
 
         return view('hasil_survei.hasil_survei_dosen', compact('results'));

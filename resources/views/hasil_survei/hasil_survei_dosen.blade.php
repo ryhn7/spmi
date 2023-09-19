@@ -34,7 +34,7 @@
             </table>
         @endforeach --}}
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
     {{-- <script>
         var results = @json($results);
         if (results.length > 0){
@@ -110,43 +110,27 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var results = @json($results);
+            var labels = ["Ketegasan pimpinan dalam melaksanakan sistem pengelolaan SDM",
+                "Sistem rekrutmen dosen yang dilakukan Fakultas Sains dan Matematika",
+                "Sistem seleksi dosen yang dilaksanakan di Fakultas Sains dan Matematika",
+                "Penempatan dosen di Fakultas Sains dan Matematika"
+            ];
+            var datasets = results.map(function(result, index) {
+                return {
+                    label: result.Category,
+                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
+                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
+                            "rgba(255, 0, 0, 0.7)")),
+                    data: labels.map(function(label, labelIndex) {
+                        return results[index].Averages[labelIndex + 1];
+                    })
+                };
+            });
             var config = {
-                type: 'horizontalBar',
+                type: 'bar',
                 data: {
-                    labels: ["Ketegasan pimpinan dalam melaksanakan sistem pengelolaan SDM",
-                        "Sistem rekrutmen dosen yang dilakukan Fakultas Sains dan Matematika",
-                        "Sistem seleksi dosen yang dilaksanakan di Fakultas Sains dan Matematika",
-                        "Penempatan dosen di Fakultas Sains dan Matematika"
-                    ],
-                    datasets: [{
-                        label: "Sangat Baik",
-                        backgroundColor: "rgba(0, 255, 0, 0.7)",
-                        data: [$results[0]['Averages'][1], $results[0]['Averages'][2], $results[
-                            0][
-                            'Averages'
-                        ][3], $results[0]['Averages'][4]],
-                    }, {
-                        label: "Baik",
-                        backgroundColor: "rgba(0, 0, 255, 0.7)",
-                        data: [$results[1]['Averages'][1], $results[1]['Averages'][2], $results[
-                            1][
-                            'Averages'
-                        ][3], $results[1]['Averages'][4]]
-                    }, {
-                        label: "Cukup",
-                        backgroundColor: "rgba(255, 128, 0, 0.7)",
-                        data: [$results[2]['Averages'][1], $results[2]['Averages'][2], $results[
-                            2][
-                            'Averages'
-                        ][3], $results[2]['Averages'][4]]
-                    }, {
-                        label: "Kurang",
-                        backgroundColor: "rgba(255, 0, 0, 0.7)",
-                        data: [$results[4]['Averages'][1], $results[4]['Averages'][2], $results[
-                            4][
-                            'Averages'
-                        ][3], $results[4]['Averages'][4]]
-                    }]
+                    labels: labels,
+                    datasets: datasets
                 },
                 options: {
                     responsive: true,
@@ -157,7 +141,7 @@
                                 min: 0,
                                 max: 100,
                                 callback: function(value) {
-                                    return value + "%"
+                                    return value + "%";
                                 }
                             }
                         }],
@@ -170,8 +154,7 @@
                         mode: 'label',
                         callbacks: {
                             label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' +
-                                    tooltipItems
+                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
                                     .xLabel + ' %';
                             }
                         }

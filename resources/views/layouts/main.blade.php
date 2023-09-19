@@ -25,7 +25,8 @@
 
     <script src="{{ asset('assets/js/tw-elements.umd.min.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script> --}}
+    <script src="{{ asset('assets/js/chartjs.min.js') }}"></script>
     @yield('scripts')
 
 </body>
