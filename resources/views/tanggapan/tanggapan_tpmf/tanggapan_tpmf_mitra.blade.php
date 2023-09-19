@@ -2,7 +2,7 @@
 @section('container')
 <div class="pt-32">
     <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1">
-        <form action="/TanggapanGPMMitra" method="POST">
+        <form action="/TanggapanTPMFMitra" method="POST">
             @csrf
             <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</label>
             <div class="mb-4 border border-black rounded px-2" style="border: 1px solid rgba(0, 0, 0, 0.3);">

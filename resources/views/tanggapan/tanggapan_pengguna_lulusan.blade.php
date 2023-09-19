@@ -3,11 +3,11 @@
 @section('container')
 <section class="sectionSize bg-white">
     <div><br><br>
-        <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Tenaga Pendidik</h2>
-        <a href="/tanggapantpmftendik" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-            <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan TPMF</span>
+        <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Pengguna Lulusan</h2>
+        <a href="/tanggapangpmpenggunalulusan" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+            <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan GPM</span>
         </a> <br>
-        <a href="/tanggapandekantendik" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+        <a href="/tanggapandekanpenggunalulusan" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
             <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan Dekan</span>
         </a>        
         <br>
@@ -20,87 +20,57 @@
             </tr>
             <tr>
                 <td class="border px-8 py-4">1.</td>
-                <td class="border px-8 py-4">Fakultas Sains dan Matematika memfasilitasi kebutuhan untuk studi lanjut</td>
+                <td class="border px-8 py-4">Etika</td>
                 <td class="border px-8 py-4">  </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">2.</td>
-                <td class="border px-8 py-4">Dukungan pengembangan diri untuk mengikuti kursus/pelatihan</td>
+                <td class="border px-8 py-4">Keahlian pada Bidang Ilmu</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">3.</td>
-                <td class="border px-8 py-4">Dukungan pengembangan diri untuk mengikuti seminar/workshop</td>
+                <td class="border px-8 py-4">Kemampuan Bahasa Asing</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">4.</td>
-                <td class="border px-8 py-4">Dukungan dan kesempatan untuk mengikuti studi banding dalam negeri</td>
+                <td class="border px-8 py-4">Penggunaan Teknologi Informasi</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">5.</td>
-                <td class="border px-8 py-4">Dukungan dan kesempatan untuk mengikuti studi banding luar negeri</td>
+                <td class="border px-8 py-4">Komunikasi</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">6.</td>
-                <td class="border px-8 py-4">Mendapat informasi tentang jenjang karir</td>
+                <td class="border px-8 py-4">Kerjasama Tim</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">7.</td>
-                <td class="border px-8 py-4">Layanan yang diberikan Fakultas Sains dan Matematika tentang jenjang karir</td>
+                <td class="border px-8 py-4">Pengembangan Diri</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">8.</td>
-                <td class="border px-8 py-4">Dukungan dan kesempatan untuk meningkatkan jenjang karir</td>
+                <td class="border px-8 py-4">Kepemimpinan</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+                <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">9.</td>
-                <td class="border px-8 py-4">Mendapatkan informasi tentang jabatan</td>
+                <td class="border px-8 py-4">Etos Kerja</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
-            </tr>
-            <tr>
-                <td class="border px-8 py-4">10.</td>
-                <td class="border px-8 py-4">Layanan yang diberikan Fakultas Sains dan Matematika tentang jabatan</td>
                 <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
-            </tr>
-            <tr>
-                <td class="border px-8 py-4">11.</td>
-                <td class="border px-8 py-4">Dukungan dan kesempatan untuk peningkatan jabatan struktural</td>
-                <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
-            </tr>
-            <tr>
-                <td class="border px-8 py-4">12.</td>
-                <td class="border px-8 py-4">Dukungan dan kesempatan untuk peningkatan jabatan non struktural</td>
-                <td class="border px-8 py-4"> </td>
-                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
-                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
             </tr>
         </table>
     </div>

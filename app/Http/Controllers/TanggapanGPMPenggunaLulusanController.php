@@ -1,15 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\feedback_mitra;
+use App\Models\feedback_stakeholder;
 use Illuminate\Http\Request;
 
-class TanggapanGPMMitraController extends Controller
+class TanggapanGPMPenggunaLulusanController extends Controller
 {
     //
     public function create()
     {
-        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mitra');
+        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mahasiswa');
     }
 
     public function store(Request $request)
@@ -25,16 +25,10 @@ class TanggapanGPMMitraController extends Controller
             '6' => $request->enam,
             '7' => $request->tujuh,
             '8' => $request->delapan,
-            '9' => $request->sembilan,
-            '10' =>$request->sepuluh
+            '9' => $request->sembilan
         ];
-
-        // $question_one = $request->satu;
-
-        // dd($tes);
-
-        // kepuasan_mahasiswa::create($validated);
-        feedback_mitra::create($tanggapan);
+        
+        feedback_stakeholder::create($tanggapan);
 
         return redirect('/')->with('success', 'berhasil save');
     }

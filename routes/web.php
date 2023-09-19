@@ -6,8 +6,11 @@ use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
 use App\Http\Controllers\SurveiKepuasanPenggunaLulusanController;
 use App\Http\Controllers\SurveiKepuasanTendikController;
+use App\Http\Controllers\TanggapanGPMMahasiswaController;
+use App\Http\Controllers\TanggapanGPMPenggunaLulusanController;
 use App\Http\Controllers\TanggapanTPMFTendikController;
-use App\Http\Controllers\TanggapanGPMMitraController;
+use App\Http\Controllers\TanggapanTPMFMitraController;
+use App\Http\Controllers\TanggapanTPMFDosenController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -109,9 +112,19 @@ Route::get('/tanggapanpenggunalulusan', function () {
 Route::get('/tanggapantpmftendik', function () {
     return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_tendik', []);
 });
-Route::get('/tanggapangpmmitra', function () {
-    return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mitra', []);
+Route::get('/tanggapantpmfmitra', function () {
+    return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_mitra', []);
 });
+Route::get('/tanggapantpmfdosen', function () {
+    return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_dosen', []);
+});
+Route::get('/tanggapangpmmahasiswa', function () {
+    return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mahasiswa', []);
+});
+Route::get('/tanggapangpmpenggunalulusan', function () {
+    return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_pengguna_lulusan', []);
+});
+
 
 //tanggapan dekan
 Route::get('/tanggapandekantendik', function () {
@@ -120,9 +133,27 @@ Route::get('/tanggapandekantendik', function () {
 Route::get('/tanggapandekanmitra', function () {
     return view('tanggapan.tanggapan_dekan.tanggapan_dekan_mitra', []);
 });
+Route::get('/tanggapandekanmahasiswa', function () {
+    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_mahasiswa', []);
+});
+Route::get('/tanggapandekanpenggunalulusan', function () {
+    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_pengguna_lulusan', []);
+});
+Route::get('/tanggapandekandosen', function () {
+    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_dosen', []);
+});
 
-//create tanggapan
+//create tanggapan TPMF
 Route::get('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'create']);
 Route::post('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'store']);
-Route::get('/TanggapanGPMMitra', [TanggapanGPMMitraController::class, 'create']);
-Route::post('/TanggapanGPMMitra', [TanggapanGPMMitraController::class, 'store']);
+Route::get('/TanggapanTPMFMitra', [TanggapanTPMFMitraController::class, 'create']);
+Route::post('/TanggapanTPMFMitra', [TanggapanTPMFMitraController::class, 'store']);
+Route::get('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'create']);
+Route::post('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'store']);
+Route::get('/TanggapanGPMMahasiswa', [TanggapanGPMMahasiswaController::class, 'create']);
+Route::post('/TanggapanGPMMahasiswa', [TanggapanGPMMahasiswaController::class, 'store']);
+Route::get('/TanggapanGPMPenggunaLulusan', [TanggapanGPMPenggunaLulusanController::class, 'create']);
+Route::post('/TanggapanGPMPenggunaLulusan', [TanggapanGPMPenggunaLulusanController::class, 'store']);
+Route::get('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'create']);
+Route::post('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'store']);
+
