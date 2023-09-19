@@ -13,7 +13,11 @@ class SurveiKepuasanDosenController extends Controller
 {
     public function create()
     {
-        return view('survei.survei_dosen');
+        $surveiDsn = kepuasan_dosen::where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
+
+        return view('survei.survei_dosen', [
+            'surveys' => $surveiDsn
+        ]);
     }
 
     public function store(Request $request)

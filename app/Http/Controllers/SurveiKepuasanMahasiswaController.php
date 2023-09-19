@@ -12,7 +12,11 @@ class SurveiKepuasanMahasiswaController extends Controller
 {
     public function create()
     {
-        return view('survei.survei_mhs');
+        $surveiMhs = kepuasan_mahasiswa::where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+
+        return view('survei.survei_mhs', [
+            'surveys' => $surveiMhs
+        ]);
     }
 
     public function store(Request $request)
