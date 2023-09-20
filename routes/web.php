@@ -11,6 +11,11 @@ use App\Http\Controllers\TanggapanGPMPenggunaLulusanController;
 use App\Http\Controllers\TanggapanTPMFTendikController;
 use App\Http\Controllers\TanggapanTPMFMitraController;
 use App\Http\Controllers\TanggapanTPMFDosenController;
+use App\Http\Controllers\TanggapanTendikController;
+use App\Http\Controllers\TanggapanPenggunaLulusanController;
+use App\Http\Controllers\TanggapanMitraController;
+use App\Http\Controllers\TanggapanMahasiswaController;
+use App\Http\Controllers\TanggapanDosenController;
 use App\Http\Controllers\HasilSurveiKepuasanDosenController;
 use Illuminate\Support\Facades\Route;
 
@@ -90,25 +95,11 @@ Route::get('/tes', function () {
 });
 
 //route tanggapan
-Route::get('/tanggapantendik', function () {
-    return view('tanggapan.tanggapan_tendik', []);
-});
-
-Route::get('/tanggapandosen', function () {
-    return view('tanggapan.tanggapan_dosen', []);
-});
-
-Route::get('/tanggapanmahasiswa', function () {
-    return view('tanggapan.tanggapan_mahasiswa', []);
-});
-
-Route::get('/tanggapanmitra', function () {
-    return view('tanggapan.tanggapan_mitra', []);
-});
-
-Route::get('/tanggapanpenggunalulusan', function () {
-    return view('tanggapan.tanggapan_pengguna_lulusan', []);
-});
+Route::get('/tanggapantendik', [TanggapanTendikController::class, 'show']);
+Route::get('/tanggapandosen', [TanggapanDosenController::class, 'show']);
+Route::get('/tanggapanmahasiswa', [TanggapanMahasiswaController::class, 'show']);
+Route::get('/tanggapanmitra', [TanggapanMitraController::class, 'show']);
+Route::get('/tanggapanpenggunalulusan', [TanggapanPenggunaLulusanController::class, 'show']);
 
 //tanggapan tpmf
 Route::get('/tanggapantpmftendik', function () {
@@ -156,6 +147,3 @@ Route::get('/TanggapanGPMMahasiswa', [TanggapanGPMMahasiswaController::class, 'c
 Route::post('/TanggapanGPMMahasiswa', [TanggapanGPMMahasiswaController::class, 'store']);
 Route::get('/TanggapanGPMPenggunaLulusan', [TanggapanGPMPenggunaLulusanController::class, 'create']);
 Route::post('/TanggapanGPMPenggunaLulusan', [TanggapanGPMPenggunaLulusanController::class, 'store']);
-Route::get('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'create']);
-Route::post('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'store']);
-

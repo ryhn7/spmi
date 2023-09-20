@@ -21,61 +21,61 @@
             <tr>
                 <td class="border px-8 py-4">1.</td>
                 <td class="border px-8 py-4">Fakultas Sains dan Matematika merespon dengan baik dalam usaha untuk menjalin/merintis kerjasama.</td>
-                <td class="border px-8 py-4">  </td>
+                <td class="border px-8 py-4"> {{$feedback->{'1'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">2.</td>
                 <td class="border px-8 py-4">Proses pembuatan MoU dan Perjanjian Kerjasama sesuai dengan harapan.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'2'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">3.</td>
                 <td class="border px-8 py-4">Fakultas Sains dan Matematika memberikan pendampingan terhadap kebutuhan kerjasama sesuai dengan harapan.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'3'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">4.</td>
                 <td class="border px-8 py-4">Kerjasama dengan Fakultas Sains dan Matematika berjalan sesuai dengan harapan.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'4'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">5.</td>
                 <td class="border px-8 py-4">Kami mendapatkan manfaat yang baik dalam menjalin kerjasama dengan Fakultas Sains dan Matematika.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'5'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">6.</td>
                 <td class="border px-8 py-4">Implementasi kerjasama sesuai dengan Perjanjian Kerjasama.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'6'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">7.</td>
                 <td class="border px-8 py-4">Pelaporan hasil kerjasama sesuai dengan kemufakatan dan aturan yang berlaku.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'7'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">8.</td>
                 <td class="border px-8 py-4">Kami akan melanjutkan kerjasama pada tahun - tahun selanjutnya (sesuai kebutuhan).</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'8'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">9.</td>
                 <td class="border px-8 py-4">SDM yang ada di Fakultas Sains dan Matematika sesuai dengan keahlian yang diperlukan dalam kerjasama.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'9'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">10.</td>
                 <td class="border px-8 py-4">SDM dari Fakultas Sains dan Matematika bekerja dengan profesional.</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'10'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
         </table>

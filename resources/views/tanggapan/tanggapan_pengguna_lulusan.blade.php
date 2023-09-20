@@ -21,55 +21,55 @@
             <tr>
                 <td class="border px-8 py-4">1.</td>
                 <td class="border px-8 py-4">Etika</td>
-                <td class="border px-8 py-4">  </td>
+                <td class="border px-8 py-4"> {{$feedback->{'1'} }} </td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">2.</td>
                 <td class="border px-8 py-4">Keahlian pada Bidang Ilmu</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'2'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">3.</td>
                 <td class="border px-8 py-4">Kemampuan Bahasa Asing</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'3'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">4.</td>
                 <td class="border px-8 py-4">Penggunaan Teknologi Informasi</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'4'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">5.</td>
                 <td class="border px-8 py-4">Komunikasi</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'5'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">6.</td>
                 <td class="border px-8 py-4">Kerjasama Tim</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'6'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">7.</td>
                 <td class="border px-8 py-4">Pengembangan Diri</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'7'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">8.</td>
                 <td class="border px-8 py-4">Kepemimpinan</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'8'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
             <tr>
                 <td class="border px-8 py-4">9.</td>
                 <td class="border px-8 py-4">Etos Kerja</td>
-                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4"> {{$feedback->{'9'} }}</td>
                 <td class="border px-8 py-4"> </td>
             </tr>
         </table>
