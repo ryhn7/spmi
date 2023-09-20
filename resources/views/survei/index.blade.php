@@ -67,16 +67,30 @@
                 @endif
             </li>
             <li>
-                <a href="/surveiMitra"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama </span>
-                </a>
+                @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                    <a href="{{ route('restricted') }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama</span>
+                    </a>
+                @else
+                    <a href="/surveiMitra"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama </span>
+                    </a>
+                @endif
             </li>
             <li>
-                <a href="/surveiPenggunaLulusan"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
-                </a>
+                @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                    <a href="{{ route('restricted') }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
+                    </a>
+                @else
+                    <a href="/surveiPenggunaLulusan"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
+                    </a>
+                @endif
             </li>
         </ul>
     </div>

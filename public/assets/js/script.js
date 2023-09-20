@@ -1,5 +1,4 @@
 window.addEventListener("load", function () {
-  console.log(document.querySelector("#showMenu"));
   document
     .querySelector("#showMenu")
     .addEventListener("click", function (event) {
