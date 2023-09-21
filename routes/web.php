@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthenticationController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SurveiKepuasanMahasiswaController;
 use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
@@ -19,16 +20,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index', []);
-})->middleware('guest')->name('dashboard');
-
+Route::get('/', [DashboardController::class, 'index'])->middleware('guest')->name('dashboard');
 
 Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
 
 Route::middleware(['auth:mahasiswa,dosen,tendik'])->group(function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
+
+Route::post('/changeRole', [AuthenticationController::class, 'changeRole'])->name('changeRole');
 
 Route::get('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'create'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
 Route::post('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'store'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
@@ -81,6 +81,6 @@ Route::get('/restricted', function () {
     return view('errors.restricted');
 })->name('restricted');
 
-Route::get('/tes', function () {
-    return view('tes', []);
-});
+// Route::get('/tes', function () {
+//     return view('tes', []);
+// });

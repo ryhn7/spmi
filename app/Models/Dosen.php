@@ -70,10 +70,15 @@ class Dosen extends Authenticatable
     /**
      * @var array
      */
-    protected $fillable = ['nama_tanpa_gelar', 'nama_dosen', 'NIDN', 'jabatan_fungsional', 'pangkat_golongan', 'keahlian', 'pendidikan_magister', 'pendidikan_doktor', 'ijazah_magister', 'ijazah_doktor', 'serdos', 'upload_serdos', 'profesi1', 'profesi2', 'profesi3', 'profesi4', 'profesi5', 'sinta', 'scholar', 'scopus', 'garuda', 'wos', 'orcid', 'instansi_dosen', 'user_dosen', 'password_dosen', 'status_dosen', 'foto_dosen'];
+        protected $fillable = ['nama_tanpa_gelar', 'nama_dosen', 'NIDN', 'jabatan_fungsional', 'pangkat_golongan', 'keahlian', 'pendidikan_magister', 'pendidikan_doktor', 'ijazah_magister', 'ijazah_doktor', 'serdos', 'upload_serdos', 'profesi1', 'profesi2', 'profesi3', 'profesi4', 'profesi5', 'sinta', 'scholar', 'scopus', 'garuda', 'wos', 'orcid', 'instansi_dosen', 'user_dosen', 'password_dosen', 'status_dosen', 'foto_dosen'];
 
     public function getAuthPassword()
     {
         return $this->password_dosen;
     }
+
+    public function jabatan()
+{
+    return $this->belongsTo(Jabatan::class, 'id_jabatan');
+}
 }

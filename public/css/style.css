@@ -3040,6 +3040,10 @@ input[type="range"]:active::-webkit-slider-thumb{
   padding-right: 1.25rem;
 }
 
+.pb-7{
+  padding-bottom: 1.75rem;
+}
+
 .text-left{
   text-align: left;
 }

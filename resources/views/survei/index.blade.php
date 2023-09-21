@@ -1,3 +1,8 @@
+{{-- @dd(Auth::guard('tpmf')->check() ? 'tpmf' : 'not tpmf') --}}
+{{-- @dd(Auth::guard('dekan')->check() ? 'dekan' : 'not dekan') --}}
+{{-- @dd(Auth::guard('wadek')->check() ? 'wadek' : 'not wadek') --}}
+{{-- @dd(Auth::guard('gpm')->check() ? 'gpm' : 'not gpm') --}}
+
 <section id="isi-survei" class="sectionSize bg-white">
     <div>
         <h2 class="secondaryTitle bg-underline3 bg-100%">Isi Survei</h2>

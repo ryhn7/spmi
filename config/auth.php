@@ -51,6 +51,26 @@ return [
             'provider' => 'dosen_provider',
         ],
 
+        'tpmf' => [
+            'driver' => 'session',
+            'provider' => 'dosen_provider',
+        ],
+
+        'gpm' => [
+            'driver' => 'session',
+            'provider' => 'dosen_provider',
+        ],
+    
+        'dekan' => [
+            'driver' => 'session',
+            'provider' => 'dosen_provider',
+        ],
+    
+        'wadek' => [
+            'driver' => 'session',
+            'provider' => 'dosen_provider',
+        ],
+
         'tendik' => [
             'driver' => 'session',
             'provider' => 'tendik_provider',

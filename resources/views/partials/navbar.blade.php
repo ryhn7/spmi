@@ -75,31 +75,60 @@
                         <div x-ref="panel" x-show="open" x-transition.origin.top.left
                             x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
                             class="text-sm before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 min-w-44 before:sm:right-7.5 before:text-5.5 absolute right-0 top-0 mt-5 w-40 rounded-lg bg-[#FBFAFB] shadow-md z-50 bg-clip-padding px-2 py-4 text-left text-slate-500 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:block lg:cursor-pointer">
-                            <div
-                                class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm">
-
-                                <div class="flex flex-col">
-                                    <p class="font-open font-medium text-slate-500">ROLE</p>
-                                    <div class="flex flex-col mt-2 ml-1.5">
-                                        <label class="flex text-sm items-center" for="oke">
-                                            <input type="radio" name="oke" class="mr-2">
-                                            <button class="">oke</button>
-                                        </label>
-                                        <label class="flex text-sm items-center" for="oke">
-                                            <input type="radio" name="oke" class="mr-2">
-                                            <button class="">oke</button>
-                                        </label>
-                                        <label class="flex text-sm items-center" for="oke">
-                                            <input type="radio" name="oke" class="mr-2">
-                                            <button class="">oke</button>
-                                        </label>
-                                        <label class="flex text-sm items-center" for="oke">
-                                            <input type="radio" name="oke" class="mr-2">
-                                            <button class="">oke</button>
-                                        </label>
+                            @if (Auth::guard('dosen')->check() && $namaJabatan)
+                                <div
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 pt-2 text-left text-sm">
+                                    <div class="flex flex-col">
+                                        <p class="font-open font-medium text-slate-500">ROLE</p>
+                                        <div class="flex flex-col mt-2 ml-1.5">
+                                            <form action="{{ route('changeRole') }}" method="POST">
+                                                @csrf
+                                                <label class="flex text-sm items-center mb-2" for="role">
+                                                    <input id="dosenInput" type="radio" name="role" class="mr-2">
+                                                    <button id="dosenBtn">Dosen</button>
+                                                </label>
+                                            </form>
+                                            @if ($namaJabatan == 'Tim Penjaminan Mutu Fakultas Sains dan Matematika')
+                                                <form action="{{ route('changeRole') }}" method="POST">
+                                                    @csrf
+                                                    <label class="flex text-sm items-center mb-2" for="role">
+                                                        <input id="tpmfInput" type="radio" name="role"
+                                                            class="mr-2">
+                                                        <button id="tpmfBtn">TPMF</button>
+                                                    </label>
+                                                </form>
+                                            @elseif ($namaJabatan == 'Gugus Penjaminan Mutu Program Studi Sarjana Matematika')
+                                                <form action="{{ route('changeRole') }}" method="POST">
+                                                    @csrf
+                                                    <label class="flex text-sm items-center mb-2" for="role">
+                                                        <input id="gpmInput" type="radio" name="role"
+                                                            class="mr-2">
+                                                        <button id="gpmBtn">GPM</button>
+                                                    </label>
+                                                </form>
+                                            @elseif ($namaJabatan == 'Dekan Fakultas Sains dan Matematika')
+                                                <form action="{{ route('changeRole') }}" method="POST">
+                                                    @csrf
+                                                    <label class="flex text-sm items-center mb-2" for="role">
+                                                        <input id="dekanInput" type="radio" name="role"
+                                                            class="mr-2">
+                                                        <button id="dekanBtn">Dekan</button>
+                                                    </label>
+                                                </form>
+                                            @elseif ($namaJabatan == 'Wakil Dekan Akademik dan Kemahasiswaan' || $namaJabatan == 'Wakil Dekan Sumber Daya dan Inovasi')
+                                                <form action="{{ route('changeRole') }}" method="POST">
+                                                    @csrf
+                                                    <label class="flex text-sm items-center mb-2" for="role">
+                                                        <input id="wadekInput" type="radio" name="role"
+                                                            class="mr-2">
+                                                        <button id="wadekBtn">Wadek</button>
+                                                    </label>
+                                                </form>
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endif
 
                             </a>
                             <form action="/logout" method="POST" class="">
@@ -173,5 +202,49 @@
                 errorElement.classList.remove('hidden');
             }
         });
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const dosenBtn = document.getElementById('dosenBtn');
+        const dosenInput = document.getElementById('dosenInput');
+        const tpmfBtn = document.getElementById('tpmfBtn');
+        const tpmfInput = document.getElementById('tpmfInput');
+        const gpmBtn = document.getElementById('gpmBtn');
+        const gpmInput = document.getElementById('gpmInput');
+        const dekanBtn = document.getElementById('dekanBtn');
+        const dekanInput = document.getElementById('dekanInput');
+        const wadekBtn = document.getElementById('wadekBtn');
+        const wadekInput = document.getElementById('wadekInput');
+
+        const selectedRole = "{{ session('role') }}";
+        const isDosen = "{{ Auth::guard('dosen')->check() }}";
+
+        // console.log(selectedRole);
+
+        if (isDosen) {
+            dosenInput.checked = true;
+            tpmfInput.checked = false;
+            gpmInput.checked = false;
+            dekanInput.checked = false;
+            wadekInput.checked = false;
+        }
+
+        if (selectedRole === 'dosen') {
+            dosenInput.checked = true;
+        } else if (selectedRole === 'tpmf') {
+            tpmfInput.checked = true;
+            dosenInput.checked = false;
+        } else if (selectedRole === 'gpm') {
+            gpmInput.checked = true;
+            dosenInput.checked = false;
+        } else if (selectedRole === 'dekan') {
+            dekanInput.checked = true;
+            dosenInput.checked = false;
+        } else if (selectedRole === 'wadek') {
+            wadekInput.checked = true;
+            dosenInput.checked = false;
+        }
     });
 </script>
