@@ -27,7 +27,7 @@ Route::get('/', function () {
 
 Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
 
-Route::middleware(['auth:mahasiswa,dosen'])->group(function () {
+Route::middleware(['auth:mahasiswa,dosen,tendik'])->group(function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
 
@@ -35,12 +35,13 @@ Route::get('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'create'])->
 Route::post('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'store'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
 Route::get('/surveiDsn', [SurveiKepuasanDosenController::class, 'create'])->middleware('auth:dosen', 'checkRole:dosen');
 Route::post('/surveiDsn', [SurveiKepuasanDosenController::class, 'store'])->middleware('auth:dosen', 'checkRole:dosen');
-Route::get('/surveiMitra', [SurveiKepuasanMitraController::class, 'create']);
-Route::post('/surveiMitra', [SurveiKepuasanMitraController::class, 'store']);
-Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'create']);
-Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store']);
-Route::get('/surveiTendik', [SurveiKepuasanTendikController::class, 'create']);
-Route::post('/surveiTendik', [SurveiKepuasanTendikController::class, 'store']);
+Route::get('/surveiTendik', [SurveiKepuasanTendikController::class, 'create'])->middleware('auth:tendik', 'checkRole:tendik');
+Route::post('/surveiTendik', [SurveiKepuasanTendikController::class, 'store'])->middleware('auth:tendik', 'checkRole:tendik');
+Route::get('/surveiMitra', [SurveiKepuasanMitraController::class, 'create'])->middleware('redirectAuthenticatedUsers');
+Route::post('/surveiMitra', [SurveiKepuasanMitraController::class, 'store'])->middleware('redirectAuthenticatedUsers');
+Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'create'])->middleware('redirectAuthenticatedUsers');
+Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store'])->middleware('redirectAuthenticatedUsers');
+
 
 Route::get('/feedbackdosen', function () {
     return view('feedback_survei.feedback_dosen', []);
@@ -78,6 +79,9 @@ Route::get('/hasiltendik', function () {
 Route::get('/forbidden', function () {
     return view('errors.403');
 })->name('forbidden');
+Route::get('/restricted', function () {
+    return view('errors.restricted');
+})->name('restricted');
 
 Route::get('/tes', function () {
     return view('tes', []);

@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('jabatan_fungsional');
             $table->string('pendidikan_terakhir', 10);
             $table->string('foto_pegawai', 25);
+            $table->string('user_pegawai', 22);
+            $table->string('password_pegawai');
         });
     }
 

@@ -12,7 +12,7 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
                     </a>
-                @elseif (Auth::guard('mahasiswa')->check())
+                @elseif (Auth::guard('mahasiswa')->check() || Auth::guard('tendik')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
@@ -27,10 +27,24 @@
                 @endif
             </li>
             <li>
-                <a href="/surveiTendik"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
-                </a>
+                @if (Auth::guard('tendik')->check())
+                    <a href="/surveiTendik"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
+                    </a>
+                @elseif (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check())
+                    <a href="{{ route('forbidden') }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
+                    </a>
+                @else
+                    <a id="surveiTendikLink" href="/surveiTendik"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow"
+                        data-te-toggle="modal" data-te-target="#modalLogin" data-te-ripple-init
+                        data-te-ripple-color="light">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
+                    </a>
+                @endif
             </li>
             <li>
                 @if (Auth::guard('mahasiswa')->check())
@@ -38,7 +52,7 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
                     </a>
-                @elseif (Auth::guard('dosen')->check())
+                @elseif (Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
@@ -53,16 +67,30 @@
                 @endif
             </li>
             <li>
-                <a href="/surveiMitra"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama </span>
-                </a>
+                @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                    <a href="{{ route('restricted') }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama</span>
+                    </a>
+                @else
+                    <a href="/surveiMitra"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama </span>
+                    </a>
+                @endif
             </li>
             <li>
-                <a href="/surveiPenggunaLulusan"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
-                </a>
+                @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                    <a href="{{ route('restricted') }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
+                    </a>
+                @else
+                    <a href="/surveiPenggunaLulusan"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>
+                    </a>
+                @endif
             </li>
         </ul>
     </div>
@@ -75,6 +103,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const surveiMhs = document.getElementById('surveiMhsLink');
             const surveiDsn = document.getElementById('surveiDsnLink');
+            const surveiTendik = document.getElementById('surveiTendikLink');
             const customLink = document.getElementById('intendedUrl');
 
             surveiMhs.addEventListener('click', function() {
@@ -83,6 +112,10 @@
 
             surveiDsn.addEventListener('click', function() {
                 customLink.value = '/surveiDsn';
+            });
+
+            surveiTendik.addEventListener('click', function() {
+                customLink.value = '/surveiTendik';
             });
         });
     </script>

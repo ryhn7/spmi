@@ -12,7 +12,11 @@ class SurveiKepuasanMahasiswaController extends Controller
 {
     public function create()
     {
-        return view('survei.survei_mhs');
+        $surveiMhs = kepuasan_mahasiswa::where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+
+        return view('survei.survei_mhs', [
+            'surveys' => $surveiMhs
+        ]);
     }
 
     public function store(Request $request)
@@ -24,7 +28,6 @@ class SurveiKepuasanMahasiswaController extends Controller
 
         $validated = $request->validate([
             'satu' => 'required|string',
-            "satu" => "required|string",
             "dua" => "required|string",
             "tiga" => "required|string",
             "empat" => "required|string",

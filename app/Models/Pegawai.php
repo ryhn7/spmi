@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 /**
  * @property integer $id_pegawai
@@ -14,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $pendidikan_terakhir
  * @property string $foto_pegawai
  */
-class Pegawai extends Model
+class Pegawai extends Authenticatable
 {
     /**
      * The table associated with the model.
@@ -33,5 +35,10 @@ class Pegawai extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nama_tanpa_gelar', 'nama_pegawai', 'NIP_pegawai', 'pekerjaan_pegawai', 'jabatan_fungsional', 'pendidikan_terakhir', 'foto_pegawai'];
+    protected $fillable = ['nama_tanpa_gelar', 'nama_pegawai', 'NIP_pegawai', 'pekerjaan_pegawai', 'jabatan_fungsional', 'pendidikan_terakhir', 'foto_pegawai', 'user_pegawai', 'password_pegawai'];
+
+    public function getAuthPassword()
+    {
+        return $this->password_pegawai;
+    }
 }

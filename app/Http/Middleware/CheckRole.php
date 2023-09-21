@@ -27,6 +27,10 @@ class CheckRole
             if (auth()->guard($guard)->check()) {
                 return $next($request);
             }
+        } else if ($guard == 'tendik') {
+            if (auth()->guard($guard)->check()) {
+                return $next($request);
+            }
         }
 
         abort(403);
