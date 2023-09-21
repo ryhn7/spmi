@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    @if ($surveys->count() == 0)
+    @if ($surveys === null)
         <div class="pt-32">
             <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1">
                 <form action="/surveiTendik" method="POST">

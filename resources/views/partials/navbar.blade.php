@@ -1,7 +1,7 @@
 <!-- Navigation -->
 <nav class="fixed flex justify-between pt-7 pb-4 w-full lg:px-48 md:px-12 px-4 content-center bg-white z-10">
     <div class="flex items-center">
-        <img src='{{ asset('assets/img/tpmf-black.png') }}' alt="Logo" class="h-10"/>
+        <img src='{{ asset('assets/img/tpmf-black.png') }}' alt="Logo" class="h-10" />
     </div>
     <ul class="font-open items-center mr-24 hidden md:flex">
         <li class="mx-3">
@@ -74,19 +74,38 @@
 
                         <div x-ref="panel" x-show="open" x-transition.origin.top.left
                             x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
-                            class="text-sm before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 min-w-44 before:sm:right-7.5 before:text-5.5 absolute right-0 top-0 mt-5 w-40 rounded-lg bg-[#1f2f5f] shadow-md z-50 bg-clip-padding px-2 py-4 text-left text-slate-500 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:block lg:cursor-pointer">
+                            class="text-sm before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 min-w-44 before:sm:right-7.5 before:text-5.5 absolute right-0 top-0 mt-5 w-40 rounded-lg bg-[#FBFAFB] shadow-md z-50 bg-clip-padding px-2 py-4 text-left text-slate-500 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:block lg:cursor-pointer">
                             <div
                                 class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm">
 
-                                <p class="font-open text-white">Role: <span class="text-slate-700 font-semibold">
-                                    </span></p>
+                                <div class="flex flex-col">
+                                    <p class="font-open font-medium text-slate-500">ROLE</p>
+                                    <div class="flex flex-col mt-2 ml-1.5">
+                                        <label class="flex text-sm items-center" for="oke">
+                                            <input type="radio" name="oke" class="mr-2">
+                                            <button class="">oke</button>
+                                        </label>
+                                        <label class="flex text-sm items-center" for="oke">
+                                            <input type="radio" name="oke" class="mr-2">
+                                            <button class="">oke</button>
+                                        </label>
+                                        <label class="flex text-sm items-center" for="oke">
+                                            <input type="radio" name="oke" class="mr-2">
+                                            <button class="">oke</button>
+                                        </label>
+                                        <label class="flex text-sm items-center" for="oke">
+                                            <input type="radio" name="oke" class="mr-2">
+                                            <button class="">oke</button>
+                                        </label>
+                                    </div>
+                                </div>
                             </div>
 
                             </a>
                             <form action="/logout" method="POST" class="">
                                 @csrf
                                 <button
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-50 disabled:text-gray-500">
+                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 py-2.5 text-left text-sm hover:bg-gray-600 disabled:text-gray-500">
                                     <span class="font-open text-red-600">Log
                                         Out</span></button>
                             </form>

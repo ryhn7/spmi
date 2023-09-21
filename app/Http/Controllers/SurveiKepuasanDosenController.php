@@ -15,6 +15,8 @@ class SurveiKepuasanDosenController extends Controller
     {
         $surveiDsn = kepuasan_dosen::where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
 
+        // dd($surveiDsn); 
+
         return view('survei.survei_dosen', [
             'surveys' => $surveiDsn
         ]);
