@@ -173,8 +173,10 @@
                             </div>
                         </div>
                     </div>
-                        <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait
-                            Layanan Pengembangan Karir/Jabatan</label>
+                    <div class="flex justify-center items-center">
+                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
+                            Layanan Pengembangan Karir/Jabatan</p>
+                    </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                                 <p class="text-xl font-open font-bold">Pertanyaan 6</p>
