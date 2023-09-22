@@ -7,7 +7,7 @@
         <a href="/tanggapangpmmahasiswa" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
             <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan GPM</span>
         </a> <br>
-        <a href="/tanggapandekanmahasiswa" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+        <a href="/tanggapangpmmahasiswa" class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
             <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan Dekan</span>
         </a>        
         <br>

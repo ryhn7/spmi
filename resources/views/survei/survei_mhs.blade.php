@@ -3,7 +3,7 @@
 @section('container')
     @if ($surveys === null)
         <div class="pt-32">
-            <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1 ">
+            {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1 "> --}}
                 <form action="/surveiMhs" method="POST">
                     @csrf
                     <div class="flex justify-center items-center">
@@ -385,8 +385,10 @@
                             </div>
                         </div>
                     </div>
-                    <label class="block text-2xl font-medium mb-2 flex justify-center items-center">Survei Kepuasan Terkait
-                        Kepastian (Assurance)</label>
+                    <div class="flex justify-center items-center">
+                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
+                            Kepastian (Assurance)</p>
+                    </div>
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 12</p>
@@ -1566,16 +1568,12 @@
                             </div>
                         </div>
                     </div>
-                    </div>
-
-
                     <div class="flex justify-center items-center">
                         <button type="submit"
                             class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-b-600">Submit</button>
-                    </div>
-
+                    </div><br>
                 </form>
-            </div>
+            {{-- </div> --}}
         </div>
     @else
         <div class="py-10">

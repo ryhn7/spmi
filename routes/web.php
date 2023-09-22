@@ -121,24 +121,6 @@ Route::get('/tanggapangpmpenggunalulusan', function () {
     return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_pengguna_lulusan', []);
 });
 
-
-//tanggapan dekan
-Route::get('/tanggapandekantendik', function () {
-    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_tendik', []);
-});
-Route::get('/tanggapandekanmitra', function () {
-    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_mitra', []);
-});
-Route::get('/tanggapandekanmahasiswa', function () {
-    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_mahasiswa', []);
-});
-Route::get('/tanggapandekanpenggunalulusan', function () {
-    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_pengguna_lulusan', []);
-});
-Route::get('/tanggapandekandosen', function () {
-    return view('tanggapan.tanggapan_dekan.tanggapan_dekan_dosen', []);
-});
-
 //create tanggapan TPMF
 Route::get('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'create']);
 Route::post('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'store']);
