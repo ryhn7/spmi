@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FeedbackSurveiController;
 use App\Http\Controllers\SurveiKepuasanMahasiswaController;
 use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
@@ -31,18 +32,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [DashboardController::class, 'index'])->middleware('guest')->name('dashboard');
-
+// Route dashboard and authentication
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
-
 Route::middleware(['auth:mahasiswa,dosen,tendik,tpmf,dekan,wadek,gpm'])->group(function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
 
+// Route change roled based on jabatan dosen
 Route::post('/changeRole', [AuthenticationController::class, 'changeRole'])->name('changeRole');
-
 Route::post('/backDosen', [AuthenticationController::class, 'switchToDosen'])->name('backDosen');
 
+// Route survei kepuasan
 Route::get('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'create'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
 Route::post('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'store'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
 Route::get('/surveiDsn', [SurveiKepuasanDosenController::class, 'create'])->middleware('auth:dosen', 'checkRole:dosen');
@@ -54,22 +55,12 @@ Route::post('/surveiMitra', [SurveiKepuasanMitraController::class, 'store'])->mi
 Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'create'])->middleware('redirectAuthenticatedUsers');
 Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store'])->middleware('redirectAuthenticatedUsers');
 
-
-Route::get('/feedbackdosen', function () {
-    return view('feedback_survei.feedback_dosen', []);
-});
-Route::get('/feedbackmahasiswa', function () {
-    return view('feedback_survei.feedback_mahasiswa', []);
-});
-Route::get('/feedbackstakeholder', function () {
-    return view('feedback_survei.feedback_stakeholder', []);
-});
-Route::get('/feedbackmitra', function () {
-    return view('feedback_survei.feedback_mitra', []);
-});
-Route::get('/feedbacktendik', function () {
-    return view('feedback_survei.feedback_tendik', []);
-});
+// Route feedback survei
+Route::get('/FeedbackDosen', [FeedbackSurveiController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
+Route::get('/FeedbackMahasiswa', [FeedbackSurveiController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
+Route::get('/FeedbackStakeHolder', [FeedbackSurveiController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
+Route::get('/FeedbackMitra', [FeedbackSurveiController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
+Route::get('/FeedbackTendik', [FeedbackSurveiController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
 
 // Route::get('/hasildosen', function () {
 //     return view('hasil_survei.hasil_survei_dosen', [HasilSurveiKepuasanDosenController::class]);
@@ -100,7 +91,7 @@ Route::get('/tes', function () {
     return view('tes', []);
 });
 
-//route tanggapan
+//Route tanggapan
 Route::get('/tanggapantendik', [TanggapanTendikController::class, 'show']);
 Route::get('/tanggapandosen', [TanggapanDosenController::class, 'show']);
 Route::get('/tanggapanmahasiswa', [TanggapanMahasiswaController::class, 'show']);

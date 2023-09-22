@@ -12,12 +12,10 @@ class SurveiKepuasanTendikController extends Controller
 {
     public function create()
     {
-        $namaJabatan = null;
         $surveiTendik = kepuasan_tendik::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
 
         return view('survei.survei_tendik', [
             'surveys' => $surveiTendik,
-            'namaJabatan' => $namaJabatan,
         ]);
     }
 

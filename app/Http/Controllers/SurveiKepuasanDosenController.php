@@ -13,12 +13,10 @@ class SurveiKepuasanDosenController extends Controller
 {
     public function create()
     {
-        $namaJabatan = null;
         $surveiDsn = kepuasan_dosen::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
 
         return view('survei.survei_dosen', [
             'surveys' => $surveiDsn,
-            'namaJabatan' => $namaJabatan,
         ]);
     }
 

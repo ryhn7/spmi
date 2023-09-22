@@ -11,74 +11,25 @@ class FeedbackSurveiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function indexFeedbackDosen()
     {
-        //
+        return view('feedback_survei.feedback_dosen');
+    }
+    public function indexFeedbackMahasiswa()
+    {
+        return view('feedback_survei.feedback_mahasiswa');
+    }
+    public function indexFeedbackTendik()
+    {
+        return view('feedback_survei.feedback_tendik');
+    }
+    public function indexFeedbackMitra()
+    {
+        return view('feedback_survei.feedback_mitra');
+    }
+    public function indexFeedbackPenggunaLulusan()
+    {
+        return view('feedback_survei.feedback_pengguna_lulusan');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }

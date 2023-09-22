@@ -93,61 +93,69 @@
                         <div x-ref="panel" x-show="open" x-transition.origin.top.left
                             x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
                             class="text-sm before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 min-w-44 before:sm:right-7.5 before:text-5.5 absolute right-0 top-0 mt-5 w-40 rounded-lg bg-[#FBFAFB] shadow-md z-50 bg-clip-padding px-2 py-4 text-left text-slate-500 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:block lg:cursor-pointer">
-                            @if ($namaJabatan)
-                                <div
-                                    class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 pt-2 text-left text-sm">
-                                    <div class="flex flex-col">
-                                        <p class="font-open font-medium text-slate-500">ROLE</p>
-                                        <div class="flex flex-col mt-2 ml-1.5">
-                                            <form action="{{ route('backDosen') }}" method="POST">
-                                                @csrf
-                                                <label class="flex text-sm items-center mb-2" for="role">
-                                                    <input id="dosenInput" type="radio" name="role" class="mr-2">
-                                                    <button id="dosenBtn">Dosen</button>
-                                                </label>
-                                            </form>
-                                            @if ($namaJabatan == 'Tim Penjaminan Mutu Fakultas Sains dan Matematika')
-                                                <form action="{{ route('changeRole') }}" method="POST">
+                            @if (
+                                (Auth::guard('dosen')->check() ||
+                                    Auth::guard('tpmf')->check() ||
+                                    Auth::guard('gpm')->check() ||
+                                    Auth::guard('dekan')->check() ||
+                                    Auth::guard('wadek')->check()) &&
+                                    request()->is('/'))
+                                @if ($namaJabatan)
+                                    <div
+                                        class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 pt-2 text-left text-sm">
+                                        <div class="flex flex-col">
+                                            <p class="font-open font-medium text-slate-500">ROLE</p>
+                                            <div class="flex flex-col mt-2 ml-1.5">
+                                                <form action="{{ route('backDosen') }}" method="POST">
                                                     @csrf
                                                     <label class="flex text-sm items-center mb-2" for="role">
-                                                        <input id="tpmfInput" type="radio" name="role"
+                                                        <input id="dosenInput" type="radio" name="role"
                                                             class="mr-2">
-                                                        <button id="tpmfBtn">TPMF</button>
+                                                        <button id="dosenBtn">Dosen</button>
                                                     </label>
                                                 </form>
-                                            @elseif ($namaJabatan == 'Gugus Penjaminan Mutu Program Studi Sarjana Matematika')
-                                                <form action="{{ route('changeRole') }}" method="POST">
-                                                    @csrf
-                                                    <label class="flex text-sm items-center mb-2" for="role">
-                                                        <input id="gpmInput" type="radio" name="role"
-                                                            class="mr-2">
-                                                        <button id="gpmBtn">GPM</button>
-                                                    </label>
-                                                </form>
-                                            @elseif ($namaJabatan == 'Dekan Fakultas Sains dan Matematika')
-                                                <form action="{{ route('changeRole') }}" method="POST">
-                                                    @csrf
-                                                    <label class="flex text-sm items-center mb-2" for="role">
-                                                        <input id="dekanInput" type="radio" name="role"
-                                                            class="mr-2">
-                                                        <button id="dekanBtn">Dekan</button>
-                                                    </label>
-                                                </form>
-                                            @elseif ($namaJabatan == 'Wakil Dekan Akademik dan Kemahasiswaan' || $namaJabatan == 'Wakil Dekan Sumber Daya dan Inovasi')
-                                                <form action="{{ route('changeRole') }}" method="POST">
-                                                    @csrf
-                                                    <label class="flex text-sm items-center mb-2" for="role">
-                                                        <input id="wadekInput" type="radio" name="role"
-                                                            class="mr-2">
-                                                        <button id="wadekBtn">Wadek</button>
-                                                    </label>
-                                                </form>
-                                            @endif
+                                                @if ($namaJabatan == 'Tim Penjaminan Mutu Fakultas Sains dan Matematika')
+                                                    <form action="{{ route('changeRole') }}" method="POST">
+                                                        @csrf
+                                                        <label class="flex text-sm items-center mb-2" for="role">
+                                                            <input id="tpmfInput" type="radio" name="role"
+                                                                class="mr-2">
+                                                            <button id="tpmfBtn">TPMF</button>
+                                                        </label>
+                                                    </form>
+                                                @elseif ($namaJabatan == 'Gugus Penjaminan Mutu Program Studi Sarjana Matematika')
+                                                    <form action="{{ route('changeRole') }}" method="POST">
+                                                        @csrf
+                                                        <label class="flex text-sm items-center mb-2" for="role">
+                                                            <input id="gpmInput" type="radio" name="role"
+                                                                class="mr-2">
+                                                            <button id="gpmBtn">GPM</button>
+                                                        </label>
+                                                    </form>
+                                                @elseif ($namaJabatan == 'Dekan Fakultas Sains dan Matematika')
+                                                    <form action="{{ route('changeRole') }}" method="POST">
+                                                        @csrf
+                                                        <label class="flex text-sm items-center mb-2" for="role">
+                                                            <input id="dekanInput" type="radio" name="role"
+                                                                class="mr-2">
+                                                            <button id="dekanBtn">Dekan</button>
+                                                        </label>
+                                                    </form>
+                                                @elseif ($namaJabatan == 'Wakil Dekan Akademik dan Kemahasiswaan' || $namaJabatan == 'Wakil Dekan Sumber Daya dan Inovasi')
+                                                    <form action="{{ route('changeRole') }}" method="POST">
+                                                        @csrf
+                                                        <label class="flex text-sm items-center mb-2" for="role">
+                                                            <input id="wadekInput" type="radio" name="role"
+                                                                class="mr-2">
+                                                            <button id="wadekBtn">Wadek</button>
+                                                        </label>
+                                                    </form>
+                                                @endif
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
                             @endif
-
                             </a>
                             <form action="/logout" method="POST" class="">
                                 @csrf
