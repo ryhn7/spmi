@@ -24,17 +24,5 @@ class feedback_tendik extends Model
      * 
      * @var string
      */
-    protected $primaryKey = 'ID';
-
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     * 
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
-     * @var array
-     */
-    protected $fillable = ['Pernyataan', 'TPMF', 'Dekanat'];
+    protected $guarded = ['ID'];
 }

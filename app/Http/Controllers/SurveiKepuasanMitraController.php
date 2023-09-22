@@ -26,9 +26,9 @@ class SurveiKepuasanMitraController extends Controller
         // $prodi = "Informatics Engineering";
 
         $tes = [
-            'nama' => "OKe",
-            'jabatan' => "OKe",
-            'nama_perusahaan' => "ABC",
+            'nama' => $request->nama,
+            'jabatan' => $request->jabatan,
+            'nama_perusahaan' => $request->nama_perusahaan,
             'date_time' => Carbon::now(),
             '1' => $request->satu,
             '2' => $request->dua,
