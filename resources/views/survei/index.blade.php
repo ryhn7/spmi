@@ -1,4 +1,5 @@
 {{-- @dd(Auth::guard('tpmf')->check() ? 'tpmf' : 'not tpmf') --}}
+{{-- @dd(Auth::guard('dosen')->check() ? 'dosen' : 'not dosen') --}}
 {{-- @dd(Auth::guard('dekan')->check() ? 'dekan' : 'not dekan') --}}
 {{-- @dd(Auth::guard('wadek')->check() ? 'wadek' : 'not wadek') --}}
 {{-- @dd(Auth::guard('gpm')->check() ? 'gpm' : 'not gpm') --}}
@@ -17,7 +18,12 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
                     </a>
-                @elseif (Auth::guard('mahasiswa')->check() || Auth::guard('tendik')->check())
+                @elseif (Auth::guard('mahasiswa')->check() ||
+                        Auth::guard('tendik')->check() ||
+                        Auth::guard('dekan')->check() ||
+                        Auth::guard('wadek')->check() ||
+                        Auth::guard('gpm')->check() ||
+                        Auth::guard('tpmf')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Dosen</span>
@@ -37,7 +43,12 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
                     </a>
-                @elseif (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check())
+                @elseif (Auth::guard('mahasiswa')->check() ||
+                        Auth::guard('dosen')->check() ||
+                        Auth::guard('dekan')->check() ||
+                        Auth::guard('wadek')->check() ||
+                        Auth::guard('gpm')->check() ||
+                        Auth::guard('tpmf')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Tenaga Kependidikan</span>
@@ -57,7 +68,12 @@
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
                     </a>
-                @elseif (Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                @elseif (Auth::guard('dosen')->check() ||
+                        Auth::guard('tendik')->check() ||
+                        Auth::guard('dekan')->check() ||
+                        Auth::guard('wadek')->check() ||
+                        Auth::guard('gpm')->check() ||
+                        Auth::guard('tpmf')->check())
                     <a href="{{ route('forbidden') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mahasiswa</span>
@@ -72,7 +88,13 @@
                 @endif
             </li>
             <li>
-                @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                @if (Auth::guard('mahasiswa')->check() ||
+                        Auth::guard('dosen')->check() ||
+                        Auth::guard('tendik')->check() ||
+                        Auth::guard('dekan')->check() ||
+                        Auth::guard('wadek')->check() ||
+                        Auth::guard('gpm')->check() ||
+                        Auth::guard('tpmf')->check())
                     <a href="{{ route('restricted') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Mitra Kerjasama</span>
@@ -85,7 +107,13 @@
                 @endif
             </li>
             <li>
-                @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+                @if (Auth::guard('mahasiswa')->check() ||
+                        Auth::guard('dosen')->check() ||
+                        Auth::guard('tendik')->check() ||
+                        Auth::guard('dekan')->check() ||
+                        Auth::guard('wadek')->check() ||
+                        Auth::guard('gpm')->check() ||
+                        Auth::guard('tpmf')->check())
                     <a href="{{ route('restricted') }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Survei Pengguna Lulusan</span>

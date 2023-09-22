@@ -69,7 +69,20 @@ class AuthenticationController extends Controller
 
     public function changeRole(Request $request)
     {
-        $namaDosen = Auth::guard('dosen')->user()->nama_dosen;
+        if (Auth::guard('dosen')->check()) {
+            $namaDosen = Auth::guard('dosen')->user()->nama_dosen;
+        } else if (Auth::guard('tpmf')->check()) {
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
+        } else if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+        }
+
+        Auth::guard('dosen')->logout();
+
 
         $jabatanDosen = DB::table('dosen')
             ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
@@ -111,18 +124,7 @@ class AuthenticationController extends Controller
             if ($tpmfUser) {
                 Auth::guard('tpmf')->login($tpmfUser);
                 if (Auth::guard('tpmf')->check()) {
-                    return redirect()->intended('/');
-                } else {
-                    dd('guard not found');
-                }
-            }
-        } else if ($namaJabatan == "Gugus Penjaminan Mutu Program Studi Sarjana Matematika") {
-            $request->session()->put('role', 'gpm');
-            $gpmUser = Dosen::where('nama_dosen', $namaDosen)->first();
-
-            if ($gpmUser) {
-                Auth::guard('gpm')->login($gpmUser);
-                if (Auth::guard('gpm')->check()) {
+                    // dd(Auth::guard('tpmf')->user());
                     return redirect()->intended('/');
                 } else {
                     dd('guard not found');
@@ -143,6 +145,27 @@ class AuthenticationController extends Controller
         } else {
             abort(404);
         }
+        abort(404);
+    }
+
+    public function switchToDosen(Request $request)
+    {
+        if (Auth::guard('dosen')->check()) {
+            $namaDosen = Auth::guard('dosen')->user()->nama_dosen;
+        } else if (Auth::guard('tpmf')->check()) {
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
+            Auth::guard('tpmf')->logout();
+        } else if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            Auth::guard('gpm')->logout();
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            Auth::guard('dekan')->logout();
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            Auth::guard('wadek')->logout();
+        }
+
         $request->session()->put('role', 'dosen');
         $dosenUser = Dosen::where('nama_dosen', $namaDosen)->first();
 

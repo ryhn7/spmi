@@ -1,3 +1,4 @@
+{{-- @dd($namaJabatan) --}}
 <!-- Navigation -->
 <nav class="fixed flex justify-between pt-7 pb-4 w-full lg:px-48 md:px-12 px-4 content-center bg-white z-10">
     <div class="flex items-center">
@@ -25,7 +26,13 @@
 
 
     {{-- if user is logged in show hello user, else show login button --}}
-    @if (Auth::guard('mahasiswa')->check() || Auth::guard('dosen')->check() || Auth::guard('tendik')->check())
+    @if (Auth::guard('mahasiswa')->check() ||
+            Auth::guard('dosen')->check() ||
+            Auth::guard('tendik')->check() ||
+            Auth::guard('tpmf')->check() ||
+            Auth::guard('dekan')->check() ||
+            Auth::guard('wadek')->check() ||
+            Auth::guard('gpm')->check())
         <div class="flex items-center mt-2 pt-1 sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
             <div class="flex items-center md:ml-auto md:pr-4">
             </div>
@@ -34,11 +41,22 @@
                     <div class="block px-0 py-2 font-open font-semibold transition-all ease-nav-brand text-sm">
                         <i class="fa fa-user sm:mr-1"></i>
                         <span class="hidden sm:inline">
-                            {{ Auth::guard('mahasiswa')->check()
-                                ? Auth::guard('mahasiswa')->user()->id_mahasiswa
-                                : (Auth::guard('dosen')->check()
-                                    ? Auth::guard('dosen')->user()->NIP_dosen
-                                    : Auth::guard('tendik')->user()->NIP_pegawai) }}</span>
+                            @if (Auth::guard('mahasiswa')->check())
+                                {{ Auth::guard('mahasiswa')->user()->id_mahasiswa }}
+                            @elseif (Auth::guard('dosen')->check())
+                                {{ Auth::guard('dosen')->user()->NIP_dosen }}
+                            @elseif (Auth::guard('tendik')->check())
+                                {{ Auth::guard('tendik')->user()->NIP_pegawai }}
+                            @elseif (Auth::guard('tpmf')->check())
+                                {{ Auth::guard('tpmf')->user()->NIP_dosen }}
+                            @elseif (Auth::guard('dekan')->check())
+                                {{ Auth::guard('dekan')->user()->NIP_dosen }}
+                            @elseif (Auth::guard('wadek')->check())
+                                {{ Auth::guard('wadek')->user()->NIP_dosen }}
+                            @elseif (Auth::guard('gpm')->check())
+                                {{ Auth::guard('gpm')->user()->NIP_dosen }}
+                            @endif
+                        </span>
                     </div>
                 </li>
 
@@ -75,13 +93,13 @@
                         <div x-ref="panel" x-show="open" x-transition.origin.top.left
                             x-on:click.outside="close($refs.button)" :id="$id('dropdown-button')" style="display: none;"
                             class="text-sm before:font-awesome before:leading-default before:duration-350 before:ease-soft lg:shadow-soft-3xl duration-250 min-w-44 before:sm:right-7.5 before:text-5.5 absolute right-0 top-0 mt-5 w-40 rounded-lg bg-[#FBFAFB] shadow-md z-50 bg-clip-padding px-2 py-4 text-left text-slate-500 sm:-mr-6 lg:absolute lg:right-0 lg:left-auto lg:block lg:cursor-pointer">
-                            @if (Auth::guard('dosen')->check() && $namaJabatan)
+                            @if ($namaJabatan)
                                 <div
                                     class="flex items-center gap-2 w-full first-of-type:rounded-t-md last-of-type:rounded-b-md px-4 pt-2 text-left text-sm">
                                     <div class="flex flex-col">
                                         <p class="font-open font-medium text-slate-500">ROLE</p>
                                         <div class="flex flex-col mt-2 ml-1.5">
-                                            <form action="{{ route('changeRole') }}" method="POST">
+                                            <form action="{{ route('backDosen') }}" method="POST">
                                                 @csrf
                                                 <label class="flex text-sm items-center mb-2" for="role">
                                                     <input id="dosenInput" type="radio" name="role" class="mr-2">
@@ -233,6 +251,10 @@
 
         if (selectedRole === 'dosen') {
             dosenInput.checked = true;
+            tpmfInput.checked = false;
+            gpmInput.checked = false;
+            dekanInput.checked = false;
+            wadekInput.checked = false;
         } else if (selectedRole === 'tpmf') {
             tpmfInput.checked = true;
             dosenInput.checked = false;

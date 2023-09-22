@@ -24,11 +24,13 @@ Route::get('/', [DashboardController::class, 'index'])->middleware('guest')->nam
 
 Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
 
-Route::middleware(['auth:mahasiswa,dosen,tendik'])->group(function () {
+Route::middleware(['auth:mahasiswa,dosen,tendik,tpmf,dekan,wadek,gpm'])->group(function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
 
 Route::post('/changeRole', [AuthenticationController::class, 'changeRole'])->name('changeRole');
+
+Route::post('/backDosen', [AuthenticationController::class, 'switchToDosen'])->name('backDosen');
 
 Route::get('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'create'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
 Route::post('/surveiMhs', [SurveiKepuasanMahasiswaController::class, 'store'])->middleware('auth:mahasiswa', 'checkRole:mahasiswa');
@@ -77,10 +79,11 @@ Route::get('/hasiltendik', function () {
 Route::get('/forbidden', function () {
     return view('errors.403');
 })->name('forbidden');
+
 Route::get('/restricted', function () {
     return view('errors.restricted');
 })->name('restricted');
 
-// Route::get('/tes', function () {
-//     return view('tes', []);
-// });
+Route::get('/tes', function () {
+    return view('tes', []);
+});
