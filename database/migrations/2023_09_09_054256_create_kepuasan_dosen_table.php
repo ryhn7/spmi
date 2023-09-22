@@ -60,6 +60,7 @@ return new class extends Migration
             $table->string('40', 100);
             $table->string('41', 100);
             $table->string('42', 100);
+            $table->timestamps();
         });
     }
 

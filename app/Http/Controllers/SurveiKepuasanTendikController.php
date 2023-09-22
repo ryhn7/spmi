@@ -29,7 +29,6 @@ class SurveiKepuasanTendikController extends Controller
 
         $validated = $request->validate([
             'satu' => 'required|string',
-            "satu" => "required|string",
             "dua" => "required|string",
             "tiga" => "required|string",
             "empat" => "required|string",

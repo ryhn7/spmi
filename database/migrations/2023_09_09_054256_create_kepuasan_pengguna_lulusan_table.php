@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string('7', 100);
             $table->string('8', 100);
             $table->string('9', 100);
+            $table->timestamps();
         });
     }
 
