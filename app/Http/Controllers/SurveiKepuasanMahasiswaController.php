@@ -13,7 +13,9 @@ class SurveiKepuasanMahasiswaController extends Controller
     public function create()
     {
         $namaJabatan = null;
-        $surveiMhs = kepuasan_mahasiswa::where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+        // $surveiMhs = kepuasan_mahasiswa::where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+        $surveiMhs = kepuasan_mahasiswa::whereYear('date_time', Carbon::now()->year)->where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+        // dd($surveiMhs);
 
         return view('survei.survei_mhs', [
             'surveys' => $surveiMhs,

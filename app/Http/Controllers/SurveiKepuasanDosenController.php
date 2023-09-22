@@ -14,7 +14,7 @@ class SurveiKepuasanDosenController extends Controller
     public function create()
     {
         $namaJabatan = null;
-        $surveiDsn = kepuasan_dosen::where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
+        $surveiDsn = kepuasan_dosen::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
 
         // dd($surveiDsn); 
 
