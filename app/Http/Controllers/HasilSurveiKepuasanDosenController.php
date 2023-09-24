@@ -84,7 +84,7 @@ class HasilSurveiKepuasanDosenController extends Controller
 
     public function show()
     {
-        $hasil = pertanyaan::where('status', 'pernyataan_mahasiswa')->first();
+        $hasil = pertanyaan::where('status', 'pernyataan_dosen')->first();
 
         if (!$hasil) {
             $hasil = new pertanyaan();
