@@ -13,21 +13,27 @@ class HasilSurveiKepuasanDosenController extends Controller
     {
         $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
         $columns = range(1, 42);
-        $results = [];  
+        $results = [];
+        $weightedTotals = [];
+        $labelWeightedTotals = [];
 
         foreach ($categories as $category) {
             $averages = [];
             $total = [];
+            $totalData = kepuasan_dosen::count();
+            // $averageResponden = [];
+
 
             foreach ($columns as $column) {
                 $totalCategory = kepuasan_dosen::where("$column", $category)
                     ->count();
                 //count totalCategory data in each column
-                $totalData = kepuasan_dosen::count();
                 $average = $totalCategory / $totalData;
+                // $averageRespon = $category=='Sangat Baik'?$totalCategory*4:(($category=='Baik'?$totalCategory*3:(($category=='Cukup'?$totalCategory*2:$totalCategory*1))));
 
                 $averages["$column"] = $average * 100;
                 $total["$column"] = $totalCategory;
+                // $averageResponden["$column"] = $averageRespon;
             }
 
             $results[] = [
@@ -35,101 +41,36 @@ class HasilSurveiKepuasanDosenController extends Controller
                 'Averages' => $averages,
                 'Total' => $total,
             ];
+        }
+        foreach ($columns as $column) {
+            $columnTotal = 0;
 
-            // dd($results);
+            foreach ($categories as $category) {
+                $totalCategory = kepuasan_dosen::where("$column", $category)->count();
 
+                // Menghitung total berbobot sesuai dengan kategori
+                if ($category == 'Sangat Baik') {
+                    $columnTotal += $totalCategory * 4;
+                } elseif ($category == 'Baik') {
+                    $columnTotal += $totalCategory * 3;
+                } elseif ($category == 'Cukup') {
+                    $columnTotal += $totalCategory * 2;
+                } else {
+                    $columnTotal += $totalCategory; // Untuk kategori 'Kurang'
+                }
+            }
+
+            // Menyimpan total berbobot di dalam array weightedTotals
+            $weightedTotals["$column"] = $columnTotal / $totalData;
         }
 
-        return view('hasil_survei.hasil_survei_dosen', compact('results'));
+        foreach ($columns as $column){
+            $label = $weightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($weightedTotals[$column] >= 3.01 ? 'Baik' : ($weightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
+            $labelWeightedTotals["$column"] = $label;
+        }
+        // dd($labelWeightedTotals);
+        // dd($results);
+        return view('hasil_survei.hasil_survei_dosen', ['results' => $results, 'weightedTotals' => $weightedTotals, 'labelWeightedTotals' => $labelWeightedTotals, 'totalData' => $totalData]);
     }
-
-    // public function executeSql(Request $request)
-    // {
-    //     // The SQL code
-    //     $sql = "
-    //     DELIMITER //
-    //     BEGIN
-    //         DECLARE counter INT DEFAULT 1;
-    //         DECLARE max_columns INT DEFAULT 45; -- Change this to the actual maximum column number
-
-    //         -- Create a temporary table to hold the results
-    //         CREATE TEMPORARY TABLE ResultTable AS
-    //         SELECT 'Sangat Baik' AS Category;
-
-    //         WHILE counter <= max_columns DO
-    //             SET @sql = CONCAT(
-    //                 'AVG(IF(`', counter, '` = ''Sangat Baik'', 1, 0)) * 100 AS `', counter, '`, '
-    //             );
-    //             SET counter = counter + 1;
-    //             PREPARE dynamic_sql FROM @sql;
-    //             EXECUTE dynamic_sql;
-    //             DEALLOCATE PREPARE dynamic_sql;
-    //         END WHILE;
-
-    //         -- UNION for 'Baik'
-    //         INSERT INTO ResultTable
-    //         SELECT 'Baik' AS Category;
-
-    //         SET counter = 1; -- Reset counter for 'Baik' category
-    //         WHILE counter <= max_columns DO
-    //             SET @sql = CONCAT(
-    //                 'AVG(IF(`', counter, '` = ''Baik'', 1, 0)) * 100 AS `', counter, '`, '
-    //             );
-    //             SET counter = counter + 1;
-    //             PREPARE dynamic_sql FROM @sql;
-    //             EXECUTE dynamic_sql;
-    //             DEALLOCATE PREPARE dynamic_sql;
-    //         END WHILE;
-
-    //         -- UNION for 'Cukup'
-    //         INSERT INTO ResultTable
-    //         SELECT 'Cukup' AS Category;
-
-    //         SET counter = 1; -- Reset counter for 'Cukup' category
-    //         WHILE counter <= max_columns DO
-    //             SET @sql = CONCAT(
-    //                 'AVG(IF(`', counter, '` = ''Cukup'', 1, 0)) * 100 AS `', counter, '`, '
-    //             );
-    //             SET counter = counter + 1;
-    //             PREPARE dynamic_sql FROM @sql;
-    //             EXECUTE dynamic_sql;
-    //             DEALLOCATE PREPARE dynamic_sql;
-    //         END WHILE;
-
-    //         -- UNION for 'Kurang Sekali'
-    //         INSERT INTO ResultTable
-    //         SELECT 'Kurang Sekali' AS Category;
-
-    //         SET counter = 1; -- Reset counter for 'Kurang Sekali' category
-    //         WHILE counter <= max_columns DO
-    //             SET @sql = CONCAT(
-    //                 'AVG(IF(`', counter, '` = ''Kurang Sekali'', 1, 0)) * 100 AS `', counter, '`, '
-    //             );
-    //             SET counter = counter + 1;
-    //             PREPARE dynamic_sql FROM @sql;
-    //             EXECUTE dynamic_sql;
-    //             DEALLOCATE PREPARE dynamic_sql;
-    //         END WHILE; 
-    //         -- Continue with similar UNION queries for 'Cukup' and 'Kurang Sekali'
-
-    //         -- Drop the temporary table if it exists
-    //         DROP TEMPORARY TABLE IF EXISTS ResultTable;
-
-    //         -- Rename the temporary table to the final result table
-    //         RENAME TABLE ResultTable TO result_table;
-    //     END //
-    //     DELIMITER ;
-
-    //     ";
-
-    //     // Execute the SQL query
-    //     DB::statement($sql);
-
-    //     // Fetch the result from the temporary table
-    //     $results = DB::table('result_table')->get();
-
-    //     // Pass the results to the Blade view for rendering
-    //     return view('hasil_survei.hasil_survei_dosen', ['results' => $results]);
-    // }
 
 }
