@@ -62,11 +62,11 @@ Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::c
 Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store'])->middleware('redirectAuthenticatedUsers');
 
 // Route upaya survei
-Route::get('/upayadosen', [UpayaDosenController::class, 'show']);
-Route::get('/upayamahasiswa', [UpayaMahasiswaController::class, 'show']);
-Route::get('/upayatendik', [UpayaTendikController::class, 'show']);
-Route::get('/upayamitra', [UpayaMitraController::class, 'show']);
-Route::get('/upayapenggunalulusan', [UpayaPenggunaLulusanController::class, 'show']);
+Route::get('/upayadosen', [UpayaDosenController::class, 'show'])->name('upayadosen');;
+Route::get('/upayamahasiswa', [UpayaMahasiswaController::class, 'show'])->name('upayamahasiswa');;
+Route::get('/upayatendik', [UpayaTendikController::class, 'show'])->name('upayatendik');;
+Route::get('/upayamitra', [UpayaMitraController::class, 'show'])->name('upayamitra');;
+Route::get('/upayapenggunalulusan', [UpayaPenggunaLulusanController::class, 'show'])->name('upayapenggunalulusan');;
 
 //hasil
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
