@@ -144,7 +144,7 @@
 
             const responseData = await response.json();
 
-            // console.log(responseData);
+            console.log(responseData);
 
             if (response.ok) {
                 window.location.href = responseData.redirect_url;
