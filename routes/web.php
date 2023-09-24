@@ -2,7 +2,11 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FeedbackSurveiController;
+use App\Http\Controllers\UpayaDosenController;
+use App\Http\Controllers\UpayaMahasiswaController;
+use App\Http\Controllers\UpayaTendikController;
+use App\Http\Controllers\UpayaMitraController;
+use App\Http\Controllers\UpayaPenggunaLulusanController;
 use App\Http\Controllers\SurveiKepuasanMahasiswaController;
 use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
@@ -57,16 +61,14 @@ Route::post('/surveiMitra', [SurveiKepuasanMitraController::class, 'store'])->mi
 Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'create'])->middleware('redirectAuthenticatedUsers');
 Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store'])->middleware('redirectAuthenticatedUsers');
 
-// Route feedback survei
-Route::get('/FeedbackDosen', [FeedbackSurveiController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
-Route::get('/FeedbackMahasiswa', [FeedbackSurveiController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
-Route::get('/FeedbackStakeHolder', [FeedbackSurveiController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
-Route::get('/FeedbackMitra', [FeedbackSurveiController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
-Route::get('/FeedbackTendik', [FeedbackSurveiController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
+// Route upaya survei
+Route::get('/upayadosen', [UpayaDosenController::class, 'show']);
+Route::get('/upayamahasiswa', [UpayaMahasiswaController::class, 'show']);
+Route::get('/upayatendik', [UpayaTendikController::class, 'show']);
+Route::get('/upayamitra', [UpayaMitraController::class, 'show']);
+Route::get('/upayapenggunalulusan', [UpayaPenggunaLulusanController::class, 'show']);
 
-// Route::get('/hasildosen', function () {
-//     return view('hasil_survei.hasil_survei_dosen', [HasilSurveiKepuasanDosenController::class]);
-// });
+//hasil
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'show']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
