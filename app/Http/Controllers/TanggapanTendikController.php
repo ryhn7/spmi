@@ -33,20 +33,35 @@ class TanggapanTendikController extends Controller
             $aktor = "Dekan";
         }
 
+        $validated = $request->validate([
+            'satu' => 'required|string',
+            "dua" => "required|string",
+            "tiga" => "required|string",
+            "empat" => "required|string",
+            "lima" => "required|string",
+            "enam" => "required|string",
+            "tujuh" => "required|string",
+            "delapan" => "required|string",
+            "sembilan" => "required|string",
+            "sepuluh" => "required|string",
+            "sebelas" => "required|string",
+            "dua_belas" => "required|string",
+        ]);
+
         $tanggapan = [
             'Aktor' => $aktor,
-            '1' => $request->satu,
-            '2' => $request->dua,
-            '3' => $request->tiga,
-            '4' => $request->empat,
-            '5' => $request->lima,
-            '6' => $request->enam,
-            '7' => $request->tujuh,
-            '8' => $request->delapan,
-            '9' => $request->sembilan,
-            '10' => $request->sepuluh,
-            '11' => $request->sebelas,
-            '12' => $request->dua_belas
+            '1' => $validated['satu'],
+            '2' => $validated['dua'],
+            '3' => $validated['tiga'],
+            '4' => $validated['empat'],
+            '5' => $validated['lima'],
+            '6' => $validated['enam'],
+            '7' => $validated['tujuh'],
+            '8' => $validated['delapan'],
+            '9' => $validated['sembilan'],
+            '10' => $validated['sepuluh'],
+            '11' => $validated['sebelas'],
+            '12' => $validated['dua_belas'],
         ];
 
         // dd($tanggapan);

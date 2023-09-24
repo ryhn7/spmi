@@ -93,15 +93,17 @@ Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
 Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
 Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
 
+Route::get('/TanggapanMitra', [TanggapanMitraController::class, 'index']);
+Route::get('/FeedbackMitra', [TanggapanMitraController::class, 'create']);
+Route::post('/FeedbackMitra', [TanggapanMitraController::class, 'store']);
+
+
 
 Route::get('/tanggapandosen', [TanggapanDosenController::class, 'show']);
 Route::get('/tanggapanmahasiswa', [TanggapanMahasiswaController::class, 'show']);
-Route::get('/tanggapanmitra', [TanggapanMitraController::class, 'show']);
 Route::get('/tanggapanpenggunalulusan', [TanggapanPenggunaLulusanController::class, 'show']);
 
 //create tanggapan TPMF
-Route::get('/TanggapanTPMFMitra', [TanggapanTPMFMitraController::class, 'create']);
-Route::post('/TanggapanTPMFMitra', [TanggapanTPMFMitraController::class, 'store']);
 Route::get('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'create']);
 Route::post('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'store']);
 Route::get('/TanggapanGPMMahasiswa', [TanggapanGPMMahasiswaController::class, 'create']);
