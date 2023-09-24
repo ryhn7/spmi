@@ -10,7 +10,6 @@ use App\Http\Controllers\SurveiKepuasanPenggunaLulusanController;
 use App\Http\Controllers\SurveiKepuasanTendikController;
 use App\Http\Controllers\TanggapanGPMMahasiswaController;
 use App\Http\Controllers\TanggapanGPMPenggunaLulusanController;
-use App\Http\Controllers\TanggapanTPMFTendikController;
 use App\Http\Controllers\TanggapanTPMFMitraController;
 use App\Http\Controllers\TanggapanTPMFDosenController;
 use App\Http\Controllers\TanggapanTendikController;
@@ -56,15 +55,13 @@ Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::c
 Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store'])->middleware('redirectAuthenticatedUsers');
 
 // Route feedback survei
-Route::get('/FeedbackDosen', [FeedbackSurveiController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
-Route::get('/FeedbackMahasiswa', [FeedbackSurveiController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
-Route::get('/FeedbackStakeHolder', [FeedbackSurveiController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
-Route::get('/FeedbackMitra', [FeedbackSurveiController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
-Route::get('/FeedbackTendik', [FeedbackSurveiController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen', [FeedbackSurveiController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa', [FeedbackSurveiController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan', [FeedbackSurveiController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra', [FeedbackSurveiController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [FeedbackSurveiController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
 
-// Route::get('/hasildosen', function () {
-//     return view('hasil_survei.hasil_survei_dosen', [HasilSurveiKepuasanDosenController::class]);
-// });
+
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'index'])->name('hasil_survei.hasil_survei_dosen');
 Route::get('/hasilmahasiswa', function () {
     return view('hasil_survei.hasil_survei_mhs', []);
@@ -92,32 +89,17 @@ Route::get('/tes', function () {
 });
 
 //Route tanggapan
-Route::get('/tanggapantendik', [TanggapanTendikController::class, 'show']);
+Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
+Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
+Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
+
+
 Route::get('/tanggapandosen', [TanggapanDosenController::class, 'show']);
 Route::get('/tanggapanmahasiswa', [TanggapanMahasiswaController::class, 'show']);
 Route::get('/tanggapanmitra', [TanggapanMitraController::class, 'show']);
 Route::get('/tanggapanpenggunalulusan', [TanggapanPenggunaLulusanController::class, 'show']);
 
-//tanggapan tpmf
-Route::get('/tanggapantpmftendik', function () {
-    return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_tendik', []);
-});
-Route::get('/tanggapantpmfmitra', function () {
-    return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_mitra', []);
-});
-Route::get('/tanggapantpmfdosen', function () {
-    return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_dosen', []);
-});
-Route::get('/tanggapangpmmahasiswa', function () {
-    return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mahasiswa', []);
-});
-Route::get('/tanggapangpmpenggunalulusan', function () {
-    return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_pengguna_lulusan', []);
-});
-
 //create tanggapan TPMF
-Route::get('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'create']);
-Route::post('/TanggapanTPMFTendik', [TanggapanTPMFTendikController::class, 'store']);
 Route::get('/TanggapanTPMFMitra', [TanggapanTPMFMitraController::class, 'create']);
 Route::post('/TanggapanTPMFMitra', [TanggapanTPMFMitraController::class, 'store']);
 Route::get('/TanggapanTPMFDosen', [TanggapanTPMFDosenController::class, 'create']);
