@@ -66,7 +66,6 @@ Route::get('/FeedbackTendik', [FeedbackSurveiController::class, 'indexFeedbackTe
 // Route::get('/hasildosen', function () {
 //     return view('hasil_survei.hasil_survei_dosen', [HasilSurveiKepuasanDosenController::class]);
 // });
-Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'index'])->name('hasil_survei.hasil_survei_dosen');
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'index'])->name('hasil_survei.hasil_survei_mhs');
 Route::get('/hasilstakeholder', function () {
