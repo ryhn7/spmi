@@ -1705,7 +1705,7 @@
                         "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
                             "rgba(255, 0, 0, 0.7)")),
                     data: labels.map(function(label, labelIndex) {
-                        return results[index].Averages[labelIndex + 5];
+                        return results[index].Averages[labelIndex + 8];
                         stack:
                             true
                     })
@@ -1767,7 +1767,7 @@
                         "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
                             "rgba(255, 0, 0, 0.7)")),
                     data: labels.map(function(label, labelIndex) {
-                        return results[index].Averages[labelIndex + 5];
+                        return results[index].Averages[labelIndex + 12];
                         stack:
                             true
                     })
@@ -1828,7 +1828,7 @@
                         "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
                             "rgba(255, 0, 0, 0.7)")),
                     data: labels.map(function(label, labelIndex) {
-                        return results[index].Averages[labelIndex + 5];
+                        return results[index].Averages[labelIndex + 17];
                         stack:
                             true
                     })
@@ -1891,7 +1891,7 @@
                         "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
                             "rgba(255, 0, 0, 0.7)")),
                     data: labels.map(function(label, labelIndex) {
-                        return results[index].Averages[labelIndex + 5];
+                        return results[index].Averages[labelIndex + 21];
                         stack:
                             true
                     })
@@ -1953,7 +1953,7 @@
                         "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
                             "rgba(255, 0, 0, 0.7)")),
                     data: labels.map(function(label, labelIndex) {
-                        return results[index].Averages[labelIndex + 5];
+                        return results[index].Averages[labelIndex + 27];
                         stack:
                             true
                     })
@@ -2024,7 +2024,7 @@
                         "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
                             "rgba(255, 0, 0, 0.7)")),
                     data: labels.map(function(label, labelIndex) {
-                        return results[index].Averages[labelIndex + 5];
+                        return results[index].Averages[labelIndex + 32];
                         stack:
                             true
                     })

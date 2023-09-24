@@ -15,7 +15,7 @@ class HasilSurveiKepuasanTendikController extends Controller
     {
         // Inisialisasi variabel $results di dalam konstruktor
         $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
-        $columns = range(1, 45);
+        $columns = range(1, 12);
         $this->results = [];
         $weightedTotals = [];
         $labelWeightedTotals = [];
