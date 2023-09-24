@@ -20,6 +20,7 @@ use App\Http\Controllers\TanggapanMahasiswaController;
 use App\Http\Controllers\TanggapanDosenController;
 use App\Http\Controllers\HasilSurveiKepuasanDosenController;
 use App\Http\Controllers\HasilSurveiKepuasanMahasiswaController;
+use App\Http\Controllers\HasilSurveiKepuasanTendikController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -68,14 +69,12 @@ Route::get('/FeedbackTendik', [FeedbackSurveiController::class, 'indexFeedbackTe
 // });
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'show']);
+Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
 Route::get('/hasilstakeholder', function () {
     return view('hasil_survei.hasil_survei_pengguna_lulusan', []);
 });
 Route::get('/hasilmitra', function () {
     return view('hasil_survei.hasil_survei_mitra', []);
-});
-Route::get('/hasiltendik', function () {
-    return view('hasil_survei.hasil_survei_tendik', []);
 });
 
 Route::get('/forbidden', function () {
