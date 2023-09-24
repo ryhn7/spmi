@@ -12,10 +12,10 @@ class SurveiKepuasanTendikController extends Controller
 {
     public function create()
     {
-        $surveiTendik = kepuasan_tendik::where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
+        $surveiTendik = kepuasan_tendik::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
 
         return view('survei.survei_tendik', [
-            'surveys' => $surveiTendik
+            'surveys' => $surveiTendik,
         ]);
     }
 
@@ -27,7 +27,6 @@ class SurveiKepuasanTendikController extends Controller
 
         $validated = $request->validate([
             'satu' => 'required|string',
-            "satu" => "required|string",
             "dua" => "required|string",
             "tiga" => "required|string",
             "empat" => "required|string",

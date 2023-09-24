@@ -12,10 +12,10 @@ class SurveiKepuasanMahasiswaController extends Controller
 {
     public function create()
     {
-        $surveiMhs = kepuasan_mahasiswa::where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+        $surveiMhs = kepuasan_mahasiswa::whereYear('date_time', Carbon::now()->year)->where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
 
         return view('survei.survei_mhs', [
-            'surveys' => $surveiMhs
+            'surveys' => $surveiMhs,
         ]);
     }
 

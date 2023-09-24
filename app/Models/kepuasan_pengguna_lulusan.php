@@ -33,5 +33,5 @@ class kepuasan_pengguna_lulusan extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nama', 'jabatan', 'nama_perusahaan', 'alumni', 'date_time', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+    protected $guarded = ['id'];
 }

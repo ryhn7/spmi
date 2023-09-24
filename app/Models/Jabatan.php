@@ -22,4 +22,9 @@ class Jabatan extends Model
      * @var array
      */
     protected $fillable = ['id_jabatan', 'jabatan', 'nama_pejabat'];
+
+    public function dosen()
+{
+    return $this->hasMany(Dosen::class, 'id_jabatan');
+}
 }

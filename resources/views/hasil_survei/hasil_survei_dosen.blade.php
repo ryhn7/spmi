@@ -61,8 +61,7 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Ketegasan
-                                pimpinan dalam melaksanakan sistem pengelolaan SDM</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'1'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][1] }}</td>
@@ -87,8 +86,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Sistem
-                                rekrutmen dosen yang dilakukan Fakultas Sains dan Matematika</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'2'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][2] }}</td>
@@ -113,8 +111,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Sistem
-                                seleksi dosen yang dilaksanakan di Fakultas Sains dan Matematika</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'3'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][3] }}</td>
@@ -139,8 +136,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Penempatan
-                                dosen di Fakultas Sains dan Matematika</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'4'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][4] }}</td>
@@ -233,8 +229,7 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Fakultas
-                                Sains dan Matematika memfasilitasi kebutuhan untuk studi lanjut</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'5'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][5] }}</td>
@@ -259,8 +254,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Dukungan
-                                pengembangan diri untuk mengikuti kursus/pelatihan</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'6'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][6] }}</td>
@@ -285,8 +279,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Dukungan
-                                pengembangan diri untuk mengikuti seminar/workshop</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'7'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][7] }}</td>
@@ -311,8 +304,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Dukungan
-                                dan kesempatan untuk mengikuti studi banding dalam negeri</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'8'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][8] }}</td>
@@ -337,8 +329,7 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">5.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">Dukungan
-                                dan kesempatan untuk mengikuti studi banding luar negeri</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'9'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][9] }}</td>
