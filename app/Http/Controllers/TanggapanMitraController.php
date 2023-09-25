@@ -14,6 +14,13 @@ class TanggapanMitraController extends Controller
         $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
 
+        if (!$feedbackTpmf) {
+            $feedbackTpmf = new feedback_mitra();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_mitra();
+        }
+
         return view('tanggapan.tanggapan_mitra', [
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan

@@ -14,6 +14,13 @@ class TanggapanTendikController extends Controller
         $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->latest()->first();
 
+        if (!$feedbackTpmf) {
+            $feedbackTpmf = new feedback_tendik();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_tendik();
+        }
+        
         return view('tanggapan.tanggapan_tendik', [
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan
