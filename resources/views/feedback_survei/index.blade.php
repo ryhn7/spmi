@@ -4,19 +4,19 @@
     </div>
     <div class="mb-4" style="color: blue">
         <h3>
-            <a href="{{ route('feedbackDosen') }}">
+            <a href="{{ route('upayadosen') }}">
                 1. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Dosen
             </a><br>
-            <a href="{{ route('feedbackTendik') }}">
+            <a href="{{ route('upayatendik') }}">
                 2. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Tenaga Kependidikan
             </a><br>
-            <a href="{{ route('feedbackMahasiswa') }}">
+            <a href="{{ route('upayamahasiswa') }}">
                 3. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mahasiswa
             </a><br>
-            <a href="{{ route('feedbackMitra') }}">
+            <a href="{{ route('upayamitra') }}">
                 4. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mitra Kerjasama
             </a><br>
-            <a href="{{ route('feedbackStakeHolder') }}">
+            <a href="{{ route('upayapenggunalulusan') }}">
                 5. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Pengguna Lulusan
             </a><br>
         </h3>
