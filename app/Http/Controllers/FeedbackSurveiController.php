@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 
 class FeedbackSurveiController extends Controller
@@ -11,25 +11,45 @@ class FeedbackSurveiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function indexFeedbackDosen()
     {
-        return view('feedback_survei.feedback_dosen');
+        $feedback = pertanyaan::where('status', 'pernyataan_dosen')->first();
+        if (!$feedback) {
+            $feedback = new pertanyaan();
+        }
+        return view('feedback_survei.feedback_dosen', compact('feedback'));
     }
     public function indexFeedbackMahasiswa()
     {
-        return view('feedback_survei.feedback_mahasiswa');
+        $feedback = pertanyaan::where('status', 'pernyataan_mahasiswa')->first();
+        if (!$feedback) {
+            $feedback = new pertanyaan();
+        }
+        return view('feedback_survei.feedback_mahasiswa', compact('feedback'));
     }
     public function indexFeedbackTendik()
     {
-        return view('feedback_survei.feedback_tendik');
+        $feedback = pertanyaan::where('status', 'pernyataan_tendik')->first();
+        if (!$feedback) {
+            $feedback = new pertanyaan();
+        }
+        return view('feedback_survei.feedback_tendik', compact('feedback'));
     }
     public function indexFeedbackMitra()
     {
-        return view('feedback_survei.feedback_mitra');
+        $feedback = pertanyaan::where('status', 'pernyataan_mitra')->first();
+        if (!$feedback) {
+            $feedback = new pertanyaan();
+        }
+        return view('feedback_survei.feedback_mitra', compact('feedback'));
     }
     public function indexFeedbackPenggunaLulusan()
     {
-        return view('feedback_survei.feedback_pengguna_lulusan');
+        $feedback = pertanyaan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        if (!$feedback) {
+            $feedback = new pertanyaan();
+        }
+        return view('feedback_survei.feedback_pengguna_lulusan', compact('feedback'));
     }
-
 }

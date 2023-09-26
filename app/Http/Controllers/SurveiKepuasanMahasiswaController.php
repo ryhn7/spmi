@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kepuasan_mahasiswa;
 use Carbon\Carbon;
+use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Auth;
@@ -13,9 +14,13 @@ class SurveiKepuasanMahasiswaController extends Controller
     public function create()
     {
         $surveiMhs = kepuasan_mahasiswa::whereYear('date_time', Carbon::now()->year)->where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
-
+        $pertanyaan = pertanyaan::where('status', 'pernyataan_mahasiswa')->first();
+        if (!$pertanyaan) {
+            $pertanyaan = new pertanyaan();
+        }
         return view('survei.survei_mhs', [
             'surveys' => $surveiMhs,
+            'pertanyaan' => $pertanyaan,
         ]);
     }
 

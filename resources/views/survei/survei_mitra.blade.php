@@ -29,7 +29,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 1</p>
-                    <p class="mt-3">Kejelasan Materi yang disampaikan oleh dosen</p>
+                    <p class="mt-3">{{$pertanyaan->{'1'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -64,7 +64,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 2</p>
-                    <p class="mt-3">Ketepatan Waktu Pelaksanaan Perkuliahan</p>
+                    <p class="mt-3">{{$pertanyaan->{'2'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -99,7 +99,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 3</p>
-                    <p class="mt-3">Kelengkapan Referensi untuk Pembelajaran (Handout, Buku, Modul, PPT, dll)</p>
+                    <p class="mt-3">{{$pertanyaan->{'3'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -134,7 +134,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 4</p>
-                    <p class="mt-3">Kesesuaian Keahlian Dosen Mengajar sesuai Bidang Keahliannya</p>
+                    <p class="mt-3">{{$pertanyaan->{'4'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -169,7 +169,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 5</p>
-                    <p class="mt-3">Kemampuan Staf Akademik untuk Melayani Administrasi Kemahasiswaan</p>
+                    <p class="mt-3">{{$pertanyaan->{'5'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -204,7 +204,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 6</p>
-                    <p class="mt-3">Kualitas Layanan Staf Akademik untuk Memenuhi Kepentingan Mahasiswa</p>
+                    <p class="mt-3">{{$pertanyaan->{'6'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -239,7 +239,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 7</p>
-                    <p class="mt-3">Kejelasan Pedoman (Kurikulum dan Akademik)</p>
+                    <p class="mt-3">{{$pertanyaan->{'7'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -274,7 +274,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 8</p>
-                    <p class="mt-3">Kesediaan Dosen dan Karyawan memberikan Pelayanan setiap Waktu</p>
+                    <p class="mt-3">{{$pertanyaan->{'8'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -309,7 +309,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 9</p>
-                    <p class="mt-3">Kecepatan Dosen dan Karyawan dalam Menanggapi Keluhan Mahasiswa</p>
+                    <p class="mt-3">{{$pertanyaan->{'9'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -345,7 +345,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 10</p>
-                    <p class="mt-3">Kecepatan dalam memberikan Pelayanan</p>
+                    <p class="mt-3">{{$pertanyaan->{'10'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"

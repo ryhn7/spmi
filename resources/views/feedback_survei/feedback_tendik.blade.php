@@ -14,7 +14,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">1.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'1'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">2.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'2'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -30,7 +30,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">3.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'3'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -38,7 +38,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">4.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'4'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -46,7 +46,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">5.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'5'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -54,7 +54,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">6.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'6'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -62,7 +62,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">7.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'7'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -70,7 +70,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">8.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'8'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -78,7 +78,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">9.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'9'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -86,7 +86,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">10.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'10'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -94,7 +94,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">11.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'11'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
@@ -102,7 +102,7 @@
                 </tr>
                 <tr>
                     <td class="border px-8 py-4">12.</td>
-                    <td class="border px-8 py-4"> </td>
+                    <td class="border px-8 py-4"> {{$feedback->{'12'} }}</td>
                     <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                                 2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                     <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>

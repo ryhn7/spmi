@@ -7,12 +7,12 @@
                 <form action="/surveiDsn" method="POST">
                     @csrf
                     <div class="flex justify-center items-center">
-                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait Pengelolaan Sumber Daya Manusia</p>
+                    <p class="text-xl font-open font-bold">Survei Kepuasan Terkait Pengelolaan Sumber Daya Manusia</p>
                     </div>
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 1</p>
-                        <label class="mt-3">Ketegasan pimpinan dalam melaksanakan sistem pengelolaan SDM</label>
+                        <p class="text-xl font-open font-bold">Pertanyaan 1</p>
+                            <label class="mt-3">{{$pertanyaan->{'1'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                             <div class="mt-3 flex flex-col justify-between space-y-1">
                                 <div class="px-2">
@@ -41,9 +41,8 @@
                     </div>
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 2</p>
-                            <label class="mt-3">Sistem rekrutmen dosen yang dilakukan
-                                Fakultas Sains dan Matematika</label>
+                        <p class="text-xl font-open font-bold">Pertanyaan 2</p>
+                            <label class="mt-3">{{$pertanyaan->{'2'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -72,9 +71,8 @@
                         </div>
                         <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 3</p>
-                        <label class="mt-3">Sistem seleksi dosen yang dilaksanakan di
-                            Fakultas Sains dan Matematika</label>
+                        <p class="text-xl font-open font-bold">Pertanyaan 3</p>
+                        <label class="mt-3">{{$pertanyaan->{'3'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                             <div class="mt-3 flex flex-col justify-between space-y-1">
                                 <div class="px-2">
@@ -105,9 +103,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 4</p>
-                            <label class="mt-3">Penempatan dosen di Fakultas Sains dan
-                                Matematika</label>
+                        <p class="text-xl font-open font-bold">Pertanyaan 4</p>
+                            <label class="mt-3">{{$pertanyaan->{'4'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -138,14 +135,13 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center">
-                            <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
+                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
                                 Layanan Pengembangan Kompetensi</p>
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 5</p>
-                            <label class="mt-3">Fakultas Sains dan Matematika memfasilitasi
-                                kebutuhan untuk studi lanjut</label>
+                        <p class="text-xl font-open font-bold">Pertanyaan 5</p>
+                            <label class="mt-3">{{$pertanyaan->{'5'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -177,9 +173,8 @@
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 6</p>
-                            <label class="mt-3">Dukungan pengembangan diri untuk mengikuti
-                                kursus/pelatihan</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 6</p>
+                            <label class="mt-3">{{$pertanyaan->{'6'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -211,9 +206,8 @@
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 7</p>
-                            <label class="mt-3">Dukungan pengembangan diri untuk mengikuti
-                                seminar/workshop</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 7</p>
+                            <label class="mt-3">{{$pertanyaan->{'7'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -245,9 +239,8 @@
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 8</p>
-                            <label class="mt-3">Dukungan dan kesempatan untuk mengikuti
-                                studi banding dalam negeri</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 8</p>
+                            <label class="mt-3">{{$pertanyaan->{'8'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -279,9 +272,8 @@
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 9</p>
-                            <label class="mt-3">Dukungan dan kesempatan untuk mengikuti
-                                studi banding luar negeri</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 9</p>
+                            <label class="mt-3">{{$pertanyaan->{'9'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -315,9 +307,8 @@
                             Layanan Pengembangan Karir/Jabatan</label>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 10</p>
-                            <label class="mt-3">Mendapat informasi tentang jenjang
-                                karir</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 10</p>
+                            <label class="mt-3">{{$pertanyaan->{'10'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -349,9 +340,8 @@
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 11</p>
-                            <label class="mt-3">Layanan yang diberikan Fakultas Sains dan
-                                Matematika tentang jenjang karir</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 11</p>
+                            <label class="mt-3">{{$pertanyaan->{'11'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -383,9 +373,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 12</p>
-                            <label class="mt-3">Dukungan dan kesempatan untuk meningkatkan
-                                jenjang karir</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 12</p>
+                            <label class="mt-3">{{$pertanyaan->{'12'} }}r</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -417,9 +406,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 13</p>
-                            <label class="mt-3">Mendapatkan informasi tentang
-                                jabatan</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 13</p>
+                            <label class="mt-3">{{$pertanyaan->{'13'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -451,9 +439,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 14</p>
-                            <label class="mt-3">Layanan yang diberikan Fakultas Sains dan
-                                Matematika tentang jabatan</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 14</p>
+                            <label class="mt-3">{{$pertanyaan->{'14'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -485,9 +472,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 15</p>
-                            <label class="mt-3">Dukungan dan kesempatan untuk peningkatan
-                                jabatan struktural</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 15</p>
+                            <label class="mt-3">{{$pertanyaan->{'15'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -519,9 +505,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 16</p>
-                            <label class="mt-3">Dukungan dan kesempatan untuk peningkatan
-                                jabatan non struktural</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 16</p>
+                            <label class="mt-3">{{$pertanyaan->{'16'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -552,14 +537,13 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center">
-                            <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
+                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
                                 Layanan Penelitian dan Karya Ilmiah</p>
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 17</p>
-                            <label class="mt-3">Fasilitas memperoleh informasi tentang
-                                kegiatan penelitian</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 17</p>
+                            <label class="mt-3">{{$pertanyaan->{'17'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -591,9 +575,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 18</p>
-                            <label class="mt-3">Fasilitas memperoleh pelayanan untuk
-                                melakukan kegiatan penelitian</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 18</p>
+                            <label class="mt-3">{{$pertanyaan->{'18'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -625,9 +608,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 19</p>
-                            <label class="mt-3">Ketersediaan sarana dan prasarana pendukung
-                                kegiatan penelitian</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 19</p>
+                            <label class="mt-3">{{$pertanyaan->{'19'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -659,9 +641,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 20</p>
-                            <label class="mt-3">Penilaian proposal penelitian dari
-                                reviewer</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 20</p>
+                            <label class="mt-3">{{$pertanyaan->{'20'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -693,9 +674,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 21</p>
-                            <label class="mt-3">Pemerataan penelitian berdasarkan
-                                distribusi dosen</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 21</p>
+                            <label class="mt-3">{{$pertanyaan->{'21'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -727,9 +707,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 22</p>
-                            <label class="mt-3">Pemerataan penelitian berdasarkan
-                                kualifikasi dosen</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 22</p>
+                            <label class="mt-3">{{$pertanyaan->{'22'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -761,9 +740,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 23</p>
-                            <label class="mt-3">Fasilitas bimbingan penyusunan proposal
-                                penelitian dan laporan akhir</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 23</p>
+                            <label class="mt-3">{{$pertanyaan->{'23'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -795,9 +773,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 24</p>
-                            <label class="mt-3">Kesempatan menjadi reviewer
-                                penelitian</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 24</p>
+                            <label class="mt-3">{{$pertanyaan->{'24'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -829,9 +806,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 25</p>
-                            <label class="mt-3">ketersediaan informasi jurnal terakreditasi
-                                sebagai media publikasi karya ilmiah</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 25</p>
+                            <label class="mt-3">{{$pertanyaan->{'25'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -862,14 +838,13 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center">
-                            <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
+                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
                                 Layanan Pengabdian kepada Masyarakat</p>
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 26</p>
-                            <label class="mt-3">Fasilitas memperoleh informasi tentang
-                                kegiatan PkM</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 26</p>
+                            <label class="mt-3">{{$pertanyaan->{'26'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -901,9 +876,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 27</p>
-                            <label class="mt-3">Fasilitas memperoleh pelayanan untuk
-                                melakukan kegiatan PkM</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 27</p>
+                            <label class="mt-3">{{$pertanyaan->{'27'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -935,9 +909,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 28</p>
-                            <label class="mt-3">Ketersediaan sarana dan prasarana pendukung
-                                kegiatan PkM</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 28</p>
+                            <label class="mt-3">{{$pertanyaan->{'28'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -969,9 +942,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 29</p>
-                            <label class="mt-3">Penilaian proposal PkM dari
-                                reviewer</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 29</p>
+                            <label class="mt-3">{{$pertanyaan->{'29'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1003,9 +975,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 30</p>
-                            <label class="mt-3">Pemerataan PkM berdasarkan distribusi
-                                dosen</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 30</p>
+                            <label class="mt-3">{{$pertanyaan->{'30'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1037,9 +1008,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 31</p>
-                            <label class="mt-3">Pemerataan PkM berdasarkan kualifikasi
-                                dosen</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 31</p>
+                            <label class="mt-3">{{$pertanyaan->{'31'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1071,9 +1041,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 32</p>
-                            <label class="mt-3">Fasilitas bimbingan penyusunan proposal
-                                PkM dan laporan akhir</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 32</p>
+                            <label class="mt-3">{{$pertanyaan->{'32'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1104,14 +1073,13 @@
                             </div>
                         </div>
                         <div class="flex justify-center items-center">
-                            <p class="text-xl font-open font-bold">Survei Kepuasan
+                        <p class="text-xl font-open font-bold">Survei Kepuasan
                                 Terkait Layanan Keuangan, Sarana dan Prasarana</p>
                         </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 33</p>
-                            <label class="mt-3">Perencanaan anggaran keuangan disusun
-                                berdasar pada RKAT sesuai dengan program dalam renstra dan renop</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 33</p>
+                            <label class="mt-3">{{$pertanyaan->{'33'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1143,8 +1111,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 34</p>
-                            <label class="mt-3">Keterlibatan dalam menyusun RKAT</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 34</p>
+                            <label class="mt-3">{{$pertanyaan->{'34'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1176,9 +1144,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 35</p>
-                            <label class="mt-3">Alokasi anggaran sesuai dengan perencanaan
-                                keuangan untuk kegiatan tridharma perguruan tinggi</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 35</p>
+                            <label class="mt-3">{{$pertanyaan->{'35'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1210,9 +1177,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 36</p>
-                            <label class="mt-3">Realisasi anggaran dengan program kerja
-                                prodi atau universitas untuk kegiatan tridharma perguruan tinggi</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 36</p>
+                            <label class="mt-3">{{$pertanyaan->{'36'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1244,9 +1210,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 37</p>
-                            <label class="mt-3">Penggunaan anggaran dipertanggungjawabkan
-                                secara transparan</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 37</p>
+                            <label class="mt-3">{{$pertanyaan->{'37'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1278,9 +1243,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 38</p>
-                            <label class="mt-3">Informasi penggunaan dan pelaporan dana
-                                dilakukan secara transparan</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 38</p>
+                            <label class="mt-3">{{$pertanyaan->{'38'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1312,9 +1276,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 39</p>
-                            <label class="mt-3">Tersedianya sarana dan prasarana
-                                pendidikan</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 39</p>
+                            <label class="mt-3">{{$pertanyaan->{'39'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1346,9 +1309,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 40</p>
-                            <label class="mt-3">Tersedianya sarana dan prasarana
-                                penelitian</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 40</p>
+                            <label class="mt-3">{{$pertanyaan->{'40'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1380,9 +1342,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 41</p>
-                            <label class="mt-3">Tersedianya sarana dan prasarana
-                                PkM</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 41</p>
+                            <label class="mt-3">{{$pertanyaan->{'41'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1414,9 +1375,8 @@
                     </div>
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 42</p>
-                            <label class="mt-3">Tersedianya fasilitas untuk mendukung
-                                luaran dosen dalam bentuk Jurnal dan Prosiding</label>
+                            <p class="text-xl font-open font-bold">Pertanyaan 42</p>
+                            <label class="mt-3">{{$pertanyaan->{'42'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">

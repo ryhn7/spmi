@@ -32,7 +32,7 @@
                         <label class="mt-3 ">Alumni:</label>
                         <label for="alumni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             <select name="alumni" id="alumni" required
-                                class="block w-full mt-1 mb-2 text-sm form-select px-2 py-1 border border-gray-500 rounded focus:border-sky-800 focus:outline-none focus:shadow-sm focus:shadow-[#2c3e50] focus:transition-shadow">
+                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="" class="">Pilih Mahasiswa</option>
                                 @foreach ($mahasiswas as $mahasiswa)
                                     <option value="{{ ucwords(strtolower($mahasiswa->nama_mahasiswa)) }}">
@@ -47,7 +47,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 1</p>
-                    <p class="mt-3">Etika</p>
+                    <p class="mt-3">{{$pertanyaan->{'1'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -81,7 +81,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 2</p>
-                    <p class="mt-3">Keahlian pada Bidang Ilmu</p>
+                    <p class="mt-3">{{$pertanyaan->{'2'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
@@ -111,7 +111,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 3</p>
-                    <p class="mt-3">Kemampuan Bahasa Asing</p>
+                    <p class="mt-3">{{$pertanyaan->{'3'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
@@ -141,7 +141,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 4</p>
-                    <p class="mt-3">Penggunaan Teknologi Informasi</p>
+                    <p class="mt-3">{{$pertanyaan->{'4'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
@@ -171,7 +171,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 5</p>
-                    <p class="mt-3">Komunikasi</p>
+                    <p class="mt-3">{{$pertanyaan->{'5'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
@@ -201,7 +201,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 6</p>
-                    <p class="mt-3">Kerjasama Tim</p>
+                    <p class="mt-3">{{$pertanyaan->{'6'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
@@ -231,7 +231,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 7</p>
-                    <p class="mt-3">Pengembangan Diri</p>
+                    <p class="mt-3">{{$pertanyaan->{'7'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
@@ -261,7 +261,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 8</p>
-                    <p class="mt-3">Kepemimpinan</p>
+                    <p class="mt-3">{{$pertanyaan->{'8'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
@@ -291,7 +291,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 9</p>
-                    <p class="mt-3">Etos Kerja</p>
+                    <p class="mt-3">{{$pertanyaan->{'9'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
@@ -332,10 +332,5 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         const name = document.getElementById('alumni');
-
-        $('#alumni').select2({
-            placeholder: 'Nama Mahasiswa',
-            allowClear: true,
-        });
     </script>
 @endsection
