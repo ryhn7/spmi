@@ -5,7 +5,7 @@
     {{-- @dd($results); --}}
     <div class="container">
         <div class=" flex justify-center text-2xl">
-            <strong>Hasil Survei Kepuasan Dosen Fakultas Sains dan Matematika Tahun 2020</strong>
+            <strong>Hasil Survei Kepuasan Dosen Fakultas Sains dan Matematika</strong>
         </div>
         //section 1
         <div class="container-fluid mt-10 mx-auto">
@@ -61,7 +61,8 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'1'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'1'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][1] }}</td>
@@ -86,7 +87,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'2'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'2'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][2] }}</td>
@@ -111,7 +113,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'3'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'3'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][3] }}</td>
@@ -136,7 +139,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'4'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'4'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][4] }}</td>
@@ -164,11 +168,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[0], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[0] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -229,7 +233,8 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'5'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'5'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][5] }}</td>
@@ -254,7 +259,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'6'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'6'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][6] }}</td>
@@ -279,7 +285,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'7'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'7'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][7] }}</td>
@@ -304,7 +311,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'8'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'8'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][8] }}</td>
@@ -329,7 +337,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">5.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'9'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'9'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][9] }}</td>
@@ -357,11 +366,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[1], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[1] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -422,7 +431,8 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'10'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'10'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][10] }}</td>
@@ -447,7 +457,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'11'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'11'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][11] }}</td>
@@ -472,7 +483,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'12'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'12'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][12] }}</td>
@@ -497,7 +509,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'13'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'13'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][13] }}</td>
@@ -522,7 +535,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">5.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'14'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'14'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][14] }}</td>
@@ -547,7 +561,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">6.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'15'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'15'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][15] }}</td>
@@ -572,7 +587,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">7.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'16'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'16'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][16] }}</td>
@@ -600,11 +616,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[2], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[2] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -618,7 +634,7 @@
                     <h3 class="card-title">Survei Kepuasan Dosen Terhadap Layanan Penelitian dan Karya Ilmiah</h3>
                 </div>
                 <div class="card-body">
-                    <canvas id="myChart4" width="500" height="98"></canvas>
+                    <canvas id="myChart4" width="500" height="183"></canvas>
                 </div>
             </div>
         </div>
@@ -665,7 +681,8 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'17'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'17'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][17] }}</td>
@@ -690,7 +707,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'18'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'18'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][18] }}</td>
@@ -715,7 +733,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'19'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'19'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][19] }}</td>
@@ -740,7 +759,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'20'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'20'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][20] }}</td>
@@ -765,7 +785,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">5.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'21'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'21'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][21] }}</td>
@@ -790,7 +811,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">6.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'22'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'22'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][22] }}</td>
@@ -815,7 +837,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">7.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'23'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'23'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][23] }}</td>
@@ -840,7 +863,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">8.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'24'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'24'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][24] }}</td>
@@ -865,7 +889,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">9.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'25'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'25'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][25] }}</td>
@@ -893,11 +918,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[3], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[3] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -958,7 +983,8 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'26'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'26'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][26] }}</td>
@@ -983,7 +1009,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'27'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'27'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][27] }}</td>
@@ -1008,7 +1035,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'28'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'28'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][28] }}</td>
@@ -1033,7 +1061,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'29'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'29'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][29] }}</td>
@@ -1058,7 +1087,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">5.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'30'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'30'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][30] }}</td>
@@ -1083,7 +1113,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">6.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'31'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'31'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][31] }}</td>
@@ -1108,7 +1139,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">7.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'32'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'32'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][32] }}</td>
@@ -1135,11 +1167,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[4], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[4] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -1200,7 +1232,8 @@
                     <tbody>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'33'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'33'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][33] }}</td>
@@ -1225,7 +1258,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'34'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'34'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][34] }}</td>
@@ -1250,7 +1284,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'35'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'35'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][35] }}</td>
@@ -1275,7 +1310,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'36'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'36'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][36] }}</td>
@@ -1300,7 +1336,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">5.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'37'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'37'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][37] }}</td>
@@ -1325,7 +1362,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">6.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'38'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'38'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][38] }}</td>
@@ -1350,7 +1388,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">7.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'39'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'39'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][39] }}</td>
@@ -1375,7 +1414,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">8.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'40'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'40'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][40] }}</td>
@@ -1400,7 +1440,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">9.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'41'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'41'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][41] }}</td>
@@ -1425,7 +1466,8 @@
                         </tr>
                         <tr>
                             <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">10.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">{{$hasil->{'42'} }}</td>
+                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
+                                {{ $hasil->{'42'} }}</td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
                                 {{ $results[0]['Total'][42] }}</td>
@@ -1453,11 +1495,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[5], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[5] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -1469,10 +1511,10 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var results = @json($results);
-            var labels = ["Ketegasan pimpinan dalam melaksanakan sistem pengelolaan SDM",
-                "Sistem rekrutmen dosen yang dilakukan Fakultas Sains dan Matematika",
-                "Sistem seleksi dosen yang dilaksanakan di Fakultas Sains dan Matematika",
-                "Penempatan dosen di Fakultas Sains dan Matematika"
+            var labels = ["{{ $hasil->{'1'} }}",
+                "{{ $hasil->{'2'} }}",
+                "{{ $hasil->{'3'} }}",
+                "{{ $hasil->{'4'} }}",
             ];
             var datasets = results.map(function(result, index) {
                 return {
@@ -1530,11 +1572,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var results = @json($results);
-            var labels = ["Fakultas Sains dan Matematika memfasilitasi kebutuhan untuk studi lanjut",
-                "Dukungan pengembangan diri untuk mengikuti kursus/pelatihan",
-                "Dukungan pengembangan diri untuk mengikuti seminar/workshop",
-                "Dukungan dan kesempatan untuk mengikuti studi banding dalam negeri",
-                "Dukungan dan kesempatan untuk mengikuti studi banding luar negeri"
+            var labels = [
+                "{{ $hasil->{'5'} }}",
+                "{{ $hasil->{'6'} }}",
+                "{{ $hasil->{'7'} }}",
+                "{{ $hasil->{'8'} }}",
+                "{{ $hasil->{'9'} }}",
             ];
             var datasets = results.map(function(result, index) {
                 return {
@@ -1592,13 +1635,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var results = @json($results);
-            var labels = ["Mendapat informasi tentang jenjang karir",
-                "Layanan yang diberikan Fakultas Sains dan Matematika tentang jenjang karir",
-                "Dukungan dan kesempatan untuk meningkatkan jenjang karir",
-                "Mendapatkan informasi tentang jabatan",
-                "Layanan yang diberikan Fakultas Sains dan Matematika tentang jabatan",
-                "Dukungan dan kesempatan untuk peningkatan jabatan struktural",
-                "Dukungan dan kesempatan untuk peningkatan jabatan non struktural"
+            var labels = [
+                "{{ $hasil->{'10'} }}",
+                "{{ $hasil->{'11'} }}",
+                "{{ $hasil->{'12'} }}",
+                "{{ $hasil->{'13'} }}",
+                "{{ $hasil->{'14'} }}",
+                "{{ $hasil->{'15'} }}",
+                "{{ $hasil->{'16'} }}"
             ];
             var datasets = results.map(function(result, index) {
                 return {
@@ -1650,6 +1694,206 @@
                 }
             };
             var ctx = document.getElementById("myChart3").getContext("2d");
+            new Chart(ctx, config);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var results = @json($results);
+            var labels = [
+                "{{ $hasil->{'17'} }}",
+                "{{ $hasil->{'18'} }}",
+                "{{ $hasil->{'19'} }}",
+                "{{ $hasil->{'20'} }}",
+                "{{ $hasil->{'21'} }}",
+                "{{ $hasil->{'22'} }}",
+                "{{ $hasil->{'23'} }}",
+                "{{ $hasil->{'24'} }}",
+                "{{ $hasil->{'25'} }}"
+            ];
+            var datasets = results.map(function(result, index) {
+                return {
+                    label: result.Category,
+                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
+                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
+                            "rgba(255, 0, 0, 0.7)")),
+                    data: labels.map(function(label, labelIndex) {
+                        return results[index].Averages[labelIndex + 17];
+                        stack:
+                            true
+                    })
+                };
+            });
+            var config = {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                callback: function(value) {
+                                    return value + "%"
+                                }
+                            }
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+                    tooltips: {
+                        enabled: true,
+                        mode: 'label',
+                        callbacks: {
+                            label: function(tooltipItems, data) {
+                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
+                                    .xLabel.toFixed(2) + ' %';
+                            }
+                        }
+                    }
+                }
+            };
+            var ctx = document.getElementById("myChart4").getContext("2d");
+            new Chart(ctx, config);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var results = @json($results);
+            var labels = [
+                "{{ $hasil->{'26'} }}",
+                "{{ $hasil->{'27'} }}",
+                "{{ $hasil->{'28'} }}",
+                "{{ $hasil->{'29'} }}",
+                "{{ $hasil->{'30'} }}",
+                "{{ $hasil->{'31'} }}",
+                "{{ $hasil->{'32'} }}"
+            ];
+            var datasets = results.map(function(result, index) {
+                return {
+                    label: result.Category,
+                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
+                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
+                            "rgba(255, 0, 0, 0.7)")),
+                    data: labels.map(function(label, labelIndex) {
+                        return results[index].Averages[labelIndex + 26];
+                        stack:
+                            true
+                    })
+                };
+            });
+            var config = {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                callback: function(value) {
+                                    return value + "%"
+                                }
+                            }
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+                    tooltips: {
+                        enabled: true,
+                        mode: 'label',
+                        callbacks: {
+                            label: function(tooltipItems, data) {
+                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
+                                    .xLabel.toFixed(2) + ' %';
+                            }
+                        }
+                    }
+                }
+            };
+            var ctx = document.getElementById("myChart5").getContext("2d");
+            new Chart(ctx, config);
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var results = @json($results);
+            var labels = [
+                "{{ $hasil->{'33'} }}",
+                "{{ $hasil->{'34'} }}",
+                "{{ $hasil->{'35'} }}",
+                "{{ $hasil->{'36'} }}",
+                "{{ $hasil->{'37'} }}",
+                "{{ $hasil->{'38'} }}",
+                "{{ $hasil->{'39'} }}",
+                "{{ $hasil->{'40'} }}",
+                "{{ $hasil->{'41'} }}",
+                "{{ $hasil->{'42'} }}"
+            ];
+            var datasets = results.map(function(result, index) {
+                return {
+                    label: result.Category,
+                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
+                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
+                            "rgba(255, 0, 0, 0.7)")),
+                    data: labels.map(function(label, labelIndex) {
+                        return results[index].Averages[labelIndex + 33];
+                        stack:
+                            true
+                    })
+                };
+            });
+            var config = {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: datasets
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    scales: {
+                        x: {
+                            stacked: true,
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                callback: function(value) {
+                                    return value + "%"
+                                }
+                            }
+                        },
+                        y: {
+                            stacked: true
+                        }
+                    },
+                    tooltips: {
+                        enabled: true,
+                        mode: 'label',
+                        callbacks: {
+                            label: function(tooltipItems, data) {
+                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
+                                    .xLabel.toFixed(2) + ' %';
+                            }
+                        }
+                    }
+                }
+            };
+            var ctx = document.getElementById("myChart6").getContext("2d");
             new Chart(ctx, config);
         });
     </script>

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kepuasan_tendik;
+use App\Models\kepuasan_pengguna_lulusan;
 use App\Models\pertanyaan;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
-class HasilSurveiKepuasanTendikController extends Controller
+class HasilSurveiKepuasanPenggunaLulusanController extends Controller
 {
     private $results = []; // Definisikan variabel $results di sini
 
@@ -15,11 +14,11 @@ class HasilSurveiKepuasanTendikController extends Controller
     {
         // Inisialisasi variabel $results di dalam konstruktor
         $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
-        $columns = range(1, 12);
+        $columns = range(1, 9);
         $this->results = [];
         $weightedTotals = [];
         $labelWeightedTotals = [];
-        $totalData = kepuasan_tendik::count();
+        $totalData = kepuasan_pengguna_lulusan::count();
 
         // Sisipkan kode perhitungan $results dari metode index() ke sini
         foreach ($categories as $category) {
@@ -27,8 +26,8 @@ class HasilSurveiKepuasanTendikController extends Controller
             $total = [];
 
             foreach ($columns as $column) {
-                $totalCategory = kepuasan_tendik::where("$column", $category)->count();
-                
+                $totalCategory = kepuasan_pengguna_lulusan::where("$column", $category)->count();
+
                 $average = $totalCategory / $totalData;
 
                 $averages["$column"] = $average * 100;
@@ -46,7 +45,7 @@ class HasilSurveiKepuasanTendikController extends Controller
             $columnTotal = 0;
 
             foreach ($categories as $category) {
-                $totalCategory = kepuasan_tendik::where("$column", $category)->count();
+                $totalCategory = kepuasan_pengguna_lulusan::where("$column", $category)->count();
 
                 if ($category == 'Sangat Baik') {
                     $columnTotal += $totalCategory * 4;
@@ -62,36 +61,15 @@ class HasilSurveiKepuasanTendikController extends Controller
             $weightedTotals["$column"] = $columnTotal / $totalData;
         }
 
-        foreach ($columns as $column){
+        foreach ($columns as $column) {
             $label = $weightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($weightedTotals[$column] >= 3.01 ? 'Baik' : ($weightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
             $labelWeightedTotals["$column"] = $label;
         }
-        // //get 2 average from weightedTotals, fisrt 5 column and last 7 column
-        // $average1 = array_sum(array_slice($weightedTotals, 0, 5)) / count(array_slice($weightedTotals, 0, 5));
-        // $average2 = array_sum(array_slice($weightedTotals, 5, 7)) / count(array_slice($weightedTotals, 5, 7));
+        //get average from all value in weightedTotals
+        $averageAll = array_sum($weightedTotals) / count($weightedTotals);
 
-        // //make label to average1 and average2
-        // $labelAverage1 = $average1 >= 3.51 ? 'Sangat Baik' : ($average1 >= 3.01 ? 'Baik' : ($average1 >= 2.51 ? 'Cukup' : 'Kurang'));
-        // $labelAverage2 = $average2 >= 3.51 ? 'Sangat Baik' : ($average2 >= 3.01 ? 'Baik' : ($average2 >= 2.51 ? 'Cukup' : 'Kurang'));
-
-        $columnRanges = [
-            ['start' => 0, 'end' => 4],  // section 1
-            ['start' => 5, 'end' => 11] // section 2
-        ];
-        
-        $averages = [];
-        $labels = [];
-        
-        foreach ($columnRanges as $range) {
-            $sum = array_sum(array_slice($weightedTotals, $range['start'], $range['end'] - $range['start'] + 1));
-            $count = $range['end'] - $range['start'] + 1;
-            $average = $sum / $count;
-            $averages[] = $average;
-        
-            // Define labels based on the average
-            $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
-            $labels[] = $label;
-        }
+        //label averageAll
+        $labelAverageAll = $averageAll >= 3.51 ? 'Sangat Baik' : ($averageAll >= 3.01 ? 'Baik' : ($averageAll >= 2.51 ? 'Cukup' : 'Kurang'));
 
         // Simpan hasil perhitungan dalam variabel $this->results
         $this->results = [
@@ -99,25 +77,25 @@ class HasilSurveiKepuasanTendikController extends Controller
             'weightedTotals' => $weightedTotals,
             'labelWeightedTotals' => $labelWeightedTotals,
             'totalData' => $totalData,
-            'averages' => $averages,
-            'labels' => $labels,
+            'averageAll' => $averageAll,
+            'labelAverageAll' => $labelAverageAll,
         ];
     }
 
     public function index()
     {
         // ...
-        return view('hasil_survei.hasil_survei_tendik', $this->results); // Menggunakan $this->results di sini
+        return view('hasil_survei.hasil_survei_pengguna_lulusan', $this->results); // Menggunakan $this->results di sini
     }
 
     public function show()
     {
-        $hasil = pertanyaan::where('status', 'pernyataan_tendik')->first();
+        $hasil = pertanyaan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
         if (!$hasil) {
             $hasil = new pertanyaan();
         }
 
-        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
+        return view('hasil_survei.hasil_survei_pengguna_lulusan', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
     }
 }

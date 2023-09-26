@@ -15,6 +15,8 @@ use App\Http\Controllers\TanggapanMahasiswaController;
 use App\Http\Controllers\TanggapanDosenController;
 use App\Http\Controllers\HasilSurveiKepuasanDosenController;
 use App\Http\Controllers\HasilSurveiKepuasanMahasiswaController;
+use App\Http\Controllers\HasilSurveiKepuasanMitraController;
+use App\Http\Controllers\HasilSurveiKepuasanPenggunaLulusanController;
 use App\Http\Controllers\HasilSurveiKepuasanTendikController;
 use Illuminate\Support\Facades\Route;
 
@@ -62,13 +64,9 @@ Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [F
 // Route hasil survey
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'show']);
+Route::get('/hasilmitra', [HasilSurveiKepuasanMitraController::class, 'show']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
-Route::get('/hasilstakeholder', function () {
-    return view('hasil_survei.hasil_survei_pengguna_lulusan', []);
-});
-Route::get('/hasilmitra', function () {
-    return view('hasil_survei.hasil_survei_mitra', []);
-});
+Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'show']);
 
 Route::get('/forbidden', function () {
     return view('errors.403');
