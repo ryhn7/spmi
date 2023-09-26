@@ -14,23 +14,359 @@
             </tr>
             <tr>
                 <td class="border px-8 py-4">1.</td>
-                <td class="border px-8 py-4">Kejelasan Materi yang disampaikan oleh dosen</td>
+                <td class="border px-8 py-4"> </td>
                 <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                             2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                 <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
                                             2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
             </tr>
             <tr>
-                <td class="border px-8 py-4">1.</td>
-                <td class="border px-8 py-4">Kejelasan Materi yang disampaikan oleh dosen</td>
+                <td class="border px-8 py-4">2.</td>
+                <td class="border px-8 py-4"> </td>
                 <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                             2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                 <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
                                             2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
             </tr>
             <tr>
-                <td class="border px-8 py-4">1.</td>
-                <td class="border px-8 py-4">Kejelasan Materi yang disampaikan oleh dosen</td>
+                <td class="border px-8 py-4">3.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">4.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">5.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">6.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">7.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">8.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">9.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">10.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">11.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">12.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">13.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">14.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">15.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">16.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">17.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">18.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">19.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">20.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">21.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">22.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">23.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">24.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">25.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">26.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">27.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">28.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">29.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">30.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">31.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">32.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">33.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">34.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">35.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">36.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">37.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">38.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">39.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">40.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">41.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">42.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">43.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">44.</td>
+                <td class="border px-8 py-4"> </td>
+                <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
+                                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>
+                                            2. Memberikan contoh nyata dan aplikasi praktis dari materi yang disampaikan.</td>
+            </tr>
+            <tr>
+                <td class="border px-8 py-4">45.</td>
+                <td class="border px-8 py-4"> </td>
                 <td class="border px-8 py-4">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
                                             2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
                 <td class="border px-8 py-4">1. Menyediakan materi perkuliahan yang lebih terstruktur dengan tujuan, tujuan pembelajaran, dan ringkasan materi yang jelas.<br>

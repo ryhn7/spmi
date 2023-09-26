@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\kepuasan_mahasiswa;
+use App\Models\kepuasan_tendik;
 use App\Models\pertanyaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class HasilSurveiKepuasanMahasiswaController extends Controller
+class HasilSurveiKepuasanTendikController extends Controller
 {
     private $results = []; // Definisikan variabel $results di sini
 
@@ -15,11 +15,11 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
     {
         // Inisialisasi variabel $results di dalam konstruktor
         $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
-        $columns = range(1, 45);
+        $columns = range(1, 12);
         $this->results = [];
         $weightedTotals = [];
         $labelWeightedTotals = [];
-        $totalData = kepuasan_mahasiswa::count();
+        $totalData = kepuasan_tendik::count();
 
         // Sisipkan kode perhitungan $results dari metode index() ke sini
         foreach ($categories as $category) {
@@ -27,7 +27,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $total = [];
 
             foreach ($columns as $column) {
-                $totalCategory = kepuasan_mahasiswa::where("$column", $category)->count();
+                $totalCategory = kepuasan_tendik::where("$column", $category)->count();
                 
                 $average = $totalCategory / $totalData;
 
@@ -46,7 +46,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $columnTotal = 0;
 
             foreach ($categories as $category) {
-                $totalCategory = kepuasan_mahasiswa::where("$column", $category)->count();
+                $totalCategory = kepuasan_tendik::where("$column", $category)->count();
 
                 if ($category == 'Sangat Baik') {
                     $columnTotal += $totalCategory * 4;
@@ -79,17 +79,17 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
     public function index()
     {
         // ...
-        return view('hasil_survei.hasil_survei_mhs', $this->results); // Menggunakan $this->results di sini
+        return view('hasil_survei.hasil_survei_tendik', $this->results); // Menggunakan $this->results di sini
     }
 
     public function show()
     {
-        $hasil = pertanyaan::where('status', 'pernyataan_mahasiswa')->first();
+        $hasil = pertanyaan::where('status', 'pernyataan_tendik')->first();
 
         if (!$hasil) {
             $hasil = new pertanyaan();
         }
 
-        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
+        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
     }
 }
