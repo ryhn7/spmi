@@ -38,23 +38,23 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="1a" name="satu" value="Sangat Baik"
-                                    class="mr-2 ">Sangat Baik
+                                <input type="radio" id="1a" name="satu" value="Sangat Setuju"
+                                    class="mr-2 ">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="1b" name="satu" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="1b" name="satu" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="1c" name="satu" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="1c" name="satu" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="1d" name="satu" value="Kurang" class="mr-2">Kurang
+                                <input type="radio" id="1d" name="satu" value="Tidak Setuju" class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -73,24 +73,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="2a" name="dua" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="2a" name="dua" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="2b" name="dua" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="2b" name="dua" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="2c" name="dua" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="2c" name="dua" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="2d" name="dua" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="2d" name="dua" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -108,24 +108,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="3a" name="tiga" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="3a" name="tiga" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="3b" name="tiga" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="3b" name="tiga" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="3c" name="tiga" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="3c" name="tiga" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="3d" name="tiga" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="3d" name="tiga" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -143,24 +143,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="4a" name="empat" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="4a" name="empat" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="4b" name="empat" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="4b" name="empat" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="4c" name="empat" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="4c" name="empat" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="4d" name="empat" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="4d" name="empat" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -178,24 +178,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="5a" name="lima" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="5a" name="lima" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="5b" name="lima" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="5b" name="lima" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="5c" name="lima" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="5c" name="lima" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="5d" name="lima" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="5d" name="lima" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -213,24 +213,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="6a" name="enam" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="6a" name="enam" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="6b" name="enam" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="6b" name="enam" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="6c" name="enam" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="6c" name="enam" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="6d" name="enam" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="6d" name="enam" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -248,24 +248,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="7a" name="tujuh" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="7a" name="tujuh" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="7b" name="tujuh" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="7b" name="tujuh" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="7c" name="tujuh" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="7c" name="tujuh" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="7d" name="tujuh" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="7d" name="tujuh" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -283,24 +283,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="8a" name="delapan" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="8a" name="delapan" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="8b" name="delapan" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="8b" name="delapan" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="8c" name="delapan" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="8c" name="delapan" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="8d" name="delapan" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="8d" name="delapan" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -318,25 +318,25 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="9a" name="sembilan" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="9a" name="sembilan" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="9b" name="sembilan" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="9b" name="sembilan" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="9c" name="sembilan" value="Cukup"
-                                    class="mr-2">Cukup
+                                <input type="radio" id="9c" name="sembilan" value="Kurang Setuju"
+                                    class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="9d" name="sembilan" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="9d" name="sembilan" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -354,24 +354,24 @@
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="10a" name="sepuluh" value="Sangat Baik"
-                                    class="mr-2">Sangat Baik
+                                <input type="radio" id="10a" name="sepuluh" value="Sangat Setuju"
+                                    class="mr-2">Sangat Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="10b" name="sepuluh" value="Baik" class="mr-2">Baik
+                                <input type="radio" id="10b" name="sepuluh" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="10c" name="sepuluh" value="Cukup" class="mr-2">Cukup
+                                <input type="radio" id="10c" name="sepuluh" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="10d" name="sepuluh" value="Kurang"
-                                    class="mr-2">Kurang
+                                <input type="radio" id="10d" name="sepuluh" value="Tidak Setuju"
+                                    class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
