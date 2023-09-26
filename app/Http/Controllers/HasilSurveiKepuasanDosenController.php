@@ -67,12 +67,37 @@ class HasilSurveiKepuasanDosenController extends Controller
             $labelWeightedTotals["$column"] = $label;
         }
 
+        $columnRanges = [
+            ['start' => 0, 'end' => 3],  // section 1
+            ['start' => 4, 'end' => 8], // section 2
+            ['start' => 9, 'end' => 15], // section 3
+            ['start' => 16, 'end' => 24], // section 4
+            ['start' => 25, 'end' => 31], // section 5
+            ['start' => 32, 'end' => 41] // section 6
+        ];
+        
+        $averages = [];
+        $labels = [];
+        
+        foreach ($columnRanges as $range) {
+            $sum = array_sum(array_slice($weightedTotals, $range['start'], $range['end'] - $range['start'] + 1));
+            $count = $range['end'] - $range['start'] + 1;
+            $average = $sum / $count;
+            $averages[] = $average;
+        
+            // Define labels based on the average
+            $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
+            $labels[] = $label;
+        }
+
         // Simpan hasil perhitungan dalam variabel $this->results
         $this->results = [
             'results' => $results,
             'weightedTotals' => $weightedTotals,
             'labelWeightedTotals' => $labelWeightedTotals,
             'totalData' => $totalData,
+            'averages' => $averages,
+            'labels' => $labels,
         ];
     }
 

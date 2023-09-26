@@ -188,11 +188,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[0], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[0] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -431,11 +431,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[1], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[1] }}</strong>
                             </td>
                         </tr>
                     </tbody>

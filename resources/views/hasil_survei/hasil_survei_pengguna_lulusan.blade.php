@@ -296,11 +296,11 @@
                             colspan="7"><strong>Rata - Rata</strong></td>
                         <td
                             style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                            <strong>a</strong>
+                            <strong>{{ number_format($averageAll, 2) }}</strong>
                         </td>
                         <td
                             style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                            <strong>a</strong>
+                            <strong>{{$labelAverageAll}}</strong>
                         </td>
                     </tr>
                 </tbody>

@@ -238,11 +238,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[0], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[0] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -406,11 +406,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[1], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[1] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -598,11 +598,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[2], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[2] }}</strong>
                             </td>
                         </tr>
                         
@@ -766,11 +766,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[3], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[3] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -983,11 +983,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[4], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[4] }}</strong>
                             </td>
                         </tr>
                         
@@ -1176,11 +1176,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[5], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[5] }}</strong>
                             </td>
                         </tr>
                         
@@ -1594,11 +1594,11 @@
                                 colspan="7"><strong>Rata - Rata</strong></td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ number_format($averages[6], 2) }}</strong>
                             </td>
                             <td
                                 style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>a</strong>
+                                <strong>{{ $labels[6] }}</strong>
                             </td>
                         </tr>
                         
@@ -1606,25 +1606,7 @@
                 </table>
             </div>
         </div>
-        {{-- @foreach ($results as $result)
-            <h2>Category: {{ $result['Category'] }}</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <th>Column</th>
-                        <th>Average</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($result['Averages'] as $column => $average)
-                        <tr>
-                            <td>{{ $column }}</td>
-                            <td>{{ number_format($average, 2) }}%</td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-        @endforeach --}}
+
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {

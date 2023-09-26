@@ -65,6 +65,11 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
             $label = $weightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($weightedTotals[$column] >= 3.01 ? 'Baik' : ($weightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
             $labelWeightedTotals["$column"] = $label;
         }
+        //get average from all value in weightedTotals
+        $averageAll = array_sum($weightedTotals) / count($weightedTotals);
+
+        //label averageAll
+        $labelAverageAll = $averageAll >= 3.51 ? 'Sangat Baik' : ($averageAll >= 3.01 ? 'Baik' : ($averageAll >= 2.51 ? 'Cukup' : 'Kurang'));
 
         // Simpan hasil perhitungan dalam variabel $this->results
         $this->results = [
@@ -72,6 +77,8 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
             'weightedTotals' => $weightedTotals,
             'labelWeightedTotals' => $labelWeightedTotals,
             'totalData' => $totalData,
+            'averageAll' => $averageAll,
+            'labelAverageAll' => $labelAverageAll,
         ];
     }
 

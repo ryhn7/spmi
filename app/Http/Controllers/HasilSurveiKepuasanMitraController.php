@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class HasilSurveiKepuasanMitraController extends Controller
 {
 
-    private $results = []; // Definisikan variabel $results di sini
+    private $results = []; // Definisikan variabel $results di sini 
 
     public function __construct()
     {
@@ -67,12 +67,20 @@ class HasilSurveiKepuasanMitraController extends Controller
             $labelWeightedTotals["$column"] = $label;
         }
 
+        //get average from all value in weightedTotals
+        $averageAll = array_sum($weightedTotals) / count($weightedTotals);
+
+        //label averageAll
+        $labelAverageAll = $averageAll >= 3.51 ? 'Sangat Baik' : ($averageAll >= 3.01 ? 'Baik' : ($averageAll >= 2.51 ? 'Cukup' : 'Kurang'));
+
         // Simpan hasil perhitungan dalam variabel $this->results
         $this->results = [
             'results' => $results,
             'weightedTotals' => $weightedTotals,
             'labelWeightedTotals' => $labelWeightedTotals,
             'totalData' => $totalData,
+            'averageAll' => $averageAll,
+            'labelAverageAll' => $labelAverageAll
         ];
     }
 
