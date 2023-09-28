@@ -39,7 +39,11 @@ class CheckRole
             if (auth()->guard($guard)->check()) {
                 return $next($request);
             }
-        } else if ($guard == 'dekan' || $guard == 'wadek') {
+        } else if ($guard == 'dekan') {
+            if (auth()->guard($guard)->check()) {
+                return $next($request);
+            }
+        } else if ($guard == 'wadek') {
             if (auth()->guard($guard)->check()) {
                 return $next($request);
             }
