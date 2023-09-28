@@ -122,4 +122,37 @@ class HasilSurveiKepuasanDosenController extends Controller
 
         return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
     }
+
+    public function yearFilter(Request $request)
+    {
+        $year = $request->year;
+        $filteredResults = kepuasan_dosen::whereYear('created_at', $year)->get();
+
+        $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
+        $columns = range(1, 42);
+        $filteredResultsCount = $filteredResults->count();
+        $filteredAverages = [];
+        $filteredTotal = [];
+
+        foreach ($categories as $category) {
+            $averages = [];
+            $total = [];
+
+            foreach ($columns as $column) {
+                $totalCategory = kepuasan_dosen::where("$column", $category)->whereYear('created_at', $year)->count();
+
+                $average = $totalCategory / $filteredResultsCount;
+
+                $averages["$column"] = $average * 100;
+                $total["$column"] = $totalCategory;
+            }
+
+            $filteredAverages[] = [
+                'Category' => $category,
+                'Averages' => $averages,
+                'Total' => $total,
+            ];
+        }
+        
+    }
 }
