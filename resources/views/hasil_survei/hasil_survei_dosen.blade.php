@@ -26,153 +26,51 @@
                 <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th style="width: 5%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;"
-                                rowspan="2"><strong>No.</strong></th>
-                            <th style="width: 25%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;"
-                                rowspan="2"><strong>Pernyataan</strong></th>
-                            <th style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;"
-                                colspan="4"><strong>Hasil Survei</strong></th>
-                            <th style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;"
-                                rowspan="2"><strong>Jumlah Responden</strong></th>
-                            <th style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;"
-                                rowspan="2"><strong>Rata - Rata</strong></th>
-                            <th style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;"
-                                rowspan="2"><strong>Kriteria</strong></th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;"><label>No.</label></th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;"><label>Pernyataan</label></th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;"><label>Hasil Survei</label></th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;"><label>Rata - Rata</label></th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;"><label>Kriteria</label></th>
                         </tr>
                         <tr>
-                            <th
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>Sangat Baik</strong>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
+                                <label>Sangat Baik</label>
                             </th>
-                            <th
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>Baik</strong>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <label>Baik</label>
                             </th>
-                            <th
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>Cukup</strong>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <label>Cukup</label>
                             </th>
-                            <th
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>Kurang</strong>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <label>Kurang</label>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
+                        @for ($i = 1; $i <= 4; $i++)
                         <tr>
-                            <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">1.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
-                                {{ $hasil->{'1'} }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[0]['Total'][1] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[1]['Total'][1] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[2]['Total'][1] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[3]['Total'][1] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $totalData }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ number_format($weightedTotals[1], 2) }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $labelWeightedTotals[1] }}</td>
+                            <td class="border border-black text-center" style="width: 5%;">{{ $i}}.</td>
+                            <td class="border-b border-black text-left px-3 py-3">{{ $hasil->{$i} }}</td>
+                            @for ($j = 0; $j <= 3; $j++)
+                            <td class="border-b border-black text-center">
+                                {{ $results[$j]['Total'][$i] }}</td>
+                            @endfor
+                            {{-- <td class="border-b border-black text-center">
+                                {{ $totalData }}</td> --}}
+                            <td class="border-b border-black text-center">
+                                {{ number_format($weightedTotals[$i], 2) }}</td>
+                            <td class="border-b border-r border-black text-center">
+                                {{ $labelWeightedTotals[$i] }}</td>
                         </tr>
+                        @endfor
                         <tr>
-                            <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">2.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
-                                {{ $hasil->{'2'} }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[0]['Total'][2] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[1]['Total'][2] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[2]['Total'][2] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[3]['Total'][2] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $totalData }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ number_format($weightedTotals[2], 2) }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $labelWeightedTotals[2] }}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">3.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
-                                {{ $hasil->{'3'} }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[0]['Total'][3] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[1]['Total'][3] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[2]['Total'][3] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[3]['Total'][3] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $totalData }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ number_format($weightedTotals[3], 2) }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $labelWeightedTotals[3] }}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;">4.</td>
-                            <td style="width: 25%; text-align: justify; padding-left: 1px; padding-right: 1px;">
-                                {{ $hasil->{'4'} }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[0]['Total'][4] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[1]['Total'][4] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[2]['Total'][4] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $results[3]['Total'][4] }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $totalData }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ number_format($weightedTotals[4], 2) }}</td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                {{ $labelWeightedTotals[4] }}</td>
-                        </tr>
-                        <tr>
-                            <td style="width: 5%; text-align: center; padding-left: 1px; padding-right: 1px;"
-                                colspan="7"><strong>Rata - Rata</strong></td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>{{ number_format($averages[0], 2) }}</strong>
+                            <td class="border-l border-b border-black text-center font-bold" colspan="6"><strong>Rata - Rata</strong></td>
+                            <td class="border-b border-black text-center font-bold">
+                                <strong>{{ number_format($averages[1], 2) }}</strong>
                             </td>
-                            <td
-                                style="width: 10%; text-align: center; vertical-align: middle; padding-left: 1px; padding-right: 1px;">
-                                <strong>{{ $labels[0] }}</strong>
+                            <td class="border-b border-r font-bold border-black text-center">
+                                <strong>{{ $labels[1] }}</strong>
                             </td>
                         </tr>
                     </tbody>
@@ -1507,7 +1405,7 @@
             </div>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var results = @json($results);
@@ -1519,9 +1417,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 1];
                         stack:
@@ -1541,7 +1439,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1553,13 +1451,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1582,9 +1483,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 5];
                         stack:
@@ -1604,7 +1505,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1616,13 +1517,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1647,9 +1551,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 10];
                         stack:
@@ -1669,7 +1573,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1681,13 +1585,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1714,9 +1621,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 17];
                         stack:
@@ -1736,7 +1643,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1748,13 +1655,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1779,9 +1689,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 26];
                         stack:
@@ -1801,7 +1711,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1813,13 +1723,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1847,9 +1760,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 33];
                         stack:
@@ -1869,7 +1782,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1881,13 +1794,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }

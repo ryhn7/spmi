@@ -1225,7 +1225,7 @@
                     <h3 class="card-title">Survei Kepuasan Mahasiswa Terhadap Proses Belajar Mengajar</h3>
                 </div>
                 <div class="card-body">
-                    <canvas id="myChart7" width="500" height="98"></canvas>
+                    <canvas id="myChart7" width="500" height="150"></canvas>
                 </div>
             </div>
         </div>
@@ -1667,9 +1667,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 1];
                         stack:
@@ -1701,13 +1701,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1728,9 +1731,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 8];
                         stack:
@@ -1762,13 +1765,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1790,9 +1796,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 12];
                         stack:
@@ -1824,13 +1830,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1851,9 +1860,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 17];
                         stack:
@@ -1885,13 +1894,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1914,9 +1926,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 21];
                         stack:
@@ -1948,13 +1960,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -1976,9 +1991,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 27];
                         stack:
@@ -2010,13 +2025,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }
@@ -2047,9 +2065,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 32];
                         stack:
@@ -2081,13 +2099,16 @@
                             stacked: true
                         }
                     },
-                    tooltips: {
-                        enabled: true,
-                        mode: 'label',
-                        callbacks: {
-                            label: function(tooltipItems, data) {
-                                return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                    .xLabel.toFixed(2) + ' %';
+                    plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
                             }
                         }
                     }

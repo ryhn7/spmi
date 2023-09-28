@@ -28,8 +28,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 1</p>
-                    <p class="mt-3">{{ $pernyataan->{'1'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 1</p>
+                    <p class="mt-3">{{$pernyataan->{'1'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -49,14 +49,12 @@
                         </div>
                         <div class="px-2">
                             <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="1c" name="satu" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="1c" name="satu" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="1d" name="satu" value="Tidak Setuju"
-                                    class="mr-2">Tidak Setuju
+                                <input type="radio" id="1d" name="satu" value="Tidak Setuju" class="mr-2">Tidak Setuju
                             </label>
                         </div>
                     </div>
@@ -65,8 +63,8 @@
 
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 2</p>
-                    <p class="mt-3">{{ $pernyataan->{'2'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 2</p>
+                    <p class="mt-3">{{$pernyataan->{'2'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -81,14 +79,12 @@
                         </div>
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="2b" name="dua" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="2b" name="dua" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="2c" name="dua" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="2c" name="dua" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -102,8 +98,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 3</p>
-                    <p class="mt-3">{{ $pernyataan->{'3'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 3</p>
+                    <p class="mt-3">{{$pernyataan->{'3'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -118,14 +114,12 @@
                         </div>
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="3b" name="tiga" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="3b" name="tiga" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="3c" name="tiga" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="3c" name="tiga" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -139,8 +133,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 4</p>
-                    <p class="mt-3">{{ $pernyataan->{'4'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 4</p>
+                    <p class="mt-3">{{$pernyataan->{'4'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -155,14 +149,12 @@
                         </div>
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="4b" name="empat" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="4b" name="empat" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="4c" name="empat" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="4c" name="empat" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -176,8 +168,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 5</p>
-                    <p class="mt-3">{{ $pernyataan->{'5'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 5</p>
+                    <p class="mt-3">{{$pernyataan->{'5'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -192,14 +184,12 @@
                         </div>
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="5b" name="lima" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="5b" name="lima" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="5c" name="lima" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="5c" name="lima" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -213,8 +203,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 6</p>
-                    <p class="mt-3">{{ $pernyataan->{'6'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 6</p>
+                    <p class="mt-3">{{$pernyataan->{'6'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -229,14 +219,12 @@
                         </div>
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="6b" name="enam" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="6b" name="enam" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="6c" name="enam" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="6c" name="enam" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -250,8 +238,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 7</p>
-                    <p class="mt-3">{{ $pernyataan->{'7'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 7</p>
+                    <p class="mt-3">{{$pernyataan->{'7'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -266,14 +254,12 @@
                         </div>
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="7b" name="tujuh" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="7b" name="tujuh" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="7c" name="tujuh" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="7c" name="tujuh" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -287,8 +273,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 8</p>
-                    <p class="mt-3">{{ $pernyataan->{'8'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 8</p>
+                    <p class="mt-3">{{$pernyataan->{'8'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -303,14 +289,12 @@
                         </div>
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="8b" name="delapan" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="8b" name="delapan" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="8c" name="delapan" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="8c" name="delapan" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -324,8 +308,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 9</p>
-                    <p class="mt-3">{{ $pernyataan->{'9'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 9</p>
+                    <p class="mt-3">{{$pernyataan->{'9'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -340,8 +324,7 @@
                         </div>
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="9b" name="sembilan" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="9b" name="sembilan" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
@@ -361,8 +344,8 @@
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                    <p class="text-xl font-open font-bold">pernyataan 10</p>
-                    <p class="mt-3">{{ $pernyataan->{'10'} }}</p>
+                    <p class="text-xl font-open font-bold">Pertanyaan 10</p>
+                    <p class="mt-3">{{$pernyataan->{'10'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -377,14 +360,12 @@
                         </div>
                         <div class="px-2">
                             <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="10b" name="sepuluh" value="Setuju"
-                                    class="mr-2">Setuju
+                                <input type="radio" id="10b" name="sepuluh" value="Setuju" class="mr-2">Setuju
                             </label>
                         </div>
                         <div class="px-2">
                             <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                <input type="radio" id="10c" name="sepuluh" value="Kurang Setuju"
-                                    class="mr-2">Kurang Setuju
+                                <input type="radio" id="10c" name="sepuluh" value="Kurang Setuju" class="mr-2">Kurang Setuju
                             </label>
                         </div>
                         <div class="px-2">

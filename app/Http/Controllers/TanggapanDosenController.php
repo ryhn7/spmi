@@ -35,7 +35,13 @@ class TanggapanDosenController extends Controller
 
     public function create()
     {
-        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_dosen');
+        $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_dosen',[
+            'pernyataan' => $pernyataan,
+        ]);
     }
 
     public function store(Request $request)
