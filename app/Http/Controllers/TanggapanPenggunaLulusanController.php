@@ -35,7 +35,13 @@ class TanggapanPenggunaLulusanController extends Controller
 
     public function create()
     {
-        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_pengguna_lulusan');
+        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_pengguna_lulusan',[
+            'pernyataan' => $pernyataan,
+        ]);
     }
 
     public function store(Request $request)

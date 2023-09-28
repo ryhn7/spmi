@@ -34,7 +34,13 @@ class TanggapanTendikController extends Controller
 
     public function create()
     {
-        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_tendik');
+        $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_tendik',[
+            'pernyataan' => $pernyataan,
+        ]);
     }
 
     public function store(Request $request)

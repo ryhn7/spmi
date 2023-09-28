@@ -34,7 +34,13 @@ class TanggapanMitraController extends Controller
 
     public function create()
     {
-        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_mitra');
+        $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_mitra',[
+            'pernyataan' => $pernyataan,
+        ]);
     }
 
     public function store(Request $request)
