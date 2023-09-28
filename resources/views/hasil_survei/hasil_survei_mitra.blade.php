@@ -386,16 +386,19 @@
                         stacked: true
                     }
                 },
-                tooltips: {
-                    enabled: true,
-                    mode: 'label',
-                    callbacks: {
-                        label: function(tooltipItems, data) {
-                            return data.datasets[tooltipItems.datasetIndex].label + ': ' + tooltipItems
-                                .xLabel.toFixed(2) + ' %';
+                plugins: {
+                        tooltip: {
+                            callbacks: {
+                                label: function(tooltipItem, index, tooltipItems, data) {
+                                    console.log(tooltipItem);
+                                    var label = config.data.datasets[tooltipItem.datasetIndex].label;
+                                    var val = config.data.datasets[tooltipItem.datasetIndex].data[
+                                        tooltipItem.dataIndex];
+                                    return label + ': ' + val.toFixed(2) + ' %';
+                                }
+                            }
                         }
                     }
-                }
             }
         };
         var ctx = document.getElementById("myChart1").getContext("2d");
