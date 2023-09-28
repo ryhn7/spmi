@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\pernyataan;
 use App\Models\feedback_mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +13,10 @@ class TanggapanMahasiswaController extends Controller
     {
         $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->latest()->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
 
         if (!$feedbackgpm) {
             $feedbackgpm = new feedback_mahasiswa();
@@ -23,7 +27,8 @@ class TanggapanMahasiswaController extends Controller
 
         return view('tanggapan.tanggapan_mahasiswa', [
             'feedbackGpm' => $feedbackgpm,
-            'feedbackDekan' => $feedbackDekan
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 

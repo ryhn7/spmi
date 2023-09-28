@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\pernyataan;
 use App\Models\feedback_dosen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +13,7 @@ class TanggapanDosenController extends Controller
     {
         $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->latest()->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
 
         if (!$feedbackTpmf) {
             $feedbackTpmf = new feedback_dosen();
@@ -20,10 +21,14 @@ class TanggapanDosenController extends Controller
         if (!$feedbackDekan) {
             $feedbackDekan = new feedback_dosen();
         }
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
 
         return view('tanggapan.tanggapan_dosen', [
             'feedbackTpmf' => $feedbackTpmf,
-            'feedbackDekan' => $feedbackDekan
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 
