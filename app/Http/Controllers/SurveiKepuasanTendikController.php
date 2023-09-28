@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kepuasan_tendik;
 use Carbon\Carbon;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,13 +14,13 @@ class SurveiKepuasanTendikController extends Controller
     public function create()
     {
         $surveiTendik = kepuasan_tendik::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
-        $pertanyaan = pertanyaan::where('status', 'pernyataan_tendik')->first();
-        if (!$pertanyaan) {
-            $pertanyaan = new pertanyaan();
+        $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
         }
         return view('survei.survei_tendik', [
             'surveys' => $surveiTendik,
-            'pertanyaan' => $pertanyaan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 

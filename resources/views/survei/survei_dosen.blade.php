@@ -12,7 +12,7 @@
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <p class="text-xl font-open font-bold">Pertanyaan 1</p>
-                            <label class="mt-3">{{$pertanyaan->{'1'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'1'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                             <div class="mt-3 flex flex-col justify-between space-y-1">
                                 <div class="px-2">
@@ -42,7 +42,7 @@
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <p class="text-xl font-open font-bold">Pertanyaan 2</p>
-                            <label class="mt-3">{{$pertanyaan->{'2'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'2'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -72,7 +72,7 @@
                         <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <p class="text-xl font-open font-bold">Pertanyaan 3</p>
-                        <label class="mt-3">{{$pertanyaan->{'3'} }}</label>
+                        <label class="mt-3">{{$pernyataan->{'3'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                             <div class="mt-3 flex flex-col justify-between space-y-1">
                                 <div class="px-2">
@@ -104,7 +104,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <p class="text-xl font-open font-bold">Pertanyaan 4</p>
-                            <label class="mt-3">{{$pertanyaan->{'4'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'4'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -141,7 +141,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <p class="text-xl font-open font-bold">Pertanyaan 5</p>
-                            <label class="mt-3">{{$pertanyaan->{'5'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'5'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -174,7 +174,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 6</p>
-                            <label class="mt-3">{{$pertanyaan->{'6'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'6'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -207,7 +207,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 7</p>
-                            <label class="mt-3">{{$pertanyaan->{'7'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'7'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -240,7 +240,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 8</p>
-                            <label class="mt-3">{{$pertanyaan->{'8'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'8'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -273,7 +273,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 9</p>
-                            <label class="mt-3">{{$pertanyaan->{'9'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'9'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -308,7 +308,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 10</p>
-                            <label class="mt-3">{{$pertanyaan->{'10'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'10'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -341,7 +341,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 11</p>
-                            <label class="mt-3">{{$pertanyaan->{'11'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'11'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -374,7 +374,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 12</p>
-                            <label class="mt-3">{{$pertanyaan->{'12'} }}r</label>
+                            <label class="mt-3">{{$pernyataan->{'12'} }}r</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -407,7 +407,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 13</p>
-                            <label class="mt-3">{{$pertanyaan->{'13'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'13'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -440,7 +440,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 14</p>
-                            <label class="mt-3">{{$pertanyaan->{'14'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'14'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -473,7 +473,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 15</p>
-                            <label class="mt-3">{{$pertanyaan->{'15'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'15'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -506,7 +506,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 16</p>
-                            <label class="mt-3">{{$pertanyaan->{'16'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'16'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -543,7 +543,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 17</p>
-                            <label class="mt-3">{{$pertanyaan->{'17'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'17'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -576,7 +576,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 18</p>
-                            <label class="mt-3">{{$pertanyaan->{'18'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'18'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -609,7 +609,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 19</p>
-                            <label class="mt-3">{{$pertanyaan->{'19'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'19'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -642,7 +642,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 20</p>
-                            <label class="mt-3">{{$pertanyaan->{'20'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'20'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -675,7 +675,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 21</p>
-                            <label class="mt-3">{{$pertanyaan->{'21'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'21'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -708,7 +708,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 22</p>
-                            <label class="mt-3">{{$pertanyaan->{'22'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'22'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -741,7 +741,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 23</p>
-                            <label class="mt-3">{{$pertanyaan->{'23'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'23'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -774,7 +774,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 24</p>
-                            <label class="mt-3">{{$pertanyaan->{'24'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'24'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -807,7 +807,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 25</p>
-                            <label class="mt-3">{{$pertanyaan->{'25'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'25'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -844,7 +844,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 26</p>
-                            <label class="mt-3">{{$pertanyaan->{'26'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'26'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -877,7 +877,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 27</p>
-                            <label class="mt-3">{{$pertanyaan->{'27'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'27'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -910,7 +910,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 28</p>
-                            <label class="mt-3">{{$pertanyaan->{'28'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'28'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -943,7 +943,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 29</p>
-                            <label class="mt-3">{{$pertanyaan->{'29'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'29'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -976,7 +976,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 30</p>
-                            <label class="mt-3">{{$pertanyaan->{'30'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'30'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1009,7 +1009,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 31</p>
-                            <label class="mt-3">{{$pertanyaan->{'31'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'31'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1042,7 +1042,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 32</p>
-                            <label class="mt-3">{{$pertanyaan->{'32'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'32'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1079,7 +1079,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 33</p>
-                            <label class="mt-3">{{$pertanyaan->{'33'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'33'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1112,7 +1112,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 34</p>
-                            <label class="mt-3">{{$pertanyaan->{'34'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'34'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1145,7 +1145,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 35</p>
-                            <label class="mt-3">{{$pertanyaan->{'35'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'35'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1178,7 +1178,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 36</p>
-                            <label class="mt-3">{{$pertanyaan->{'36'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'36'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1211,7 +1211,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 37</p>
-                            <label class="mt-3">{{$pertanyaan->{'37'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'37'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1244,7 +1244,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 38</p>
-                            <label class="mt-3">{{$pertanyaan->{'38'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'38'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1277,7 +1277,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 39</p>
-                            <label class="mt-3">{{$pertanyaan->{'39'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'39'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1310,7 +1310,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 40</p>
-                            <label class="mt-3">{{$pertanyaan->{'40'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'40'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1343,7 +1343,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 41</p>
-                            <label class="mt-3">{{$pertanyaan->{'41'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'41'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">
@@ -1376,7 +1376,7 @@
                         <div class="flex justify-center items-center">
                             <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                             <p class="text-xl font-open font-bold">Pertanyaan 42</p>
-                            <label class="mt-3">{{$pertanyaan->{'42'} }}</label>
+                            <label class="mt-3">{{$pernyataan->{'42'} }}</label>
                             <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                                 <div class="mt-3 flex flex-col justify-between space-y-1">
                                     <div class="px-2">

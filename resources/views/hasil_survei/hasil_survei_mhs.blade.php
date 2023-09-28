@@ -1225,7 +1225,7 @@
                     <h3 class="card-title">Survei Kepuasan Mahasiswa Terhadap Proses Belajar Mengajar</h3>
                 </div>
                 <div class="card-body">
-                    <canvas id="myChart7" width="500" height="98"></canvas>
+                    <canvas id="myChart7" width="500" height="150"></canvas>
                 </div>
             </div>
         </div>
