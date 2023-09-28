@@ -31,7 +31,7 @@ class CheckRole
             if (auth()->guard($guard)->check()) {
                 return $next($request);
             }
-        }
+        } 
 
         abort(403);
     }

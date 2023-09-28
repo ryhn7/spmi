@@ -28,7 +28,7 @@ class HasilSurveiKepuasanTendikController extends Controller
 
             foreach ($columns as $column) {
                 $totalCategory = kepuasan_tendik::where("$column", $category)->count();
-                
+
                 $average = $totalCategory / $totalData;
 
                 $averages["$column"] = $average * 100;
@@ -62,7 +62,7 @@ class HasilSurveiKepuasanTendikController extends Controller
             $weightedTotals["$column"] = $columnTotal / $totalData;
         }
 
-        foreach ($columns as $column){
+        foreach ($columns as $column) {
             $label = $weightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($weightedTotals[$column] >= 3.01 ? 'Baik' : ($weightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
             $labelWeightedTotals["$column"] = $label;
         }
@@ -75,19 +75,20 @@ class HasilSurveiKepuasanTendikController extends Controller
         // $labelAverage2 = $average2 >= 3.51 ? 'Sangat Baik' : ($average2 >= 3.01 ? 'Baik' : ($average2 >= 2.51 ? 'Cukup' : 'Kurang'));
 
         $columnRanges = [
-            ['start' => 0, 'end' => 4],  // section 1
+            ['start' => 0, 'end' => 4],
+            // section 1
             ['start' => 5, 'end' => 11] // section 2
         ];
-        
+
         $averages = [];
         $labels = [];
-        
+
         foreach ($columnRanges as $range) {
             $sum = array_sum(array_slice($weightedTotals, $range['start'], $range['end'] - $range['start'] + 1));
             $count = $range['end'] - $range['start'] + 1;
             $average = $sum / $count;
             $averages[] = $average;
-        
+
             // Define labels based on the average
             $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
             $labels[] = $label;

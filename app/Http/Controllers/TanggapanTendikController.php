@@ -47,7 +47,7 @@ class TanggapanTendikController extends Controller
     {
         if (Auth::guard('tpmf')->check()) {
             $aktor = "TPMF";
-        } else if (Auth::guard('dekan')->check()) {
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
         }
 

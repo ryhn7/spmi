@@ -28,7 +28,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
 
             foreach ($columns as $column) {
                 $totalCategory = kepuasan_mahasiswa::where("$column", $category)->count();
-                
+
                 $average = $totalCategory / $totalData;
 
                 $averages["$column"] = $average * 100;
@@ -62,29 +62,36 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $weightedTotals["$column"] = $columnTotal / $totalData;
         }
 
-        foreach ($columns as $column){
+        foreach ($columns as $column) {
             $label = $weightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($weightedTotals[$column] >= 3.01 ? 'Baik' : ($weightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
             $labelWeightedTotals["$column"] = $label;
         }
         $columnRanges = [
-            ['start' => 0, 'end' => 6],  // section 1
-            ['start' => 7, 'end' => 10], // section 2
-            ['start' => 11, 'end' => 15], // section 3
-            ['start' => 16, 'end' => 19], // section 4
-            ['start' => 20, 'end' => 25], // section 5
-            ['start' => 26, 'end' => 30], // section 6
-            ['start' => 31, 'end' => 44], // section 7
+            ['start' => 0, 'end' => 6],
+            // section 1
+            ['start' => 7, 'end' => 10],
+            // section 2
+            ['start' => 11, 'end' => 15],
+            // section 3
+            ['start' => 16, 'end' => 19],
+            // section 4
+            ['start' => 20, 'end' => 25],
+            // section 5
+            ['start' => 26, 'end' => 30],
+            // section 6
+            ['start' => 31, 'end' => 44],
+            // section 7
         ];
-        
+
         $averages = [];
         $labels = [];
-        
+
         foreach ($columnRanges as $range) {
             $sum = array_sum(array_slice($weightedTotals, $range['start'], $range['end'] - $range['start'] + 1));
             $count = $range['end'] - $range['start'] + 1;
             $average = $sum / $count;
             $averages[] = $average;
-        
+
             // Define labels based on the average
             $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
             $labels[] = $label;

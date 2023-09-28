@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\pernyataan;
 use App\Models\feedback_stakeholder;
 use Illuminate\Http\Request;
@@ -48,7 +49,7 @@ class TanggapanPenggunaLulusanController extends Controller
     {
         if (Auth::guard('gpm')->check()) {
             $aktor = "GPM";
-        } else if (Auth::guard('dekan')->check()) {
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
         }
 

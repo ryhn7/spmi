@@ -81,22 +81,36 @@ Route::get('/tes', function () {
 });
 
 //Route tanggapan
-Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
-Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
-Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
 
-Route::get('/TanggapanMitra', [TanggapanMitraController::class, 'index']);
-Route::get('/FeedbackMitra', [TanggapanMitraController::class, 'create']);
-Route::post('/FeedbackMitra', [TanggapanMitraController::class, 'store']);
+Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
+    Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
+    Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
+    Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
 
-Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
-Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
-Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
+});
 
-Route::get('/TanggapanDosen', [TanggapanDosenController::class, 'index']);
-Route::get('/FeedbackDosen', [TanggapanDosenController::class, 'create']);
-Route::post('/FeedbackDosen', [TanggapanDosenController::class, 'store']);
+Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
+    Route::get('/TanggapanDosen', [TanggapanDosenController::class, 'index']);
+    Route::get('/FeedbackDosen', [TanggapanDosenController::class, 'create']);
+    Route::post('/FeedbackDosen', [TanggapanDosenController::class, 'store']);
+});
 
-Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
-Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
-Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);
+Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
+    Route::get('/TanggapanMitra', [TanggapanMitraController::class, 'index']);
+    Route::get('/FeedbackMitra', [TanggapanMitraController::class, 'create']);
+    Route::post('/FeedbackMitra', [TanggapanMitraController::class, 'store']);
+
+});
+
+Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
+    Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
+    Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
+    Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
+});
+
+Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
+    Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
+    Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
+    Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);
+
+});

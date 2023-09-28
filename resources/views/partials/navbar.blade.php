@@ -4,7 +4,7 @@
     <div class="flex items-center">
         <img src='{{ asset('assets/img/tpmf-black.png') }}' alt="Logo" class="h-10" />
     </div>
-    <ul class="font-open items-center mr-24 hidden md:flex">
+    <ul class="font-open items-center hidden md:flex">
         <li class="mx-3">
             <a class="font-medium growing-underline" href="{{ route('dashboard') }}#beranda">
                 Beranda
@@ -13,9 +13,18 @@
         <li class="font-medium growing-underline mx-3">
             <a href="{{ route('dashboard') }}#informasi-survei">Informasi Survei</a>
         </li>
-        <li class="font-medium growing-underline mx-3">
-            <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
-        </li>
+        @if (Auth::guard('tpmf')->check() ||
+                Auth::guard('dekan')->check() ||
+                Auth::guard('gpm')->check() ||
+                Auth::guard('wadek')->check())
+            <li class="font-medium growing-underline mx-3">
+                <a href="{{ route('dashboard') }}#tanggapan-survei">Tanggapan Survei</a>
+            </li>
+        @else
+            <li class="font-medium growing-underline mx-3">
+                <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
+            </li>
+        @endif
         <li class="font-medium growing-underline mx-3">
             <a href="{{ route('dashboard') }}#hasil-survei">Hasil Survei</a>
         </li>
@@ -109,7 +118,7 @@
                                                 <form action="{{ route('backDosen') }}" method="POST">
                                                     @csrf
                                                     <label class="flex text-sm items-center mb-2" for="role">
-                                                        <input id="dosenInput" type="radio" name="role"
+                                                        <input disabled id="dosenInput" type="radio" name="role"
                                                             class="mr-2">
                                                         <button id="dosenBtn">Dosen</button>
                                                     </label>
@@ -118,7 +127,7 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="tpmfInput" type="radio" name="role"
+                                                            <input disabled id="tpmfInput" type="radio" name="role"
                                                                 class="mr-2">
                                                             <button id="tpmfBtn">TPMF</button>
                                                         </label>
@@ -127,7 +136,7 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="gpmInput" type="radio" name="role"
+                                                            <input disabled id="gpmInput" type="radio" name="role"
                                                                 class="mr-2">
                                                             <button id="gpmBtn">GPM</button>
                                                         </label>
@@ -136,8 +145,8 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="dekanInput" type="radio" name="role"
-                                                                class="mr-2">
+                                                            <input disabled id="dekanInput" type="radio"
+                                                                name="role" class="mr-2">
                                                             <button id="dekanBtn">Dekan</button>
                                                         </label>
                                                     </form>
@@ -145,8 +154,8 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="wadekInput" type="radio" name="role"
-                                                                class="mr-2">
+                                                            <input disabled id="wadekInput" type="radio"
+                                                                name="role" class="mr-2">
                                                             <button id="wadekBtn">Wadek</button>
                                                         </label>
                                                     </form>

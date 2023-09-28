@@ -4,12 +4,12 @@
     @if ($surveys === null)
         <div class="pt-32">
             {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1 "> --}}
-                <form action="/surveiMhs" method="POST">
-                    @csrf
-                    <div class="flex justify-center items-center">
-                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
-                            Keandalan (Reliability)</p>
-                    </div>
+            <form action="/surveiMhs" method="POST">
+                @csrf
+                <div class="flex justify-center items-center">
+                    <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
+                        Keandalan (Reliability)</p>
+                </div>
 
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
@@ -1510,11 +1510,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-center items-center">
-                        <button type="submit"
-                            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-b-600">Submit</button>
-                    </div><br>
-                </form>
+                </div>
+                <div class="flex justify-center items-center">
+                    <button type="submit"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-b-600">Submit</button>
+                </div><br>
+            </form>
             {{-- </div> --}}
         </div>
     @else
