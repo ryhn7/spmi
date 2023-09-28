@@ -53,14 +53,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $44
  * @property string $45
  */
-class pertanyaan extends Model
+class pernyataan extends Model
 {
     /**
      * The table associated with the model.
      * 
      * @var string
      */
-    protected $table = 'pertanyaan';
+    protected $table = 'pernyataan';
 
     /**
      * The primary key for the model.

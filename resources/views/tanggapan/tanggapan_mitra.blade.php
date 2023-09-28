@@ -24,73 +24,14 @@
                     <th class="bg-blue-100 border border-black text-center px-8 py-4">Tanggapan TPMF</th>
                     <th class="bg-blue-100 border border-black text-center px-8 py-4">Tanggapan Dekan</th>
                 </tr>
-                <tr>
-                    <td class="border px-8 py-4">1.</td>
-                    <td class="border px-8 py-4">Fakultas Sains dan Matematika merespon dengan baik dalam usaha untuk
-                        menjalin/merintis kerjasama.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'1'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'1'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">2.</td>
-                    <td class="border px-8 py-4">Proses pembuatan MoU dan Perjanjian Kerjasama sesuai dengan harapan.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'2'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'2'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">3.</td>
-                    <td class="border px-8 py-4">Fakultas Sains dan Matematika memberikan pendampingan terhadap kebutuhan
-                        kerjasama sesuai dengan harapan.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'3'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'3'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">4.</td>
-                    <td class="border px-8 py-4">Kerjasama dengan Fakultas Sains dan Matematika berjalan sesuai dengan
-                        harapan.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'4'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'4'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">5.</td>
-                    <td class="border px-8 py-4">Kami mendapatkan manfaat yang baik dalam menjalin kerjasama dengan Fakultas
-                        Sains dan Matematika.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'5'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'5'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">6.</td>
-                    <td class="border px-8 py-4">Implementasi kerjasama sesuai dengan Perjanjian Kerjasama.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'6'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'6'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">7.</td>
-                    <td class="border px-8 py-4">Pelaporan hasil kerjasama sesuai dengan kemufakatan dan aturan yang
-                        berlaku.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'7'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'7'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">8.</td>
-                    <td class="border px-8 py-4">Kami akan melanjutkan kerjasama pada tahun - tahun selanjutnya (sesuai
-                        kebutuhan).</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'8'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'8'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">9.</td>
-                    <td class="border px-8 py-4">SDM yang ada di Fakultas Sains dan Matematika sesuai dengan keahlian yang
-                        diperlukan dalam kerjasama.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'9'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'9'} }} </td>
-                </tr>
-                <tr>
-                    <td class="border px-8 py-4">10.</td>
-                    <td class="border px-8 py-4">SDM dari Fakultas Sains dan Matematika bekerja dengan profesional.</td>
-                    <td class="border px-8 py-4"> {{ $feedbackTpmf->{'10'} }} </td>
-                    <td class="border px-8 py-4"> {{ $feedbackDekan->{'10'} }} </td>
-                </tr>
+                @for ($nomor = 1; $nomor <= 10; $nomor++)
+                    <tr>
+                        <td class="border px-8 py-4">{{ $nomor }}.</td>
+                        <td class="border px-8 py-4">{{ $pernyataan->{$nomor} }}</td>
+                        <td class="border px-8 py-4">{{ $feedbackTpmf->{$nomor} }}</td>
+                        <td class="border px-8 py-4">{{ $feedbackDekan->{$nomor} }}</td>
+                    </tr>
+                @endfor
             </table>
         </div>
     </section>

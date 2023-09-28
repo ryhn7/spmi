@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\pernyataan;
 use App\Models\feedback_tendik;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +13,10 @@ class TanggapanTendikController extends Controller
     {
         $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->latest()->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
 
         if (!$feedbackTpmf) {
             $feedbackTpmf = new feedback_tendik();
@@ -23,7 +27,8 @@ class TanggapanTendikController extends Controller
         
         return view('tanggapan.tanggapan_tendik', [
             'feedbackTpmf' => $feedbackTpmf,
-            'feedbackDekan' => $feedbackDekan
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 

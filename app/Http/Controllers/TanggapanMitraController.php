@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\pernyataan;
 use App\Models\feedback_mitra;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +13,10 @@ class TanggapanMitraController extends Controller
     {
         $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
 
         if (!$feedbackTpmf) {
             $feedbackTpmf = new feedback_mitra();
@@ -23,7 +27,8 @@ class TanggapanMitraController extends Controller
 
         return view('tanggapan.tanggapan_mitra', [
             'feedbackTpmf' => $feedbackTpmf,
-            'feedbackDekan' => $feedbackDekan
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 
