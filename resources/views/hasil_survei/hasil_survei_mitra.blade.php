@@ -373,10 +373,10 @@
                 responsive: true,
                 scales: {
                     x: {
+                        min: 0,
+                            max: 100,
                         stacked: true,
                         ticks: {
-                            min: 0,
-                            max: 100,
                             callback: function(value) {
                                 return value + "%"
                             }
