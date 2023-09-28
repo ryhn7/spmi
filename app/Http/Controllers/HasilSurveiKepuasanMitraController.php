@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kepuasan_mitra_kerjasama;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Illuminate\Http\Request;
 
 class HasilSurveiKepuasanMitraController extends Controller
@@ -92,10 +92,10 @@ class HasilSurveiKepuasanMitraController extends Controller
 
     public function show()
     {
-        $hasil = pertanyaan::where('status', 'pernyataan_mitra')->first();
+        $hasil = pernyataan::where('status', 'pernyataan_mitra')->first();
 
         if (!$hasil) {
-            $hasil = new pertanyaan();
+            $hasil = new pernyataan();
         }
 
         return view('hasil_survei.hasil_survei_mitra', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga

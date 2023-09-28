@@ -4,7 +4,7 @@
     <div class="flex items-center">
         <img src='{{ asset('assets/img/tpmf-black.png') }}' alt="Logo" class="h-10" />
     </div>
-    <ul class="font-open items-center mr-24 hidden md:flex">
+    <ul class="font-open items-center hidden md:flex">
         <li class="mx-3">
             <a class="font-medium growing-underline" href="{{ route('dashboard') }}#beranda">
                 Beranda
@@ -13,9 +13,18 @@
         <li class="font-medium growing-underline mx-3">
             <a href="{{ route('dashboard') }}#informasi-survei">Informasi Survei</a>
         </li>
-        <li class="font-medium growing-underline mx-3">
-            <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
-        </li>
+        @if (Auth::guard('tpmf')->check() ||
+                Auth::guard('dekan')->check() ||
+                Auth::guard('gpm')->check() ||
+                Auth::guard('wadek')->check())
+            <li class="font-medium growing-underline mx-3">
+                <a href="{{ route('dashboard') }}#tanggapan-survei">Tanggapan Survei</a>
+            </li>
+        @else
+            <li class="font-medium growing-underline mx-3">
+                <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
+            </li>
+        @endif
         <li class="font-medium growing-underline mx-3">
             <a href="{{ route('dashboard') }}#hasil-survei">Hasil Survei</a>
         </li>

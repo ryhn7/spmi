@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kepuasan_dosen;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -28,7 +28,7 @@ class HasilSurveiKepuasanDosenController extends Controller
 
             foreach ($columns as $column) {
                 $totalCategory = kepuasan_dosen::where("$column", $category)->count();
-                
+
                 $average = $totalCategory / $totalData;
 
                 $averages["$column"] = $average * 100;
@@ -62,29 +62,34 @@ class HasilSurveiKepuasanDosenController extends Controller
             $weightedTotals["$column"] = $columnTotal / $totalData;
         }
 
-        foreach ($columns as $column){
+        foreach ($columns as $column) {
             $label = $weightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($weightedTotals[$column] >= 3.01 ? 'Baik' : ($weightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
             $labelWeightedTotals["$column"] = $label;
         }
 
         $columnRanges = [
-            ['start' => 0, 'end' => 3],  // section 1
-            ['start' => 4, 'end' => 8], // section 2
-            ['start' => 9, 'end' => 15], // section 3
-            ['start' => 16, 'end' => 24], // section 4
-            ['start' => 25, 'end' => 31], // section 5
+            ['start' => 0, 'end' => 3],
+            // section 1
+            ['start' => 4, 'end' => 8],
+            // section 2
+            ['start' => 9, 'end' => 15],
+            // section 3
+            ['start' => 16, 'end' => 24],
+            // section 4
+            ['start' => 25, 'end' => 31],
+            // section 5
             ['start' => 32, 'end' => 41] // section 6
         ];
-        
+
         $averages = [];
         $labels = [];
-        
+
         foreach ($columnRanges as $range) {
             $sum = array_sum(array_slice($weightedTotals, $range['start'], $range['end'] - $range['start'] + 1));
             $count = $range['end'] - $range['start'] + 1;
             $average = $sum / $count;
             $averages[] = $average;
-        
+
             // Define labels based on the average
             $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
             $labels[] = $label;
@@ -109,10 +114,10 @@ class HasilSurveiKepuasanDosenController extends Controller
 
     public function show()
     {
-        $hasil = pertanyaan::where('status', 'pernyataan_dosen')->first();
+        $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
 
         if (!$hasil) {
-            $hasil = new pertanyaan();
+            $hasil = new pernyataan();
         }
 
         return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
