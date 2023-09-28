@@ -31,23 +31,7 @@ class CheckRole
             if (auth()->guard($guard)->check()) {
                 return $next($request);
             }
-        } else if ($guard == 'tpmf') {
-            if (auth()->guard($guard)->check()) {
-                return $next($request);
-            }
-        } else if ($guard == 'gpm') {
-            if (auth()->guard($guard)->check()) {
-                return $next($request);
-            }
-        } else if ($guard == 'dekan') {
-            if (auth()->guard($guard)->check()) {
-                return $next($request);
-            }
-        } else if ($guard == 'wadek') {
-            if (auth()->guard($guard)->check()) {
-                return $next($request);
-            }
-        }
+        } 
 
         abort(403);
     }
