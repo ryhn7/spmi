@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\pernyataan;
 use App\Models\feedback_mitra;
 use Illuminate\Http\Request;
@@ -41,7 +42,7 @@ class TanggapanMitraController extends Controller
     {
         if (Auth::guard('tpmf')->check()) {
             $aktor = "TPMF";
-        } else if (Auth::guard('dekan')->check()) {
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
         }
 

@@ -118,7 +118,7 @@
                                                 <form action="{{ route('backDosen') }}" method="POST">
                                                     @csrf
                                                     <label class="flex text-sm items-center mb-2" for="role">
-                                                        <input id="dosenInput" type="radio" name="role"
+                                                        <input disabled id="dosenInput" type="radio" name="role"
                                                             class="mr-2">
                                                         <button id="dosenBtn">Dosen</button>
                                                     </label>
@@ -127,7 +127,7 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="tpmfInput" type="radio" name="role"
+                                                            <input disabled id="tpmfInput" type="radio" name="role"
                                                                 class="mr-2">
                                                             <button id="tpmfBtn">TPMF</button>
                                                         </label>
@@ -136,7 +136,7 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="gpmInput" type="radio" name="role"
+                                                            <input disabled id="gpmInput" type="radio" name="role"
                                                                 class="mr-2">
                                                             <button id="gpmBtn">GPM</button>
                                                         </label>
@@ -145,8 +145,8 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="dekanInput" type="radio" name="role"
-                                                                class="mr-2">
+                                                            <input disabled id="dekanInput" type="radio"
+                                                                name="role" class="mr-2">
                                                             <button id="dekanBtn">Dekan</button>
                                                         </label>
                                                     </form>
@@ -154,8 +154,8 @@
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
-                                                            <input id="wadekInput" type="radio" name="role"
-                                                                class="mr-2">
+                                                            <input disabled id="wadekInput" type="radio"
+                                                                name="role" class="mr-2">
                                                             <button id="wadekBtn">Wadek</button>
                                                         </label>
                                                     </form>

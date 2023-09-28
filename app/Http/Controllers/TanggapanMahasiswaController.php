@@ -41,7 +41,7 @@ class TanggapanMahasiswaController extends Controller
     {
         if (Auth::guard('gpm')->check()) {
             $aktor = "GPM";
-        } else if (Auth::guard('dekan')->check()) {
+        } else if (Auth::guard('dekan')->check()||Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
         }
 
