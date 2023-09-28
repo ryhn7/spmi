@@ -12,7 +12,7 @@
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Tindak Lanjut</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Perbaikan</th>
             </tr>
-                @for ($nomor = 1; $nomor <= 42; $nomor++)
+                @for ($nomor = 1; $nomor <= 10; $nomor++)
                     <tr>
                         <td class="border px-8 py-4 border border-black">{{ $nomor }}.</td>
                         <td class="border px-8 py-4 border border-black">{{ $pernyataan->{$nomor} }}</td>
