@@ -20,7 +20,7 @@
             <tr>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">No.</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Pernyataan</th>
-                <th class="bg-blue-100 border border-black text-center px-8 py-4">Tanggapan GPM</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">Tanggapan TPMF</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Tanggapan Dekan</th>
             </tr>
                 @for ($nomor = 1; $nomor <= 42; $nomor++)

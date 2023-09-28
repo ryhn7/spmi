@@ -1209,6 +1209,22 @@ input[type="range"]:active::-webkit-slider-thumb{
   margin-top: 0.15rem;
 }
 
+.mr-36{
+  margin-right: 9rem;
+}
+
+.ml-20{
+  margin-left: 5rem;
+}
+
+.ml-10{
+  margin-left: 2.5rem;
+}
+
+.ml-8{
+  margin-left: 2rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
@@ -2585,6 +2601,16 @@ input[type="range"]:active::-webkit-slider-thumb{
 .bg-zinc-700{
   --tw-bg-opacity: 1;
   background-color: rgb(63 63 70 / var(--tw-bg-opacity));
+}
+
+.bg-red-300{
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+}
+
+.bg-green-200{
+  --tw-bg-opacity: 1;
+  background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-b{

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kepuasan_pengguna_lulusan;
 use App\Models\Mahasiswa;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Http\Request;
@@ -14,14 +14,14 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
     //
     public function create()
     {
-        $pertanyaan = pertanyaan::where('status', 'pernyataan_pengguna_lulusan')->first();
-        if (!$pertanyaan) {
-            $pertanyaan = new pertanyaan();
+        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
         }
 
         return view('survei.survei_pengguna_lulusan', [
             'mahasiswas' => Mahasiswa::where('lulus', '!=', '0000-00-00')->get(),
-            'pertanyaan' => $pertanyaan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 

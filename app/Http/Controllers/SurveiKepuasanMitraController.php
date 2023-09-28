@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kepuasan_mitra_kerjasama;
 use Carbon\Carbon;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Illuminate\Http\Request;
 
 class SurveiKepuasanMitraController extends Controller
@@ -12,12 +12,12 @@ class SurveiKepuasanMitraController extends Controller
     //
     public function create()
     {
-        $pertanyaan = pertanyaan::where('status', 'pernyataan_mitra')->first();
-        if (!$pertanyaan) {
-            $pertanyaan = new pertanyaan();
+        $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
         }
         return view('survei.survei_mitra', [
-            'pertanyaan' => $pertanyaan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 

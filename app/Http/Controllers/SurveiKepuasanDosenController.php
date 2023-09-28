@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\kepuasan_dosen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -14,13 +14,13 @@ class SurveiKepuasanDosenController extends Controller
     public function create()
     {
         $surveiDsn = kepuasan_dosen::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
-        $pertanyaan = pertanyaan::where('status', 'pernyataan_dosen')->first();
-        if (!$pertanyaan) {
-            $pertanyaan = new pertanyaan();
+        $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
         }
         return view('survei.survei_dosen', [
             'surveys' => $surveiDsn,
-            'pertanyaan' => $pertanyaan,
+            'pernyataan' => $pernyataan,
         ]);
     }
 

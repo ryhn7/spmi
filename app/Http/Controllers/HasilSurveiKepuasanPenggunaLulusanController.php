@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kepuasan_pengguna_lulusan;
-use App\Models\pertanyaan;
+use App\Models\pernyataan;
 use Illuminate\Http\Request;
 
 class HasilSurveiKepuasanPenggunaLulusanController extends Controller
@@ -90,10 +90,10 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
 
     public function show()
     {
-        $hasil = pertanyaan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        $hasil = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
         if (!$hasil) {
-            $hasil = new pertanyaan();
+            $hasil = new pernyataan();
         }
 
         return view('hasil_survei.hasil_survei_pengguna_lulusan', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
