@@ -1519,9 +1519,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 1];
                         stack:
@@ -1582,9 +1582,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 5];
                         stack:
@@ -1647,9 +1647,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 10];
                         stack:
@@ -1714,9 +1714,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 17];
                         stack:
@@ -1779,9 +1779,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 26];
                         stack:
@@ -1847,9 +1847,9 @@
             var datasets = results.map(function(result, index) {
                 return {
                     label: result.Category,
-                    backgroundColor: index == 0 ? "rgba(0, 255, 0, 0.7)" : (index == 1 ?
-                        "rgba(0, 0, 255, 0.7)" : (index == 2 ? "rgba(255, 128, 0, 0.7)" :
-                            "rgba(255, 0, 0, 0.7)")),
+                    backgroundColor: index == 0 ? " rgb(1,143,95)" : (index == 1 ?
+                        "rgb(1,191,127)" : (index == 2 ? "rgb(251,168,28)" :
+                            "rgb(253,73,84)")),
                     data: labels.map(function(label, labelIndex) {
                         return results[index].Averages[labelIndex + 33];
                         stack:
