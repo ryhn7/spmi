@@ -1405,7 +1405,7 @@
             </div>
         </div>
     </div>
-    
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             var results = @json($results);
@@ -1439,7 +1439,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1505,7 +1505,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1573,7 +1573,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1643,7 +1643,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1711,7 +1711,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
@@ -1782,7 +1782,7 @@
                     scales: {
                         x: {
                             min: 0,
-                                max: 100,
+                            max: 100,
                             stacked: true,
                             ticks: {
                                 callback: function(value) {
