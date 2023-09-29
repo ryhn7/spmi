@@ -153,6 +153,65 @@ class HasilSurveiKepuasanDosenController extends Controller
                 'Total' => $total,
             ];
         }
+
+        foreach($columns as $column){
+            $columnTotal = 0;
+
+            foreach($categories as $category){
+                $totalCategory = kepuasan_dosen::where("$column", $category)->whereYear('created_at', $year)->count();
+
+                if($category == 'Sangat Baik'){
+                    $columnTotal += $totalCategory * 4;
+                } elseif($category == 'Baik'){
+                    $columnTotal += $totalCategory * 3;
+                } elseif($category == 'Cukup'){
+                    $columnTotal += $totalCategory * 2;
+                } else {
+                    $columnTotal += $totalCategory;
+                }
+            }
+
+            $filteredWeightedTotals["$column"] = $columnTotal / $filteredResultsCount;
+        }
+
+        foreach($columns as $column){
+            $label = $filteredWeightedTotals[$column] >= 3.51 ? 'Sangat Baik' : ($filteredWeightedTotals[$column] >= 3.01 ? 'Baik' : ($filteredWeightedTotals[$column] >= 2.51 ? 'Cukup' : 'Kurang'));
+            $filteredLabelWeightedTotals["$column"] = $label;
+        }
+
+        $columnRanges = [
+            ['start' => 0, 'end' => 3], // section 1
+            ['start' => 4, 'end' => 8], // section 2
+            ['start' => 9, 'end' => 15], // section 3
+            ['start' => 16, 'end' => 24], // section 4
+            ['start' => 25, 'end' => 31], // section 5
+            ['start' => 32, 'end' => 41] // section 6
+        ];
+
+        $filteredAverages = [];
+        $filteredLabels = [];
+
+        foreach ($columnRanges as $range) {
+            $sum = array_sum(array_slice($filteredWeightedTotals, $range['start'], $range['end'] - $range['start'] + 1));
+            $count = $range['end'] - $range['start'] + 1;
+            $average = $sum / $count;
+            $filteredAverages[] = $average;
+
+            // Define labels based on the average
+            $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
+            $filteredLabels[] = $label;
+        }
+
+        $filteredResults = [
+            'results' => $filteredAverages,
+            'weightedTotals' => $filteredWeightedTotals,
+            'labelWeightedTotals' => $filteredLabelWeightedTotals,
+            'totalData' => $filteredResultsCount,
+            'averages' => $filteredAverages,
+            'labels' => $filteredLabels,
+        ];
+
+        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['filteredResults' => $filteredResults, 'year' => $year]));
         
     }
 }
