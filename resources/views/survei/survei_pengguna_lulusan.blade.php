@@ -29,11 +29,23 @@
                             <input type="text" id="nama_perusahaan" name="nama_perusahaan" value=""
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
+                        <label class="mt-3">Program Studi:</label>
+                        <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            <select name="program_studi" id="program_studi"
+                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="">Pilih Program Studi Alumni</option>
+                                @foreach ($mahasiswas->pluck('program_studi')->unique()->sort() as $programStudi)
+                                    <option value="{{ $programStudi }}">
+                                        {{ $programStudi }}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </label>
                         <label class="mt-3 ">Alumni:</label>
                         <label for="alumni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             <select name="alumni" id="alumni" required
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                                <option value="" class="">Pilih Mahasiswa</option>
+                                <option value="" class="">Pilih Nama Alumni</option>
                                 @foreach ($mahasiswas as $mahasiswa)
                                     <option value="{{ ucwords(strtolower($mahasiswa->nama_mahasiswa)) }}">
                                         {{ $mahasiswa->nama_mahasiswa }}

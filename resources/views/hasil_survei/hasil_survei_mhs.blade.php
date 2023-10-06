@@ -12,7 +12,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mahasiswa Terhadap Keandalan (Reliability)</h3>
-                    <canvas id="myChart1" width="500" height="98"></canvas>
+                    <canvas id="myChart1" width="500" height="150"></canvas>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Dosen Terhadap Layanan Pengembangan Kompetensi</h3>
-                    <canvas id="myChart2" width="500" height="98"></canvas>
+                    <canvas id="myChart2" width="500" height="100"></canvas>
                 </div>
             </div>
         </div>
@@ -147,7 +147,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mahasiswa Terhadap Kepastian (Assurance)</h3>
-                    <canvas id="myChart3" width="500" height="98"></canvas>
+                    <canvas id="myChart3" width="500" height="110"></canvas>
                 </div>
             </div>
         </div>
@@ -214,7 +214,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mahasiswa Terhadap Empati (Empathy)</h3>
-                    <canvas id="myChart4" width="500" height="98"></canvas>
+                    <canvas id="myChart4" width="500" height="100"></canvas>
                 </div>
             </div>
         </div>
@@ -281,7 +281,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mahasiswa Terhadap (Tangible)</h3>
-                    <canvas id="myChart5" width="500" height="98"></canvas>
+                    <canvas id="myChart5" width="500" height="120"></canvas>
                 </div>
             </div>
         </div>
@@ -348,7 +348,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mahasiswa Terhadap Ketersediaan Layanan Mahasiswa</h3>
-                    <canvas id="myChart6" width="500" height="98"></canvas>
+                    <canvas id="myChart6" width="500" height="120"></canvas>
                 </div>
             </div>
         </div>
@@ -415,7 +415,7 @@
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">
                     <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mahasiswa Terhadap Proses Belajar Mengajar</h3>
-                    <canvas id="myChart7" width="500" height="150"></canvas>
+                    <canvas id="myChart7" width="500" height="300"></canvas>
                 </div>
             </div>
         </div>
