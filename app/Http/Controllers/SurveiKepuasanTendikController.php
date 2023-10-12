@@ -29,6 +29,7 @@ class SurveiKepuasanTendikController extends Controller
     {
         $namaTendik = Auth::guard('tendik')->user()->nama_pegawai;
         $nip = Auth::guard('tendik')->user()->NIP_pegawai;
+        $lokasi = Auth::guard('tendik')->user()->lokasi;
         $date = Carbon::now();
 
         $validated = $request->validate([
@@ -51,6 +52,7 @@ class SurveiKepuasanTendikController extends Controller
             'nama' => $namaTendik,
             'NIP' => $nip,
             'date_time' => $date,
+            'lokasi' => $lokasi,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
