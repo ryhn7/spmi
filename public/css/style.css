@@ -2397,11 +2397,6 @@ input[type="range"]:active::-webkit-slider-thumb{
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
-.border-\[\#CC5500\]{
-  --tw-border-opacity: 1;
-  border-color: rgb(204 85 0 / var(--tw-border-opacity));
-}
-
 .border-t-transparent{
   border-top-color: transparent;
 }
@@ -2809,6 +2804,11 @@ input[type="range"]:active::-webkit-slider-thumb{
   padding-bottom: 0px;
 }
 
+.py-0\.5{
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
+
 .py-1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -2887,11 +2887,6 @@ input[type="range"]:active::-webkit-slider-thumb{
 .py-\[5px\]{
   padding-top: 5px;
   padding-bottom: 5px;
-}
-
-.py-0\.5{
-  padding-top: 0.125rem;
-  padding-bottom: 0.125rem;
 }
 
 .pb-0{
@@ -4430,11 +4425,6 @@ input[type="range"]:active::-webkit-slider-thumb{
 .checked\:focus\:after\:bg-transparent:focus:checked::after{
   content: var(--tw-content);
   background-color: transparent;
-}
-
-.active\:border-red-500:active{
-  --tw-border-opacity: 1;
-  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .active\:bg-\[\#cacfd1\]:active{

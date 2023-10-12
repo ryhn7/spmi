@@ -34,9 +34,10 @@
                     <option value="SARJANA MATEMATIKA">SARJANA MATEMATIKA</option>
                     <option value="SARJANA STATITISKA">SARJANA STATITISKA</option>
                 </select>
+            </label>
             </form>
             
-        </label>
+        
         <div class="container-fluid mt-10 mx-auto">
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg">
                 <div class="card card-primary">
@@ -981,6 +982,7 @@
 
     prodi.addEventListener('change', () => {
         prodiForm.submit();
+        prodi.style.display = "block";
     })
 </script>
 @endsection
