@@ -85,7 +85,7 @@ Route::get('/tes', function () {
 
 //Route tanggapan
 
-Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
+Route::middleware(['auth:gpm,tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
     Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
     Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
