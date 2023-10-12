@@ -9,7 +9,7 @@
                 <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Mahasiswa Fakultas Sains dan
                     Matematika Tahun 2020</label>
             </div> <br>
-            <form id="Filter" action="/hasilmahasiswa/filter" class="py-0.5" method="GET">
+            <form id="filter" action="/hasilmahasiswa/filter" class="py-0.5" method="GET">
                 <label class="mt-3">Tahun:</label>
                 <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     <select name="tahun" id="tahun"
@@ -31,8 +31,8 @@
                         </option>
                         <option value="MAGISTER FISIKA"
                             {{ request('program_studi') == 'MAGISTER FISIKA' ? 'selected' : '' }}>MAGISTER FISIKA</option>
-                        <option value="MAGISTER KIMIA"
-                            {{ request('program_studi') == 'MAGISTER KIMIA' ? 'selected' : '' }}>MAGISTER KIMIA</option>
+                        <option value="MAGISTER KIMIA" {{ request('program_studi') == 'MAGISTER KIMIA' ? 'selected' : '' }}>
+                            MAGISTER KIMIA</option>
                         <option value="MAGISTER MATEMATIKA"
                             {{ request('program_studi') == 'MAGISTER MATEMATIKA' ? 'selected' : '' }}>MAGISTER MATEMATIKA
                         </option>
@@ -41,13 +41,13 @@
                         <option value="SARJANA BIOTEKNOLOGI"
                             {{ request('program_studi') == 'SARJANA BIOTEKNOLOGI' ? 'selected' : '' }}>SARJANA
                             BIOTEKNOLOGI</option>
-                        <option value="SARJANA FISIKA"
-                            {{ request('program_studi') == 'SARJANA FISIKA' ? 'selected' : '' }}>SARJANA FISIKA</option>
+                        <option value="SARJANA FISIKA" {{ request('program_studi') == 'SARJANA FISIKA' ? 'selected' : '' }}>
+                            SARJANA FISIKA</option>
                         <option value="SARJANA INFORMATIKA"
                             {{ request('program_studi') == 'SARJANA INFORMATIKA' ? 'selected' : '' }}>SARJANA INFORMATIKA
                         </option>
-                        <option value="SARJANA KIMIA"
-                            {{ request('program_studi') == 'SARJANA KIMIA' ? 'selected' : '' }}>SARJANA KIMIA</option>
+                        <option value="SARJANA KIMIA" {{ request('program_studi') == 'SARJANA KIMIA' ? 'selected' : '' }}>
+                            SARJANA KIMIA</option>
                         <option value="SARJANA MATEMATIKA"
                             {{ request('program_studi') == 'SARJANA MATEMATIKA' ? 'selected' : '' }}>SARJANA MATEMATIKA
                         </option>
@@ -78,15 +78,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -155,15 +160,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -200,7 +210,8 @@
                             @endfor
                             <tr>
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6">
-                                    <label>Rata - Rata</label></td>
+                                    <label>Rata - Rata</label>
+                                </td>
                                 <td class="border-b border-black text-center font-bold">
                                     <label>{{ number_format($averages[1], 2) }}</label>
                                 </td>
@@ -231,15 +242,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -276,7 +292,8 @@
                             @endfor
                             <tr>
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6">
-                                    <label>Rata - Rata</label></td>
+                                    <label>Rata - Rata</label>
+                                </td>
                                 <td class="border-b border-black text-center font-bold">
                                     <label>{{ number_format($averages[1], 2) }}</label>
                                 </td>
@@ -307,15 +324,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -352,7 +374,8 @@
                             @endfor
                             <tr>
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6">
-                                    <label>Rata - Rata</label></td>
+                                    <label>Rata - Rata</label>
+                                </td>
                                 <td class="border-b border-black text-center font-bold">
                                     <label>{{ number_format($averages[1], 2) }}</label>
                                 </td>
@@ -383,15 +406,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -428,7 +456,8 @@
                             @endfor
                             <tr>
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6">
-                                    <label>Rata - Rata</label></td>
+                                    <label>Rata - Rata</label>
+                                </td>
                                 <td class="border-b border-black text-center font-bold">
                                     <label>{{ number_format($averages[1], 2) }}</label>
                                 </td>
@@ -459,15 +488,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -504,7 +538,8 @@
                             @endfor
                             <tr>
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6">
-                                    <label>Rata - Rata</label></td>
+                                    <label>Rata - Rata</label>
+                                </td>
                                 <td class="border-b border-black text-center font-bold">
                                     <label>{{ number_format($averages[1], 2) }}</label>
                                 </td>
@@ -535,15 +570,20 @@
                         <thead>
                             <tr>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
+                                    <label>No.</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
+                                    <label>Pernyataan</label>
+                                </th>
                                 <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
+                                    <label>Hasil Survei</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
+                                    <label>Rata - Rata</label>
+                                </th>
                                 <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
                                 <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
@@ -580,7 +620,8 @@
                             @endfor
                             <tr>
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6">
-                                    <label>Rata - Rata</label></td>
+                                    <label>Rata - Rata</label>
+                                </td>
                                 <td class="border-b border-black text-center font-bold">
                                     <label>{{ number_format($averages[1], 2) }}</label>
                                 </td>
@@ -1063,14 +1104,22 @@
     <script>
         const prodi = document.getElementById('program_studi');
         const tahun = document.getElementById('tahun');
-        const Form = document.getElementById('filter');
+        const form = document.getElementById('filter');
 
         tahun.addEventListener('change', () => {
-            prodi.addEventListener('change', () => {
-                Form.submit();
-                prodi.style.display = "block";
-            })
+            // Cek apakah tahun dan prodi sudah terpilih
             tahun.style.display = "block";
+            if (tahun.value && prodi.value) {
+                form.submit();
+            }
+        })
+
+        prodi.addEventListener('change', () => {
+            // Cek apakah tahun dan prodi sudah terpilih
+            tahun.style.display = "block";
+            if (tahun.value && prodi.value) {
+                form.submit();
+            }
         })
     </script>
 @endsection

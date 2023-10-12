@@ -130,20 +130,22 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
     public function Filter(Request $request)
     {
         $programStudi = $request->input('program_studi');
+        $tahun = $request->input('tahun');
+        // dd($tahun);
         // dd($programStudi);
         $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
         $columns = range(1, 45);
         $this->results = [];
         $weightedTotals = [];
         $labelWeightedTotals = [];
-        $totalData = kepuasan_mahasiswa::where('program_studi', $programStudi)->count();
+        $totalData = kepuasan_mahasiswa::where('program_studi', $programStudi)->whereYear('date_time', $tahun)->count();
 
         foreach ($categories as $category) {
             $averages = [];
             $total = [];
 
             foreach ($columns as $column) {
-                $totalCategory = kepuasan_mahasiswa::where('program_studi', $programStudi)->where("$column", $category)->count();
+                $totalCategory = kepuasan_mahasiswa::where('program_studi', $programStudi)->whereYear('date_time', $tahun)->where("$column", $category)->count();
                 // dd($totalCategory);
 
                 $average = $totalCategory / $totalData;
@@ -162,7 +164,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $columnTotal = 0;
 
             foreach ($categories as $category) {
-                $totalCategory = kepuasan_mahasiswa::where('program_studi', $programStudi)->where("$column", $category)->count();
+                $totalCategory = kepuasan_mahasiswa::where('program_studi', $programStudi)->whereYear('date_time', $tahun)->where("$column", $category)->count();
 
                 if ($category == 'Sangat Baik') {
                     $columnTotal += $totalCategory * 4;
