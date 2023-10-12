@@ -22,6 +22,8 @@
 <body>
     @include('partials.navbar')
 
+    @yield('filter')
+
     @yield('container')
 
     @include('partials.footer')
