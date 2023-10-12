@@ -127,7 +127,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
         return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi, 'uniqueYears' => $uniqueYears]));
     }
 
-    public function ProdiFilter(Request $request)
+    public function Filter(Request $request)
     {
         $programStudi = $request->input('program_studi');
         // dd($programStudi);
