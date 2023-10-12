@@ -32,8 +32,6 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
         ]);
     }
 
-
-
     public function store(Request $request)
     {
         $date = Carbon::now();
@@ -73,5 +71,14 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
         kepuasan_pengguna_lulusan::create($alumni);
 
         return redirect('/')->with('success', 'berhasil save');
+    }
+    public function getMahasiswas(Request $request)
+    {
+        $programStudi = $request->input('program_studi');
+        $mahasiswas = Mahasiswa::where('lulus', '!=', '0000-00-00')
+            ->where('program_studi', $programStudi)
+            ->orderBy('nama_mahasiswa', 'asc') 
+            ->pluck('nama_mahasiswa');
+        return response()->json($mahasiswas);
     }
 }

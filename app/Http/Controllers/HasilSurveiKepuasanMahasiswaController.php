@@ -122,6 +122,8 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $hasil = new pernyataan();
         }
 
-        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
+        $programstudi = kepuasan_mahasiswa::distinct('program_studi')->pluck('program_studi');
+
+        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi]));
     }
 }

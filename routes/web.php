@@ -53,6 +53,8 @@ Route::get('/surveiMitra', [SurveiKepuasanMitraController::class, 'create'])->mi
 Route::post('/surveiMitra', [SurveiKepuasanMitraController::class, 'store'])->middleware('redirectAuthenticatedUsers');
 Route::get('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'create'])->middleware('redirectAuthenticatedUsers');
 Route::post('/surveiPenggunaLulusan', [SurveiKepuasanPenggunaLulusanController::class, 'store'])->middleware('redirectAuthenticatedUsers');
+Route::get('/get-mahasiswas', [SurveiKepuasanPenggunaLulusanController::class, 'getMahasiswas']);
+
 
 // Route feedback survei
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen', [FeedbackSurveiController::class, 'indexFeedbackDosen'])->name('feedbackDosen');

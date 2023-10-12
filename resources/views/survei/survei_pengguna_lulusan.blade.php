@@ -31,28 +31,21 @@
                         </label>
                         <label class="mt-3">Program Studi:</label>
                         <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <select name="program_studi" id="program_studi"
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="">Pilih Program Studi Alumni</option>
                                 @foreach ($mahasiswas->pluck('program_studi')->unique()->sort() as $programStudi)
-                                    <option value="{{ $programStudi }}">
+                                    <option value="{{ $programStudi }}" data-program-studi="{{ $programStudi }}">
                                         {{ $programStudi }}
                                     </option>
                                 @endforeach
                             </select>
-                        </label>
+                        </label>                        
                         <label class="mt-3 ">Alumni:</label>
                         <label for="alumni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <select name="alumni" id="alumni" required
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <select name="alumni" id="alumni" required class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="" class="">Pilih Nama Alumni</option>
-                                @foreach ($mahasiswas as $mahasiswa)
-                                    <option value="{{ ucwords(strtolower($mahasiswa->nama_mahasiswa)) }}">
-                                        {{ $mahasiswa->nama_mahasiswa }}
-                                    </option>
-                                @endforeach
                             </select>
-                        </label>
+                        </label> 
                     </div>
                 </div>
             </div>
@@ -342,7 +335,30 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        const name = document.getElementById('alumni');
+    $(document).ready(function() {
+        // Ketika Program Studi berubah
+        $('#program_studi').on('change', function() {
+            var selectedProgramStudi = $(this).val();
+
+            // Kirim permintaan Ajax untuk mendapatkan nama-nama mahasiswa berdasarkan Program Studi
+            $.ajax({
+                url: '/get-mahasiswas', // Ganti dengan URL yang sesuai di Controller Anda
+                method: 'GET',
+                data: {
+                    program_studi: selectedProgramStudi
+                },
+                success: function(data) {
+                    // Hapus opsi sebelumnya dan tambahkan yang baru
+                    $('#alumni').empty().append('<option value="">Pilih Nama Alumni</option>');
+                    $.each(data, function(key, value) {
+                        $('#alumni').append('<option value="' + value + '">' + value + '</option>');
+                    });
+                }
+            });
+        });
+    });
     </script>
+
 @endsection
