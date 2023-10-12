@@ -22,7 +22,15 @@
             </li>
         @else
             <li class="font-medium growing-underline mx-3">
-                <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
+                @if (Auth::guard('tendik')->check())
+                    <a href="/surveiTendik">Isi Survei</a>
+                @elseif (Auth::guard('dosen')->check())
+                    <a href="/surveiDosen">Isi Survei</a>
+                @elseif (Auth::guard('mahasiswa')->check())
+                    <a href="/surveiMahasiswa">Isi Survei</a>
+                @else
+                    <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
+                @endif
             </li>
         @endif
         <li class="font-medium growing-underline mx-3">
