@@ -12,19 +12,25 @@ use Illuminate\Http\Request;
 class SurveiKepuasanPenggunaLulusanController extends Controller
 {
     //
-    public function create()
+    public function create(Request $request)
     {
-        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        $pernyataan = Pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         if (!$pernyataan) {
-            $pernyataan = new pernyataan();
+            $pernyataan = new Pernyataan();
         }
 
+        $programStudi = $request->input('program_studi');
+        $mahasiswaQuery = Mahasiswa::where('lulus', '!=', '0000-00-00');
+        if ($programStudi) {
+            $mahasiswaQuery->where('program_studi', $programStudi);
+        }
+        $mahasiswas = $mahasiswaQuery->get();
+
         return view('survei.survei_pengguna_lulusan', [
-            'mahasiswas' => Mahasiswa::where('lulus', '!=', '0000-00-00')->get(),
+            'mahasiswas' => $mahasiswas,
             'pernyataan' => $pernyataan,
         ]);
     }
-
 
     public function store(Request $request)
     {
@@ -65,5 +71,14 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
         kepuasan_pengguna_lulusan::create($alumni);
 
         return redirect('/')->with('success', 'berhasil save');
+    }
+    public function getMahasiswas(Request $request)
+    {
+        $programStudi = $request->input('program_studi');
+        $mahasiswas = Mahasiswa::where('lulus', '!=', '0000-00-00')
+            ->where('program_studi', $programStudi)
+            ->orderBy('nama_mahasiswa', 'asc') 
+            ->pluck('nama_mahasiswa');
+        return response()->json($mahasiswas);
     }
 }

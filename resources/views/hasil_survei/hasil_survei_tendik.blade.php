@@ -7,7 +7,32 @@
     <div class="container">
         <div class=" flex justify-center text-2xl mt-10">
             <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Mahasiswa Fakultas Sains dan Matematika Tahun 2020</label>
-        </div>
+        </div> <br>
+        <form action="/hasiltendik" method="">
+            @csrf
+            <label class="mt-3">Pilih Tahun:</label>
+            <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <select name="tahun" id="tahun" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="">Pilih Tahun</option>
+                    @foreach($uniqueYears as $year)
+                        <option value="{{ $year }}">{{ $year }}</option>
+                    @endforeach
+                </select>
+            </label>
+            <label class="mt-3">Lokasi:</label>
+            <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option value="">Pilih Lokasi</option>
+                <option value="Fakultas">FAKULTAS SAINS DAN MATEMATIKA</option>
+                <option value="Biologi">DEPARTEMEN BIOLOGI</option>
+                <option value="Fisika">DEPARTEMEN FISIKA</option>
+                <option value="Informatika">DEPARTEMEN INFORMATIKA</option>
+                <option value="Kimia">DEPARTEMEN KIMIA</option>
+                <option value="Matematika">DEPARTEMEN MATEMATIKA</option>
+                <option value="Statitiska">DEPARTEMEN STATITISKA</option>
+            </select>
+            </label>
+        </form>
         <div class="container-fluid mt-10 mx-auto">
             <div class="card card-primary">
                 <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
@@ -183,10 +208,10 @@
                     responsive: true,
                     scales: {
                         x: {
+                            min: 0,
+                            max: 100,
                             stacked: true,
                             ticks: {
-                                min: 0,
-                                max: 100,
                                 callback: function(value) {
                                     return value + "%"
                                 }
