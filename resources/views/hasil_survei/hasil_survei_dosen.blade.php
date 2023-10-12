@@ -8,6 +8,18 @@
         <div class=" flex justify-center text-2xl mt-10">
             <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Dosen Fakultas Sains dan Matematika</label>
         </div>
+        <form action="/hasildosen" method="">
+            @csrf
+            <label class="mt-3">Tahun:</label>
+            <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <select name="tahun" id="tahun" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="">Pilih Tahun</option>
+                    @foreach($uniqueYears as $year)
+                        <option value="{{ $year }}">{{ $year }}</option>
+                    @endforeach
+                </select>
+            </label>
+        </form>
         <div class="container-fluid mt-10 mx-auto">
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                 <div class="card card-primary">

@@ -123,7 +123,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
         }
 
         $programstudi = kepuasan_mahasiswa::distinct('program_studi')->pluck('program_studi');
-
-        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi]));
+        $uniqueYears = kepuasan_mahasiswa::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi, 'uniqueYears' => $uniqueYears]));
     }
 }

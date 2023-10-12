@@ -34,7 +34,7 @@
                             <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="">Pilih Program Studi Alumni</option>
                                 @foreach ($mahasiswas->pluck('program_studi')->unique()->sort() as $programStudi)
-                                    <option value="{{ $programStudi }}" data-program-studi="{{ $programStudi }}">
+                                    <option value="{{ $programStudi }}" >
                                         {{ $programStudi }}
                                     </option>
                                 @endforeach
@@ -341,16 +341,13 @@
         // Ketika Program Studi berubah
         $('#program_studi').on('change', function() {
             var selectedProgramStudi = $(this).val();
-
-            // Kirim permintaan Ajax untuk mendapatkan nama-nama mahasiswa berdasarkan Program Studi
             $.ajax({
-                url: '/get-mahasiswas', // Ganti dengan URL yang sesuai di Controller Anda
+                url: '/get-mahasiswas', 
                 method: 'GET',
                 data: {
                     program_studi: selectedProgramStudi
                 },
                 success: function(data) {
-                    // Hapus opsi sebelumnya dan tambahkan yang baru
                     $('#alumni').empty().append('<option value="">Pilih Nama Alumni</option>');
                     $.each(data, function(key, value) {
                         $('#alumni').append('<option value="' + value + '">' + value + '</option>');

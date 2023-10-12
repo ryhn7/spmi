@@ -119,6 +119,8 @@ class HasilSurveiKepuasanTendikController extends Controller
             $hasil = new pernyataan();
         }
 
-        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil])); // Menggunakan $this->results di sini juga
+        $uniqueYears = kepuasan_tendik::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+
+        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
     }
 }
