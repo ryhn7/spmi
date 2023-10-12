@@ -10,20 +10,23 @@
         </div> <br>
         <label class="mt-3">Program Studi:</label>
         <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option value="">Pilih Program Studi</option>
-                <option value="MAGISTER BIOLOGI">MAGISTER BIOLOGI</option>
-                <option value="MAGISTER FISIKA">MAGISTER FISIKA</option>
-                <option value="MAGISTER KIMIA">MAGISTER KIMIA</option>
-                <option value="MAGISTER MATEMATIKA">MAGISTER MATEMATIKA</option>
-                <option value="SARJANA BIOLOGI">SARJANA BIOLOGI</option>
-                <option value="SARJANA BIOTEKNOLOGI">SARJANA BIOTEKNOLOGI</option>
-                <option value="SARJANA FISIKA">SARJANA FISIKA</option>
-                <option value="SARJANA INFORMATIKA">SARJANA INFORMATIKA</option>
-                <option value="SARJANA KIMIA">SARJANA KIMIA</option>
-                <option value="SARJANA MATEMATIKA">SARJANA MATEMATIKA</option>
-                <option value="SARJANA STATITISKA">SARJANA STATITISKA</option>
-            </select>
+            <form id="prodiFilter" action="/hasilmahasiswa/filterProdi" class="py-0.5" method="GET">
+                <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    <option value="">Pilih Program Studi</option>
+                    <option value="MAGISTER BIOLOGI">MAGISTER BIOLOGI</option>
+                    <option value="MAGISTER FISIKA">MAGISTER FISIKA</option>
+                    <option value="MAGISTER KIMIA">MAGISTER KIMIA</option>
+                    <option value="MAGISTER MATEMATIKA">MAGISTER MATEMATIKA</option>
+                    <option value="SARJANA BIOLOGI">SARJANA BIOLOGI</option>
+                    <option value="SARJANA BIOTEKNOLOGI">SARJANA BIOTEKNOLOGI</option>
+                    <option value="SARJANA FISIKA">SARJANA FISIKA</option>
+                    <option value="SARJANA INFORMATIKA">SARJANA INFORMATIKA</option>
+                    <option value="SARJANA KIMIA">SARJANA KIMIA</option>
+                    <option value="SARJANA MATEMATIKA">SARJANA MATEMATIKA</option>
+                    <option value="SARJANA STATITISKA">SARJANA STATITISKA</option>
+                </select>
+            </form>
+            
         </label>
         <div class="container-fluid mt-10 mx-auto">
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg">
@@ -963,4 +966,12 @@
         });
     </script>
 </section>
+<script>
+    const prodi = document.getElementById('program_studi');
+    const prodiForm = document.getElementById('prodiFilter');
+
+    prodi.addEventListener('change', () => {
+        prodiForm.submit();
+    })
+</script>
 @endsection

@@ -66,6 +66,7 @@ Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [F
 // Route hasil survey
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'show']);
+Route::get('/hasilmahasiswa/filterProdi', [HasilSurveiKepuasanMahasiswaController::class, 'ProdiFilter']);
 Route::get('/hasilmitra', [HasilSurveiKepuasanMitraController::class, 'show']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
 Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'show']);
