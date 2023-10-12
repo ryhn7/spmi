@@ -8,19 +8,9 @@
         <div class=" flex justify-center text-2xl mt-10">
             <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Mahasiswa Fakultas Sains dan Matematika Tahun 2020</label>
         </div> <br>
-        <form action="/hasilmahasiswa" method="">
-            @csrf
-            <label class="mt-3">Pilih Tahun:</label>
-            <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                <select name="tahun" id="tahun" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    <option value="">Pilih Tahun</option>
-                    @foreach($uniqueYears as $year)
-                        <option value="{{ $year }}">{{ $year }}</option>
-                    @endforeach
-                </select>
-            </label>
-            <label class="mt-3">Program Studi:</label>
-            <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+        <label class="mt-3">Program Studi:</label>
+        <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <form id="prodiFilter" action="/hasilmahasiswa/filterProdi" class="py-0.5" method="GET">
                 <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="">Pilih Program Studi</option>
                     <option value="MAGISTER BIOLOGI">MAGISTER BIOLOGI</option>
@@ -35,8 +25,9 @@
                     <option value="SARJANA MATEMATIKA">SARJANA MATEMATIKA</option>
                     <option value="SARJANA STATITISKA">SARJANA STATITISKA</option>
                 </select>
-            </label>
-        </form>
+            </form>
+            
+        </label>
         <div class="container-fluid mt-10 mx-auto">
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg">
                 <div class="card card-primary">
@@ -975,4 +966,12 @@
         });
     </script>
 </section>
+<script>
+    const prodi = document.getElementById('program_studi');
+    const prodiForm = document.getElementById('prodiFilter');
+
+    prodi.addEventListener('change', () => {
+        prodiForm.submit();
+    })
+</script>
 @endsection

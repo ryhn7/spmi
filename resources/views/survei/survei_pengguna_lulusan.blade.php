@@ -31,28 +31,30 @@
                         </label>
                         <label class="mt-3">Program Studi:</label>
                         <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <select name="program_studi" id="program_studi"
+                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="">Pilih Program Studi Alumni</option>
                                 @foreach ($mahasiswas->pluck('program_studi')->unique()->sort() as $programStudi)
-                                    <option value="{{ $programStudi }}" >
+                                    <option value="{{ $programStudi }}">
                                         {{ $programStudi }}
                                     </option>
                                 @endforeach
                             </select>
-                        </label>                        
+                        </label>
                         <label class="mt-3 ">Alumni:</label>
                         <label for="alumni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <select name="alumni" id="alumni" required class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                            <select name="alumni" id="alumni" required
+                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="" class="">Pilih Nama Alumni</option>
                             </select>
-                        </label> 
+                        </label>
                     </div>
                 </div>
             </div>
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 1</p>
-                    <p class="mt-3">{{$pernyataan->{'1'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'1'} }}</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -86,7 +88,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 2</p>
-                    <p class="mt-3">{{$pernyataan->{'2'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'2'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="dua" class="block text-gray-700 font-medium mb-2">
@@ -116,7 +118,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 3</p>
-                    <p class="mt-3">{{$pernyataan->{'3'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'3'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="tiga" class="block text-gray-700 font-medium mb-2">
@@ -146,7 +148,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 4</p>
-                    <p class="mt-3">{{$pernyataan->{'4'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'4'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="empat" class="block text-gray-700 font-medium mb-2">
@@ -176,7 +178,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 5</p>
-                    <p class="mt-3">{{$pernyataan->{'5'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'5'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="lima" class="block text-gray-700 font-medium mb-2">
@@ -206,7 +208,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 6</p>
-                    <p class="mt-3">{{$pernyataan->{'6'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'6'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="enam" class="block text-gray-700 font-medium mb-2">
@@ -236,7 +238,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 7</p>
-                    <p class="mt-3">{{$pernyataan->{'7'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'7'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="tujuh" class="block text-gray-700 font-medium mb-2">
@@ -266,7 +268,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 8</p>
-                    <p class="mt-3">{{$pernyataan->{'8'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'8'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="delapan" class="block text-gray-700 font-medium mb-2">
@@ -296,7 +298,7 @@
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
                     <p class="text-xl font-open font-bold">Pertanyaan 9</p>
-                    <p class="mt-3">{{$pernyataan->{'9'} }}</p>
+                    <p class="mt-3">{{ $pernyataan->{'9'} }}</p>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
                         <div class="px-2">
                             <label for="sembilan" class="block text-gray-700 font-medium mb-2">
@@ -337,25 +339,29 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-    $(document).ready(function() {
-        // Ketika Program Studi berubah
-        $('#program_studi').on('change', function() {
-            var selectedProgramStudi = $(this).val();
-            $.ajax({
-                url: '/get-mahasiswas', 
-                method: 'GET',
-                data: {
-                    program_studi: selectedProgramStudi
-                },
-                success: function(data) {
-                    $('#alumni').empty().append('<option value="">Pilih Nama Alumni</option>');
-                    $.each(data, function(key, value) {
-                        $('#alumni').append('<option value="' + value + '">' + value + '</option>');
-                    });
-                }
+        $(document).ready(function() {
+            // Ketika Program Studi berubah
+            $('#program_studi').on('change', function() {
+                var selectedProgramStudi = $(this).val();
+
+                // Kirim permintaan Ajax untuk mendapatkan nama-nama mahasiswa berdasarkan Program Studi
+                $.ajax({
+                    url: '/get-mahasiswas', // Ganti dengan URL yang sesuai di Controller Anda
+                    method: 'GET',
+                    data: {
+                        program_studi: selectedProgramStudi
+                    },
+                    success: function(data) {
+                        // Hapus opsi sebelumnya dan tambahkan yang baru
+                        $('#alumni').empty().append(
+                            '<option value="">Pilih Nama Alumni</option>');
+                        $.each(data, function(key, value) {
+                            $('#alumni').append('<option value="' + value + '">' +
+                                value + '</option>');
+                        });
+                    }
+                });
             });
         });
-    });
     </script>
-
 @endsection
