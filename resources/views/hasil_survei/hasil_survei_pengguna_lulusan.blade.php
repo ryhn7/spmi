@@ -7,35 +7,55 @@
     <div class=" flex justify-center text-2xl mt-10">
         <label class="text-xl font-open font-semibold text-center">Hasil Survei Kepuasan Pengguna Lulusan Fakultas Sains dan Matematika</label>
     </div> <br>
-    <form action="/hasilpenggunalulusan" method="">
-        @csrf
-        <label class="mt-3">Pilih Tahun:</label>
+    <form id="filter" action="/hasilpenggunalulusan/filter" class="py-0.5" method="GET">
+        <label class="mt-3">Tahun:</label>
         <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            <select name="tahun" id="tahun" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <select name="tahun" id="tahun"
+                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="">Pilih Tahun</option>
-                @foreach($uniqueYears as $year)
-                    <option value="{{ $year }}">{{ $year }}</option>
+                @foreach ($uniqueYears as $year)
+                    <option value="{{ $year }}" {{ request('tahun') == $year ? 'selected' : '' }}>
+                        {{ $year }}</option>
                 @endforeach
             </select>
         </label>
         <label class="mt-3">Program Studi:</label>
-        <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <select name="program_studi" id="program_studi"
+                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="">Pilih Program Studi</option>
-                <option value="MAGISTER BIOLOGI">MAGISTER BIOLOGI</option>
-                <option value="MAGISTER FISIKA">MAGISTER FISIKA</option>
-                <option value="MAGISTER KIMIA">MAGISTER KIMIA</option>
-                <option value="MAGISTER MATEMATIKA">MAGISTER MATEMATIKA</option>
-                <option value="SARJANA BIOLOGI">SARJANA BIOLOGI</option>
-                <option value="SARJANA BIOTEKNOLOGI">SARJANA BIOTEKNOLOGI</option>
-                <option value="SARJANA FISIKA">SARJANA FISIKA</option>
-                <option value="SARJANA INFORMATIKA">SARJANA INFORMATIKA</option>
-                <option value="SARJANA KIMIA">SARJANA KIMIA</option>
-                <option value="SARJANA MATEMATIKA">SARJANA MATEMATIKA</option>
-                <option value="SARJANA STATITISKA">SARJANA STATITISKA</option>
+                <option value="MAGISTER BIOLOGI"
+                    {{ request('program_studi') == 'MAGISTER BIOLOGI' ? 'selected' : '' }}>MAGISTER BIOLOGI
+                </option>
+                <option value="MAGISTER FISIKA"
+                    {{ request('program_studi') == 'MAGISTER FISIKA' ? 'selected' : '' }}>MAGISTER FISIKA</option>
+                <option value="MAGISTER KIMIA" {{ request('program_studi') == 'MAGISTER KIMIA' ? 'selected' : '' }}>
+                    MAGISTER KIMIA</option>
+                <option value="MAGISTER MATEMATIKA"
+                    {{ request('program_studi') == 'MAGISTER MATEMATIKA' ? 'selected' : '' }}>MAGISTER MATEMATIKA
+                </option>
+                <option value="SARJANA BIOLOGI"
+                    {{ request('program_studi') == 'SARJANA BIOLOGI' ? 'selected' : '' }}>SARJANA BIOLOGI</option>
+                <option value="SARJANA BIOTEKNOLOGI"
+                    {{ request('program_studi') == 'SARJANA BIOTEKNOLOGI' ? 'selected' : '' }}>SARJANA
+                    BIOTEKNOLOGI</option>
+                <option value="SARJANA FISIKA" {{ request('program_studi') == 'SARJANA FISIKA' ? 'selected' : '' }}>
+                    SARJANA FISIKA</option>
+                <option value="SARJANA INFORMATIKA"
+                    {{ request('program_studi') == 'SARJANA INFORMATIKA' ? 'selected' : '' }}>SARJANA INFORMATIKA
+                </option>
+                <option value="SARJANA KIMIA" {{ request('program_studi') == 'SARJANA KIMIA' ? 'selected' : '' }}>
+                    SARJANA KIMIA</option>
+                <option value="SARJANA MATEMATIKA"
+                    {{ request('program_studi') == 'SARJANA MATEMATIKA' ? 'selected' : '' }}>SARJANA MATEMATIKA
+                </option>
+                <option value="SARJANA STATISTIKA"
+                    {{ request('program_studi') == 'SARJANA STATISTIKA' ? 'selected' : '' }}>SARJANA STATITISKA
+                </option>
             </select>
         </label>
     </form>
+    <label class="mt-3 text-center justify-center">Total Data: {{ $totalData }}</label>
     <div class="container-fluid mt-10 mx-auto">
         <div class="card card-primary">
             <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
@@ -47,9 +67,6 @@
     <div class="card card-primary mt-5">
         <div class="card-header flex justify-center">
             <h3 class="text-l font-open font-semibold text-center">Survei Kepuasan Pengguna Lulusan</h3><br>
-        </div>
-        <div>
-            <h3 class="text-l font-open text-center mb-2">Jumlah data: {{ $totalData }}</h3>
         </div>
         <div class="card-body">
             <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
@@ -183,6 +200,27 @@
         var ctx = document.getElementById("myChart1").getContext("2d");
         new Chart(ctx, config);
     });
+</script>
+<script>
+    const prodi = document.getElementById('program_studi');
+    const tahun = document.getElementById('tahun');
+    const form = document.getElementById('filter');
+
+        tahun.addEventListener('change', () => {
+            // Cek apakah tahun dan prodi sudah terpilih
+            tahun.style.display = "block";
+            if (tahun.value && prodi.value) {
+                form.submit();
+            }
+        })
+
+        prodi.addEventListener('change', () => {
+            // Cek apakah tahun dan prodi sudah terpilih
+            tahun.style.display = "block";
+            if (tahun.value && prodi.value) {
+                form.submit();
+            }
+        })
 </script>
 </section>
 @endsection

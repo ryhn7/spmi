@@ -7,7 +7,7 @@
         <div class="container">
             <div class=" flex justify-center text-2xl mt-10">
                 <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Mahasiswa Fakultas Sains dan
-                    Matematika Tahun 2020</label>
+                    Matematika</label>
             </div> <br>
             <form id="filter" action="/hasilmahasiswa/filter" class="py-0.5" method="GET">
                 <label class="mt-3">Tahun:</label>
@@ -51,13 +51,13 @@
                         <option value="SARJANA MATEMATIKA"
                             {{ request('program_studi') == 'SARJANA MATEMATIKA' ? 'selected' : '' }}>SARJANA MATEMATIKA
                         </option>
-                        <option value="SARJANA STATITISKA"
+                        <option value="SARJANA STATISTIKA"
                             {{ request('program_studi') == 'SARJANA STATISTIKA' ? 'selected' : '' }}>SARJANA STATITISKA
                         </option>
                     </select>
                 </label>
             </form>
-
+            <label class="mt-3 text-center justify-center">Total Data: {{ $totalData }}</label>
 
             <div class="container-fluid mt-10 mx-auto">
                 <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg">

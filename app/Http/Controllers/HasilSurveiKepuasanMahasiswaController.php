@@ -139,7 +139,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
         $weightedTotals = [];
         $labelWeightedTotals = [];
         $totalData = kepuasan_mahasiswa::where('program_studi', $programStudi)->whereYear('date_time', $tahun)->count();
-
+        
         foreach ($categories as $category) {
             $averages = [];
             $total = [];

@@ -65,11 +65,15 @@ Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [F
 
 // Route hasil survey
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
+Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'show']);
 Route::get('/hasilmahasiswa/filter', [HasilSurveiKepuasanMahasiswaController::class, 'Filter']);
 Route::get('/hasilmitra', [HasilSurveiKepuasanMitraController::class, 'show']);
+Route::get('/hasilmitra/filter', [HasilSurveiKepuasanMitraController::class, 'filter']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
+Route::get('/hasiltendik/filter', [HasilSurveiKepuasanTendikController::class, 'filter']);
 Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'show']);
+Route::get('/hasilpenggunalulusan/filter', [HasilSurveiKepuasanPenggunaLulusanController::class, 'filter']);
 
 Route::get('/forbidden', function () {
     return view('errors.403');

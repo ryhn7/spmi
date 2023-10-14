@@ -6,33 +6,46 @@
     {{-- @dd($results); --}}
     <div class="container">
         <div class=" flex justify-center text-2xl mt-10">
-            <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Mahasiswa Fakultas Sains dan Matematika Tahun 2020</label>
+            <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Tenaga Pendidik Fakultas Sains dan Matematika</label>
         </div> <br>
-        <form action="/hasiltendik" method="">
-            @csrf
-            <label class="mt-3">Pilih Tahun:</label>
+        <form id="filter" action="/hasiltendik/filter" class="py-0.5" method="GET">
+            <label class="mt-3">Tahun:</label>
             <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                <select name="tahun" id="tahun" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select name="tahun" id="tahun"
+                    class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     <option value="">Pilih Tahun</option>
-                    @foreach($uniqueYears as $year)
-                        <option value="{{ $year }}">{{ $year }}</option>
+                    @foreach ($uniqueYears as $year)
+                        <option value="{{ $year }}" {{ request('tahun') == $year ? 'selected' : '' }}>
+                            {{ $year }}</option>
                     @endforeach
                 </select>
             </label>
             <label class="mt-3">Lokasi:</label>
-            <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-            <select name="program_studi" id="program_studi" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+            <label for="lokasi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                <select name="lokasi" id="lokasi"
+                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option value="">Pilih Lokasi</option>
-                <option value="Fakultas">FAKULTAS SAINS DAN MATEMATIKA</option>
-                <option value="Biologi">DEPARTEMEN BIOLOGI</option>
-                <option value="Fisika">DEPARTEMEN FISIKA</option>
-                <option value="Informatika">DEPARTEMEN INFORMATIKA</option>
-                <option value="Kimia">DEPARTEMEN KIMIA</option>
-                <option value="Matematika">DEPARTEMEN MATEMATIKA</option>
-                <option value="Statitiska">DEPARTEMEN STATITISKA</option>
+                <option value="Fakultas"
+                    {{ request('lokasi') == 'Fakultas' ? 'selected' : '' }}>FAKULTAS SAINS DAN MATEMATIKA</option>
+                <option value="Biologi"
+                    {{ request('lokasi') == 'Biologi' ? 'selected' : '' }}>DEPARTEMEN BIOLOGI</option>
+                <option value="Fisika" {{ request('lokasi') == 'Fisika' ? 'selected' : '' }}> DEPARTEMEN FISIKA
+                    </option>
+                <option value="Informatika"
+                    {{ request('lokasi') == 'Informatika' ? 'selected' : '' }}>DEPARTEMEN INFORMATIKA
+                </option>
+                <option value="Kimia" {{ request('lokasi') == 'Kimia' ? 'selected' : '' }}> DEPARTEMEN KIMIA
+                    </option>
+                <option value="Matematika"
+                    {{ request('lokasi') == 'Matematika' ? 'selected' : '' }}>DEPARTEMEN MATEMATIKA
+                </option>
+                <option value="Statistika"
+                    {{ request('lokasi') == 'Statistika' ? 'selected' : '' }}>DEPARTEMEN STATISTIKA
+                </option>
             </select>
-            </label>
+        </label>
         </form>
+        <label class="mt-3 text-center justify-center">Total Data: {{ $totalData }}</label>
         <div class="container-fluid mt-10 mx-auto">
             <div class="card card-primary">
                 <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
@@ -44,9 +57,6 @@
         <div class="card card-primary mt-5">
             <div class="card-header flex justify-center">
                 <h3 class="text-l font-open font-bold text-center">Survei Kepuasan Mahasiswa Terhadap Keandalan (Reliability)</h3>
-            </div>
-            <div>
-                <h3 class="text-l font-open text-center mb-2">Jumlah data: {{ $totalData }}</h3>
             </div>
             <div class="card-body">
                 <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
@@ -306,6 +316,27 @@
             var ctx = document.getElementById("myChart2").getContext("2d");
             new Chart(ctx, config);
         });
+    </script>
+    <script>
+    const lokasi = document.getElementById('lokasi');
+    const tahun = document.getElementById('tahun');
+    const form = document.getElementById('filter');
+
+        tahun.addEventListener('change', () => {
+            // Cek apakah tahun dan lokasi sudah terpilih
+            tahun.style.display = "block";
+            if (tahun.value && lokasi.value) {
+                form.submit();
+            }
+        })
+
+        lokasi.addEventListener('change', () => {
+            // Cek apakah tahun dan lokasi sudah terpilih
+            tahun.style.display = "block";
+            if (tahun.value && lokasi.value) {
+                form.submit();
+            }
+        })
     </script>
 </section>
 @endsection
