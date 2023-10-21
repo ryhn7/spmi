@@ -139,6 +139,10 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
         $weightedTotals = [];
         $labelWeightedTotals = [];
         $totalData = kepuasan_mahasiswa::where('program_studi', $programStudi)->whereYear('date_time', $tahun)->count();
+
+        if($totalData == 0){
+            return redirect('/hasilmahasiswa')->with('error', 'Hasil Survei Tidak Ditemukan');
+        }
         
         foreach ($categories as $category) {
             $averages = [];
@@ -213,9 +217,7 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
             $labels[] = $label;
         }
-        if($totalData == 0){
-            return redirect('/hasilmahasiswa')->with('error', 'Hasil Survei Tidak Ditemukan');
-        }
+
 
         // Simpan hasil perhitungan dalam variabel $this->results
         $this->results = [
