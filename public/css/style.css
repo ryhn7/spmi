@@ -3550,6 +3550,11 @@ input[type="range"]:active::-webkit-slider-thumb{
   color: rgb(163 115 19 / var(--tw-text-opacity));
 }
 
+.text-\[\#1f2f5f\]{
+  --tw-text-opacity: 1;
+  color: rgb(31 47 95 / var(--tw-text-opacity));
+}
+
 .underline{
   text-decoration-line: underline;
 }
