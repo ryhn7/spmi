@@ -213,6 +213,9 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             $label = ($average >= 3.51) ? 'Sangat Baik' : ($average >= 3.01 ? 'Baik' : ($average >= 2.51 ? 'Cukup' : 'Kurang'));
             $labels[] = $label;
         }
+        if($totalData == 0){
+            return redirect('/hasilmahasiswa')->with('error', 'Hasil Survei Tidak Ditemukan');
+        }
 
         // Simpan hasil perhitungan dalam variabel $this->results
         $this->results = [

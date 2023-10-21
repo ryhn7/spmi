@@ -1,6 +1,17 @@
 @extends('layouts.main')
 
 @section('container')
+    @if (session()->has('error'))
+        <div alert
+            class="relative p-4 pr-12 mb-4 text-white border border-red-300 border-solid rounded-lg bg-gradient-to-tl from-red-600 to-rose-400"
+            role="alert">
+            <strong class="font-bold">Hasil Survei Tidak Ditemukan!</strong>
+            {{ session('error') }}
+            <button type="button" alert-close
+                class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+            </button>
+        </div>
+    @endif
     <section class="sectionSize bg-white">
         <br><br><br>
         {{-- @dd($results); --}}
@@ -41,7 +52,8 @@
                         <option value="SARJANA BIOTEKNOLOGI"
                             {{ request('program_studi') == 'SARJANA BIOTEKNOLOGI' ? 'selected' : '' }}>SARJANA
                             BIOTEKNOLOGI</option>
-                        <option value="SARJANA FISIKA" {{ request('program_studi') == 'SARJANA FISIKA' ? 'selected' : '' }}>
+                        <option value="SARJANA FISIKA"
+                            {{ request('program_studi') == 'SARJANA FISIKA' ? 'selected' : '' }}>
                             SARJANA FISIKA</option>
                         <option value="SARJANA INFORMATIKA"
                             {{ request('program_studi') == 'SARJANA INFORMATIKA' ? 'selected' : '' }}>SARJANA INFORMATIKA
