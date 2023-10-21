@@ -24,7 +24,7 @@
                     <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Tanggapan TPMF</th>
                     <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Tanggapan Dekan</th>
                 </tr>
-                @for ($nomor = 1; $nomor <= 42; $nomor++)
+                @for ($nomor = 1; $nomor <= 10; $nomor++)
                     <tr>
                         <td class="border border-black text-center mt-2">{{ $nomor }}.</td>
                         <td class="border-b border-black px-3 py-3">{{ $pernyataan->{$nomor} }}</td>
