@@ -16,18 +16,22 @@
                         Perbaikan
                         Hasil Survei Kepuasan Dosen</span>
                 </a><br>
-                <a class="hover:text-white hover:underline underline-offset-4" href="{{ route('feedbackTendik') }}">
-                    2. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Tenaga Kependidikan
+                <a  href="{{ route('feedbackTendik') }}">
+                    2. <span class="hover:text-white hover:underline underline-offset-4">
+                        Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Tenaga Kependidikan</span>
                 </a><br>
-                <a class="hover:text-white hover:underline underline-offset-4" href="{{ route('feedbackMahasiswa') }}">
-                    3. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mahasiswa
+                <a  href="{{ route('feedbackMahasiswa') }}">
+                    3. <span class="hover:text-white hover:underline underline-offset-4">
+                        Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mahasiswa</span>
                 </a><br>
-                <a class="hover:text-white hover:underline underline-offset-4" href="{{ route('feedbackMitra') }}">
-                    4. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mitra Kerjasama
+                <a  href="{{ route('feedbackMitra') }}">
+                    4. <span class="hover:text-white hover:underline underline-offset-4">
+                        Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Mitra Kerjasama</span>
                 </a><br>
-                <a class="hover:text-white hover:underline underline-offset-4"
+                <a 
                     href="{{ route('feedbackStakeHolder') }}">
-                    5. Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Pengguna Lulusan
+                    5. <span class="hover:text-white hover:underline underline-offset-4">
+                        Upaya Tindak Lanjut dan Perbaikan Hasil Survei Kepuasan Pengguna Lulusan</span>
                 </a><br>
             </h3>
         </div>
