@@ -113,6 +113,9 @@ class HasilSurveiKepuasanMitraController extends Controller
         $weightedTotals = [];
         $labelWeightedTotals = [];
         $totalData = kepuasan_mitra_kerjasama::whereYear('date_time', $tahun)->count();
+        if($totalData == 0){
+            return redirect('/hasilmitra')->with('error', 'Hasil Survei Tidak Ditemukan');
+        }
 
         // Sisipkan kode perhitungan $results dari metode index() ke sini
         foreach ($categories as $category) {

@@ -137,6 +137,9 @@ class HasilSurveiKepuasanDosenController extends Controller
         $weightedTotals = [];
         $labelWeightedTotals = [];
         $totalData = kepuasan_dosen::whereYear('date_time', $tahun)->count();
+        if($totalData == 0){
+            return redirect('/hasildosen')->with('error', 'Hasil Survei Tidak Ditemukan');
+        }
         // dd($totalData);
         // Sisipkan kode perhitungan $results dari metode index() ke sini
         foreach ($categories as $category) {

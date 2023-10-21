@@ -95,6 +95,9 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
         $weightedTotals = [];
         $labelWeightedTotals = [];
         $totalData = kepuasan_pengguna_lulusan::where('program_studi', $programStudi)->whereYear('date_time', $tahun)->count();
+        if($totalData == 0){
+            return redirect('/hasilpenggunalulusan')->with('error', 'Hasil Survei Tidak Ditemukan');
+        }
         // dd($totalData);
 
         // Sisipkan kode perhitungan $results dari metode index() ke sini
