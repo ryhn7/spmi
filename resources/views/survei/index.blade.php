@@ -6,11 +6,11 @@
         Auth::guard('wadek')->check() ||
         Auth::guard('gpm')->check())
 @else
-    <section id="isi-survei" class="sectionSize bg-white">
+    <section id="isi-survei" class="sectionSize bg-white pt-32">
         <div>
             <h2 class="secondaryTitle bg-underline3 bg-100%">Isi Survei</h2>
         </div>
-        <div class="w-full max-w-sm p-4 bg-white rounded-lg sm:p-6">
+        <div class="w-full max-w-sm p-10 bg-white rounded-lg sm:p-6">
             <!-- <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700"> -->
             <ul class="my-4 space-y-3">
                 <li>
@@ -135,7 +135,7 @@
 
 
 @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
-    <section id="tanggapan-survei" class="sectionSize bg-white">
+    <section id="tanggapan-survei" class="sectionSize bg-white pt-32">
         <div>
             <h2 class="secondaryTitle bg-underline3 bg-100%">Tanggapan Survei</h2>
         </div>
@@ -211,7 +211,7 @@
         </div>
     </section>
 @elseif (Auth::guard('tpmf')->check())
-    <section id="tanggapan-survei" class="sectionSize bg-white">
+    <section id="tanggapan-survei" class="sectionSize bg-white pt-32">
         <div>
             <h2 class="secondaryTitle bg-underline3 bg-100%">Tanggapan Survei</h2>
         </div>
@@ -261,7 +261,7 @@
         </div>
     </section>
 @elseif (Auth::guard('gpm')->check())
-    <section id="tanggapan-survei" class="sectionSize bg-white">
+    <section id="tanggapan-survei" class="sectionSize bg-white pt-32">
         <div>
             <h2 class="secondaryTitle bg-underline3 bg-100%">Tanggapan Survei</h2>
         </div>
