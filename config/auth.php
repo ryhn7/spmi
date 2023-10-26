@@ -60,6 +60,11 @@ return [
             'driver' => 'session',
             'provider' => 'dosen_provider',
         ],
+
+        'kaprodi' => [
+            'driver' => 'session',
+            'provider' => 'dosen_provider',
+        ],
     
         'dekan' => [
             'driver' => 'session',

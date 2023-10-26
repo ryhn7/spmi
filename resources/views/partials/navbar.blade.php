@@ -16,6 +16,7 @@
         @if (Auth::guard('tpmf')->check() ||
                 Auth::guard('dekan')->check() ||
                 Auth::guard('gpm')->check() ||
+                Auth::guard('kaprodi')->check() ||
                 Auth::guard('wadek')->check())
             <li class="font-medium growing-underline mx-3">
                 <a href="{{ route('dashboard') }}#tanggapan-survei">Tanggapan Survei</a>
@@ -49,6 +50,7 @@
             Auth::guard('tpmf')->check() ||
             Auth::guard('dekan')->check() ||
             Auth::guard('wadek')->check() ||
+            Auth::guard('kaprodi')->check() ||
             Auth::guard('gpm')->check())
         <div class="flex items-center mt-2 pt-1 sm:mt-0 sm:mr-6 md:mr-0 lg:flex lg:basis-auto">
             <div class="flex items-center md:ml-auto md:pr-4">
@@ -70,6 +72,8 @@
                                 {{ Auth::guard('dekan')->user()->NIP_dosen }}
                             @elseif (Auth::guard('wadek')->check())
                                 {{ Auth::guard('wadek')->user()->NIP_dosen }}
+                            @elseif (Auth::guard('kaprodi')->check())
+                                {{ Auth::guard('kaprodi')->user()->NIP_dosen }}
                             @elseif (Auth::guard('gpm')->check())
                                 {{ Auth::guard('gpm')->user()->NIP_dosen }}
                             @endif
@@ -115,6 +119,7 @@
                                     Auth::guard('tpmf')->check() ||
                                     Auth::guard('gpm')->check() ||
                                     Auth::guard('dekan')->check() ||
+                                    Auth::guard('kaprodi')->check() ||
                                     Auth::guard('wadek')->check()) &&
                                     request()->is('/'))
                                 @if ($namaJabatan)
@@ -156,6 +161,15 @@
                                                             <input disabled id="dekanInput" type="radio"
                                                                 name="role" class="mr-2">
                                                             <button id="dekanBtn">Dekan</button>
+                                                        </label>
+                                                    </form>
+                                                @elseif (Str::startsWith($namaJabatan, 'Ketua Program Studi'))
+                                                    <form action="{{ route('changeRole') }}" method="POST">
+                                                        @csrf
+                                                        <label class="flex text-sm items-center mb-2" for="role">
+                                                            <input disabled id="kaprodiInput" type="radio"
+                                                                name="role" class="mr-2">
+                                                            <button id="kaprodiBtn">Kaprodi</button>
                                                         </label>
                                                     </form>
                                                 @elseif ($namaJabatan == 'Wakil Dekan Akademik dan Kemahasiswaan' || $namaJabatan == 'Wakil Dekan Sumber Daya dan Inovasi')
@@ -260,17 +274,20 @@
         const dekanInput = document.getElementById('dekanInput');
         const wadekBtn = document.getElementById('wadekBtn');
         const wadekInput = document.getElementById('wadekInput');
+        const kaprodiBtn = document.getElementById('kaprodiBtn');
+        const kaprodiInput = document.getElementById('kaprodiInput');
 
         const selectedRole = "{{ session('role') }}";
         const isDosen = "{{ Auth::guard('dosen')->check() }}";
 
-        // console.log(selectedRole);
+        console.log(selectedRole);
 
         if (isDosen) {
             dosenInput.checked = true;
             tpmfInput.checked = false;
             gpmInput.checked = false;
             dekanInput.checked = false;
+            kaprodiInput.checked = false;
             wadekInput.checked = false;
         }
 
@@ -279,6 +296,7 @@
             tpmfInput.checked = false;
             gpmInput.checked = false;
             dekanInput.checked = false;
+            kaprodiInput.checked = false;
             wadekInput.checked = false;
         } else if (selectedRole === 'tpmf') {
             tpmfInput.checked = true;
@@ -291,6 +309,9 @@
             dosenInput.checked = false;
         } else if (selectedRole === 'wadek') {
             wadekInput.checked = true;
+            dosenInput.checked = false;
+        } else if (selectedRole === 'kaprodi') {
+            kaprodiInput.checked = true;
             dosenInput.checked = false;
         }
     });

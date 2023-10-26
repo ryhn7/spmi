@@ -13,8 +13,7 @@ class DashboardController extends Controller
         $namaJabatan = null;
         if (
             Auth::guard('dosen')->check() || Auth::guard('tpmf')->check() || Auth::guard('gpm')->check() ||
-            Auth::guard('dekan')->check() ||
-            Auth::guard('wadek')->check()
+            Auth::guard('dekan')->check() || Auth::guard('wadek')->check() || Auth::guard('kaprodi')->check()
         ) {
             if (Auth::guard('dosen')->check()) {
                 $namaDosen = Auth::guard('dosen')->user()->nama_dosen;
@@ -26,6 +25,8 @@ class DashboardController extends Controller
                 $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             } else if (Auth::guard('wadek')->check()) {
                 $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            }else if (Auth::guard('kaprodi')->check()) {
+                $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
             }
 
             $jabatanDosen = DB::table('dosen')
