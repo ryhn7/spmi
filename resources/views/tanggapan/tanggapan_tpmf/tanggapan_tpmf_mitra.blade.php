@@ -17,9 +17,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="satu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="satu" name="satu" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="satu" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="satu" type="hidden" name="satu" value="{{ strip_tags(old('satu')) }}">
+                            <trix-editor input="satu"></trix-editor>
+                            @error('satu')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">2. Proses pembuatan MoU dan Perjanjian Kerjasama sesuai dengan harapan.</label>
@@ -29,9 +32,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="dua" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="dua" name="dua" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="dua" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="dua" type="hidden" name="dua" value="{{ strip_tags(old('dua')) }}">
+                            <trix-editor input="dua"></trix-editor>
+                            @error('dua')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">3. Fakultas Sains dan Matematika memberikan pendampingan terhadap kebutuhan
@@ -42,9 +48,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="tiga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="tiga" name="tiga" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="tiga" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="tiga" type="hidden" name="tiga" value="{{ strip_tags(old('tiga')) }}">
+                            <trix-editor input="tiga"></trix-editor>
+                            @error('tiga')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">4. Kerjasama dengan Fakultas Sains dan Matematika berjalan sesuai dengan
@@ -55,9 +64,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="empat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="empat" name="empat" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="empat" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="empat" type="hidden" name="empat" value="{{ strip_tags(old('empat')) }}">
+                            <trix-editor input="empat"></trix-editor>
+                            @error('empat')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">5. Kami mendapatkan manfaat yang baik dalam menjalin kerjasama dengan Fakultas
@@ -68,9 +80,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="lima" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="lima" name="lima" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="lima" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="lima" type="hidden" name="lima" value="{{ strip_tags(old('lima')) }}">
+                            <trix-editor input="lima"></trix-editor>
+                            @error('lima')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">6. Implementasi kerjasama sesuai dengan Perjanjian Kerjasama.</label>
@@ -81,9 +96,12 @@
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
 
-                        <label for="enam" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="enam" name="enam" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="enam" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="enam" type="hidden" name="enam" value="{{ strip_tags(old('enam')) }}">
+                            <trix-editor input="enam"></trix-editor>
+                            @error('enam')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">7. Pelaporan hasil kerjasama sesuai dengan kemufakatan dan aturan yang
@@ -94,9 +112,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="tujuh" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="tujuh" name="tujuh" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="tujuh" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="tujuh" type="hidden" name="tujuh" value="{{ strip_tags(old('tujuh')) }}">
+                            <trix-editor input="tujuh"></trix-editor>
+                            @error('tujuh')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">8. Kami akan melanjutkan kerjasama pada tahun - tahun selanjutnya (sesuai
@@ -107,9 +128,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="delapan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="delapan" name="delapan" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="delapan" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="delapan" type="hidden" name="delapan" value="{{ strip_tags(old('delapan')) }}">
+                            <trix-editor input="delapan"></trix-editor>
+                            @error('delapan')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">9. SDM yang ada di Fakultas Sains dan Matematika sesuai dengan keahlian yang
@@ -120,9 +144,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="sembilan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="sembilan" name="sembilan" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="sembilan" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="sembilan" type="hidden" name="sembilan" value="{{ strip_tags(old('sembilan')) }}">
+                            <trix-editor input="sembilan"></trix-editor>
+                            @error('sembilan')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                     <label class="mt-3">10. SDM dari Fakultas Sains dan Matematika bekerja dengan profesional.</label>
@@ -132,9 +159,12 @@
                             d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="sepuluh" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="sepuluh" name="sepuluh" value=""
-                                class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="sepuluh" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="sepuluh" type="hidden" name="sepuluh" value="{{ strip_tags(old('sepuluh')) }}">
+                            <trix-editor input="sepuluh"></trix-editor>
+                            @error('sepuluh')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 </div>
