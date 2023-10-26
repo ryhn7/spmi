@@ -6,9 +6,21 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $ID
- * @property string $Pernyataan
- * @property string $TPMF
- * @property string $Dekanat
+ * @property string $Aktor
+ * @property string $1
+ * @property string $2
+ * @property string $3
+ * @property string $4
+ * @property string $5
+ * @property string $6
+ * @property string $7
+ * @property string $8
+ * @property string $9
+ * @property string $10
+ * @property string $11
+ * @property string $12
+ * @property string $updated_at
+ * @property string $created_at
  */
 class feedback_tendik extends Model
 {
@@ -24,5 +36,10 @@ class feedback_tendik extends Model
      * 
      * @var string
      */
-    protected $guarded = ['ID'];
+    protected $primaryKey = 'ID';
+
+    /**
+     * @var array
+     */
+    protected $fillable = ['Aktor', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', 'updated_at', 'created_at'];
 }
