@@ -11,7 +11,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 1</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 1</p>
                         <label class="mt-3">{{ $pernyataan->{'1'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -45,7 +45,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 2</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 2</p>
                         <label class="mt-3">{{ $pernyataan->{'2'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -79,7 +79,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 3</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 3</p>
                         <label class="mt-3">{{ $pernyataan->{'3'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -116,7 +116,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 4</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 4</p>
                         <label class="mt-3">{{ $pernyataan->{'4'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -157,7 +157,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 5</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 5</p>
                         <label class="mt-3">{{ $pernyataan->{'5'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -194,7 +194,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 6</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 6</p>
                         <label class="mt-3">{{ $pernyataan->{'6'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -231,7 +231,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 7</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 7</p>
                         <label class="mt-3">{{ $pernyataan->{'7'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -268,7 +268,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 8</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 8</p>
                         <label class="mt-3">{{ $pernyataan->{'8'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -305,7 +305,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 9</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 9</p>
                         <label class="mt-3">{{ $pernyataan->{'9'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -344,7 +344,7 @@
                     Layanan Pengembangan Karir/Jabatan</label>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 10</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 10</p>
                         <label class="mt-3">{{ $pernyataan->{'10'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -381,7 +381,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 11</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 11</p>
                         <label class="mt-3">{{ $pernyataan->{'11'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -418,7 +418,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 12</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 12</p>
                         <label class="mt-3">{{ $pernyataan->{'12'} }}r</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -455,7 +455,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 13</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 13</p>
                         <label class="mt-3">{{ $pernyataan->{'13'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -492,7 +492,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 14</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 14</p>
                         <label class="mt-3">{{ $pernyataan->{'14'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -529,7 +529,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 15</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 15</p>
                         <label class="mt-3">{{ $pernyataan->{'15'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -566,7 +566,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 16</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 16</p>
                         <label class="mt-3">{{ $pernyataan->{'16'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -607,7 +607,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 17</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 17</p>
                         <label class="mt-3">{{ $pernyataan->{'17'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -644,7 +644,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 18</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 18</p>
                         <label class="mt-3">{{ $pernyataan->{'18'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -681,7 +681,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 19</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 19</p>
                         <label class="mt-3">{{ $pernyataan->{'19'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -718,7 +718,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 20</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 20</p>
                         <label class="mt-3">{{ $pernyataan->{'20'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -755,7 +755,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 21</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 21</p>
                         <label class="mt-3">{{ $pernyataan->{'21'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -792,7 +792,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 22</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 22</p>
                         <label class="mt-3">{{ $pernyataan->{'22'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -829,7 +829,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 23</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 23</p>
                         <label class="mt-3">{{ $pernyataan->{'23'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -866,7 +866,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 24</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 24</p>
                         <label class="mt-3">{{ $pernyataan->{'24'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -903,7 +903,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 25</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 25</p>
                         <label class="mt-3">{{ $pernyataan->{'25'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -944,7 +944,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 26</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 26</p>
                         <label class="mt-3">{{ $pernyataan->{'26'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -981,7 +981,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 27</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 27</p>
                         <label class="mt-3">{{ $pernyataan->{'27'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1018,7 +1018,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 28</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 28</p>
                         <label class="mt-3">{{ $pernyataan->{'28'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1055,7 +1055,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 29</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 29</p>
                         <label class="mt-3">{{ $pernyataan->{'29'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1092,7 +1092,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 30</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 30</p>
                         <label class="mt-3">{{ $pernyataan->{'30'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1129,7 +1129,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 31</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 31</p>
                         <label class="mt-3">{{ $pernyataan->{'31'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1166,7 +1166,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 32</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 32</p>
                         <label class="mt-3">{{ $pernyataan->{'32'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1207,7 +1207,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 33</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 33</p>
                         <label class="mt-3">{{ $pernyataan->{'33'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1244,7 +1244,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 34</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 34</p>
                         <label class="mt-3">{{ $pernyataan->{'34'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1281,7 +1281,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 35</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 35</p>
                         <label class="mt-3">{{ $pernyataan->{'35'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1318,7 +1318,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 36</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 36</p>
                         <label class="mt-3">{{ $pernyataan->{'36'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1355,7 +1355,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 37</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 37</p>
                         <label class="mt-3">{{ $pernyataan->{'37'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1392,7 +1392,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 38</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 38</p>
                         <label class="mt-3">{{ $pernyataan->{'38'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1429,7 +1429,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 39</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 39</p>
                         <label class="mt-3">{{ $pernyataan->{'39'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1466,7 +1466,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 40</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 40</p>
                         <label class="mt-3">{{ $pernyataan->{'40'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1503,7 +1503,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 41</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 41</p>
                         <label class="mt-3">{{ $pernyataan->{'41'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -1540,7 +1540,7 @@
                 </div>
                 <div class="flex justify-center items-center">
                     <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <p class="text-xl font-open font-bold">pernyataan 42</p>
+                        <p class="text-xl font-open font-bold">Pertanyaan 42</p>
                         <label class="mt-3">{{ $pernyataan->{'42'} }}</label>
                         <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6"
                             fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
