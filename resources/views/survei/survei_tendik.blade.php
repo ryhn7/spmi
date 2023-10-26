@@ -10,399 +10,47 @@
                         <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
                             Layanan Pengembangan Kompetensi</p>
                     </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 1</p>
-                            <label class="mt-3">{{$pernyataan->{'1'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="1a" name="satu" value="Sangat Baik"
-                                            class="mr-2 ">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="1b" name="satu" value="Baik" class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="1c" name="satu" value="Cukup" class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="satu" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="1d" name="satu" value="Kurang" class="mr-2">Kurang
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 2</p>
-                            <label class="mt-3">{{$pernyataan->{'2'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="2a" name="dua" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="2b" name="dua" value="Baik" class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="2c" name="dua" value="Cukup" class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="dua" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="2d" name="dua" value="Kurang" class="mr-2">Kurang
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 3</p>
-                            <label class="mt-3">{{$pernyataan->{'3'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="3a" name="tiga" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="3b" name="tiga" value="Baik" class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="3c" name="tiga" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="tiga" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="3d" name="tiga" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 4</p>
-                            <label class="mt-3">{{$pernyataan->{'4'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="4a" name="empat" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="4b" name="empat" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="4c" name="empat" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="empat" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="4d" name="empat" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 5</p>
-                            <label class="mt-3">{{$pernyataan->{'5'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="5a" name="lima" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="5b" name="lima" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="5c" name="lima" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="lima" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="5d" name="lima" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
-                            Layanan Pengembangan Karir/Jabatan</p>
-                    </div>
+                    @php
+                    $jumlahPertanyaan = 12; // jumlah pertanyaan
+                    $namaFor = ['satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas', 'dua_belas']; // id untuk setiap pertanyaan
+                    $nilaiOptions = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang']; // option yang ada pada setiap pertanyaan
+                    $sections = [
+                        1 => 'Survei Kepuasan Terkait Layanan Pengembangan Kompetensi',
+                        6 => 'Survei Kepuasan Terkait Layanan Pengembangan Karir/Jabatan',
+                    ]; // buat awal setiap section yang ada
+                @endphp
+
+                @for ($i = 1; $i <= $jumlahPertanyaan; $i++)
+                    @if (array_key_exists($i, $sections))
                         <div class="flex justify-center items-center">
-                            <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                                <p class="text-xl font-open font-bold">Pertanyaan 6</p>
-                            <label class="mt-3">{{$pernyataan->{'6'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="6a" name="enam" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="6b" name="enam" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="6c" name="enam" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="enam" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="6d" name="enam" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
+                            <p class="text-xl font-open font-bold">{{ $sections[$i] }}</p>
                         </div>
-                    </div>
+                    @endif
                     <div class="flex justify-center items-center">
                         <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 7</p>
-                            <label class="mt-3">{{$pernyataan->{'7'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="7a" name="tujuh" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="7b" name="tujuh" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="7c" name="tujuh" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="tujuh" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="7d" name="tujuh" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
+                            <p class="text-xl font-open font-bold">Pertanyaan {{ $i }}</p>
+                            <label class="mt-3">{{ $pernyataan->{$i} }}</label>
+                            <!-- SVG Anda -->
+                            <div class="mt-3 flex flex-col justify-between space-y-1">
+                                @foreach ($nilaiOptions as $index => $nilai)
+                                    @php
+                                        $id = $i . chr(97 + $index);
+                                    @endphp
+                                    <div class="px-2">
+                                        <label for="{{ $namaFor[$i - 1] }}" class="block text-gray-700 font-medium mb-2">
+                                            <input type="radio" id="{{ $id }}" name="{{ $namaFor[$i - 1] }}"
+                                                value="{{ $nilai }}" class="mr-2"
+                                                {{ old($namaFor[$i - 1]) == $nilai ? 'checked' : '' }}>{{ $nilai }}
+                                        </label>
+                                    </div>
+                                @endforeach
                             </div>
-                            </div>
+                            @error($namaFor[$i - 1])
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
+                            @enderror
                         </div>
                     </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 8</p>
-                            <label class="mt-3">{{$pernyataan->{'8'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="8a" name="delapan" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="8b" name="delapan" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="8c" name="delapan" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="delapan" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="8d" name="delapan" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 9</p>
-                            <label class="mt-3">{{$pernyataan->{'9'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="9a" name="sembilan" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="9b" name="sembilan" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="9c" name="sembilan" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sembilan" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="9d" name="sembilan" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 10</p>
-                            <label class="mt-3">{{$pernyataan->{'10'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="10a" name="sepuluh" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="10b" name="sepuluh" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="10c" name="sepuluh" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sepuluh" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="10d" name="sepuluh" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 11</p>
-                            <label class="mt-3">{{$pernyataan->{'11'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="sebelas" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="11a" name="sebelas" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sebelas" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="11b" name="sebelas" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sebelas" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="11c" name="sebelas" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="sebelas" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="11d" name="sebelas" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                        <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                            <p class="text-xl font-open font-bold">Pertanyaan 12</p>
-                            <label class="mt-3">{{$pernyataan->{'12'} }}</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
-                                <div class="mt-3 flex flex-col justify-between space-y-1">
-                                <div class="px-2">
-                                    <label for="dua_belas" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="12a" name="dua_belas" value="Sangat Baik"
-                                            class="mr-2">Sangat Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="dua_belas" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="12b" name="dua_belas" value="Baik"
-                                            class="mr-2">Baik
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="dua_belas" class="block text-gray-700 font-medium mb-2">
-                                        <input type="radio" id="12c" name="dua_belas" value="Cukup"
-                                            class="mr-2">Cukup
-                                    </label>
-                                </div>
-                                <div class="px-2">
-                                    <label for="dua_belas" class="block text-gray-700 font-medium mb-2">
-                                    <input type="radio" id="12d" name="dua_belas" value="Kurang"
-                                        class="mr-2">Kurang
-                                </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                @endfor
 
 
                     <div class="flex justify-center items-center">

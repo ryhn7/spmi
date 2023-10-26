@@ -9,7 +9,7 @@
             <tr>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">No.</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Pernyataan</th>
-                <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Tindak Lanjut</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">Usulan Tindak Lanjut</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Perbaikan</th>
             </tr>
                 @for ($nomor = 1; $nomor <= 45; $nomor++)

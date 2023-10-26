@@ -9,17 +9,15 @@
             <tr>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">No.</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Pernyataan</th>
-                <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Tindak Lanjut</th>
+                <th class="bg-blue-100 border border-black text-center px-8 py-4">Usulan Tindak Lanjut</th>
                 <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Perbaikan</th>
             </tr>
                 @for ($nomor = 1; $nomor <= 42; $nomor++)
                     <tr>
                         <td class="border px-8 py-4 border border-black">{{ $nomor }}.</td>
                         <td class="border px-8 py-4 border border-black">{{ $pernyataan->{$nomor} }}</td>
-                        <td class="border px-8 py-4 border border-black">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
-                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
-                        <td class="border px-8 py-4 border border-black">1. Mengadakan bimbingan terstruktur untuk mahasiswa yang membutuhkan pemahaman tambahan tentang materi.<br>
-                            2. Menghimbau dosen pengampu mata kuliah untuk menanyakan kembali tentang kejelasan materi di setiap akhir perkuliahan.</td>
+                        <td class="border px-8 py-4 border border-black">{!!$feedbackTpmf->{$nomor}!!}</td>
+                        <td class="border px-8 py-4 border border-black">{!!$feedbackDekan->{$nomor}!!}</td>
                     </tr>
                 @endfor
         </table>

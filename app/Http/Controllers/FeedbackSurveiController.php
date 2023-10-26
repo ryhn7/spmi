@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\pernyataan;
+use App\Models\feedback_dosen;
+use App\Models\feedback_tendik;
+use App\Models\feedback_mitra;
 use Illuminate\Http\Request;
 
 class FeedbackSurveiController extends Controller
@@ -15,10 +19,22 @@ class FeedbackSurveiController extends Controller
     public function indexFeedbackDosen()
     {
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
+        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->latest()->first();
+        $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->latest()->first();
+        if (!$feedbackTpmf) {
+            $feedbackTpmf = new feedback_dosen();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_dosen();
+        }
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('feedback_survei.feedback_dosen', compact('pernyataan'));
+        return view('feedback_survei.feedback_dosen', [
+            'feedbackTpmf' => $feedbackTpmf,
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
+        ]);
     }
     public function indexFeedbackMahasiswa()
     {
@@ -31,18 +47,42 @@ class FeedbackSurveiController extends Controller
     public function indexFeedbackTendik()
     {
         $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
+        $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->latest()->first();
+        $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->latest()->first();
+        if (!$feedbackTpmf) {
+            $feedbackTpmf = new feedback_tendik();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_tendik();
+        }
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('feedback_survei.feedback_tendik', compact('pernyataan'));
+        return view('feedback_survei.feedback_tendik',[
+            'feedbackTpmf' => $feedbackTpmf,
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
+        ]);
     }
     public function indexFeedbackMitra()
     {
         $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
+        $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
+        $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
+        if (!$feedbackTpmf) {
+            $feedbackTpmf = new feedback_mitra();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_mitra();
+        }
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('feedback_survei.feedback_mitra', compact('pernyataan'));
+        return view('feedback_survei.feedback_mitra', [
+            'feedbackTpmf' => $feedbackTpmf,
+            'feedbackDekan' => $feedbackDekan,
+            'pernyataan' => $pernyataan,
+        ]);
     }
     public function indexFeedbackPenggunaLulusan()
     {
