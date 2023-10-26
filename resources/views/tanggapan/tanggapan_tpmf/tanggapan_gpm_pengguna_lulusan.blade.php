@@ -12,8 +12,13 @@
                     <label class="mt-3">{{ $pernyataan->{'1'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="satu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="satu" name="satu" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="satu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
+                            <input id="satu" type="hidden" name="satu" value="{{ old('satu') }}">
+                            <trix-editor input="satu"></trix-editor>
+                            @error('satu')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
+                            {{-- <textarea id="satu" name="satu" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea> --}}
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'2'} }}</label>
