@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\Models\pernyataan;
 use App\Models\feedback_tendik;
 use Illuminate\Http\Request;
@@ -86,5 +87,68 @@ class TanggapanTendikController extends Controller
         feedback_tendik::create($tanggapan);
 
         return redirect('/TanggapanTendik')->with('success', 'berhasil save');
+    }
+
+    public function edit($id)
+    {
+        $feedback = feedback_tendik::find($id);
+
+        if (!$feedback) {
+            return redirect('/TanggapanTendik')->with('error', 'Tanggapan tidak ditemukan');
+        }
+
+        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+
+        return view('tanggapan.tanggapan_tpmf_gpm.edit_tanggapan_tpmf_tendik', [
+            'feedback' => $feedback,
+            'pernyataan' => $pernyataan,
+        ]);
+    }
+
+    public function update(Request $request, feedback_tendik $id)
+    {
+
+        $validated = $request->validate([
+            'satu' => 'required',
+            'dua' => 'required',
+            'tiga' => 'required',
+            'empat' => 'required',
+            'lima' => 'required',
+            'enam' => 'required',
+            'tujuh' => 'required',
+            'delapan' => 'required',
+            'sembilan' => 'required',
+            "sepuluh" => "required|string",
+            "sebelas" => "required|string",
+            "dua_belas" => "required|string",
+        ]);
+
+        $tanggapan = [
+            '1' => $validated['satu'],
+            '2' => $validated['dua'],
+            '3' => $validated['tiga'],
+            '4' => $validated['empat'],
+            '5' => $validated['lima'],
+            '6' => $validated['enam'],
+            '7' => $validated['tujuh'],
+            '8' => $validated['delapan'],
+            '9' => $validated['sembilan'],
+            '10' => $validated['sepuluh'],
+            '11' => $validated['sebelas'],
+            '12' => $validated['dua_belas'],
+        ];
+
+        // dd($tanggapan);
+
+        DB::table('feedback_tendik')
+        ->where('ID', $id->ID)
+        ->update($tanggapan);
+
+
+        return redirect('/TanggapanTendik')->with('success', 'Tanggapan berhasil diperbarui');
     }
 }

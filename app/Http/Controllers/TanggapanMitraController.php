@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\pernyataan;
 use App\Models\feedback_mitra;
 use Illuminate\Http\Request;
@@ -50,7 +50,7 @@ class TanggapanMitraController extends Controller
             $aktor = "TPMF";
         } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
-        }
+        } 
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -84,5 +84,65 @@ class TanggapanMitraController extends Controller
 
         return redirect('/TanggapanMitra')->with('success', 'berhasil save');
     }
+
+    public function edit($id)
+    {
+        $feedback = feedback_mitra::find($id);
+
+        if (!$feedback) {
+            return redirect('/TanggapanMitra')->with('error', 'Tanggapan tidak ditemukan');
+        }
+
+        $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
+
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+
+        return view('tanggapan.tanggapan_tpmf_gpm.edit_tanggapan_tpmf_mitra', [
+            'feedback' => $feedback,
+            'pernyataan' => $pernyataan,
+        ]);
+    }
+
+    public function update(Request $request, feedback_mitra $id)
+    {
+
+        $validated = $request->validate([
+            'satu' => 'required',
+            'dua' => 'required',
+            'tiga' => 'required',
+            'empat' => 'required',
+            'lima' => 'required',
+            'enam' => 'required',
+            'tujuh' => 'required',
+            'delapan' => 'required',
+            'sembilan' => 'required',
+            'sepuluh' => 'required',
+        ]);
+
+        $tanggapan = [
+            '1' => $validated['satu'],
+            '2' => $validated['dua'],
+            '3' => $validated['tiga'],
+            '4' => $validated['empat'],
+            '5' => $validated['lima'],
+            '6' => $validated['enam'],
+            '7' => $validated['tujuh'],
+            '8' => $validated['delapan'],
+            '9' => $validated['sembilan'],
+            '10' => $validated['sepuluh'],
+        ];
+
+        // dd($tanggapan);
+
+        DB::table('feedback_mitra')
+        ->where('ID', $id->ID)
+        ->update($tanggapan);
+
+
+        return redirect('/TanggapanMitra')->with('success', 'Tanggapan berhasil diperbarui');
+    }
+
 
 }

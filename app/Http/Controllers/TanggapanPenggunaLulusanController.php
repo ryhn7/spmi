@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
 
 use App\Models\pernyataan;
 use App\Models\feedback_stakeholder;
@@ -9,19 +9,17 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+
 class TanggapanPenggunaLulusanController extends Controller
 {
     public function index()
     {
-        // Mendapatkan data tanggapan terbaru dari GPM dan Dekan
-        $feedbackGpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
+        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->latest()->first();
-
-        // Mendapatkan pernyataan yang diperlukan
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
-        if (!$feedbackGpm) {
-            $feedbackGpm = new feedback_stakeholder();
+        if (!$feedbackgpm) {
+            $feedbackgpm = new feedback_stakeholder();
         }
         if (!$feedbackDekan) {
             $feedbackDekan = new feedback_stakeholder();
@@ -30,8 +28,9 @@ class TanggapanPenggunaLulusanController extends Controller
             $pernyataan = new pernyataan();
         }
 
+
         return view('tanggapan.tanggapan_pengguna_lulusan', [
-            'feedbackGpm' => $feedbackGpm,
+            'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
         ]);
@@ -43,36 +42,33 @@ class TanggapanPenggunaLulusanController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_gpm_pengguna_lulusan', [
+        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_gpm_pengguna_lulusan',[
             'pernyataan' => $pernyataan,
         ]);
     }
 
     public function store(Request $request)
     {
-        // Menentukan aktor berdasarkan user yang login
         if (Auth::guard('gpm')->check()) {
             $aktor = "GPM";
-        } elseif (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
-        } else {
-            // Tambahkan penanganan kasus lain jika diperlukan
         }
 
         $validated = $request->validate([
             'satu' => 'required|string',
-            'dua' => 'required|string',
-            'tiga' => 'required|string',
-            'empat' => 'required|string',
-            'lima' => 'required|string',
-            'enam' => 'required|string',
-            'tujuh' => 'required|string',
-            'delapan' => 'required|string',
-            'sembilan' => 'required|string',
+            "dua" => "required|string",
+            "tiga" => "required|string",
+            "empat" => "required|string",
+            "lima" => "required|string",
+            "enam" => "required|string",
+            "tujuh" => "required|string",
+            "delapan" => "required|string",
+            "sembilan" => "required|string",
         ]);
 
         $tanggapan = [
-            'aktor' => $aktor,
+            'Aktor' => $aktor,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -84,9 +80,10 @@ class TanggapanPenggunaLulusanController extends Controller
             '9' => $validated['sembilan'],
         ];
 
+        // dd($tanggapan);
         feedback_stakeholder::create($tanggapan);
 
-        return redirect('/TanggapanPenggunaLulusan')->with('success', 'Tanggapan berhasil disimpan');
+        return redirect('/TanggapanPenggunaLulusan')->with('success', 'berhasil save');
     }
 
     public function edit($id)
@@ -112,7 +109,7 @@ class TanggapanPenggunaLulusanController extends Controller
     public function update(Request $request, feedback_stakeholder $id)
     {
 
-        $rules = [
+        $validated = $request->validate([
             'satu' => 'required',
             'dua' => 'required',
             'tiga' => 'required',
@@ -122,14 +119,25 @@ class TanggapanPenggunaLulusanController extends Controller
             'tujuh' => 'required',
             'delapan' => 'required',
             'sembilan' => 'required',
+        ]);
+
+        $tanggapan = [
+            '1' => $validated['satu'],
+            '2' => $validated['dua'],
+            '3' => $validated['tiga'],
+            '4' => $validated['empat'],
+            '5' => $validated['lima'],
+            '6' => $validated['enam'],
+            '7' => $validated['tujuh'],
+            '8' => $validated['delapan'],
+            '9' => $validated['sembilan'],
         ];
 
-        $validated = $request->validate($rules);
+        // dd($tanggapan);
 
-        // dd($validated);
-
-        feedback_stakeholder::where('ID', $id->ID)
-            ->update($validated);
+        DB::table('feedback_stakeholder')
+        ->where('ID', $id->ID)
+        ->update($tanggapan);
 
 
         return redirect('/TanggapanPenggunaLulusan')->with('success', 'Tanggapan berhasil diperbarui');

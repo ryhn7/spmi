@@ -93,6 +93,8 @@ Route::middleware(['auth:gpm,tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
     Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
     Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
+    Route::get('/TanggapanTendik/Edit/{id}', [TanggapanTendikController::class, 'edit']);
+    Route::put('/TanggapanTendik/{id}', [TanggapanTendikController::class, 'update'])->name('tanggapantendik.update');
 
 });
 
@@ -100,27 +102,32 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanDosen', [TanggapanDosenController::class, 'index']);
     Route::get('/FeedbackDosen', [TanggapanDosenController::class, 'create']);
     Route::post('/FeedbackDosen', [TanggapanDosenController::class, 'store']);
+    Route::get('/TanggapanDosen/Edit/{id}', [TanggapanDosenController::class, 'edit']);
+    Route::put('/TanggapanDosen/{id}', [TanggapanDosenController::class, 'update'])->name('tanggapandosen.update');
 });
 
 Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanMitra', [TanggapanMitraController::class, 'index']);
     Route::get('/FeedbackMitra', [TanggapanMitraController::class, 'create']);
     Route::post('/FeedbackMitra', [TanggapanMitraController::class, 'store']);
-
+    Route::get('/TanggapanMitra/Edit/{id}', [TanggapanMitraController::class, 'edit']);
+    Route::put('/TanggapanMitra/{id}', [TanggapanMitraController::class, 'update'])->name('tanggapanmitra.update');
 });
 
 Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
     Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
     Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
     Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
+    Route::get('/TanggapanMahasiswa/Edit/{id}', [TanggapanMahasiswaController::class, 'edit']);
+    Route::put('/TanggapanMahasiswa/{id}', [TanggapanMahasiswaController::class, 'update'])->name('tanggapanmahasiswa.update');
 });
 
 Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
     Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
     Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
     Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);
-    Route::get('/tanggapan/edit/{id}', [TanggapanPenggunaLulusanController::class, 'edit']);
-    Route::put('/tanggapan/{id}', [TanggapanPenggunaLulusanController::class, 'update'])->name('tanggapan.update');
+    Route::get('/TanggapanPenggunaLulusan/Edit/{id}', [TanggapanPenggunaLulusanController::class, 'edit']);
+    Route::put('/TanggapanPenggunaLulusan/{id}', [TanggapanPenggunaLulusanController::class, 'update'])->name('tanggapanpenggunalulusan.update');
 
 
 });
