@@ -2,7 +2,7 @@
 @section('container')
 <div class="pt-32">
     {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1"> --}}
-        <form action="/TanggapanTPMFDosen" method="POST">
+        <form action="/FeedbackDosen" method="POST">
             @csrf
             <div class="flex justify-center items-center">
                 <p class="text-xl font-open font-bold">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</p>
