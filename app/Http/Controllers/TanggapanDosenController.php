@@ -39,7 +39,7 @@ class TanggapanDosenController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf.tanggapan_tpmf_dosen',[
+        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_dosen',[
             'pernyataan' => $pernyataan,
         ]);
     }

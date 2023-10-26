@@ -38,5 +38,5 @@ class feedback_stakeholder extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Aktor', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'updated_at', 'created_at'];
+    protected $guarded = ['ID'];
 }
