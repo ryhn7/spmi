@@ -12,69 +12,100 @@
                     <label class="mt-3">{{ $pernyataan->{'1'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="satu" class="block mb-2 text-sm font-medium text-gray-900 dark:text-black">
-                            <input id="satu" type="hidden" name="satu" value="{{ old('satu') }}">
+                        <label for="satu" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="satu" type="hidden" name="satu" value="{{ strip_tags(old('satu')) }}">
                             <trix-editor input="satu"></trix-editor>
                             @error('satu')
                                 <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
                             @enderror
-                            {{-- <textarea id="satu" name="satu" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea> --}}
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'2'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="dua" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="dua" name="dua" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="dua" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="dua" type="hidden" name="dua" value="{{ old('dua') }}">
+                            <trix-editor input="dua"></trix-editor>
+                            @error('dua')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'3'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="tiga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="tiga" name="tiga" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="tiga" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="tiga" type="hidden" name="tiga" value="{{ old('tiga') }}">
+                            <trix-editor input="tiga"></trix-editor>
+                            @error('tiga')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'4'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="empat" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="empat" name="empat" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="empat" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="empat" type="hidden" name="empat" value="{{ old('empat') }}">
+                            <trix-editor input="empat"></trix-editor>
+                            @error('empat')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'5'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="lima" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="lima" name="lima" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="lima" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="lima" type="hidden" name="lima" value="{{ old('lima') }}">
+                            <trix-editor input="lima"></trix-editor>
+                            @error('lima')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'6'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="enam" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="enam" name="enam" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="enam" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="enam" type="hidden" name="enam" value="{{ old('enam') }}">
+                            <trix-editor input="enam"></trix-editor>
+                            @error('enam')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'7'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="tujuh" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="tujuh" name="tujuh" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="tujuh" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="tujuh" type="hidden" name="tujuh" value="{{ old('tujuh') }}">
+                            <trix-editor input="tujuh"></trix-editor>
+                            @error('tujuh')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'8'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="delapan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="delapan" name="delapan" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="delapan" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="delapan" type="hidden" name="delapan" value="{{ old('delapan') }}">
+                            <trix-editor input="delapan"></trix-editor>
+                            @error('delapan')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 <label class="mt-3">{{ $pernyataan->{'9'} }}</label>
                 <svg xmlns="http://www.w3.org/2000/svg" class="absolute top-0 right-0 m-5 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /> </svg>
                     <div class="mt-3 flex flex-col justify-between space-y-1">
-                        <label for="sembilan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <textarea id="sembilan" name="sembilan" value="" class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
+                        <label for="sembilan" class="block mb-2 text-sm font-medium text-gray-900">
+                            <input id="sembilan" type="hidden" name="sembilan" value="{{ old('sembilan') }}">
+                            <trix-editor input="sembilan"></trix-editor>
+                            @error('sembilan')
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                            @enderror
                         </label>
                     </div>
                 </div>

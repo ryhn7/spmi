@@ -27,8 +27,8 @@
                     <tr>
                         <td class="border border-black text-center mt-2">{{ $nomor }}.</td>
                         <td class="border-b border-black px-3 py-3">{{ $pernyataan->{$nomor} }}</td>
-                        <td class="border-b border-black px-3 py-3">{{ $feedbackTpmf->{$nomor} }}</td>
-                        <td class="border-b border-r border-black px-3 py-3">{{ $feedbackDekan->{$nomor} }}</td>
+                        <td class="border-b border-black px-3 py-3">{!!$feedbackTpmf->{$nomor}!!}</td>
+                        <td class="border-b border-r border-black px-3 py-3">{!!$feedbackDekan->{$nomor}!!}</td>
                     </tr>
                 @endfor
             </table>
