@@ -109,13 +109,13 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
 
 });
 
-Route::middleware(['auth:gpm,dekan,wadek, kaprodi'])->group(function () {
+Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
     Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
     Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
 });
 
-Route::middleware(['auth:gpm,dekan,wadek, kaprodi'])->group(function () {
+Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
     Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
     Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);

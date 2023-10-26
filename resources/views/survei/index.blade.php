@@ -279,7 +279,10 @@
             <!-- <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700"> -->
             <ul class="my-4 space-y-3">
                 <li>
-                    @if (Auth::guard('gpm')->check() || Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
+                    @if (Auth::guard('gpm')->check() ||
+                            Auth::guard('dekan')->check() ||
+                            Auth::guard('wadek')->check() ||
+                            Auth::guard('kaprodi')->check())
                         <a href="/TanggapanMahasiswa"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                             <span class="flex-1 ml-3 whitespace-nowrap">Tanggapan Survei Mahasiswa</span>
@@ -292,7 +295,10 @@
                     @endif
                 </li>
                 <li>
-                    @if (Auth::guard('gpm')->check() || Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
+                    @if (Auth::guard('gpm')->check() ||
+                            Auth::guard('dekan')->check() ||
+                            Auth::guard('wadek')->check() ||
+                            Auth::guard('kaprodi')->check())
                         <a href="/TanggapanPenggunaLulusan"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                             <span class="flex-1 ml-3 whitespace-nowrap">Tanggapan Survei Pengguna Lulusan</span>
