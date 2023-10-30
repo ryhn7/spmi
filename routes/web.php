@@ -3,6 +3,11 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\FeedbackSurveiController;
+use App\Http\Controllers\FeedbackSurveiDosenController;
+use App\Http\Controllers\FeedbackSurveiMahasiswaController;
+use App\Http\Controllers\FeedbackSurveiMitraController;
+use App\Http\Controllers\FeedbackSurveiPenggunaLulusanController;
+use App\Http\Controllers\FeedbackSurveiTendikController;
 use App\Http\Controllers\SurveiKepuasanMahasiswaController;
 use App\Http\Controllers\SurveiKepuasanDosenController;
 use App\Http\Controllers\SurveiKepuasanMitraController;
@@ -57,22 +62,33 @@ Route::get('/get-mahasiswas', [SurveiKepuasanPenggunaLulusanController::class, '
 
 
 // Route feedback survei
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen', [FeedbackSurveiController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa', [FeedbackSurveiController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan', [FeedbackSurveiController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra', [FeedbackSurveiController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [FeedbackSurveiController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen', [FeedbackSurveiDosenController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa', [FeedbackSurveiMahasiswaController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan', [FeedbackSurveiPenggunaLulusanController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra', [FeedbackSurveiMitraController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [FeedbackSurveiTendikController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
+
+//Route filter feedback survei
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen/filter', [FeedbackSurveiDosenController::class, 'filter']);
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa/filter', [FeedbackSurveiMahasiswaController::class, 'filter']);
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan/filter', [FeedbackSurveiPenggunaLulusanController::class, 'filter']);
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra/filter', [FeedbackSurveiMitraController::class, 'filter']);
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik/filter', [FeedbackSurveiTendikController::class, 'filter']);
+
 
 // Route hasil survey
 Route::get('/hasildosen', [HasilSurveiKepuasanDosenController::class, 'show']);
-Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);
 Route::get('/hasilmahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'show']);
-Route::get('/hasilmahasiswa/filter', [HasilSurveiKepuasanMahasiswaController::class, 'Filter']);
 Route::get('/hasilmitra', [HasilSurveiKepuasanMitraController::class, 'show']);
-Route::get('/hasilmitra/filter', [HasilSurveiKepuasanMitraController::class, 'filter']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
-Route::get('/hasiltendik/filter', [HasilSurveiKepuasanTendikController::class, 'filter']);
 Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'show']);
+
+
+// Route filter hasil survey
+Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);
+Route::get('/hasilmahasiswa/filter', [HasilSurveiKepuasanMahasiswaController::class, 'Filter']);
+Route::get('/hasilmitra/filter', [HasilSurveiKepuasanMitraController::class, 'filter']);
+Route::get('/hasiltendik/filter', [HasilSurveiKepuasanTendikController::class, 'filter']);
 Route::get('/hasilpenggunalulusan/filter', [HasilSurveiKepuasanPenggunaLulusanController::class, 'filter']);
 
 Route::get('/forbidden', function () {
