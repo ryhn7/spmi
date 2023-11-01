@@ -34,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 // Route dashboard and authentication
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::post('/login', [AuthenticationController::class, 'login'])->middleware('guest')->name('login');
-Route::middleware(['auth:mahasiswa,dosen,tendik,tpmf,dekan,wadek,gpm'])->group(function () {
+Route::middleware(['auth:mahasiswa,dosen,tendik,tpmf,dekan,wadek,gpm,kaprodi'])->group(function () {
     Route::post('/logout', [AuthenticationController::class, 'logout'])->name('logout');
 });
 
@@ -89,7 +89,7 @@ Route::get('/tes', function () {
 
 //Route tanggapan
 
-Route::middleware(['auth:gpm,tpmf,dekan,wadek'])->group(function () {
+Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
     Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
     Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
@@ -114,7 +114,7 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::put('/TanggapanMitra/{id}', [TanggapanMitraController::class, 'update'])->name('tanggapanmitra.update');
 });
 
-Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
+Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
     Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
     Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
@@ -122,7 +122,7 @@ Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
     Route::put('/TanggapanMahasiswa/{id}', [TanggapanMahasiswaController::class, 'update'])->name('tanggapanmahasiswa.update');
 });
 
-Route::middleware(['auth:gpm,dekan,wadek'])->group(function () {
+Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
     Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
     Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);

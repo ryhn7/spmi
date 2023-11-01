@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $nama
  * @property string $NIP
  * @property string $date_time
- * @property string $lokasi
  * @property string $1
  * @property string $2
  * @property string $3
@@ -35,5 +34,5 @@ class kepuasan_tendik extends Model
     /**
      * @var array
      */
-    protected $fillable = ['nama', 'NIP', 'date_time', 'lokasi', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+    protected $guarded = ['id'];
 }

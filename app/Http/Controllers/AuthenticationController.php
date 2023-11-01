@@ -7,6 +7,7 @@ use App\Models\Dosen;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class AuthenticationController extends Controller
 {
@@ -75,6 +76,8 @@ class AuthenticationController extends Controller
             $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
         } else if (Auth::guard('gpm')->check()) {
             $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
         } else if (Auth::guard('dekan')->check()) {
             $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
         } else if (Auth::guard('wadek')->check()) {
@@ -90,7 +93,10 @@ class AuthenticationController extends Controller
             ->where('dosen.nama_dosen', '=', $namaDosen)
             ->get();
 
+
         $namaJabatan = $jabatanDosen[0]->jabatan;
+
+        // dd($namaJabatan);
 
         if ($namaJabatan == "Dekan Fakultas Sains dan Matematika") {
             $request->session()->put('role', 'dekan');
@@ -142,6 +148,18 @@ class AuthenticationController extends Controller
                     dd('guard not found');
                 }
             }
+        } else if (Str::startsWith($namaJabatan, 'Ketua Program Studi')) {
+            $request->session()->put('role', 'kaprodi');
+            $kaprodiUser = Dosen::where('nama_dosen', $namaDosen)->first();
+
+            if ($kaprodiUser) {
+                Auth::guard('kaprodi')->login($kaprodiUser);
+                if (Auth::guard('kaprodi')->check()) {
+                    return redirect()->intended('/');
+                } else {
+                    dd('guard not found');
+                }
+            }
         } else {
             abort(404);
         }
@@ -158,6 +176,9 @@ class AuthenticationController extends Controller
         } else if (Auth::guard('gpm')->check()) {
             $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
             Auth::guard('gpm')->logout();
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            Auth::guard('kaprodi')->logout();
         } else if (Auth::guard('dekan')->check()) {
             $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             Auth::guard('dekan')->logout();

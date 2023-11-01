@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         Auth::resolved(function ($auth) {
             $auth->extend('custom_guard', function ($app, $name, array $config) {
                 $guard = new \Illuminate\Auth\SessionGuard($name, Auth::createUserProvider($config['provider']), $app['session.store']);
-    
+
                 // Customize the guard behavior based on the guard name
                 if ($name === 'tpmf') {
                     // Modify the guard behavior for 'tpmf' guard
@@ -42,12 +42,14 @@ class AuthServiceProvider extends ServiceProvider
                 } elseif ($name === 'gpm') {
                     // Example: Set a different user provider
                     $guard->setProvider(Auth::createUserProvider('custom_gpm_provider'));
-                }elseif ($name === 'wadek') {
+                } elseif ($name === 'wadek') {
                     // Modify the guard behavior for 'wadek' guard
                     // Example: Set a different user provider
                     $guard->setProvider(Auth::createUserProvider('custom_wadek_provider'));
+                } elseif ($name === 'kaprodi') {
+                    $guard->setProvider(Auth::createUserProvider('custom_kaprodi_provider'));
                 }
-    
+
                 return $guard;
             });
         });

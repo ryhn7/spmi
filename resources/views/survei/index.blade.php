@@ -1,9 +1,13 @@
+{{-- @dd(Auth::guard('kaprodi')->check()) --}}
+
+
 @if (Auth::guard('mahasiswa')->check() ||
         Auth::guard('dosen')->check() ||
         Auth::guard('tendik')->check() ||
         Auth::guard('tpmf')->check() ||
         Auth::guard('dekan')->check() ||
         Auth::guard('wadek')->check() ||
+        Auth::guard('kaprodi')->check() ||
         Auth::guard('gpm')->check())
 @else
     <section id="isi-survei" class="sectionSize bg-white pt-32">
@@ -24,6 +28,7 @@
                             Auth::guard('dekan')->check() ||
                             Auth::guard('wadek')->check() ||
                             Auth::guard('gpm')->check() ||
+                            Auth::guard('kaprodi')->check() ||
                             Auth::guard('tpmf')->check())
                         <a href="{{ route('forbidden') }}"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
@@ -49,6 +54,7 @@
                             Auth::guard('dekan')->check() ||
                             Auth::guard('wadek')->check() ||
                             Auth::guard('gpm')->check() ||
+                            Auth::guard('kaprodi')->check() ||
                             Auth::guard('tpmf')->check())
                         <a href="{{ route('forbidden') }}"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
@@ -74,6 +80,7 @@
                             Auth::guard('dekan')->check() ||
                             Auth::guard('wadek')->check() ||
                             Auth::guard('gpm')->check() ||
+                            Auth::guard('kaprodi')->check() ||
                             Auth::guard('tpmf')->check())
                         <a href="{{ route('forbidden') }}"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
@@ -95,6 +102,7 @@
                             Auth::guard('dekan')->check() ||
                             Auth::guard('wadek')->check() ||
                             Auth::guard('gpm')->check() ||
+                            Auth::guard('kaprodi')->check() ||
                             Auth::guard('tpmf')->check())
                         <a href="{{ route('restricted') }}"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
@@ -114,6 +122,7 @@
                             Auth::guard('dekan')->check() ||
                             Auth::guard('wadek')->check() ||
                             Auth::guard('gpm')->check() ||
+                            Auth::guard('kaprodi')->check() ||
                             Auth::guard('tpmf')->check())
                         <a href="{{ route('restricted') }}"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
@@ -260,7 +269,7 @@
                 </li>
         </div>
     </section>
-@elseif (Auth::guard('gpm')->check())
+@elseif (Auth::guard('gpm')->check() || Auth::guard('kaprodi')->check())
     <section id="tanggapan-survei" class="sectionSize bg-white pt-32">
         <div>
             <h2 class="secondaryTitle bg-underline3 bg-100%">Tanggapan Survei</h2>
@@ -270,20 +279,10 @@
             <!-- <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 dark:bg-gray-800 dark:border-gray-700"> -->
             <ul class="my-4 space-y-3">
                 <li>
-                    @if (Auth::guard('tpmf')->check() || Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
-                        <a href="/TanggapanTendik"
-                            class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                            <span class="flex-1 ml-3 whitespace-nowrap">Tanggapan Survei Tendik</span>
-                        </a>
-                    @else
-                        <a href="{{ route('forbidden') }}"
-                            class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                            <span class="flex-1 ml-3 whitespace-nowrap">Tanggapan Survei Tendik </span>
-                        </a>
-                    @endif
-                </li>
-                <li>
-                    @if (Auth::guard('gpm')->check() || Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
+                    @if (Auth::guard('gpm')->check() ||
+                            Auth::guard('dekan')->check() ||
+                            Auth::guard('wadek')->check() ||
+                            Auth::guard('kaprodi')->check())
                         <a href="/TanggapanMahasiswa"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                             <span class="flex-1 ml-3 whitespace-nowrap">Tanggapan Survei Mahasiswa</span>
@@ -296,7 +295,10 @@
                     @endif
                 </li>
                 <li>
-                    @if (Auth::guard('gpm')->check() || Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
+                    @if (Auth::guard('gpm')->check() ||
+                            Auth::guard('dekan')->check() ||
+                            Auth::guard('wadek')->check() ||
+                            Auth::guard('kaprodi')->check())
                         <a href="/TanggapanPenggunaLulusan"
                             class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                             <span class="flex-1 ml-3 whitespace-nowrap">Tanggapan Survei Pengguna Lulusan</span>
