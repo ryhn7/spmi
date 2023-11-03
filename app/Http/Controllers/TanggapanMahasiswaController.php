@@ -163,7 +163,7 @@ class TanggapanMahasiswaController extends Controller
             return redirect('/TanggapanMahasiswa')->with('error', 'Tanggapan tidak ditemukan');
         }
 
-        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
 
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -221,6 +221,9 @@ class TanggapanMahasiswaController extends Controller
             "empat_puluh" => "required|string",
             "empat_satu" => "required|string",
             "empat_dua" => "required|string",
+            "empat_tiga" => "required|string",
+            "empat_empat" => "required|string",
+            "empat_lima" => "required|string",
         ]);
 
         $tanggapan = [
@@ -266,6 +269,9 @@ class TanggapanMahasiswaController extends Controller
             '40' => $validated['empat_puluh'],
             '41' => $validated['empat_satu'],
             '42' => $validated['empat_dua'],
+            '43' => $validated['empat_tiga'],
+            '44' => $validated['empat_empat'],
+            '45' => $validated['empat_lima'],
         ];
 
         // dd($tanggapan);

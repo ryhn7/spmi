@@ -10,11 +10,21 @@
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                     <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan GPM</span>
                 </a>
+                <br>
+                <a href="{{ route('tanggapanmahasiswa.edit', ['id' => $feedbackGpm->ID]) }}"
+                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan GPM</span>
+                </a>
             @elseif (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
                 <a href="/FeedbackPenggunaLulusan"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                     <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan Dekan</span>
                 </a>
+                <br>
+                <a href="{{ route('tanggapanmahasiswa.edit', ['id' => $feedbackGpm->ID]) }}"
+                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan Dekan</span>
+                </a> 
             @endif
             <br>
             <table class="shadow-lg bg-white">
