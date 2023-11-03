@@ -21,6 +21,7 @@ class FeedbackSurveiController extends Controller
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
         $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->latest()->first();
+        $uniqueYears = feedback_dosen::selectRaw('YEAR(updated_at) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
         if (!$feedbackTpmf) {
             $feedbackTpmf = new feedback_dosen();
         }
@@ -34,6 +35,7 @@ class FeedbackSurveiController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'uniqueYears' => $uniqueYears
         ]);
     }
     public function indexFeedbackMahasiswa()
