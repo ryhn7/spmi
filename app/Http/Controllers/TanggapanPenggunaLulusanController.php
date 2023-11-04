@@ -16,6 +16,7 @@ class TanggapanPenggunaLulusanController extends Controller
     {
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->latest()->first();
+        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         $roleAktor = null;
 
@@ -23,6 +24,8 @@ class TanggapanPenggunaLulusanController extends Controller
             $roleAktor = "TPMF";
         } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $roleAktor = "Dekan";
+        }else if (Auth::guard('kaprodi')->check()) {
+            $roleAktor = "Kaprodi";
         }
 
         if (!$feedbackgpm) {
@@ -30,6 +33,9 @@ class TanggapanPenggunaLulusanController extends Controller
         }
         if (!$feedbackDekan) {
             $feedbackDekan = new feedback_stakeholder();
+        }
+        if (!$feedbackKaprodi) {
+            $feedbackKaprodi = new feedback_stakeholder();
         }
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -39,6 +45,7 @@ class TanggapanPenggunaLulusanController extends Controller
         return view('tanggapan.tanggapan_pengguna_lulusan', [
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
+            'feedbackKaprodi' => $feedbackKaprodi,
             'pernyataan' => $pernyataan,
             'roleAktor' => $roleAktor,
         ]);
@@ -61,6 +68,8 @@ class TanggapanPenggunaLulusanController extends Controller
             $aktor = "GPM";
         } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $aktor = "Kaprodi";
         }
 
         $validated = $request->validate([

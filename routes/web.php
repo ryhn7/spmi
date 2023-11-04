@@ -70,8 +70,8 @@ Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [F
 
 //Route filter feedback survei
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen/filter', [FeedbackSurveiDosenController::class, 'filter']);
-// Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa/filter', [FeedbackSurveiMahasiswaController::class, 'filter']);
-// Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan/filter', [FeedbackSurveiPenggunaLulusanController::class, 'filter']);
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa/filter', [FeedbackSurveiMahasiswaController::class, 'filter']);
+Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan/filter', [FeedbackSurveiPenggunaLulusanController::class, 'filter']);
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra/filter', [FeedbackSurveiMitraController::class, 'filter']);
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik/filter', [FeedbackSurveiTendikController::class, 'filter']);
 

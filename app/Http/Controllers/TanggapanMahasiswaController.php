@@ -18,9 +18,12 @@ class TanggapanMahasiswaController extends Controller
             $roleAktor = "TPMF";
         } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $roleAktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $roleAktor = "Kaprodi";
         }
         $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->latest()->first();
+        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -32,10 +35,14 @@ class TanggapanMahasiswaController extends Controller
         if (!$feedbackDekan) {
             $feedbackDekan = new feedback_mahasiswa();
         }
+        if (!$feedbackKaprodi) {
+            $feedbackKaprodi = new feedback_mahasiswa();
+        }
 
         return view('tanggapan.tanggapan_mahasiswa', [
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
+            'feedbackKaprodi' => $feedbackKaprodi,
             'pernyataan' => $pernyataan,
             'roleAktor' => $roleAktor,
         ]);
@@ -59,6 +66,10 @@ class TanggapanMahasiswaController extends Controller
         } else if (Auth::guard('dekan')->check()||Auth::guard('wadek')->check()) {
             $aktor = "Dekan";
         }
+        else if (Auth::guard('kaprodi')->check()) {
+            $aktor = "Kaprodi";
+        }
+
 
         $validated = $request->validate([
             'satu' => 'required|string',
