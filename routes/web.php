@@ -63,15 +63,15 @@ Route::get('/get-mahasiswas', [SurveiKepuasanPenggunaLulusanController::class, '
 
 // Route feedback survei
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen', [FeedbackSurveiDosenController::class, 'indexFeedbackDosen'])->name('feedbackDosen');
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa', [FeedbackSurveiMahasiswaController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan', [FeedbackSurveiPenggunaLulusanController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
+// Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa', [FeedbackSurveiMahasiswaController::class, 'indexFeedbackMahasiswa'])->name('feedbackMahasiswa');
+// Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan', [FeedbackSurveiPenggunaLulusanController::class, 'indexFeedbackPenggunaLulusan'])->name('feedbackStakeHolder');
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra', [FeedbackSurveiMitraController::class, 'indexFeedbackMitra'])->name('feedbackMitra');
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik', [FeedbackSurveiTendikController::class, 'indexFeedbackTendik'])->name('feedbackTendik');
 
 //Route filter feedback survei
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-dosen/filter', [FeedbackSurveiDosenController::class, 'filter']);
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa/filter', [FeedbackSurveiMahasiswaController::class, 'filter']);
-Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan/filter', [FeedbackSurveiPenggunaLulusanController::class, 'filter']);
+// Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mahasiswa/filter', [FeedbackSurveiMahasiswaController::class, 'filter']);
+// Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-pengguna-lulusan/filter', [FeedbackSurveiPenggunaLulusanController::class, 'filter']);
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-mitra/filter', [FeedbackSurveiMitraController::class, 'filter']);
 Route::get('/upaya-tindak-lanjut-dan-perbaikan-hasil-survei-kepuasan-tendik/filter', [FeedbackSurveiTendikController::class, 'filter']);
 
@@ -118,8 +118,8 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanDosen', [TanggapanDosenController::class, 'index']);
     Route::get('/FeedbackDosen', [TanggapanDosenController::class, 'create']);
     Route::post('/FeedbackDosen', [TanggapanDosenController::class, 'store']);
-    Route::get('/TanggapanDosen/Edit/{id}', [TanggapanDosenController::class, 'edit'])->name('tanggapandosen.edit');
-    Route::put('/TanggapanDosen/{id}', [TanggapanDosenController::class, 'update'])->name('tanggapandosen.update');
+    Route::get('/TanggapanDosen/Edit/{aktor}', [TanggapanDosenController::class, 'edit'])->name('tanggapandosen.edit');
+    Route::put('/TanggapanDosen/{aktor}', [TanggapanDosenController::class, 'update'])->name('tanggapandosen.update');
 });
 
 Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
