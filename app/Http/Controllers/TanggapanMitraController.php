@@ -15,6 +15,14 @@ class TanggapanMitraController extends Controller
         $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
+        $roleAktor = null;
+
+        if (Auth::guard('tpmf')->check()) {
+            $roleAktor = "TPMF";
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            $roleAktor = "Dekan";
+        }
+
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
@@ -30,6 +38,7 @@ class TanggapanMitraController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'roleAktor' => $roleAktor,
         ]);
     }
 
@@ -85,9 +94,9 @@ class TanggapanMitraController extends Controller
         return redirect('/TanggapanMitra')->with('success', 'berhasil save');
     }
 
-    public function edit($id)
+    public function edit($aktor)
     {
-        $feedback = feedback_mitra::find($id);
+        $feedback = feedback_mitra::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
             return redirect('/TanggapanMitra')->with('error', 'Tanggapan tidak ditemukan');

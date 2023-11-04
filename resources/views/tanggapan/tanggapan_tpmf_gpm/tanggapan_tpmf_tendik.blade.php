@@ -17,7 +17,7 @@
                             <input id="satu" type="hidden" name="satu" value="{{ strip_tags(old('satu')) }}">
                             <trix-editor input="satu"></trix-editor>
                             @error('satu')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -28,7 +28,7 @@
                             <input id="dua" type="hidden" name="dua" value="{{ strip_tags(old('dua')) }}">
                             <trix-editor input="dua"></trix-editor>
                             @error('dua')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -39,7 +39,7 @@
                             <input id="tiga" type="hidden" name="tiga" value="{{ strip_tags(old('tiga')) }}">
                             <trix-editor input="tiga"></trix-editor>
                             @error('tiga')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -50,7 +50,7 @@
                             <input id="empat" type="hidden" name="empat" value="{{ strip_tags(old('empat')) }}">
                             <trix-editor input="empat"></trix-editor>
                             @error('empat')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -61,7 +61,7 @@
                             <input id="lima" type="hidden" name="lima" value="{{ strip_tags(old('lima')) }}">
                             <trix-editor input="lima"></trix-editor>
                             @error('lima')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -72,7 +72,7 @@
                             <input id="enam" type="hidden" name="enam" value="{{ strip_tags(old('enam')) }}">
                             <trix-editor input="enam"></trix-editor>
                             @error('enam')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -83,7 +83,7 @@
                             <input id="tujuh" type="hidden" name="tujuh" value="{{ strip_tags(old('tujuh')) }}">
                             <trix-editor input="tujuh"></trix-editor>
                             @error('tujuh')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -94,7 +94,7 @@
                             <input id="delapan" type="hidden" name="delapan" value="{{ strip_tags(old('delapan')) }}">
                             <trix-editor input="delapan"></trix-editor>
                             @error('delapan')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -105,7 +105,7 @@
                             <input id="sembilan" type="hidden" name="sembilan" value="{{ strip_tags(old('sembilan')) }}">
                             <trix-editor input="sembilan"></trix-editor>
                             @error('sembilan')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -116,7 +116,7 @@
                             <input id="sepuluh" type="hidden" name="sepuluh" value="{{ strip_tags(old('sepuluh')) }}">
                             <trix-editor input="sepuluh"></trix-editor>
                             @error('sepuluh')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -127,7 +127,7 @@
                             <input id="sebelas" type="hidden" name="sebelas" value="{{ strip_tags(old('sebelas')) }}">
                             <trix-editor input="sebelas"></trix-editor>
                             @error('sebelas')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>
@@ -138,7 +138,7 @@
                             <input id="dua_belas" type="hidden" name="dua_belas" value="{{ strip_tags(old('dua_belas')) }}">
                             <trix-editor input="dua_belas"></trix-editor>
                             @error('dua_belas')
-                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ $message }}</p>
+                                <p class="text-xs mt-1 text-red-700 font-franklin">{{ 'Pertanyaan wajib diisi' }}</p>
                             @enderror
                         </label>
                     </div>

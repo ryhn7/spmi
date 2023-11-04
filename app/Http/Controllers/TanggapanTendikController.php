@@ -15,6 +15,13 @@ class TanggapanTendikController extends Controller
         $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
+        $roleAktor = null;
+
+        if (Auth::guard('tpmf')->check()) {
+            $roleAktor = "TPMF";
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            $roleAktor = "Dekan";
+        }
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
@@ -30,6 +37,7 @@ class TanggapanTendikController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'roleAktor' => $roleAktor,
         ]);
     }
 
@@ -89,9 +97,9 @@ class TanggapanTendikController extends Controller
         return redirect('/TanggapanTendik')->with('success', 'berhasil save');
     }
 
-    public function edit($id)
+    public function edit($aktor)
     {
-        $feedback = feedback_tendik::find($id);
+        $feedback = feedback_tendik::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
             return redirect('/TanggapanTendik')->with('error', 'Tanggapan tidak ditemukan');

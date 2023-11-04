@@ -12,6 +12,13 @@ class TanggapanMahasiswaController extends Controller
 {
     public function index()
     {
+        $roleAktor = null;
+
+        if (Auth::guard('tpmf')->check()) {
+            $roleAktor = "TPMF";
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            $roleAktor = "Dekan";
+        }
         $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
@@ -30,6 +37,7 @@ class TanggapanMahasiswaController extends Controller
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'roleAktor' => $roleAktor,
         ]);
     }
 
@@ -155,9 +163,9 @@ class TanggapanMahasiswaController extends Controller
         return redirect('/TanggapanMahasiswa')->with('success', 'berhasil save');
     }
 
-    public function edit($id)
+    public function edit($aktor)
     {
-        $feedback = feedback_mahasiswa::find($id);
+        $feedback = feedback_mahasiswa::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
             return redirect('/TanggapanMahasiswa')->with('error', 'Tanggapan tidak ditemukan');

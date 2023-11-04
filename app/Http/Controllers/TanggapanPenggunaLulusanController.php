@@ -17,6 +17,13 @@ class TanggapanPenggunaLulusanController extends Controller
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        $roleAktor = null;
+
+        if (Auth::guard('tpmf')->check()) {
+            $roleAktor = "TPMF";
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            $roleAktor = "Dekan";
+        }
 
         if (!$feedbackgpm) {
             $feedbackgpm = new feedback_stakeholder();
@@ -33,6 +40,7 @@ class TanggapanPenggunaLulusanController extends Controller
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'roleAktor' => $roleAktor,
         ]);
     }
 
@@ -86,9 +94,9 @@ class TanggapanPenggunaLulusanController extends Controller
         return redirect('/TanggapanPenggunaLulusan')->with('success', 'berhasil save');
     }
 
-    public function edit($id)
+    public function edit($aktor)
     {
-        $feedback = feedback_stakeholder::find($id);
+        $feedback = feedback_stakeholder::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
             return redirect('/TanggapanPenggunaLulusan')->with('error', 'Tanggapan tidak ditemukan');

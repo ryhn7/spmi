@@ -6,10 +6,6 @@
             {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1"> --}}
                 <form action="/surveiTendik" method="POST">
                     @csrf
-                    <div class="flex justify-center items-center">
-                        <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
-                            Layanan Pengembangan Kompetensi</p>
-                    </div>
                     @php
                     $jumlahPertanyaan = 12; // jumlah pertanyaan
                     $namaFor = ['satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas', 'dua_belas']; // id untuk setiap pertanyaan
