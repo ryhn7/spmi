@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Dosen;
 use App\Models\pernyataan;
 use App\Models\feedback_mahasiswa;
 use Illuminate\Http\Request;
@@ -83,7 +81,7 @@ class TanggapanMahasiswaController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mahasiswa', [
+        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_gpm_mahasiswa', [
             'pernyataan' => $pernyataan,
         ]);
     }
