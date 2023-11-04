@@ -239,7 +239,7 @@ class TanggapanMahasiswaController extends Controller
         ]);
     }
 
-    public function update(Request $request, feedback_mahasiswa $id)
+    public function update(Request $request, feedback_mahasiswa $aktor)
     {
 
         $validated = $request->validate([
@@ -341,7 +341,7 @@ class TanggapanMahasiswaController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_mahasiswa')
-        ->where('ID', $id->ID)
+        ->where('Aktor', $aktor->Aktor)
         ->update($tanggapan);
 
 
