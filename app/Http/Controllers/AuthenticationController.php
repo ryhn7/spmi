@@ -96,7 +96,7 @@ class AuthenticationController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        // dd($namaJabatan);
+        dd($namaJabatan);
 
         if ($namaJabatan == "Dekan Fakultas Sains dan Matematika") {
             $request->session()->put('role', 'dekan');
@@ -130,13 +130,12 @@ class AuthenticationController extends Controller
             if ($tpmfUser) {
                 Auth::guard('tpmf')->login($tpmfUser);
                 if (Auth::guard('tpmf')->check()) {
-                    // dd(Auth::guard('tpmf')->user());
                     return redirect()->intended('/');
                 } else {
                     dd('guard not found');
                 }
             }
-        } else if ($namaJabatan == "Gugus Penjaminan Mutu Program Studi Sarjana Matematika") {
+        } else if (strpos($namaJabatan, 'Gugus Penjaminan Mutu') !== false) {
             $request->session()->put('role', 'gpm');
             $gpmUser = Dosen::where('nama_dosen', $namaDosen)->first();
 
