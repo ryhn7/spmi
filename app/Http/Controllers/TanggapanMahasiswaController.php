@@ -1,17 +1,49 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Dosen;
 use App\Models\pernyataan;
 use App\Models\feedback_mahasiswa;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class TanggapanMahasiswaController extends Controller
 {
     public function index()
     {
-        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->latest()->first();
+        if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+        $substring = "Ketua Gugus Penjaminan Mutu Program Studi";
+        // get jurusan
+        $jurusan = trim(str_replace($substring, "", $namaJabatan));
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
+
+        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
         $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
@@ -29,6 +61,7 @@ class TanggapanMahasiswaController extends Controller
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'ketua' => $ketua
         ]);
     }
 
@@ -38,7 +71,7 @@ class TanggapanMahasiswaController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mahasiswa',[
+        return view('tanggapan.tanggapan_tpmf.tanggapan_gpm_mahasiswa', [
             'pernyataan' => $pernyataan,
         ]);
     }
@@ -46,10 +79,27 @@ class TanggapanMahasiswaController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
             $aktor = "GPM";
-        } else if (Auth::guard('dekan')->check()||Auth::guard('wadek')->check()) {
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             $aktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $aktor = "Dekan";
+        } else {
+            $namaDosen = "Tidak ada";
         }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -101,6 +151,7 @@ class TanggapanMahasiswaController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
+            'status' => $namaJabatan,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -149,8 +200,12 @@ class TanggapanMahasiswaController extends Controller
         ];
 
         // dd($tanggapan);
-        feedback_mahasiswa::create($tanggapan);
-
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_mahasiswa::create($tanggapan);
+        } else {
+            // cannot create
+            abort(403);
+        }
         return redirect('/TanggapanMahasiswa')->with('success', 'berhasil save');
     }
 
