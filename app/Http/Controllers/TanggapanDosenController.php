@@ -151,11 +151,24 @@ class TanggapanDosenController extends Controller
 
     public function edit($id)
     {
+        // if (Auth::guard('tpmf')->check()) {
+        //     // $aktor = "TPMF";
+        //     $feedback = feedback_dosen::where('Aktor', 'TPMF')->find($id);
+        // } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+        //     // $aktor = "Dekan";
+        //     $feedback = feedback_dosen::where('Aktor', 'Dekan')->find($id);
+        // }
+
         $feedback = feedback_dosen::find($id);
 
         if (!$feedback) {
             return redirect('/TanggapanDosen')->with('error', 'Tanggapan tidak ditemukan');
         }
+
+        // dd($feedback);
+        $x = Auth::guard('tpmf')->check();
+        $y = Auth::guard('dekan')->check();
+        dd($x, $y);
 
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
