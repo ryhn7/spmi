@@ -136,7 +136,7 @@
                                                         <button id="dosenBtn">Dosen</button>
                                                     </label>
                                                 </form>
-                                                @if ($namaJabatan == 'Tim Penjaminan Mutu Fakultas Sains dan Matematika')
+                                                @if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false)
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">

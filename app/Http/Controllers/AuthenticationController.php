@@ -96,7 +96,7 @@ class AuthenticationController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        dd($namaJabatan);
+        // dd($namaJabatan);
 
         if ($namaJabatan == "Dekan Fakultas Sains dan Matematika") {
             $request->session()->put('role', 'dekan');
@@ -123,7 +123,7 @@ class AuthenticationController extends Controller
                     dd('guard not found');
                 }
             }
-        } else if ($namaJabatan == "Tim Penjaminan Mutu Fakultas Sains dan Matematika") {
+        } else if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false) {
             $request->session()->put('role', 'tpmf');
             $tpmfUser = Dosen::where('nama_dosen', $namaDosen)->first();
 
@@ -162,7 +162,6 @@ class AuthenticationController extends Controller
         } else {
             abort(404);
         }
-        abort(404);
     }
 
     public function switchToDosen(Request $request)
