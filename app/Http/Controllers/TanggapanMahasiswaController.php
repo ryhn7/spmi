@@ -23,6 +23,7 @@ class TanggapanMahasiswaController extends Controller
             $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
             $roleAktor = "Dekan";
         } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
             $roleAktor = "Kaprodi";
         }else {
             $namaDosen = "Tidak ada";
