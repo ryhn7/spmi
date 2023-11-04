@@ -420,10 +420,6 @@ object {
   /* 2 */
 }
 
-.trix-button-group.trix-button-group {
-  display: none;
-}
-
 /*
 Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
 */
