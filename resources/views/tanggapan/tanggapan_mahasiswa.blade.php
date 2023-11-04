@@ -5,7 +5,7 @@
         <div><br><br>
             <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Mahasiswa
             </h2>
-            @if (Auth::guard('gpm')->check() || Auth::guard('dekan')->check() || Auth::guard('wadek')->check()|| Auth::guard('kaprodi')->check())
+            @if ((Auth::guard('gpm')->check() && $ketua) || (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()|| Auth::guard('kaprodi')->check()))
                 <a href="/FeedbackMahasiswa"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                     <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
