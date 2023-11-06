@@ -14,6 +14,42 @@ class TanggapanPenggunaLulusanController extends Controller
 {
     public function index()
     {
+        $roleAktor = null;
+        if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $roleAktor = "GPM";
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $roleAktor = "Kaprodi";
+        }else {
+            $namaDosen = "Tidak ada";
+        }
+
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+        $substring = "Ketua Gugus Penjaminan Mutu Program Studi";
+        // get jurusan
+        $jurusan = trim(str_replace($substring, "", $namaJabatan));
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
+        
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
         $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->latest()->first();
         $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')->latest()->first();
