@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\pernyataan;
 use App\Models\feedback_mahasiswa;
 use Illuminate\Http\Request;
@@ -25,7 +26,7 @@ class TanggapanMahasiswaController extends Controller
         } else if (Auth::guard('kaprodi')->check()) {
             $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
             $roleAktor = "Kaprodi";
-        }else {
+        } else {
             $namaDosen = "Tidak ada";
         }
 
@@ -38,9 +39,16 @@ class TanggapanMahasiswaController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
-        $substring = "Ketua Gugus Penjaminan Mutu Program Studi";
-        // get jurusan
-        $jurusan = trim(str_replace($substring, "", $namaJabatan));
+        // $substring = "Ketua Gugus Penjaminan Mutu Program Studi";
+        // // get jurusan
+        // $jurusan = trim(str_replace($substring, "", $namaJabatan));
+
+        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[1];
+        } else {
+            // Handle the case where the pattern is not found
+            $jurusan = "Tidak ada";
+        }
 
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
@@ -49,7 +57,7 @@ class TanggapanMahasiswaController extends Controller
 
 
         $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->latest()->first();
+        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
         $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
@@ -98,6 +106,9 @@ class TanggapanMahasiswaController extends Controller
         } else if (Auth::guard('wadek')->check()) {
             $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
             $aktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $aktor = "Kaprodi";
         } else {
             $namaDosen = "Tidak ada";
         }
@@ -342,8 +353,8 @@ class TanggapanMahasiswaController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_mahasiswa')
-        ->where('Aktor', $aktor->Aktor)
-        ->update($tanggapan);
+            ->where('Aktor', $aktor->Aktor)
+            ->update($tanggapan);
 
 
         return redirect('/TanggapanMahasiswa')->with('success', 'Tanggapan berhasil diperbarui');
