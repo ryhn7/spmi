@@ -83,6 +83,8 @@ Route::get('/hasilmitra', [HasilSurveiKepuasanMitraController::class, 'show']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
 Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'show']);
 
+//Route cetak pdf hasil survey
+Route::get('/hasildosen/cetak_pdf', [HasilSurveiKepuasanDosenController::class, 'cetak_pdf']);
 
 // Route filter hasil survey
 Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);

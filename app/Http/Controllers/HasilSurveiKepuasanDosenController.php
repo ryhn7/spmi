@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\kepuasan_dosen;
 use App\Models\pernyataan;
+use Barryvdh\DomPDF\Facade\Pdf as PDF; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -233,5 +234,18 @@ class HasilSurveiKepuasanDosenController extends Controller
         $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
 
         return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+    }
+
+    public function cetak_pdf(){
+        $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $pdf = PDF::loadview('hasil_survei.hasil_survei_dosen_pdf', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+
+        return $pdf->stream();
     }
 }
