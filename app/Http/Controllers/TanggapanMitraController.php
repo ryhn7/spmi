@@ -12,6 +12,39 @@ class TanggapanMitraController extends Controller
 {
     public function index()
     {
+        $roleAktor = null;
+        if (Auth::guard('tpmf')->check()) {
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
+            $roleAktor = "TPMF";
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
+        $tpmf = null;
+        if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false) {
+            $tpmf = "Tim Penjaminan Mutu Fakultas Sains dan Matematika";
+        }
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
         $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
@@ -38,6 +71,7 @@ class TanggapanMitraController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'ketua' => $ketua,
             'roleAktor' => $roleAktor,
         ]);
     }
@@ -56,10 +90,27 @@ class TanggapanMitraController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('tpmf')->check()) {
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
             $aktor = "TPMF";
-        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             $aktor = "Dekan";
-        } 
+        } else if (Auth::guard("wadek")->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $aktor = "Dekan";
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -76,6 +127,7 @@ class TanggapanMitraController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
+            'status' => $namaJabatan,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -89,7 +141,13 @@ class TanggapanMitraController extends Controller
         ];
 
         // dd($tanggapan);
-        feedback_mitra::create($tanggapan);
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_mitra::create($tanggapan);
+        } else {
+            // cannot create
+            abort(403);
+        }
+        
 
         return redirect('/TanggapanMitra')->with('success', 'berhasil save');
     }
@@ -114,7 +172,7 @@ class TanggapanMitraController extends Controller
         ]);
     }
 
-    public function update(Request $request, feedback_mitra $id)
+    public function update(Request $request, feedback_mitra $aktor)
     {
 
         $validated = $request->validate([
@@ -146,7 +204,7 @@ class TanggapanMitraController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_mitra')
-        ->where('ID', $id->ID)
+        ->where('Aktor', $aktor->Aktor)
         ->update($tanggapan);
 
 

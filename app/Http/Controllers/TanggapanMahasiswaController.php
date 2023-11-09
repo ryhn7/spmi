@@ -39,9 +39,6 @@ class TanggapanMahasiswaController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
-        // $substring = "Ketua Gugus Penjaminan Mutu Program Studi";
-        // // get jurusan
-        // $jurusan = trim(str_replace($substring, "", $namaJabatan));
 
         if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[1];
@@ -350,12 +347,9 @@ class TanggapanMahasiswaController extends Controller
             '45' => $validated['empat_lima'],
         ];
 
-        // dd($tanggapan);
-
         DB::table('feedback_mahasiswa')
             ->where('Aktor', $aktor->Aktor)
             ->update($tanggapan);
-
 
         return redirect('/TanggapanMahasiswa')->with('success', 'Tanggapan berhasil diperbarui');
     }

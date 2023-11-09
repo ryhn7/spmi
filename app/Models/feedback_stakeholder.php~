@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $ID
  * @property string $Aktor
- * @property string $status
+ * @property string $Status
  * @property string $1
  * @property string $2
  * @property string $3
@@ -39,5 +39,5 @@ class feedback_stakeholder extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Aktor', 'status', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'updated_at', 'created_at'];
+    protected $fillable = ['Aktor', 'Status', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'updated_at', 'created_at'];
 }

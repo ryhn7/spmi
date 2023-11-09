@@ -2,9 +2,6 @@
 
 @section('container')
 <div class="pt-32">
-    {{-- <form action="/tanggapan/{{ $feedback->id }}" method="POST">
-        @csrf
-        <input type="hidden" name="_method" value="PUT"> --}}
     <form action="{{ route('tanggapanpenggunalulusan.update', $feedback->ID ) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('PUT')

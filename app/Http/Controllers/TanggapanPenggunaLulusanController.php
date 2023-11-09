@@ -27,7 +27,7 @@ class TanggapanPenggunaLulusanController extends Controller
         } else if (Auth::guard('kaprodi')->check()) {
             $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
             $roleAktor = "Kaprodi";
-        }else {
+        } else {
             $namaDosen = "Tidak ada";
         }
 
@@ -40,9 +40,13 @@ class TanggapanPenggunaLulusanController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
-        $substring = "Ketua Gugus Penjaminan Mutu Program Studi";
-        // get jurusan
-        $jurusan = trim(str_replace($substring, "", $namaJabatan));
+
+        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[1];
+        } else {
+            // Handle the case where the pattern is not found
+            $jurusan = "Tidak ada";
+        }
 
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
@@ -50,19 +54,10 @@ class TanggapanPenggunaLulusanController extends Controller
         }
 
         
-        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
-        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->latest()->first();
+        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
         $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
-        $roleAktor = null;
-
-        if (Auth::guard('tpmf')->check()) {
-            $roleAktor = "TPMF";
-        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
-            $roleAktor = "Dekan";
-        }else if (Auth::guard('kaprodi')->check()) {
-            $roleAktor = "Kaprodi";
-        }
 
         if (!$feedbackgpm) {
             $feedbackgpm = new feedback_stakeholder();
@@ -83,6 +78,7 @@ class TanggapanPenggunaLulusanController extends Controller
             'feedbackDekan' => $feedbackDekan,
             'feedbackKaprodi' => $feedbackKaprodi,
             'pernyataan' => $pernyataan,
+            'ketua' => $ketua,
             'roleAktor' => $roleAktor,
         ]);
     }
@@ -101,12 +97,29 @@ class TanggapanPenggunaLulusanController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
             $aktor = "GPM";
-        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $aktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
             $aktor = "Dekan";
         } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
             $aktor = "Kaprodi";
+        } else {
+            $namaDosen = "Tidak ada";
         }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+        // dd($namaJabatan);
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -122,6 +135,7 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
+            'status' => $namaJabatan,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -134,7 +148,12 @@ class TanggapanPenggunaLulusanController extends Controller
         ];
 
         // dd($tanggapan);
-        feedback_stakeholder::create($tanggapan);
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_stakeholder::create($tanggapan);
+        } else {
+            // cannot create
+            abort(403);
+        }
 
         return redirect('/TanggapanPenggunaLulusan')->with('success', 'berhasil save');
     }
@@ -159,7 +178,7 @@ class TanggapanPenggunaLulusanController extends Controller
         ]);
     }
 
-    public function update(Request $request, feedback_stakeholder $id)
+    public function update(Request $request, feedback_stakeholder $aktor)
     {
 
         $validated = $request->validate([
@@ -189,8 +208,8 @@ class TanggapanPenggunaLulusanController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_stakeholder')
-        ->where('ID', $id->ID)
-        ->update($tanggapan);
+            ->where('Aktor', $aktor->Aktor)
+            ->update($tanggapan);
 
 
         return redirect('/TanggapanPenggunaLulusan')->with('success', 'Tanggapan berhasil diperbarui');

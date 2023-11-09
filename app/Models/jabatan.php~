@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $jabatan
  * @property string $nama_pejabat
  */
-class jabatan extends Model
+class Jabatan extends Model
 {
     /**
      * The table associated with the model.
@@ -19,14 +19,12 @@ class jabatan extends Model
     protected $table = 'jabatan';
 
     /**
-     * The primary key for the model.
-     * 
-     * @var string
-     */
-    protected $primaryKey = 'id_jabatan';
-
-    /**
      * @var array
      */
-    protected $fillable = ['jabatan', 'nama_pejabat'];
+    protected $fillable = ['id_jabatan', 'jabatan', 'nama_pejabat'];
+
+    public function dosen()
+{
+    return $this->hasMany(Dosen::class, 'id_jabatan');
+}
 }

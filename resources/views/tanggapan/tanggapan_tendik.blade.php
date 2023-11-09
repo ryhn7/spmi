@@ -5,25 +5,15 @@
         <div><br><br>
             <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Tenaga
                 Pendidik</h2>
-            @if (Auth::guard('tpmf')->check() || Auth::guard('gpm'))
-                <a href="/FeedbackTendik"
+                @if ((Auth::guard('tpmf')->check() && $ketua) || (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()))
+                <a href="/Feedbacktendik"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan TPMF/GPM</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
                 </a>
                 <br>
                 <a href="{{ route('tanggapantendik.edit', ['aktor' => $roleAktor]) }}"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan TPMF</span>
-                </a>
-            @elseif (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
-                <a href="/FeedbackTendik"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan Dekan</span>
-                </a>
-                <br>
-                <a href="{{ route('tanggapantendik.edit', ['aktor' => $roleAktor]) }}"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan Dekan</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                 </a>
             @endif
             <br>
@@ -31,7 +21,7 @@
                 <tr>
                     <th class="bg-[#03051e] text-white text-center py-3" style="width: 5%;">No.</th>
                     <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Pernyataan</th>
-                    <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Tanggapan TPMF/GPM</th>
+                    <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Tanggapan TPMF</th>
                     <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Tanggapan Dekan</th>
                 </tr>
                 @for ($nomor = 1; $nomor <= 12; $nomor++)
