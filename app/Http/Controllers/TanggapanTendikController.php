@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Models\pernyataan;
 use App\Models\feedback_tendik;
@@ -12,6 +14,11 @@ class TanggapanTendikController extends Controller
 {
     public function index()
     {
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
         $roleAktor = null;
         if (Auth::guard('tpmf')->check()) {
             $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
@@ -45,8 +52,8 @@ class TanggapanTendikController extends Controller
             $ketua = true;
         }
 
-        $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->latest()->first();
-        $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->latest()->first();
+        $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
         $roleAktor = null;
 
@@ -65,7 +72,7 @@ class TanggapanTendikController extends Controller
         if (!$feedbackDekan) {
             $feedbackDekan = new feedback_tendik();
         }
-        
+
         return view('tanggapan.tanggapan_tendik', [
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
@@ -81,7 +88,7 @@ class TanggapanTendikController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_tendik',[
+        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_tendik', [
             'pernyataan' => $pernyataan,
         ]);
     }
@@ -145,6 +152,8 @@ class TanggapanTendikController extends Controller
 
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_tendik::create($tanggapan);
+        } elseif ((Auth::guard('dekan')->check() || Auth::guard('wadek')->check())) {
             feedback_tendik::create($tanggapan);
         } else {
             // cannot create
@@ -210,8 +219,8 @@ class TanggapanTendikController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_tendik')
-        ->where('Aktor', $aktor->Aktor)
-        ->update($tanggapan);
+            ->where('Aktor', $aktor->Aktor)
+            ->update($tanggapan);
 
 
         return redirect('/TanggapanTendik')->with('success', 'Tanggapan berhasil diperbarui');
