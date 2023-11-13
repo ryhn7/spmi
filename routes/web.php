@@ -86,6 +86,9 @@ Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanControlle
 //Route cetak pdf hasil survey
 Route::get('/hasildosen/cetak_pdf', [HasilSurveiKepuasanDosenController::class, 'cetak_pdf']);
 
+//route cetak excel hasil survey
+Route::get('/hasildosen/cetak_excel', [HasilSurveiKepuasanDosenController::class, 'cetak_excel']);
+
 // Route filter hasil survey
 Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);
 Route::get('/hasilmahasiswa/filter', [HasilSurveiKepuasanMahasiswaController::class, 'Filter']);

@@ -7,6 +7,8 @@ use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use App\Exports\HasilExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HasilSurveiKepuasanDosenController extends Controller
 {
@@ -341,4 +343,11 @@ class HasilSurveiKepuasanDosenController extends Controller
         // return $pdf-.>download('invoice.pdf');
         return $pdf->stream();
     }
+
+    public function cetak_excel(Request $request)
+	{
+        // use function filter
+        $hasil = $this->Filter($request);
+		return Excel::download(new HasilExport($hasil), 'hasil.xlsx');
+	}
 }
