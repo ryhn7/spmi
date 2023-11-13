@@ -7,12 +7,12 @@
             @if ((Auth::guard('tpmf')->check() && $ketua) || (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()))
                 <a href="/FeedbackDosen"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan TPMF</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
                 </a>
                 <br>
                 <a href="{{ route('tanggapandosen.edit', ['aktor' => $roleAktor]) }}"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan TPMF</span>
+                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                 </a>
             @endif
             <br>

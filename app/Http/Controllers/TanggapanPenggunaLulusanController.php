@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 
 class TanggapanPenggunaLulusanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         $roleAktor = null;
         if (Auth::guard('gpm')->check()) {
@@ -53,10 +53,13 @@ class TanggapanPenggunaLulusanController extends Controller
             $ketua = true;
         }
 
-        
+        $programStudi = $request->input('program_studi');
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
         $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')->latest()->first();
+        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')
+        ->where('program_studi', $programStudi)
+        ->latest()
+        ->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
         if (!$feedbackgpm) {
