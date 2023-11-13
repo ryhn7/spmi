@@ -27,6 +27,7 @@
                     <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                 </a> <br>
                 <form id="filter" action="/TanggapanPenggunaLulusan/filter" class="py-0.5" method="GET">
+                    @csrf
                     <label class="mt-3">Program Studi:</label>
                     <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         <select name="program_studi" id="program_studi"

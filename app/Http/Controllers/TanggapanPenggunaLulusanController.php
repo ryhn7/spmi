@@ -55,7 +55,8 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $programStudi = $request->input('program_studi');
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        // $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', $programStudi)->latest()->first();
         $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', $programStudi)
         ->latest()
         ->first();
@@ -129,7 +130,7 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $programStudi = $request->input('program_studi');
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', $programStudi)->latest()->first();
         $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', $programStudi)
         ->latest()
         ->first();
@@ -160,14 +161,17 @@ class TanggapanPenggunaLulusanController extends Controller
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
+        $programStudi = $request->program_studi;
+        // dd($programStudi);
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
         return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_gpm_pengguna_lulusan',[
             'pernyataan' => $pernyataan,
+            'programStudi' => $programStudi,
         ]);
     }
 
@@ -196,7 +200,8 @@ class TanggapanPenggunaLulusanController extends Controller
             ->get();
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
-        // dd($namaJabatan);
+        $programStudi = $request->program_studi;
+        // dd($programStudi);
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -212,7 +217,8 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
-            'status' => $namaJabatan,
+            // 'status' => $namaJabatan,
+            // 'status' => $programStudi,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -224,10 +230,18 @@ class TanggapanPenggunaLulusanController extends Controller
             '9' => $validated['sembilan'],
         ];
 
+        if (Auth::guard('dekan')->check()) {
+            $tanggapan['status'] = $programStudi;
+        } else {
+            $tanggapan['status'] = $namaJabatan;
+        }
+
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
             feedback_stakeholder::create($tanggapan);
-        } else {
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            feedback_stakeholder::create($tanggapan);
+        }else {
             // cannot create
             abort(403);
         }
