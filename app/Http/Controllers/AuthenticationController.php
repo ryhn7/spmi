@@ -123,20 +123,19 @@ class AuthenticationController extends Controller
                     dd('guard not found');
                 }
             }
-        } else if ($namaJabatan == "Tim Penjaminan Mutu Fakultas Sains dan Matematika") {
+        } else if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false) {
             $request->session()->put('role', 'tpmf');
             $tpmfUser = Dosen::where('nama_dosen', $namaDosen)->first();
 
             if ($tpmfUser) {
                 Auth::guard('tpmf')->login($tpmfUser);
                 if (Auth::guard('tpmf')->check()) {
-                    // dd(Auth::guard('tpmf')->user());
                     return redirect()->intended('/');
                 } else {
                     dd('guard not found');
                 }
             }
-        } else if ($namaJabatan == "Gugus Penjaminan Mutu Program Studi Sarjana Matematika") {
+        } else if (strpos($namaJabatan, 'Gugus Penjaminan Mutu') !== false) {
             $request->session()->put('role', 'gpm');
             $gpmUser = Dosen::where('nama_dosen', $namaDosen)->first();
 
@@ -163,7 +162,6 @@ class AuthenticationController extends Controller
         } else {
             abort(404);
         }
-        abort(404);
     }
 
     public function switchToDosen(Request $request)

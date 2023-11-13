@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\DB;
 use App\Models\pernyataan;
 use App\Models\feedback_dosen;
@@ -12,7 +13,40 @@ class TanggapanDosenController extends Controller
 {
     public function index()
     {
-        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->latest()->first();
+        $roleAktor = null;
+        if (Auth::guard('tpmf')->check()) {
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
+            $roleAktor = "TPMF";
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
+        $tpmf = null;
+        if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false) {
+            $tpmf = "Tim Penjaminan Mutu Fakultas Sains dan Matematika";
+        }
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
+        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->where('status', 'LIKE', "%$tpmf%")->latest()->first();
         $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
 
@@ -30,6 +64,8 @@ class TanggapanDosenController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'ketua' => $ketua,
+            'roleAktor' => $roleAktor,
         ]);
     }
 
@@ -39,7 +75,7 @@ class TanggapanDosenController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_dosen',[
+        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_dosen', [
             'pernyataan' => $pernyataan,
         ]);
     }
@@ -47,10 +83,26 @@ class TanggapanDosenController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('tpmf')->check()) {
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
             $aktor = "TPMF";
-        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             $aktor = "Dekan";
+        } else if (Auth::guard("wadek")->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $aktor = "Dekan";
+        } else {
+            $namaDosen = "Tidak ada";
         }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -99,6 +151,7 @@ class TanggapanDosenController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
+            'status' => $namaJabatan,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -144,31 +197,24 @@ class TanggapanDosenController extends Controller
         ];
 
         // dd($tanggapan);
-        feedback_dosen::create($tanggapan);
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_dosen::create($tanggapan);
+        } else {
+            // cannot create
+            abort(403);
+        }
 
         return redirect('/TanggapanDosen')->with('success', 'berhasil save');
     }
 
-    public function edit($id)
+    public function edit($aktor)
     {
-        // if (Auth::guard('tpmf')->check()) {
-        //     // $aktor = "TPMF";
-        //     $feedback = feedback_dosen::where('Aktor', 'TPMF')->find($id);
-        // } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
-        //     // $aktor = "Dekan";
-        //     $feedback = feedback_dosen::where('Aktor', 'Dekan')->find($id);
-        // }
-
-        $feedback = feedback_dosen::find($id);
+        $feedback = feedback_dosen::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
             return redirect('/TanggapanDosen')->with('error', 'Tanggapan tidak ditemukan');
         }
 
-        // dd($feedback);
-        $x = Auth::guard('tpmf')->check();
-        $y = Auth::guard('dekan')->check();
-        dd($x, $y);
 
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
@@ -182,7 +228,7 @@ class TanggapanDosenController extends Controller
         ]);
     }
 
-    public function update(Request $request, feedback_dosen $id)
+    public function update(Request $request, feedback_dosen $aktor)
     {
 
         $validated = $request->validate([
@@ -278,8 +324,8 @@ class TanggapanDosenController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_dosen')
-        ->where('ID', $id->ID)
-        ->update($tanggapan);
+            ->where('Aktor', $aktor->Aktor)
+            ->update($tanggapan);
 
 
         return redirect('/TanggapanDosen')->with('success', 'Tanggapan berhasil diperbarui');

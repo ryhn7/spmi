@@ -430,6 +430,10 @@ video {
   height: auto;
 }
 
+.trix-button-group.trix-button-group {
+  display: none;
+}
+
 /* Make elements with the HTML hidden attribute stay hidden by default */
 
 [hidden] {
@@ -5214,6 +5218,11 @@ input[type="range"]:active::-webkit-slider-thumb{
   .dark\:text-white{
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity));
+  }
+
+  .dark\:text-black{
+    --tw-text-opacity: 1;
+    color: rgb(0 0 0 / var(--tw-text-opacity));
   }
 
   .dark\:placeholder-gray-400::-moz-placeholder{

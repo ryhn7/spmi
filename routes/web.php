@@ -111,8 +111,8 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanTendik', [TanggapanTendikController::class, 'index']);
     Route::get('/FeedbackTendik', [TanggapanTendikController::class, 'create']);
     Route::post('/FeedbackTendik', [TanggapanTendikController::class, 'store']);
-    Route::get('/TanggapanTendik/Edit/{id}', [TanggapanTendikController::class, 'edit'])->name('tanggapantendik.edit');
-    Route::put('/TanggapanTendik/{id}', [TanggapanTendikController::class, 'update'])->name('tanggapantendik.update');
+    Route::get('/TanggapanTendik/Edit/{aktor}', [TanggapanTendikController::class, 'edit'])->name('tanggapantendik.edit');
+    Route::put('/TanggapanTendik/{aktor}', [TanggapanTendikController::class, 'update'])->name('tanggapantendik.update');
 
 });
 
@@ -120,24 +120,24 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanDosen', [TanggapanDosenController::class, 'index']);
     Route::get('/FeedbackDosen', [TanggapanDosenController::class, 'create']);
     Route::post('/FeedbackDosen', [TanggapanDosenController::class, 'store']);
-    Route::get('/TanggapanDosen/Edit/{id}', [TanggapanDosenController::class, 'edit'])->name('tanggapandosen.edit');
-    Route::put('/TanggapanDosen/{id}', [TanggapanDosenController::class, 'update'])->name('tanggapandosen.update');
+    Route::get('/TanggapanDosen/Edit/{aktor}', [TanggapanDosenController::class, 'edit'])->name('tanggapandosen.edit');
+    Route::put('/TanggapanDosen/{aktor}', [TanggapanDosenController::class, 'update'])->name('tanggapandosen.update');
 });
 
 Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanMitra', [TanggapanMitraController::class, 'index']);
     Route::get('/FeedbackMitra', [TanggapanMitraController::class, 'create']);
     Route::post('/FeedbackMitra', [TanggapanMitraController::class, 'store']);
-    Route::get('/TanggapanMitra/Edit/{id}', [TanggapanMitraController::class, 'edit'])->name('tanggapanmitra.edit');
-    Route::put('/TanggapanMitra/{id}', [TanggapanMitraController::class, 'update'])->name('tanggapanmitra.update');
+    Route::get('/TanggapanMitra/Edit/{aktor}', [TanggapanMitraController::class, 'edit'])->name('tanggapanmitra.edit');
+    Route::put('/TanggapanMitra/{aktor}', [TanggapanMitraController::class, 'update'])->name('tanggapanmitra.update');
 });
 
 Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
     Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
     Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
-    Route::get('/TanggapanMahasiswa/Edit/{id}', [TanggapanMahasiswaController::class, 'edit'])->name('tanggapanmahasiswa.edit');
-    Route::put('/TanggapanMahasiswa/{id}', [TanggapanMahasiswaController::class, 'update'])->name('tanggapanmahasiswa.update');
+    Route::get('/TanggapanMahasiswa/Edit/{aktor}', [TanggapanMahasiswaController::class, 'edit'])->name('tanggapanmahasiswa.edit');
+    Route::put('/TanggapanMahasiswa/{aktor}', [TanggapanMahasiswaController::class, 'update'])->name('tanggapanmahasiswa.update');
     
 });
 
@@ -145,8 +145,8 @@ Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
     Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
     Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);
-    Route::get('/TanggapanPenggunaLulusan/Edit/{id}', [TanggapanPenggunaLulusanController::class, 'edit'])->name('tanggapanpenggunalulusan.edit');
-    Route::put('/TanggapanPenggunaLulusan/{id}', [TanggapanPenggunaLulusanController::class, 'update'])->name('tanggapanpenggunalulusan.update');
+    Route::get('/TanggapanPenggunaLulusan/Edit/{aktor}', [TanggapanPenggunaLulusanController::class, 'edit'])->name('tanggapanpenggunalulusan.edit');
+    Route::put('/TanggapanPenggunaLulusan/{aktor}', [TanggapanPenggunaLulusanController::class, 'update'])->name('tanggapanpenggunalulusan.update');
 
 
 });

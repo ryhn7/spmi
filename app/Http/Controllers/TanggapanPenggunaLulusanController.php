@@ -12,10 +12,54 @@ use Illuminate\Support\Facades\Auth;
 
 class TanggapanPenggunaLulusanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->latest()->first();
-        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->latest()->first();
+        $roleAktor = null;
+        if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $roleAktor = "GPM";
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $roleAktor = "Kaprodi";
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
+        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[1];
+        } else {
+            // Handle the case where the pattern is not found
+            $jurusan = "Tidak ada";
+        }
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
+        $programStudi = $request->input('program_studi');
+        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')
+        ->where('program_studi', $programStudi)
+        ->latest()
+        ->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
         if (!$feedbackgpm) {
@@ -23,6 +67,9 @@ class TanggapanPenggunaLulusanController extends Controller
         }
         if (!$feedbackDekan) {
             $feedbackDekan = new feedback_stakeholder();
+        }
+        if (!$feedbackKaprodi) {
+            $feedbackKaprodi = new feedback_stakeholder();
         }
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -32,7 +79,10 @@ class TanggapanPenggunaLulusanController extends Controller
         return view('tanggapan.tanggapan_pengguna_lulusan', [
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
+            'feedbackKaprodi' => $feedbackKaprodi,
             'pernyataan' => $pernyataan,
+            'ketua' => $ketua,
+            'roleAktor' => $roleAktor,
         ]);
     }
 
@@ -50,10 +100,29 @@ class TanggapanPenggunaLulusanController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
             $aktor = "GPM";
-        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             $aktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $aktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $aktor = "Kaprodi";
+        } else {
+            $namaDosen = "Tidak ada";
         }
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+        // dd($namaJabatan);
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -69,6 +138,7 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
+            'status' => $namaJabatan,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -81,14 +151,19 @@ class TanggapanPenggunaLulusanController extends Controller
         ];
 
         // dd($tanggapan);
-        feedback_stakeholder::create($tanggapan);
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_stakeholder::create($tanggapan);
+        } else {
+            // cannot create
+            abort(403);
+        }
 
         return redirect('/TanggapanPenggunaLulusan')->with('success', 'berhasil save');
     }
 
-    public function edit($id)
+    public function edit($aktor)
     {
-        $feedback = feedback_stakeholder::find($id);
+        $feedback = feedback_stakeholder::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
             return redirect('/TanggapanPenggunaLulusan')->with('error', 'Tanggapan tidak ditemukan');
@@ -106,7 +181,7 @@ class TanggapanPenggunaLulusanController extends Controller
         ]);
     }
 
-    public function update(Request $request, feedback_stakeholder $id)
+    public function update(Request $request, feedback_stakeholder $aktor)
     {
 
         $validated = $request->validate([
@@ -136,8 +211,8 @@ class TanggapanPenggunaLulusanController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_stakeholder')
-        ->where('ID', $id->ID)
-        ->update($tanggapan);
+            ->where('Aktor', $aktor->Aktor)
+            ->update($tanggapan);
 
 
         return redirect('/TanggapanPenggunaLulusan')->with('success', 'Tanggapan berhasil diperbarui');

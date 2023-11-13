@@ -5,27 +5,17 @@
         <div><br><br>
             <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Mitra
                 Kerjasama</h2>
-            @if (Auth::guard('tpmf')->check())
-                <a href="/FeedbackMitra"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan TPMF</span>
-                </a>
-                <br>
-                <a href="{{ route('tanggapanmitra.edit', ['id' => $feedbackTpmf->ID]) }}"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan TPMF</span>
-                </a>
-            @elseif (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
-                <a href="/FeedbackMitra"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan Dekan</span>
-                </a>
-                <br>
-                <a href="{{ route('tanggapanmitra.edit', ['id' => $feedbackTpmf->ID]) }}"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan Dekan</span>
-                </a>
-            @endif
+                @if ((Auth::guard('tpmf')->check() && $ketua) || (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()))
+                    <a href="/Feedbackmitra"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
+                    </a>
+                    <br>
+                    <a href="{{ route('tanggapanmitra.edit', ['aktor' => $roleAktor]) }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
+                    </a>
+                @endif
             <br>
             <table class="shadow-lg bg-white">
                 <tr>
