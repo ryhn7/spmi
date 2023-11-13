@@ -19,6 +19,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- Trix Editor --}}
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <style>
+        .trix-button-group.trix-button-group {
+            display: none;
+        }
+    </style>
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 </head>
 
