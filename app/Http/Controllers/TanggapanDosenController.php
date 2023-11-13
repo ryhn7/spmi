@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use App\Models\pernyataan;
 use App\Models\feedback_dosen;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,6 +14,10 @@ class TanggapanDosenController extends Controller
 {
     public function index()
     {
+        // $year = Carbon::now()->year;
+        // dd($year);
+
+
         $roleAktor = null;
         if (Auth::guard('tpmf')->check()) {
             $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
@@ -35,6 +40,7 @@ class TanggapanDosenController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
+
 
         $tpmf = null;
         if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false) {
@@ -59,6 +65,11 @@ class TanggapanDosenController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
+
+        // check attribute of $feedbackTpmf
+        // $x = $feedbackDekan->toArray();
+
+        // dd($x);
 
         return view('tanggapan.tanggapan_dosen', [
             'feedbackTpmf' => $feedbackTpmf,
@@ -198,6 +209,8 @@ class TanggapanDosenController extends Controller
 
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_dosen::create($tanggapan);
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             feedback_dosen::create($tanggapan);
         } else {
             // cannot create
