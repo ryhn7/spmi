@@ -128,6 +128,23 @@ class HasilSurveiKepuasanDosenController extends Controller
         return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
     }
 
+    public function tes()
+    {
+        $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+
+        // dd($final);
+
+        return Excel::download(new HasilExport($final), 'hasil.xlsx');
+    }
+
     public function Filter(Request $request)
     {
         $tahun = $request->input('tahun');

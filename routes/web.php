@@ -154,3 +154,6 @@ Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
 
 });
 
+// Export excel
+Route::get('/export-excell', [HasilSurveiKepuasanDosenController::class, 'tes']);
+

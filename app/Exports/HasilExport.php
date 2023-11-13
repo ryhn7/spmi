@@ -14,10 +14,12 @@ class HasilExport implements FromView
     public function __construct($hasil)
     {
         $this->hasil = $hasil;
+
+        // dd($hasil);
     }
 
     public function view(): View
     {
-        return view('hasil_survei.hasil_survei_dosen',['hasil' => $this->hasil]); // Replace with the actual path to your view
+        return view('hasil_survei.tes', ['hasil' => $this->hasil]); // Replace with the actual path to your view
     }
 }
