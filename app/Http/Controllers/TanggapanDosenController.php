@@ -14,8 +14,11 @@ class TanggapanDosenController extends Controller
 {
     public function index()
     {
-        // $year = Carbon::now()->year;
-        // dd($year);
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
 
 
         $roleAktor = null;
@@ -52,8 +55,8 @@ class TanggapanDosenController extends Controller
             $ketua = true;
         }
 
-        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->where('status', 'LIKE', "%$tpmf%")->latest()->first();
-        $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->latest()->first();
+        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->where('status', 'LIKE', "%$tpmf%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
 
         if (!$feedbackTpmf) {

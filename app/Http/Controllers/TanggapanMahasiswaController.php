@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pernyataan;
 use App\Models\feedback_mahasiswa;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -13,6 +14,12 @@ class TanggapanMahasiswaController extends Controller
 {
     public function index()
     {
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
+
         $roleAktor = null;
         if (Auth::guard('gpm')->check()) {
             $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
@@ -53,9 +60,9 @@ class TanggapanMahasiswaController extends Controller
         }
 
 
-        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->latest()->first();
+        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$jurusan%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -220,6 +227,8 @@ class TanggapanMahasiswaController extends Controller
 
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
+            feedback_mahasiswa::create($tanggapan);
+        } else if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             feedback_mahasiswa::create($tanggapan);
         } else {
             // cannot create
