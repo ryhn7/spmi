@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use App\Models\pernyataan;
 use App\Models\feedback_mitra;
@@ -12,6 +14,11 @@ class TanggapanMitraController extends Controller
 {
     public function index()
     {
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
         $roleAktor = null;
         if (Auth::guard('tpmf')->check()) {
             $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
@@ -45,8 +52,8 @@ class TanggapanMitraController extends Controller
             $ketua = true;
         }
 
-        $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
-        $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
+        $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
         $roleAktor = null;
 
@@ -82,7 +89,7 @@ class TanggapanMitraController extends Controller
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
-        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_mitra',[
+        return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_tpmf_mitra', [
             'pernyataan' => $pernyataan,
         ]);
     }
@@ -143,11 +150,13 @@ class TanggapanMitraController extends Controller
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
             feedback_mitra::create($tanggapan);
+        } elseif ((Auth::guard('dekan')->check() || Auth::guard('wadek')->check())) {
+            feedback_mitra::create($tanggapan);
         } else {
             // cannot create
             abort(403);
         }
-        
+
 
         return redirect('/TanggapanMitra')->with('success', 'berhasil save');
     }
@@ -204,8 +213,8 @@ class TanggapanMitraController extends Controller
         // dd($tanggapan);
 
         DB::table('feedback_mitra')
-        ->where('Aktor', $aktor->Aktor)
-        ->update($tanggapan);
+            ->where('Aktor', $aktor->Aktor)
+            ->update($tanggapan);
 
 
         return redirect('/TanggapanMitra')->with('success', 'Tanggapan berhasil diperbarui');
