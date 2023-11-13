@@ -134,6 +134,7 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
 
 Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanMahasiswa', [TanggapanMahasiswaController::class, 'index']);
+    Route::get('/TanggapanMahasiswa/filter', [TanggapanMahasiswaController::class, 'filter']);
     Route::get('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'create']);
     Route::post('/FeedbackMahasiswa', [TanggapanMahasiswaController::class, 'store']);
     Route::get('/TanggapanMahasiswa/Edit/{aktor}', [TanggapanMahasiswaController::class, 'edit'])->name('tanggapanmahasiswa.edit');

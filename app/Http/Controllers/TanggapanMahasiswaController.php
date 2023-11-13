@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class TanggapanMahasiswaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // get desember current year -1
         $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
@@ -54,15 +54,21 @@ class TanggapanMahasiswaController extends Controller
             $jurusan = "Tidak ada";
         }
 
+        if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            $programStudi = $request->input('program_studi');
+        } else {
+            $programStudi = $jurusan;
+        }
+
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
             $ketua = true;
         }
 
 
-        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
-        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$jurusan%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
-        $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -85,17 +91,103 @@ class TanggapanMahasiswaController extends Controller
             'pernyataan' => $pernyataan,
             'ketua' => $ketua,
             'roleAktor' => $roleAktor,
+            'programStudi' => $programStudi,
         ]);
     }
 
-    public function create()
+    public function filter(Request $request)
     {
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
+
+        $roleAktor = null;
+        if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $roleAktor = "GPM";
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $roleAktor = "Kaprodi";
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
+        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[1];
+        } else {
+            // Handle the case where the pattern is not found
+            $jurusan = "Tidak ada";
+        }
+
+        if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
+            $programStudi = $request->input('program_studi');
+        } else {
+            $programStudi = $jurusan;
+        }
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
+
+        $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+
+        if (!$feedbackgpm) {
+            $feedbackgpm = new feedback_mahasiswa();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_mahasiswa();
+        }
+        if (!$feedbackKaprodi) {
+            $feedbackKaprodi = new feedback_mahasiswa();
+        }
+
+        return view('tanggapan.tanggapan_mahasiswa', [
+            'feedbackGpm' => $feedbackgpm,
+            'feedbackDekan' => $feedbackDekan,
+            'feedbackKaprodi' => $feedbackKaprodi,
+            'pernyataan' => $pernyataan,
+            'ketua' => $ketua,
+            'roleAktor' => $roleAktor,
+            'programStudi' => $programStudi,
+        ]);
+    }
+
+    public function create(Request $request)
+    {
+        $programStudi = $request->program_studi;
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
         }
         return view('tanggapan.tanggapan_tpmf_gpm.tanggapan_gpm_mahasiswa', [
             'pernyataan' => $pernyataan,
+            'programStudi' => $programStudi,
         ]);
     }
 
@@ -125,7 +217,7 @@ class TanggapanMahasiswaController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
-
+        $programStudi = $request->program_studi;
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -177,7 +269,7 @@ class TanggapanMahasiswaController extends Controller
 
         $tanggapan = [
             'Aktor' => $aktor,
-            'status' => $namaJabatan,
+            // 'status' => $namaJabatan,
             '1' => $validated['satu'],
             '2' => $validated['dua'],
             '3' => $validated['tiga'],
@@ -225,6 +317,12 @@ class TanggapanMahasiswaController extends Controller
             '45' => $validated['empat_lima'],
         ];
 
+        if (Auth::guard('dekan')->check()) {
+            $tanggapan['status'] = $programStudi;
+        } else {
+            $tanggapan['status'] = $namaJabatan;
+        }
+
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
             feedback_mahasiswa::create($tanggapan);
@@ -234,7 +332,7 @@ class TanggapanMahasiswaController extends Controller
             // cannot create
             abort(403);
         }
-        return redirect('/TanggapanMahasiswa')->with('success', 'berhasil save');
+        return redirect("/TanggapanMahasiswa/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
     }
 
     public function edit($aktor)
