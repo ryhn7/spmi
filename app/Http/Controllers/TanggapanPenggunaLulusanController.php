@@ -82,6 +82,7 @@ class TanggapanPenggunaLulusanController extends Controller
             'pernyataan' => $pernyataan,
             'ketua' => $ketua,
             'roleAktor' => $roleAktor,
+            'programStudi' => $programStudi,
         ]);
     }
 
@@ -155,6 +156,7 @@ class TanggapanPenggunaLulusanController extends Controller
             'pernyataan' => $pernyataan,
             'ketua' => $ketua,
             'roleAktor' => $roleAktor,
+            'programStudi' => $programStudi,
         ]);
     }
 

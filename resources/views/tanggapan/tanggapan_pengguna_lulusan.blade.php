@@ -17,7 +17,7 @@
                 </a> <br>
             @endif
             @if ((Auth::guard('dekan')->check()))
-                <a href="/FeedbackPenggunaLulusan"
+                <a href="/FeedbackPenggunaLulusan?program_studi={{ $programStudi }}"
                     class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                     <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
                 </a>
@@ -88,26 +88,8 @@
                 @endfor
             </table>
         </div>
+        
         <script>
-            const prodi = document.getElementById('program_studi');
-            const form = document.getElementById('filter');
-            const tambahkanTanggapanLink = document.getElementById('tambahkan_tanggapan_link');
-        
-            prodi.addEventListener('change', () => {
-                // Cek apakah tahun dan prodi sudah terpilih
-                console.log('Prodi dipilih:', prodi.value); // Pesan ini akan muncul di konsol
-                tahun.style.display = "block";
-        
-                // Update URL dengan nilai Program Studi yang dipilih
-                tambahkanTanggapanLink.href = `/FeedbackPenggunaLulusan?program_studi=${encodeURIComponent(prodi.value)}`;
-        
-                if (prodi.value) {
-                    form.submit();
-                }
-            });
-        </script>
-        
-        {{-- <script>
         const prodi = document.getElementById('program_studi');
         const form = document.getElementById('filter');
 
@@ -118,6 +100,6 @@
                 form.submit();
             }
         })
-        </script> --}}
+        </script>
     </section>
 @endsection
