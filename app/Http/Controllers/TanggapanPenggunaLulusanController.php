@@ -56,8 +56,80 @@ class TanggapanPenggunaLulusanController extends Controller
         $programStudi = $request->input('program_studi');
         $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
         $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
-        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi')
-        ->where('program_studi', $programStudi)
+        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', $programStudi)
+        ->latest()
+        ->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+
+        if (!$feedbackgpm) {
+            $feedbackgpm = new feedback_stakeholder();
+        }
+        if (!$feedbackDekan) {
+            $feedbackDekan = new feedback_stakeholder();
+        }
+        if (!$feedbackKaprodi) {
+            $feedbackKaprodi = new feedback_stakeholder();
+        }
+        if (!$pernyataan) {
+            $pernyataan = new pernyataan();
+        }
+
+
+        return view('tanggapan.tanggapan_pengguna_lulusan', [
+            'feedbackGpm' => $feedbackgpm,
+            'feedbackDekan' => $feedbackDekan,
+            'feedbackKaprodi' => $feedbackKaprodi,
+            'pernyataan' => $pernyataan,
+            'ketua' => $ketua,
+            'roleAktor' => $roleAktor,
+        ]);
+    }
+
+    public function filter(Request $request)
+    {
+        $roleAktor = null;
+        if (Auth::guard('gpm')->check()) {
+            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $roleAktor = "GPM";
+        } else if (Auth::guard('dekan')->check()) {
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('wadek')->check()) {
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $roleAktor = "Dekan";
+        } else if (Auth::guard('kaprodi')->check()) {
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $roleAktor = "Kaprodi";
+        } else {
+            $namaDosen = "Tidak ada";
+        }
+
+
+        $jabatanDosen = DB::table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+            ->select('dosen.*', 'jabatan.jabatan')
+            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->get();
+
+
+        $namaJabatan = $jabatanDosen[0]->jabatan;
+
+        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[1];
+        } else {
+            // Handle the case where the pattern is not found
+            $jurusan = "Tidak ada";
+        }
+
+        $ketua = false;
+        if (strpos($namaJabatan, 'Ketua') !== false) {
+            $ketua = true;
+        }
+
+        $programStudi = $request->input('program_studi');
+        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$jurusan%")->latest()->first();
+        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', $programStudi)
         ->latest()
         ->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();

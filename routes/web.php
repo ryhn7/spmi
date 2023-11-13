@@ -143,6 +143,7 @@ Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
 
 Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
     Route::get('/TanggapanPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'index']);
+    Route::get('/TanggapanPenggunaLulusan/filter', [TanggapanPenggunaLulusanController::class, 'filter']);
     Route::get('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'create']);
     Route::post('/FeedbackPenggunaLulusan', [TanggapanPenggunaLulusanController::class, 'store']);
     Route::get('/TanggapanPenggunaLulusan/Edit/{aktor}', [TanggapanPenggunaLulusanController::class, 'edit'])->name('tanggapanpenggunalulusan.edit');
