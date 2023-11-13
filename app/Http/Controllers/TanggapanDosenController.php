@@ -16,10 +16,11 @@ class TanggapanDosenController extends Controller
     {
         // get desember current year -1
         $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        
         // get november current year 
         $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
 
-
+        // dd($past, $current);
 
         $roleAktor = null;
         if (Auth::guard('tpmf')->check()) {

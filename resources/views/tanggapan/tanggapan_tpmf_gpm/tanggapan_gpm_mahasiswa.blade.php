@@ -3,6 +3,7 @@
 <div class="pt-32">
         <form action="/FeedbackMahasiswa" method="POST">
             @csrf
+            <input type="hidden" name="program_studi" value="{{ $programStudi }}">
             <div class="flex justify-center items-center">
                 <p class="text-xl font-open font-bold">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</p>
             </div>
