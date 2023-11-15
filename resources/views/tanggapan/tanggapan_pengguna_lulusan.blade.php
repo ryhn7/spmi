@@ -5,27 +5,18 @@
         <div><br><br>
             <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Pengguna
                 Lulusan</h2>
-            @if ((Auth::guard('gpm')->check() && $ketua) || Auth::guard('kaprodi')->check())
-                <a href="/FeedbackPenggunaLulusan"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
-                </a>
-                <br>
-                <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor]) }}"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
-                </a> <br>
-            @endif
-            @if ((Auth::guard('dekan')->check()) || Auth::guard('wadek')->check())
-                <a href="/FeedbackPenggunaLulusan?program_studi={{ $programStudi }}"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
-                </a>
-                <br>
-                <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor]) }}"
-                    class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
-                    <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
-                </a> <br>
+                @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
+                @if ($feedbackDekan->toArray() != null)
+                    <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor]) }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
+                    </a>
+                @else
+                    <a href="/FeedbackPenggunaLulusan?program_studi={{ $programStudi }}" onclick="return checkProgramStudi()"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
+                    </a>
+                @endif
                 <form id="filter" action="/TanggapanPenggunaLulusan/filter" class="py-0.5" method="GET">
                     <label class="mt-3">Program Studi:</label>
                     <label for="program_studi" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -63,6 +54,30 @@
                     </select>
                 </label>
                 </form>
+            @elseif(Auth::guard('kaprodi')->check())
+                @if ($feedbackKaprodi->toArray() != null)
+                    <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor]) }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
+                    </a>
+                @else
+                    <a href="/FeedbackPenggunaLulusan"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
+                    </a>
+                @endif
+            @elseif(Auth::guard('gpm')->check() && $ketua)
+                @if ($feedbackGpm->toArray() != null)
+                    <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor]) }}"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
+                    </a>
+                @else
+                    <a href="/FeedbackPenggunaLulusan"
+                        class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
+                        <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
+                    </a>
+                @endif
             @endif
             <br>
             <table class="shadow-lg bg-white">
@@ -99,6 +114,17 @@
                 form.submit();
             }
         })
+
+        function checkProgramStudi() {
+                const selectedProgramStudi = document.getElementById('program_studi').value;
+
+                if (selectedProgramStudi === '') {
+                    alert('Pilih program studi terlebih dahulu.');
+                    return false; // Mencegah pengarahan ke link jika program studi belum dipilih
+                }
+
+                return true; // Lanjutkan ke link jika program studi sudah terpilih
+            }
         </script>
     </section>
 @endsection

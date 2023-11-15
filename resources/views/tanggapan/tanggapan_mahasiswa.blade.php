@@ -12,7 +12,7 @@
                         <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                     </a>
                 @else
-                    <a href="/FeedbackMahasiswa?program_studi={{ $programStudi }}"
+                    <a href="/FeedbackMahasiswa?program_studi={{ $programStudi }}" onclick="return checkProgramStudi()"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
                     </a>
@@ -113,6 +113,16 @@
                     form.submit();
                 }
             })
+            function checkProgramStudi() {
+                const selectedProgramStudi = document.getElementById('program_studi').value;
+
+                if (selectedProgramStudi === '') {
+                    alert('Pilih program studi terlebih dahulu.');
+                    return false; // Mencegah pengarahan ke link jika program studi belum dipilih
+                }
+
+                return true; // Lanjutkan ke link jika program studi sudah terpilih
+            }
         </script>
     </section>
 @endsection

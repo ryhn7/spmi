@@ -60,13 +60,18 @@ class TanggapanPenggunaLulusanController extends Controller
         }
 
         $programStudi = $request->input('program_studi');
-        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
-        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
-        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', 'LIKE', "%$programStudi%")
-        ->latest()
-        ->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
-
+        if ($programStudi !== null) {
+            $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
+            $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
+            $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', 'LIKE', "%$programStudi%")
+            ->latest()
+            ->first();
+        } else {
+            $feedbackgpm = ''; 
+            $feedbackDekan = ''; 
+            $feedbackKaprodi = ''; 
+        }
         if (!$feedbackgpm) {
             $feedbackgpm = new feedback_stakeholder();
         }
@@ -139,11 +144,17 @@ class TanggapanPenggunaLulusanController extends Controller
             $programStudi = $jurusan;
         }
         
-        $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
-        $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
-        $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', $programStudi)
-        ->latest()
-        ->first();
+        if ($programStudi !== null) {
+            $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
+            $feedbackDekan = feedback_stakeholder::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
+            $feedbackKaprodi = feedback_stakeholder::where('aktor', 'Kaprodi') ->where('status', 'LIKE', "%$programStudi%")
+            ->latest()
+            ->first();
+        } else {
+            $feedbackgpm = ''; 
+            $feedbackDekan = ''; 
+            $feedbackKaprodi = ''; 
+        }
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
         if (!$feedbackgpm) {
