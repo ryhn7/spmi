@@ -22,17 +22,17 @@
             </form>
             <table class="shadow-lg bg-white">
                 <tr>
-                    <th class="bg-blue-100 border border-black text-center px-8 py-4">No.</th>
-                    <th class="bg-blue-100 border border-black text-center px-8 py-4">Pernyataan</th>
-                    <th class="bg-blue-100 border border-black text-center px-8 py-4">Usulan Tindak Lanjut</th>
-                    <th class="bg-blue-100 border border-black text-center px-8 py-4">Upaya Perbaikan</th>
+                    <th class="bg-[#03051e] text-white text-center py-3" style="width: 5%;">No.</th>
+                    <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Pernyataan</th>
+                    <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Usulan Tindak Lanjut</th>
+                    <th class="bg-[#03051e] text-white text-center py-3" style="width: 30%;">Upaya Perbaikan</th>
                 </tr>
                 @for ($nomor = 1; $nomor <= 12; $nomor++)
                     <tr>
-                        <td class="border px-8 py-4 border border-black">{{ $nomor }}.</td>
-                        <td class="border px-8 py-4 border border-black">{{ $pernyataan->{$nomor} }}</td>
-                        <td class="border px-8 py-4 border border-black">{!! $feedbackTpmf->{$nomor} !!}</td>
-                        <td class="border px-8 py-4 border border-black">{!! $feedbackDekan->{$nomor} !!}</td>
+                        <td class="border-b border-black px-3 py-3">{{ $nomor }}.</td>
+                        <td class="border-b border-black px-3 py-3">{{ $pernyataan->{$nomor} }}</td>
+                        <td class="border-b border-black px-3 py-3">{!! $feedbackTpmf->{$nomor} !!}</td>
+                        <td class="border-b border-r border-black px-3 py-3">{!! $feedbackDekan->{$nomor} !!}</td>
                     </tr>
                 @endfor
             </table>

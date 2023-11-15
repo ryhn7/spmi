@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\FeedbackSurveiController;
 use App\Http\Controllers\FeedbackSurveiDosenController;
 use App\Http\Controllers\FeedbackSurveiMahasiswaController;
 use App\Http\Controllers\FeedbackSurveiMitraController;

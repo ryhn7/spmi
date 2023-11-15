@@ -13,6 +13,7 @@ class FeedbackSurveiMitraController extends Controller
         $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
         $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->latest()->first();
+        $uniqueYears = feedback_mitra::selectRaw('YEAR(updated_at) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
         if (!$feedbackTpmf) {
             $feedbackTpmf = new feedback_mitra();
         }
@@ -26,12 +27,13 @@ class FeedbackSurveiMitraController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'uniqueYears' => $uniqueYears
         ]);
     }
     public function Filter(Request $request)
     {
         $tahun = $request->input('tahun');
-        $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
         $feedbackTpmf = feedback_mitra::whereYear('updated_at', $tahun)->where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_mitra::whereYear('updated_at', $tahun)->where('aktor', 'Dekan')->latest()->first();
         $uniqueYears = feedback_mitra::selectRaw('YEAR(updated_at) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');

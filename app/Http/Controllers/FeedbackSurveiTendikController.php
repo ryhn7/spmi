@@ -13,6 +13,7 @@ class FeedbackSurveiTendikController extends Controller
         $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
         $feedbackTpmf = feedback_tendik::where('aktor', 'TPMF')->latest()->first();
         $feedbackDekan = feedback_tendik::where('aktor', 'Dekan')->latest()->first();
+        $uniqueYears = feedback_tendik::selectRaw('YEAR(updated_at) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
         if (!$feedbackTpmf) {
             $feedbackTpmf = new feedback_tendik();
         }
@@ -26,6 +27,7 @@ class FeedbackSurveiTendikController extends Controller
             'feedbackTpmf' => $feedbackTpmf,
             'feedbackDekan' => $feedbackDekan,
             'pernyataan' => $pernyataan,
+            'uniqueYears' => $uniqueYears
         ]);
     }
 
