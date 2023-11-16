@@ -7,6 +7,8 @@ use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
+use App\Exports\HasilExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HasilSurveiKepuasanDosenController extends Controller
 {
@@ -122,8 +124,29 @@ class HasilSurveiKepuasanDosenController extends Controller
         }
 
         $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
+        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final])); // Menggunakan $this->results di sini juga
+    }
+
+    public function tes(Request $request)
+    {
+        // dd($request->all());
+        
+        $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+
+        // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        $final = json_decode($request->input('excel'), true);
+
+        // dd($final);
+
+        return Excel::download(new HasilExport($final), 'hasil.xlsx');
     }
 
     public function Filter(Request $request)
@@ -224,6 +247,7 @@ class HasilSurveiKepuasanDosenController extends Controller
             'totalData' => $totalData,
             'averages' => $averages,
             'labels' => $labels,
+            'tahun' => $tahun
         ];
         $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
 
@@ -232,8 +256,9 @@ class HasilSurveiKepuasanDosenController extends Controller
         }
 
         $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final]));
     }
 
     public function cetak_pdf()
@@ -341,4 +366,11 @@ class HasilSurveiKepuasanDosenController extends Controller
         // return $pdf-.>download('invoice.pdf');
         return $pdf->stream();
     }
+
+    public function cetak_excel(Request $request)
+	{
+        // use function filter
+        $hasil = $this->Filter($request);
+		return Excel::download(new HasilExport($hasil), 'hasil.xlsx');
+	}
 }
