@@ -122,7 +122,7 @@ Route::middleware(['auth:tpmf,dekan,wadek'])->group(function () {
     Route::get('/TanggapanDosen', [TanggapanDosenController::class, 'index']);
     Route::get('/FeedbackDosen', [TanggapanDosenController::class, 'create']);
     Route::post('/FeedbackDosen', [TanggapanDosenController::class, 'store']);
-    Route::get('/TanggapanDosen/Edit/{aktor}', [TanggapanDosenController::class, 'edit'])->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->name('tanggapandosen.edit');
+    Route::get('/TanggapanDosen/Edit/{aktor}', [TanggapanDosenController::class, 'edit'])->name('tanggapandosen.edit');
     Route::put('/TanggapanDosen/{aktor}', [TanggapanDosenController::class, 'update'])->name('tanggapandosen.update');
 });
 
