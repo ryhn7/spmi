@@ -3,6 +3,11 @@
 @section('container')
     <section class="sectionSize bg-white">
         <br><br><br>
+        <form id="excel" action="/cetak-excel-mahasiswa" method="POST">
+            @csrf
+            <input type="hidden" name="excel" value="{{ json_encode($final) }}">
+            <button type="submit">Export excel</button>
+        </form>
         {{-- @dd($results); --}}
         <div class="container">
             <div class=" flex justify-center text-2xl mt-10">
@@ -147,10 +152,10 @@
                                 <td class="border-l border-b border-black text-center font-bold" colspan="6"><label>Rata
                                         - Rata</label></td>
                                 <td class="border-b border-black text-center font-bold">
-                                    <label>{{ number_format($averages[1], 2) }}</label>
+                                    <label>{{ number_format($averages[0], 2) }}</label>
                                 </td>
                                 <td class="border-b border-r font-bold border-black text-center">
-                                    <label>{{ $labels[1] }}</label>
+                                    <label>{{ $labels[0] }}</label>
                                 </td>
                             </tr>
                         </tbody>
@@ -312,10 +317,10 @@
                                     <label>Rata - Rata</label>
                                 </td>
                                 <td class="border-b border-black text-center font-bold">
-                                    <label>{{ number_format($averages[1], 2) }}</label>
+                                    <label>{{ number_format($averages[2], 2) }}</label>
                                 </td>
                                 <td class="border-b border-r font-bold border-black text-center">
-                                    <label>{{ $labels[1] }}</label>
+                                    <label>{{ $labels[2] }}</label>
                                 </td>
                             </tr>
                         </tbody>
@@ -394,10 +399,10 @@
                                     <label>Rata - Rata</label>
                                 </td>
                                 <td class="border-b border-black text-center font-bold">
-                                    <label>{{ number_format($averages[1], 2) }}</label>
+                                    <label>{{ number_format($averages[3], 2) }}</label>
                                 </td>
                                 <td class="border-b border-r font-bold border-black text-center">
-                                    <label>{{ $labels[1] }}</label>
+                                    <label>{{ $labels[3] }}</label>
                                 </td>
                             </tr>
                         </tbody>
@@ -476,10 +481,10 @@
                                     <label>Rata - Rata</label>
                                 </td>
                                 <td class="border-b border-black text-center font-bold">
-                                    <label>{{ number_format($averages[1], 2) }}</label>
+                                    <label>{{ number_format($averages[4], 2) }}</label>
                                 </td>
                                 <td class="border-b border-r font-bold border-black text-center">
-                                    <label>{{ $labels[1] }}</label>
+                                    <label>{{ $labels[4] }}</label>
                                 </td>
                             </tr>
                         </tbody>
@@ -558,10 +563,10 @@
                                     <label>Rata - Rata</label>
                                 </td>
                                 <td class="border-b border-black text-center font-bold">
-                                    <label>{{ number_format($averages[1], 2) }}</label>
+                                    <label>{{ number_format($averages[5], 2) }}</label>
                                 </td>
                                 <td class="border-b border-r font-bold border-black text-center">
-                                    <label>{{ $labels[1] }}</label>
+                                    <label>{{ $labels[5] }}</label>
                                 </td>
                             </tr>
                         </tbody>
@@ -640,10 +645,10 @@
                                     <label>Rata - Rata</label>
                                 </td>
                                 <td class="border-b border-black text-center font-bold">
-                                    <label>{{ number_format($averages[1], 2) }}</label>
+                                    <label>{{ number_format($averages[6], 2) }}</label>
                                 </td>
                                 <td class="border-b border-r font-bold border-black text-center">
-                                    <label>{{ $labels[1] }}</label>
+                                    <label>{{ $labels[6] }}</label>
                                 </td>
                             </tr>
                         </tbody>

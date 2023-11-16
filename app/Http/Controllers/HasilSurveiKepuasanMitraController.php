@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\kepuasan_mitra_kerjasama;
 use App\Models\pernyataan;
 use Illuminate\Http\Request;
+use App\Exports\MitraExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HasilSurveiKepuasanMitraController extends Controller
 {
@@ -99,8 +101,28 @@ class HasilSurveiKepuasanMitraController extends Controller
         }
 
         $uniqueYears = kepuasan_mitra_kerjasama::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        return view('hasil_survei.hasil_survei_mitra', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final])); // Menggunakan $this->results di sini juga
+    }
 
-        return view('hasil_survei.hasil_survei_mitra', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
+    public function cetak_excel(Request $request)
+    {
+        // dd($request->all());
+        
+        $hasil = pernyataan::where('status', 'pernyataan_mitra')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_mitra_kerjasama::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+
+        // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        $final = json_decode($request->input('excel'), true);
+
+        // dd($final);
+
+        return Excel::download(new MitraExport($final), 'Hasil Survei Mitra Kerjasama Tahun' . $final['tahun'] . '.xlsx');
     }
 
     public function filter(Request $request)
@@ -176,7 +198,8 @@ class HasilSurveiKepuasanMitraController extends Controller
             'labelWeightedTotals' => $labelWeightedTotals,
             'totalData' => $totalData,
             'averageAll' => $averageAll,
-            'labelAverageAll' => $labelAverageAll
+            'labelAverageAll' => $labelAverageAll,
+            'tahun' => $tahun
         ];
         $hasil = pernyataan::where('status', 'pernyataan_mitra')->first();
 
@@ -185,7 +208,8 @@ class HasilSurveiKepuasanMitraController extends Controller
         }
 
         $uniqueYears = kepuasan_mitra_kerjasama::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_mitra', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+        return view('hasil_survei.hasil_survei_mitra', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final]));
     }
 }

@@ -12,38 +12,29 @@
     @php
         $sections = [
         0 => [
-            'name' => 'Survei Kepuasan Terkait Pengelolaan Sumber Daya Manusia',
-            'index' => [1, 4],
+            'name' => 'Survei Kepuasan Terkait Layanan Pengembangan Kompetensi',
+            'index' => [1, 5],
         ],
         1 => [
-            'name' => 'Survei Kepuasan Terkait Layanan Pengembangan Kompetensi',
-            'index' => [5, 9],
-        ],
-        2 => [
             'name' => 'Survei Kepuasan Terkait Layanan Pengembangan Karir/Jabatan',
-            'index' => [10, 16],
-        ],
-        3 => [
-            'name' => 'Survei Kepuasan Terkait Layanan Penelitian dan Karya Ilmiah',
-            'index' => [17, 25],
-        ],
-        4 => [
-            'name' => 'Survei Kepuasan Terkait Layanan Pengabdian kepada Masyarakat',
-            'index' => [26, 32],
-        ],
-        5 => [
-            'name' => 'Survei Kepuasan Terkait Layanan Keuangan, Sarana dan Prasarana',
-            'index' => [33, 42],
+            'index' => [6, 12],
         ]
         ];
     @endphp
+    <h1>
+        @if (isset($hasil['tahun']))
+            {{ 'Hasil Survei Tenaga Kependidikan Tahun ' . $hasil['tahun'] }}
+        @else
+            {{ 'Hasil Survei Tenaga Kependidikan' }}
+        @endif
+    </h1>
     @foreach ($sections as $sectionNumber => $section)
         @php
             $startNumber = $section['index'][0];
             $endNumber = $section['index'][1];
         @endphp
-        <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-            <h3>{{ $section['name'] }}</h3>
+        <h3>{{ $section['name'] }}</h3>
+        <table style="width: 100%;" id="{{ $sectionNumber }}" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;"><b>No.</b></th>
@@ -77,7 +68,7 @@
                 @for ($i = $startNumber; $i <= $endNumber; $i++)
                 <tr>
                     <td class="border border-black text-center" style="width: 5%;">{{ $i }}.</td>
-                    <td class="border-b border-black text-left px-3 py-3">{{ $hasil['hasil'][$i] }}</td>
+                    <td class="border-b border-black text-left px-3 py-3">{{ $hasil['hasil'][$i-1] }}</td>
                     @for ($j = 0; $j <= 3; $j++)
                         <td class="border-b border-black text-center">
                             {{ $hasil['results'][$j]['Total'][$i] }}</td>
