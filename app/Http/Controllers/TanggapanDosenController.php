@@ -15,10 +15,12 @@ class TanggapanDosenController extends Controller
     public function index()
     {
         // get desember current year -1
+        // $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
         $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
         
         // get november current year 
-        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+        // $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+        $current = Carbon::create(2023, 11, 16);
 
         // dd($past, $current);
 
