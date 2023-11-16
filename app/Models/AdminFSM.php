@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @property integer $id_admin
@@ -11,13 +11,16 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $user_admin
  * @property string $password_admin
  */
-class AdminFSM extends Model
+class AdminFSM extends Authenticatable
 {
     /**
      * The table associated with the model.
      * 
      * @var string
      */
+
+    protected $connection = 'mysql2';
+
     protected $table = 'admin_fsm';
 
     /**
@@ -31,4 +34,9 @@ class AdminFSM extends Model
      * @var array
      */
     protected $fillable = ['akses', 'nama_admin', 'user_admin', 'password_admin'];
+
+    public function getAuthPassword()
+    {
+        return $this->password_admin;
+    }
 }

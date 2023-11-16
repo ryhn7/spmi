@@ -249,11 +249,12 @@
 
             const responseData = await response.json();
 
-            console.log(responseData);
+            // console.log(responseData);
 
             if (response.ok) {
                 window.location.href = responseData.redirect_url;
             } else {
+                // console.log(responseData.error_message);
                 const errorElement = document.getElementById('loginError');
                 errorElement.innerHTML = responseData.error_message;
                 errorElement.classList.remove('hidden');

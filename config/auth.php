@@ -117,7 +117,7 @@ return [
 
         'tendik_provider' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Pegawai::class,
+            'model' => App\Models\AdminFSM::class,
         ],
 
         // 'users' => [
