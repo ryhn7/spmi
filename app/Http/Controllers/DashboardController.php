@@ -29,7 +29,7 @@ class DashboardController extends Controller
                 $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
             }
 
-            $jabatanDosen = DB::table('dosen')
+            $jabatanDosen = DB::connection('mysql2')->table('dosen')
                 ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
                 ->select('dosen.*', 'jabatan.jabatan')
                 ->where('dosen.nama_dosen', '=', $namaDosen)

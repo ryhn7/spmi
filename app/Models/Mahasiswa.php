@@ -37,6 +37,7 @@ class Mahasiswa extends Authenticatable
      * 
      * @var string
      */
+    protected $connection = 'mysql2';
     protected $table = 'mahasiswa';
 
     /**

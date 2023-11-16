@@ -44,6 +44,7 @@ class Dosen extends Authenticatable
      * 
      * @var string
      */
+    protected $connection = 'mysql2';
     protected $table = 'dosen';
 
     /**
