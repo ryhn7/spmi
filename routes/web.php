@@ -88,7 +88,7 @@ Route::post('/cetak-excel-dosen', [HasilSurveiKepuasanDosenController::class, 'c
 Route::post('/cetak-excel-mahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'cetak_excel']);
 Route::post('/cetak-excel-mitra', [HasilSurveiKepuasanMitraController::class, 'cetak_excel']);
 Route::post('/cetak-excel-tendik', [HasilSurveiKepuasanTendikController::class, 'cetak_excel']);
-Route::post('/cetak-excel-penggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'cetak_excel']);
+Route::post('/cetak-excel-pengguna-lulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'cetak_excel']);
 
 // Route filter hasil survey
 Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);

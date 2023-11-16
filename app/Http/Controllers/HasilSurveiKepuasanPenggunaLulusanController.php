@@ -201,7 +201,7 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
     {
         // dd($request->all());
         
-        $hasil = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
+        $hasil = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
         if (!$hasil) {
             $hasil = new pernyataan();
@@ -213,7 +213,11 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
         $final = json_decode($request->input('excel'), true);
 
         // dd($final);
-
-        return Excel::download(new PenggunaLulusanExport($final), 'Hasil Survei Pengguna Lulusan '. $final['program_studi'] . ' Tahun ' . $final['tahun'] . '.xlsx');
+        if (isset($final['tahun'])){
+            return Excel::download(new PenggunaLulusanExport($final), 'Hasil Survei Pengguna Lulusan '. $final['program_studi'] . ' Tahun ' . $final['tahun'] . '.xlsx');
+        }
+        else{
+            return Excel::download(new PenggunaLulusanExport($final), 'Hasil Survei Pengguna Lulusan.xlsx');
+        }
     }
 }
