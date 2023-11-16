@@ -8,7 +8,7 @@
             <h2 class="secondaryTitle bg-underline3 bg-100%" style="text-align: center;">Tanggapan Terhadap Survei Dosen</h2>
             @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
                 @if ($feedbackDekan->toArray() != null)
-                    <a href="{{ route('tanggapandosen.edit', ['aktor' => $roleAktor, 'created_at' => $past, 'updated_at' => $current]) }}"
+                    <a href="{{ route('tanggapandosen.edit', ['aktor' => $roleAktor]) }}"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                     </a>

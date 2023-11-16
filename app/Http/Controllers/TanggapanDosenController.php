@@ -19,8 +19,8 @@ class TanggapanDosenController extends Controller
         $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
         
         // get november current year 
-        // $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
-        $current = Carbon::create(2023, 11, 16);
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+        // $current = Carbon::create(2023, 11, 16);
 
         // dd($past, $current);
 
