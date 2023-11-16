@@ -13,7 +13,12 @@ class SurveiKepuasanDosenController extends Controller
 {
     public function create()
     {
-        $surveiDsn = kepuasan_dosen::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
+        $surveiDsn = kepuasan_dosen::whereBetween('created_at', [$past, $current])->where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
