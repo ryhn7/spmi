@@ -13,7 +13,12 @@ class SurveiKepuasanMahasiswaController extends Controller
 {
     public function create()
     {
-        $surveiMhs = kepuasan_mahasiswa::whereYear('date_time', Carbon::now()->year)->where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
+        $surveiMhs = kepuasan_mahasiswa::whereBetween('created_at', [$past, $current])->where('NIM', Auth::guard('mahasiswa')->user()->id_mahasiswa)->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();

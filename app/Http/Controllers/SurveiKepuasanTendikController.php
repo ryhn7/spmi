@@ -13,7 +13,12 @@ class SurveiKepuasanTendikController extends Controller
 {
     public function create()
     {
-        $surveiTendik = kepuasan_tendik::whereYear('date_time', Carbon::now()->year)->where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
+        // get desember current year -1
+        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
+        // get november current year 
+        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+
+        $surveiTendik = kepuasan_tendik::whereBetween('created_at', [$past, $current])->where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
