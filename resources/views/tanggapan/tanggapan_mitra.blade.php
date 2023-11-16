@@ -12,7 +12,7 @@
                         <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                     </a>
                 @else
-                    <a href="/Feedbackmitra"
+                    <a href="/FeedbackMitra"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
                     </a>
@@ -24,7 +24,7 @@
                         <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                     </a>
                 @else
-                    <a href="/Feedbackmitra"
+                    <a href="/FeedbackMitra"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Tambahkan tanggapan</span>
                     </a>

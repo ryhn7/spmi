@@ -235,7 +235,7 @@ class TanggapanDosenController extends Controller
         }
 
 
-        $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
+        $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
 
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
