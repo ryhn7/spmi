@@ -34,7 +34,7 @@ class AuthenticationController extends Controller
             $isLecturerAuthenticated = Auth::guard('dosen')->attempt(['user_dosen' => $credentials['username'], 'password' => $credentials['password']]);
         }
 
-        $isTendikAuthenticated = Auth::guard('tendik')->attempt(['user_pegawai' => $credentials['username'], 'password' => $credentials['password']]);
+        $isTendikAuthenticated = Auth::guard('tendik')->attempt(['user_admin' => $credentials['username'], 'password' => $credentials['password']]);
 
         if ($isStudentAuthenticated) {
             $request->session()->regenerate();
@@ -87,7 +87,7 @@ class AuthenticationController extends Controller
         Auth::guard('dosen')->logout();
 
 
-        $jabatanDosen = DB::table('dosen')
+        $jabatanDosen = DB::connection('mysql2')->table('dosen')
             ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
             ->select('dosen.*', 'jabatan.jabatan')
             ->where('dosen.nama_dosen', '=', $namaDosen)
