@@ -124,12 +124,15 @@ class HasilSurveiKepuasanDosenController extends Controller
         }
 
         $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
+        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final])); // Menggunakan $this->results di sini juga
     }
 
-    public function tes()
+    public function tes(Request $request)
     {
+        // dd($request->all());
+        
         $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
 
         if (!$hasil) {
@@ -138,7 +141,8 @@ class HasilSurveiKepuasanDosenController extends Controller
 
         $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
 
-        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        $final = json_decode($request->input('excel'), true);
 
         // dd($final);
 
@@ -243,6 +247,7 @@ class HasilSurveiKepuasanDosenController extends Controller
             'totalData' => $totalData,
             'averages' => $averages,
             'labels' => $labels,
+            'tahun' => $tahun
         ];
         $hasil = pernyataan::where('status', 'pernyataan_dosen')->first();
 
@@ -251,8 +256,9 @@ class HasilSurveiKepuasanDosenController extends Controller
         }
 
         $uniqueYears = kepuasan_dosen::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+        return view('hasil_survei.hasil_survei_dosen', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final]));
     }
 
     public function cetak_pdf()
