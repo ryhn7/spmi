@@ -144,9 +144,14 @@ class HasilSurveiKepuasanDosenController extends Controller
         // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
         $final = json_decode($request->input('excel'), true);
 
-        // dd($final);
-
-        return Excel::download(new DosenExport($final), 'Hasil Survei Dosen Tahun ' . $final['tahun'] . '.xlsx');
+        
+        if (isset($final['tahun'])){
+            return Excel::download(new DosenExport($final), 'Hasil Survei Dosen Tahun ' . $final['tahun'] ? $final['tahun'] : ""  . '.xlsx');
+        }
+        else{
+            return Excel::download(new DosenExport($final), 'Hasil Survei Dosen.xlsx');
+        }
+        
     }
 
     public function Filter(Request $request)

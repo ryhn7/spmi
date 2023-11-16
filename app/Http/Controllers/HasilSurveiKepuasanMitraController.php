@@ -121,8 +121,12 @@ class HasilSurveiKepuasanMitraController extends Controller
         $final = json_decode($request->input('excel'), true);
 
         // dd($final);
-
-        return Excel::download(new MitraExport($final), 'Hasil Survei Mitra Kerjasama Tahun' . $final['tahun'] . '.xlsx');
+        if (isset($final['tahun'])){
+            return Excel::download(new MitraExport($final), 'Hasil Survei Dosen Mitra Kerjasama Tahun' . $final['tahun'] . '.xlsx');
+        }
+        else{
+            return Excel::download(new MitraExport($final), 'Hasil Survei Mitra Kerjasama.xlsx');
+        }
     }
 
     public function filter(Request $request)

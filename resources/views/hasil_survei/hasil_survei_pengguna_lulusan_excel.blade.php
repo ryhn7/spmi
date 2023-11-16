@@ -49,7 +49,7 @@
             </tr>
         </thead>
         <tbody>
-            @for ($i = 1; $i <= 10; $i++)
+            @for ($i = 1; $i <= 9; $i++)
                 <tr>
                     <td class="border border-black text-center" style="width: 5%;">{{ $i }}.</td>
                     <td class="border-b border-black text-left px-3 py-3">{{ $hasil['hasil'][$i-1] }}</td>

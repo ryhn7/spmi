@@ -146,8 +146,12 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
         $final = json_decode($request->input('excel'), true);
 
         // dd($final);
-
-        return Excel::download(new MahasiswaExport($final), 'Hasil Survei Mahasiswa '. $final['program_studi'] . ' Tahun ' . $final['tahun'] . '.xlsx');
+        if (isset($final['tahun'])){
+            return Excel::download(new MahasiswaExport($final), 'Hasil Survei Mahasiswa '. $final['program_studi'] . ' Tahun ' . $final['tahun'] . '.xlsx');
+        }
+        else{
+            return Excel::download(new MahasiswaExport($final), 'Hasil Survei Mahasiswa.xlsx');
+        }
     }
 
     public function filter(Request $request)

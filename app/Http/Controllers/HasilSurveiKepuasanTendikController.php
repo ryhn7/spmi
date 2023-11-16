@@ -253,7 +253,11 @@ class HasilSurveiKepuasanTendikController extends Controller
         $final = json_decode($request->input('excel'), true);
 
         // dd($final);
-
-        return Excel::download(new TendikExport($final), 'Hasil Survei Tenaga Kependidikan Tahun ' . $final['tahun'] . '.xlsx');
+        if (isset($final['tahun'])){
+            return Excel::download(new TendikExport($final), 'Hasil Survei Tenaga Kependidikan Tahun ' . $final['tahun'] . '.xlsx');
+        }
+        else{
+            return Excel::download(new TendikExport($final), 'Hasil Survei Tenaga Kependidikan.xlsx');
+        }
     }
 }
