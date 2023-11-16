@@ -30,8 +30,8 @@ class DashboardController extends Controller
             }
 
             $jabatanDosen = DB::connection('mysql2')->table('dosen')
-                ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
-                ->select('dosen.*', 'jabatan.jabatan')
+                ->leftJoin('jabatan_pengguna', 'dosen.nama_dosen', '=', 'jabatan_pengguna.nama_pejabat')
+                ->select('dosen.*', 'jabatan_pengguna.jabatan')
                 ->where('dosen.nama_dosen', '=', $namaDosen)
                 ->get();
 
