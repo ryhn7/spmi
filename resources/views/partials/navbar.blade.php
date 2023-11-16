@@ -65,7 +65,7 @@
                             @elseif (Auth::guard('dosen')->check())
                                 {{ Auth::guard('dosen')->user()->NIP_dosen }}
                             @elseif (Auth::guard('tendik')->check())
-                                {{ Auth::guard('tendik')->user()->NIP_pegawai }}
+                                {{ Auth::guard('tendik')->user()->user_admin }}
                             @elseif (Auth::guard('tpmf')->check())
                                 {{ Auth::guard('tpmf')->user()->NIP_dosen }}
                             @elseif (Auth::guard('dekan')->check())
