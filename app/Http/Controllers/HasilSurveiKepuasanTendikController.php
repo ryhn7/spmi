@@ -6,6 +6,8 @@ use App\Models\kepuasan_tendik;
 use App\Models\pernyataan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\TendikExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HasilSurveiKepuasanTendikController extends Controller
 {
@@ -108,14 +110,13 @@ class HasilSurveiKepuasanTendikController extends Controller
     public function filter(Request $request)
     {
         $tahun = $request->input('tahun');
-        $lokasi = $request->input('lokasi');
         // Inisialisasi variabel $results di dalam konstruktor
         $categories = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang'];
         $columns = range(1, 12);
         $this->results = [];
         $weightedTotals = [];
         $labelWeightedTotals = [];
-        $totalData = kepuasan_tendik::where('lokasi', $lokasi)->whereYear('date_time', $tahun)->count();
+        $totalData = kepuasan_tendik::whereYear('date_time', $tahun)->count();
         if($totalData == 0){
             return redirect('/hasiltendik')->with('error', 'Hasil Survei Tidak Ditemukan');
         }
@@ -126,7 +127,7 @@ class HasilSurveiKepuasanTendikController extends Controller
             $total = [];
 
             foreach ($columns as $column) {
-                $totalCategory = kepuasan_tendik::where('lokasi', $lokasi)->whereYear('date_time', $tahun)->where("$column", $category)->count();
+                $totalCategory = kepuasan_tendik::whereYear('date_time', $tahun)->where("$column", $category)->count();
 
                 $average = $totalCategory / $totalData;
 
@@ -145,7 +146,7 @@ class HasilSurveiKepuasanTendikController extends Controller
             $columnTotal = 0;
 
             foreach ($categories as $category) {
-                $totalCategory = kepuasan_tendik::where('lokasi', $lokasi)->whereYear('date_time', $tahun)->where("$column", $category)->count();
+                $totalCategory = kepuasan_tendik::whereYear('date_time', $tahun)->where("$column", $category)->count();
 
                 if ($category == 'Sangat Baik') {
                     $columnTotal += $totalCategory * 4;
@@ -201,6 +202,7 @@ class HasilSurveiKepuasanTendikController extends Controller
             'totalData' => $totalData,
             'averages' => $averages,
             'labels' => $labels,
+            'tahun' => $tahun
         ];
         $hasil = pernyataan::where('status', 'pernyataan_tendik')->first();
 
@@ -209,8 +211,9 @@ class HasilSurveiKepuasanTendikController extends Controller
         }
 
         $uniqueYears = kepuasan_tendik::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final]));
 
     }
 
@@ -229,7 +232,28 @@ class HasilSurveiKepuasanTendikController extends Controller
         }
 
         $uniqueYears = kepuasan_tendik::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
+        return view('hasil_survei.hasil_survei_tendik', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final])); // Menggunakan $this->results di sini juga
+    }
+
+    public function cetak_excel(Request $request)
+    {
+        // dd($request->all());
+        
+        $hasil = pernyataan::where('status', 'pernyataan_tendik')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_tendik::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+
+        // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        $final = json_decode($request->input('excel'), true);
+
+        // dd($final);
+
+        return Excel::download(new TendikExport($final), 'Hasil Survei Tenaga Kependidikan Tahun ' . $final['tahun'] . '.xlsx');
     }
 }

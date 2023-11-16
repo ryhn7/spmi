@@ -2,7 +2,12 @@
 
 @section('container')
 <br><br><br>
-<section class="sectionSize bg-white"> 
+<section class="sectionSize bg-white">
+    <form id="excel" action="/cetak-excel-pengguna-lulusan" method="POST">
+        @csrf
+        <input type="hidden" name="excel" value="{{ json_encode($final) }}">
+        <button type="submit">Export excel</button>
+    </form>
 <div class="container">
     <div class=" flex justify-center text-2xl mt-10">
         <label class="text-xl font-open font-semibold text-center">Hasil Survei Kepuasan Pengguna Lulusan Fakultas Sains dan Matematika</label>

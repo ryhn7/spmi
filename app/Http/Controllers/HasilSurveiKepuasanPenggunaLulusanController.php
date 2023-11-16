@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\kepuasan_pengguna_lulusan;
 use App\Models\pernyataan;
 use Illuminate\Http\Request;
+use App\Exports\PenggunaLulusanExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HasilSurveiKepuasanPenggunaLulusanController extends Controller
 {
@@ -159,6 +161,8 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
             'totalData' => $totalData,
             'averageAll' => $averageAll,
             'labelAverageAll' => $labelAverageAll,
+            'tahun' => $tahun,
+            'program_studi' => $programStudi
         ];
         $hasil = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
 
@@ -167,8 +171,9 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
         }
 
         $uniqueYears = kepuasan_pengguna_lulusan::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_pengguna_lulusan', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]));
+        return view('hasil_survei.hasil_survei_pengguna_lulusan', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final]));
 
     }
 
@@ -187,7 +192,28 @@ class HasilSurveiKepuasanPenggunaLulusanController extends Controller
         }
 
         $uniqueYears = kepuasan_pengguna_lulusan::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_pengguna_lulusan', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears])); // Menggunakan $this->results di sini juga
+        return view('hasil_survei.hasil_survei_pengguna_lulusan', array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears, 'final' => $final])); // Menggunakan $this->results di sini juga
+    }
+
+    public function cetak_excel(Request $request)
+    {
+        // dd($request->all());
+        
+        $hasil = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_pengguna_lulusan::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+
+        // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        $final = json_decode($request->input('excel'), true);
+
+        // dd($final);
+
+        return Excel::download(new PenggunaLulusanExport($final), 'Hasil Survei Pengguna Lulusan '. $final['program_studi'] . ' Tahun ' . $final['tahun'] . '.xlsx');
     }
 }

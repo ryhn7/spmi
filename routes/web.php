@@ -82,15 +82,16 @@ Route::get('/hasilmitra', [HasilSurveiKepuasanMitraController::class, 'show']);
 Route::get('/hasiltendik', [HasilSurveiKepuasanTendikController::class, 'show']);
 Route::get('/hasilpenggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'show']);
 
-//Route cetak pdf hasil survey
-Route::get('/hasildosen/cetak_pdf', [HasilSurveiKepuasanDosenController::class, 'cetak_pdf']);
-
-//route cetak excel hasil survey
-Route::get('/hasildosen/cetak_excel', [HasilSurveiKepuasanDosenController::class, 'cetak_excel']);
+//Route cetak excel hasil survey
+Route::post('/cetak-excel-dosen', [HasilSurveiKepuasanDosenController::class, 'cetak_excel']);
+Route::post('/cetak-excel-mahasiswa', [HasilSurveiKepuasanMahasiswaController::class, 'cetak_excel']);
+Route::post('/cetak-excel-mitra', [HasilSurveiKepuasanMitraController::class, 'cetak_excel']);
+Route::post('/cetak-excel-tendik', [HasilSurveiKepuasanTendikController::class, 'cetak_excel']);
+Route::post('/cetak-excel-penggunalulusan', [HasilSurveiKepuasanPenggunaLulusanController::class, 'cetak_excel']);
 
 // Route filter hasil survey
 Route::get('/hasildosen/filter', [HasilSurveiKepuasanDosenController::class, 'filter']);
-Route::get('/hasilmahasiswa/filter', [HasilSurveiKepuasanMahasiswaController::class, 'Filter']);
+Route::get('/hasilmahasiswa/filter', [HasilSurveiKepuasanMahasiswaController::class, 'filter']);
 Route::get('/hasilmitra/filter', [HasilSurveiKepuasanMitraController::class, 'filter']);
 Route::get('/hasiltendik/filter', [HasilSurveiKepuasanTendikController::class, 'filter']);
 Route::get('/hasilpenggunalulusan/filter', [HasilSurveiKepuasanPenggunaLulusanController::class, 'filter']);
@@ -155,6 +156,4 @@ Route::middleware(['auth:gpm,dekan,wadek,kaprodi'])->group(function () {
 
 });
 
-// Export excel
-// Route::get('/export-excell', [HasilSurveiKepuasanDosenController::class, 'tes']);
-Route::post('/tesExcel', [HasilSurveiKepuasanDosenController::class, 'tes']);
+

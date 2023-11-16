@@ -3,6 +3,13 @@
 @section('container')
 <section class="sectionSize bg-white"> 
 <br><br><br>
+{{-- @dd($final);
+@dd($results); --}}
+<form id="excel" action="/cetak-excel-mitra" method="POST">
+    @csrf
+    <input type="hidden" name="excel" value="{{ json_encode($final) }}">
+    <button type="submit">Export excel</button>
+</form>
 <div class="container">
     <div class=" flex justify-center text-2xl mt-10">
         <label class="text-xl font-open font-bold text-center">Hasil Survei Kepuasan Mitra Kerjasama Fakultas Sains dan Matematika</label>

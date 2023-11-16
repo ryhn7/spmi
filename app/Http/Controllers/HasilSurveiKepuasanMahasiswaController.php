@@ -6,6 +6,8 @@ use App\Models\kepuasan_mahasiswa;
 use App\Models\pernyataan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\MahasiswaExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class HasilSurveiKepuasanMahasiswaController extends Controller
 {
@@ -124,10 +126,31 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
 
         $programstudi = kepuasan_mahasiswa::distinct('program_studi')->pluck('program_studi');
         $uniqueYears = kepuasan_mahasiswa::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
-        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi, 'uniqueYears' => $uniqueYears]));
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi, 'uniqueYears' => $uniqueYears, 'final' => $final]));
     }
 
-    public function Filter(Request $request)
+    public function cetak_excel(Request $request)
+    {
+        // dd($request->all());
+        
+        $hasil = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
+
+        if (!$hasil) {
+            $hasil = new pernyataan();
+        }
+
+        $uniqueYears = kepuasan_mahasiswa::selectRaw('YEAR(date_time) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
+
+        // $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
+        $final = json_decode($request->input('excel'), true);
+
+        // dd($final);
+
+        return Excel::download(new MahasiswaExport($final), 'Hasil Survei Mahasiswa '. $final['program_studi'] . ' Tahun ' . $final['tahun'] . '.xlsx');
+    }
+
+    public function filter(Request $request)
     {
         $programStudi = $request->input('program_studi');
         $tahun = $request->input('tahun');
@@ -226,7 +249,9 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
             'labelWeightedTotals' => $labelWeightedTotals,
             'totalData' => $totalData,
             'averages' => $averages,
-            'labels' => $labels
+            'labels' => $labels,
+            'tahun' => $tahun,
+            'program_studi' => $programStudi
         ];
         $hasil = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
 
@@ -236,8 +261,9 @@ class HasilSurveiKepuasanMahasiswaController extends Controller
 
         $programstudi = kepuasan_mahasiswa::distinct('program_studi')->pluck('program_studi');
         $uniqueYears = kepuasan_mahasiswa::selectRaw('YEAR(date_time) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $final = array_merge($this->results, ['hasil' => $hasil, 'uniqueYears' => $uniqueYears]);
 
-        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi, 'uniqueYears' => $uniqueYears]));
+        return view('hasil_survei.hasil_survei_mhs', array_merge($this->results, ['hasil' => $hasil, 'programstudi' => $programstudi, 'uniqueYears' => $uniqueYears, 'final' => $final]));
     }
     
 }

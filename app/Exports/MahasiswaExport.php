@@ -6,7 +6,7 @@ use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\Exportable;
 use Illuminate\Contracts\View\View;
 
-class HasilExport implements FromView
+class MahasiswaExport implements FromView
 {
     use Exportable;
     protected $hasil;
@@ -20,6 +20,6 @@ class HasilExport implements FromView
 
     public function view(): View
     {
-        return view('hasil_survei.tes', ['hasil' => $this->hasil]); // Replace with the actual path to your view
+        return view('hasil_survei.hasil_survei_mhs_excel', ['hasil' => $this->hasil]); // Replace with the actual path to your view
     }
 }
