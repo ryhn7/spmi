@@ -42,17 +42,21 @@
         </li>
         <li class="font-medium growing-underline mx-3">
             @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
-                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
+                <a href="https://drive.google.com/file/d/1SiA0LxlEwc_TSfPYvyvG9Vf2uF1JpArA/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('kaprodi')->check())
-                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
+                <a href="https://drive.google.com/file/d/1i3gALgIB-Cs4Flspwu4D8Apg8PNTssk2/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('dosen')->check())
-                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
+                <a href="https://drive.google.com/file/d/1iydMq7Z-0NB799fRIelagnyaBSmUamzK/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('tpmf')->check())
-                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
+                <a href="https://drive.google.com/file/d/1eA-uE33Si-3CcjsJS44jhVRdR_ii_VDK/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('gpm')->check())
-                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
+                <a href="https://drive.google.com/file/d/1Um9dpWKUCIb-LFhbZw2kVl1xlKehojKX/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('mahasiswa')->check())
-                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
+                <a href="https://drive.google.com/file/d/1Lb1tT-phMQynIsfhBic-hc4MI2BTBUnL/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('tendik')->check())
+                <a href="https://drive.google.com/file/d/1mky15AtFeN6yqRwmWPTKa4jrWgAiofXA/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @else
+                <a href="https://drive.google.com/file/d/1tkj9e3hae3cly7nNz1j59ix0PNBmupEx/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
             @endif
         </li>
     </ul>
@@ -224,25 +228,51 @@
             </button>
         </div>
     @endif
-
-
     <div id="showMenu" class="md:hidden">
         <img src='{{ asset('assets/logos/Menu.svg') }}' alt="Menu icon" />
     </div>
 </nav>
-<div id='mobileNav' class="hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-white z-20 animate-fade-in-down">
+<div id='mobileNav' class="hidden md:hidden px-4 py-6 fixed top-0 left-0 h-full w-full bg-white z-20 animate-fade-in-down">
     <div id="hideMenu" class="flex justify-end">
         <img src='{{ asset('assets/logos/Cross.svg') }}' alt="" class="h-16 w-16" />
     </div>
     <ul class="font-open flex flex-col mx-8 my-24 items-center text-3xl">
         <li class="my-6">
-            <a href="howitworks">How it works</a>
+            <a href="{{ route('dashboard') }}#beranda">Beranda</a>
         </li>
         <li class="my-6">
-            <a href="features">Features</a>
+            <a href="{{ route('dashboard') }}#informasi-survei">Informasi Survei</a>
         </li>
         <li class="my-6">
-            <a href="pricing">Pricing</a>
+            <a href="{{ route('dashboard') }}#tanggapan-survei">Tanggapan Survei</a>
+        </li>
+        <li class="my-6">
+            <a href="{{ route('dashboard') }}#isi-survei">Isi Survei</a>
+        </li>
+        <li class="my-6">
+            <a href="{{ route('dashboard') }}#hasil-survei">Hasil Survei</a>
+        </li>
+        <li class="my-6">
+            <a href="{{ route('dashboard') }}#tindak-lanjut">Tindak Lanjut</a>
+        </li>
+        <li class="my-6">
+            @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
+                <a href="https://drive.google.com/file/d/1SiA0LxlEwc_TSfPYvyvG9Vf2uF1JpArA/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('kaprodi')->check())
+                <a href="https://drive.google.com/file/d/1i3gALgIB-Cs4Flspwu4D8Apg8PNTssk2/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('dosen')->check())
+                <a href="https://drive.google.com/file/d/1iydMq7Z-0NB799fRIelagnyaBSmUamzK/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('tpmf')->check())
+                <a href="https://drive.google.com/file/d/1eA-uE33Si-3CcjsJS44jhVRdR_ii_VDK/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('gpm')->check())
+                <a href="https://drive.google.com/file/d/1Um9dpWKUCIb-LFhbZw2kVl1xlKehojKX/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('mahasiswa')->check())
+                <a href="https://drive.google.com/file/d/1Lb1tT-phMQynIsfhBic-hc4MI2BTBUnL/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @elseif (Auth::guard('tendik')->check())
+                <a href="https://drive.google.com/file/d/1mky15AtFeN6yqRwmWPTKa4jrWgAiofXA/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @else
+                <a href="https://drive.google.com/file/d/1tkj9e3hae3cly7nNz1j59ix0PNBmupEx/view?usp=sharing" target="_blank"> Cara Penggunaan </a>
+            @endif
         </li>
     </ul>
 </div>

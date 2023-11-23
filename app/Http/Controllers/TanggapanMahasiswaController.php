@@ -22,26 +22,26 @@ class TanggapanMahasiswaController extends Controller
 
         $roleAktor = null;
         if (Auth::guard('gpm')->check()) {
-            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $namaDosen = Auth::guard('gpm')->user()->nama_tanpa_gelar;
             $roleAktor = "GPM";
         } else if (Auth::guard('dekan')->check()) {
-            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $namaDosen = Auth::guard('dekan')->user()->nama_tanpa_gelar;
             $roleAktor = "Dekan";
         } else if (Auth::guard('wadek')->check()) {
-            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $namaDosen = Auth::guard('wadek')->user()->nama_tanpa_gelar;
             $roleAktor = "Dekan";
         } else if (Auth::guard('kaprodi')->check()) {
-            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_tanpa_gelar;
             $roleAktor = "Kaprodi";
         } else {
             $namaDosen = "Tidak ada";
         }
 
 
-        $jabatanDosen = DB::table('dosen')
-            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+        $jabatanDosen = DB::connection('mysql2')->table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_tanpa_gelar', '=', 'jabatan.nama_pejabat')
             ->select('dosen.*', 'jabatan.jabatan')
-            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->where('dosen.nama_tanpa_gelar', '=', $namaDosen)
             ->get();
 
 
@@ -111,26 +111,26 @@ class TanggapanMahasiswaController extends Controller
 
         $roleAktor = null;
         if (Auth::guard('gpm')->check()) {
-            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $namaDosen = Auth::guard('gpm')->user()->nama_tanpa_gelar;
             $roleAktor = "GPM";
         } else if (Auth::guard('dekan')->check()) {
-            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $namaDosen = Auth::guard('dekan')->user()->nama_tanpa_gelar;
             $roleAktor = "Dekan";
         } else if (Auth::guard('wadek')->check()) {
-            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $namaDosen = Auth::guard('wadek')->user()->nama_tanpa_gelar;
             $roleAktor = "Dekan";
         } else if (Auth::guard('kaprodi')->check()) {
-            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_tanpa_gelar;
             $roleAktor = "Kaprodi";
         } else {
             $namaDosen = "Tidak ada";
         }
 
 
-        $jabatanDosen = DB::table('dosen')
-            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+        $jabatanDosen = DB::connection('mysql2')->table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_tanpa_gelar', '=', 'jabatan.nama_pejabat')
             ->select('dosen.*', 'jabatan.jabatan')
-            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->where('dosen.nama_tanpa_gelar', '=', $namaDosen)
             ->get();
 
 
@@ -206,25 +206,25 @@ class TanggapanMahasiswaController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('gpm')->check()) {
-            $namaDosen = Auth::guard('gpm')->user()->nama_dosen;
+            $namaDosen = Auth::guard('gpm')->user()->nama_tanpa_gelar;
             $aktor = "GPM";
         } else if (Auth::guard('dekan')->check()) {
-            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $namaDosen = Auth::guard('dekan')->user()->nama_tanpa_gelar;
             $aktor = "Dekan";
         } else if (Auth::guard('wadek')->check()) {
-            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $namaDosen = Auth::guard('wadek')->user()->nama_tanpa_gelar;
             $aktor = "Dekan";
         } else if (Auth::guard('kaprodi')->check()) {
-            $namaDosen = Auth::guard('kaprodi')->user()->nama_dosen;
+            $namaDosen = Auth::guard('kaprodi')->user()->nama_tanpa_gelar;
             $aktor = "Kaprodi";
         } else {
             $namaDosen = "Tidak ada";
         }
 
-        $jabatanDosen = DB::table('dosen')
-            ->leftJoin('jabatan', 'dosen.nama_dosen', '=', 'jabatan.nama_pejabat')
+        $jabatanDosen = DB::connection('mysql2')->table('dosen')
+            ->leftJoin('jabatan', 'dosen.nama_tanpa_gelar', '=', 'jabatan.nama_pejabat')
             ->select('dosen.*', 'jabatan.jabatan')
-            ->where('dosen.nama_dosen', '=', $namaDosen)
+            ->where('dosen.nama_tanpa_gelar', '=', $namaDosen)
             ->get();
 
 
