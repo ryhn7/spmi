@@ -146,7 +146,7 @@ class HasilSurveiKepuasanDosenController extends Controller
 
         
         if (isset($final['tahun'])){
-            return Excel::download(new DosenExport($final), 'Hasil Survei Dosen Tahun ' . $final['tahun'] ? $final['tahun'] : ""  . '.xlsx');
+            return Excel::download(new DosenExport($final), 'Hasil Survei Dosen Tahun ' . $final['tahun'] . '.xlsx');
         }
         else{
             return Excel::download(new DosenExport($final), 'Hasil Survei Dosen.xlsx');
