@@ -26,7 +26,7 @@
                 @endif
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-between">
-                <form id="filter" action="/hasiltendik/filter" class="py-0.5 w-full sm:w-80" method="GET">
+                <form id="filter" action="/hasiltendik/filter" class="py-0.5 w-full sm:w-80" method="GET" style="width: 80%;">
                     <label class="mt-3">Tahun:</label>
                     <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         <select name="tahun" id="tahun"
@@ -39,7 +39,7 @@
                         </select>
                     </label>
                 </form>
-                <form id="excel" action="/cetak-excel-tendik" method="POST" class="w-full sm:w-15">
+                <form id="excel" action="/cetak-excel-tendik" method="POST" class="w-full sm:w-15" style="width: 15%;">
                     @csrf
                     <input type="hidden" name="excel" value="{{ json_encode($final) }}">
                     <button class="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
