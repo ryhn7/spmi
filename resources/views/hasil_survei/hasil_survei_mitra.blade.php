@@ -26,7 +26,7 @@
             </div>
         @endif
     </div>
-    <div class="flex items-center justify-between">
+    <div class="flex flex-col sm:flex-row items-center justify-between">
         <form id="filter" action="/hasilmitra/filter" class="py-0.5" method="GET" style="width: 80%;">
             <label class="mt-3">Tahun:</label>
             <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
@@ -43,46 +43,58 @@
         <form id="excel" action="/cetak-excel-mitra" method="POST" style="width: 15%;">
             @csrf
             <input type="hidden" name="excel" value="{{ json_encode($final) }}">
+            <div class="flex justify-center">
             <button class=" mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
                 <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
                 <span style="font-size: 12px">Download Excel</span>
             </button>
+            </div>
         </form>
     </div>
     <label class="mt-3 text-center justify-center">Total Data: {{ $totalData }}</label>
-    <div class="container-fluid mt-10 mx-auto">
+    <div class="container mx-auto mt-10">
         <div class="card card-primary">
-            <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Mitra Kerjasama</h3>
-                <canvas id="myChart1" width="500" height="250"></canvas>
+            <div class="rounded-lg border border-gray-100 p-6 shadow-lg">
+                <h3 class="text-lg font-open font-bold text-center mb-4 sm:text-l">Survei Kepuasan Terkait Layanan Pengembangan Karir/Jabatan</h3>
+                <canvas id="myChart1" class="w-full sm:h-500" height="400"></canvas>
             </div>
         </div>
-    </div>
+    </div> 
     <div class="card card-primary mt-5">
         <div class="card-header flex justify-center">
             <h3 class="text-l font-open font-bold text-center">Survei Kepuasan Mitra Kerjasama</h3><br>
         </div>
-        <div class="card-body">
+        <div class="overflow-x-auto">
             <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
                 <thead>
                     <tr>
-                        <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;"><label>No.</label></th>
-                        <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;"><label>Pernyataan</label></th>
-                        <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;"><label>Hasil Survei</label></th>
-                        <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;"><label>Rata - Rata</label></th>
-                        <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;"><label>Kriteria</label></th>
+                        <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                            <label>No.</label>
+                        </th>
+                        <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                            <label>Pernyataan</label>
+                        </th>
+                        <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                            <label>Hasil Survei</label>
+                        </th>
+                        <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                            <label>Rata - Rata</label>
+                        </th>
+                        <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                            <label>Kriteria</label>
+                        </th>
                     </tr>
                     <tr>
-                        <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
+                        <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
                             <label>Sangat Baik</label>
                         </th>
-                        <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                        <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                             <label>Baik</label>
                         </th>
-                        <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                        <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                             <label>Cukup</label>
                         </th>
-                        <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                        <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                             <label>Kurang</label>
                         </th>
                     </tr>

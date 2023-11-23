@@ -103,35 +103,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -185,35 +185,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -267,35 +267,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -349,35 +349,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -431,35 +431,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -513,35 +513,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -595,35 +595,35 @@
                 </div>
                 <div class="card-body">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label>
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5" style="width: 5%;">
+                                <label>No.</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25" style="width: 25%;">
+                                <label>Pernyataan</label>
+                            </th>
+                            <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32" style="width: 32%;">
+                                <label>Hasil Survei</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Rata - Rata</label>
+                            </th>
+                            <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12" style="width: 12%;">
+                                <label>Kriteria</label>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10" style="width: 10%;">
+                                <label>Sangat Baik</label>
                                 </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label>
-                                </th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label>
-                                </th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label>
-                                </th>
-                            </tr>
-                            <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
-                                    <label>Sangat Baik</label>
-                                </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8" style="width: 8%;">
                                     <label>Kurang</label>
                                 </th>
                             </tr>

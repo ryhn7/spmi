@@ -59,7 +59,7 @@
                 <div class="card card-primary">
                     <div class="rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <h3 class="text-lg font-open font-bold text-center mb-4 sm:text-xl">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</h3>
-                        <canvas id="myChart1" class="w-full" height="150"></canvas>
+                        <canvas id="myChart1" class="w-full" height="200"></canvas>
                     </div>
                 </div>
             </div>            
@@ -125,7 +125,7 @@
                 <div class="card card-primary">
                     <div class="rounded-lg border border-gray-100 p-6 shadow-lg ">
                         <h3 class="text-lg font-open font-bold text-center mb-4 sm:text-xl">Survei Kepuasan Terkait Layanan Pengembangan Karir/Jabatan</h3>
-                        <canvas id="myChart2" class="w-full" height="150"></canvas>
+                        <canvas id="myChart2" class="w-full" height="230"></canvas>
                     </div>
                 </div>
             </div>            
