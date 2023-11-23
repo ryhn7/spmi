@@ -16,6 +16,8 @@ class jabatan extends Model
      * 
      * @var string
      */
+    protected $connection = 'mysql2';
+
     protected $table = 'jabatan';
 
     /**

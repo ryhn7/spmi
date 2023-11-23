@@ -163,7 +163,7 @@
                                                             <button id="dekanBtn">Dekan</button>
                                                         </label>
                                                     </form>
-                                                @elseif (Str::startsWith($namaJabatan, 'Ketua Program Studi'))
+                                                @elseif (Str::startsWith($namaJabatan, 'Ketua Program Studi') || Str::startsWith($namaJabatan, 'Ketua Departemen'))
                                                     <form action="{{ route('changeRole') }}" method="POST">
                                                         @csrf
                                                         <label class="flex text-sm items-center mb-2" for="role">
