@@ -25,8 +25,8 @@
                     </div>
                 @endif
             </div>
-            <div class="flex items-center justify-between">
-                <form id="filter" action="/hasiltendik/filter" class="py-0.5" method="GET" style="width: 80%;">
+            <div class="flex flex-col sm:flex-row items-center justify-between">
+                <form id="filter" action="/hasiltendik/filter" class="py-0.5 w-full sm:w-80" method="GET">
                     <label class="mt-3">Tahun:</label>
                     <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         <select name="tahun" id="tahun"
@@ -39,55 +39,65 @@
                         </select>
                     </label>
                 </form>
-                <form id="excel" action="/cetak-excel-tendik" method="POST" style="width: 15%;">
+                <form id="excel" action="/cetak-excel-tendik" method="POST" class="w-full sm:w-15">
                     @csrf
                     <input type="hidden" name="excel" value="{{ json_encode($final) }}">
-                    <button class=" mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
-                        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+                    <button class="mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center"
+                        type="submit">
+                        <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path
+                                d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                        </svg>
                         <span style="font-size: 12px">Download Excel</span>
                     </button>
                 </form>
             </div>
+            
 
             <label class="mt-3 text-center justify-center">Total Data: {{ $totalData }}</label>
-            <div class="container-fluid mt-10 mx-auto">
+            <div class="container mx-auto mt-10">
                 <div class="card card-primary">
-                    <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</h3>
-                        <canvas id="myChart1" width="500" height="150"></canvas>
+                    <div class="rounded-lg border border-gray-100 p-6 shadow-lg ">
+                        <h3 class="text-lg font-open font-bold text-center mb-4 sm:text-xl">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</h3>
+                        <canvas id="myChart1" class="w-full" height="150"></canvas>
                     </div>
                 </div>
-            </div>
+            </div>            
             <div class="card card-primary mt-5">
                 <div class="card-header flex justify-center">
                     <h3 class="text-l font-open font-bold text-center">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</h3>
                 </div>
-                <div class="card-body">
+                <div class="overflow-x-auto">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5">
+                                    <label>No.</label>
+                                </th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25">
+                                    <label>Pernyataan</label>
+                                </th>
+                                <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32">
+                                    <label>Hasil Survei</label>
+                                </th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10">
+                                    <label>Rata - Rata</label>
+                                </th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12">
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10">
                                     <label>Sangat Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -95,26 +105,29 @@
                         <tbody>
                             @for ($i = 1; $i <= 5; $i++)
                                 <tr>
-                                    <td class="border border-black text-center" style="width: 5%;">{{ $i }}.</td>
-                                    <td class="border-b border-black text-left px-3 py-3">{{ $hasil->{$i} }}</td>
+                                    <td class="border border-black text-center w-full sm:w-5">{{ $i }}.</td>
+                                    <td class="border-b border-black text-left px-3 py-3 w-full sm:w-25">{{ $hasil->{$i} }}</td>
                                     @for ($j = 0; $j < 4; $j++)
-                                        <td class="border-b border-black text-center">
-                                            {{ $results[$j]['Total'][$i] }}</td>
+                                        <td class="border-b border-black text-center w-full sm:w-8">
+                                            {{ $results[$j]['Total'][$i] }}
+                                        </td>
                                     @endfor
-                                    <td class="border-b border-black text-center">
-                                        {{ number_format($weightedTotals[$i], 2) }}</td>
-                                    <td class="border-b border-r border-black text-center">
-                                        {{ $labelWeightedTotals[$i] }}</td>
+                                    <td class="border-b border-black text-center w-full sm:w-10">
+                                        {{ number_format($weightedTotals[$i], 2) }}
+                                    </td>
+                                    <td class="border-b border-r border-black text-center w-full sm:w-12">
+                                        {{ $labelWeightedTotals[$i] }}
+                                    </td>
                                 </tr>
                             @endfor
                             <tr>
-                                <td class="border-l border-b border-black text-center font-bold" colspan="6"><strong>Rata
-                                        -
-                                        Rata</strong></td>
-                                <td class="border-b border-black text-center font-bold">
+                                <td class="border-l border-b border-black text-center font-bold w-full sm:w-5" colspan="6">
+                                    <strong>Rata - Rata</strong>
+                                </td>
+                                <td class="border-b border-black text-center font-bold w-full sm:w-8">
                                     <strong>{{ number_format($averages[0], 2) }}</strong>
                                 </td>
-                                <td class="border-b border-r border-black text-center font-bold">
+                                <td class="border-b border-r border-black text-center font-bold w-full sm:w-12">
                                     <strong>{{ $labels[0] }}</strong>
                                 </td>
                             </tr>
@@ -124,14 +137,14 @@
                 </div>
             </div>
 
-            <div class="container-fluid mt-10 mx-auto">
+            <div class="container mx-auto mt-10">
                 <div class="card card-primary">
-                    <div class="select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
-                        <h3 class="text-l font-open font-bold text-center mb-2">Survei Kepuasan Terkait Layanan Pengembangan Karir/Jabatan</h3>
-                        <canvas id="myChart2" width="500" height="150"></canvas>
+                    <div class="rounded-lg border border-gray-100 p-6 shadow-lg ">
+                        <h3 class="text-lg font-open font-bold text-center mb-4 sm:text-xl">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</h3>
+                        <canvas id="myChart2" class="w-full" height="150"></canvas>
                     </div>
                 </div>
-            </div>
+            </div>            
             <div class="card card-primary mt-5">
                 <div class="card-header flex justify-center">
                     <h3 class="text-l font-open font-bold text-center">Survei Kepuasan Terkait Layanan Pengembangan Karir/Jabatan</h3>
@@ -139,32 +152,37 @@
                 <div>
                     <h3 class="text-l font-open text-center mb-2">Jumlah data: {{ $totalData }}</h3>
                 </div>
-                <div class="card-body">
+                <div class="overflow-x-auto">
                     <table style="width: 100%;" id="example1" class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 5%;">
-                                    <label>No.</label></th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 25%;">
-                                    <label>Pernyataan</label></th>
-                                <th colspan="4" class="bg-[#03051e] text-white text-center pt-3" style="width: 32%;">
-                                    <label>Hasil Survei</label></th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 10%;">
-                                    <label>Rata - Rata</label></th>
-                                <th rowspan="2" class="bg-[#03051e] text-white text-center" style="width: 12%;">
-                                    <label>Kriteria</label></th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-5 md:w-5 sm:w-5">
+                                    <label>No.</label>
+                                </th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-25 md:w-25 sm:w-25">
+                                    <label>Pernyataan</label>
+                                </th>
+                                <th colspan="4" class="bg-[#03051e] text-white text-center lg:w-32 md:w-32 sm:w-32">
+                                    <label>Hasil Survei</label>
+                                </th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-10 md:w-10 sm:w-10">
+                                    <label>Rata - Rata</label>
+                                </th>
+                                <th rowspan="2" class="bg-[#03051e] text-white text-center lg:w-12 md:w-12 sm:w-12">
+                                    <label>Kriteria</label>
+                                </th>
                             </tr>
                             <tr>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 10%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-10 md:w-10 sm:w-10">
                                     <label>Sangat Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8">
                                     <label>Baik</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8">
                                     <label>Cukup</label>
                                 </th>
-                                <th class="bg-[#03051e] text-white text-center border-black py-2" style="width: 8%;">
+                                <th class="bg-[#03051e] text-white text-center border-black py-2 lg:w-8 md:w-8 sm:w-8">
                                     <label>Kurang</label>
                                 </th>
                             </tr>
@@ -172,34 +190,27 @@
                         <tbody>
                             @for ($i = 6; $i <= 12; $i++)
                                 <tr>
-                                    <td class="border border-black text-center" style="width: 5%;">{{ $i - 5 }}.
-                                    </td>
-                                    <td class="border-b border-black text-left px-3 py-3">{{ $hasil->{$i} }}</td>
+                                    <td class="border border-black text-center w-full sm:w-5">{{ $i - 5 }}.</td>
+                                    <td class="border-b border-black text-left px-3 py-3 w-1/4">{{ $hasil->{$i} }}</td>
                                     @for ($j = 0; $j <= 3; $j++)
-                                        <td class="border-b border-black text-center">
-                                            {{ $results[$j]['Total'][$i] }}</td>
+                                        <td class="border-b border-black text-center w-1/12">{{ $results[$j]['Total'][$i] }}</td>
                                     @endfor
-                                    {{-- <td class="border-b border-black text-center">
-                                {{ $totalData }}</td> --}}
-                                    <td class="border-b border-black text-center">
-                                        {{ number_format($weightedTotals[$i], 2) }}</td>
-                                    <td class="border-b border-r border-black text-center">
-                                        {{ $labelWeightedTotals[$i] }}</td>
+                                    <td class="border-b border-black text-center w-1/10">{{ number_format($weightedTotals[$i], 2) }}</td>
+                                    <td class="border-b border-r border-black text-center w-1/8">{{ $labelWeightedTotals[$i] }}</td>
                                 </tr>
                             @endfor
                             <tr>
-                                <td class="border-l border-b border-black text-center font-bold" colspan="6">
+                                <td class="border-l border-b border-black text-center font-bold w-1/2 sm:w-1/3" colspan="6">
                                     <strong>Rata - Rata</strong></td>
-                                <td class="border-b border-black text-center font-bold">
-                                    <strong>{{ number_format($averages[1], 2) }}</strong>
-                                </td>
-                                <td class="border-b border-r font-bold border-black text-center">
-                                    <strong>{{ $labels[1] }}</strong>
-                                </td>
+                                <td class="border-b border-black text-center font-bold w-1/10 sm:w-1/12">
+                                    <strong>{{ number_format($averages[1], 2) }}</strong></td>
+                                <td class="border-b border-r font-bold border-black text-center w-1/8 sm:w-1/12">
+                                    <strong>{{ $labels[1] }}</strong></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
+                
             </div>
         </div>
         <script>
