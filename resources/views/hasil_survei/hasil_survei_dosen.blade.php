@@ -28,7 +28,7 @@
                 @endif
             </div>
             <div class="flex items-center justify-between">
-                <form id="filter" action="/hasildosen/filter" class="py-0.5" method="GET" style="width: 75%;">
+                <form id="filter" action="/hasildosen/filter" class="py-0.5" method="GET" style="width: 80%;">
                     <label class="mt-3">Tahun:</label>
                     <label for="tahun" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         <select name="tahun" id="tahun"
@@ -44,7 +44,7 @@
                 <form id="excel" action="/cetak-excel-dosen" method="POST" style="width: 15%;">
                     @csrf
                     <input type="hidden" name="excel" value="{{ json_encode($final) }}">
-                    <button class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
+                    <button class=" mt-4 bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center" type="submit">
                         <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
                         <span style="font-size: 12px">Download Excel</span>
                     </button>
