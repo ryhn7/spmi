@@ -31,7 +31,7 @@ class SurveiKepuasanDosenController extends Controller
 
     public function store(Request $request)
     {
-        $namaDsn = Auth::guard('dosen')->user()->nama_dosen;
+        $namaDsn = Auth::guard('dosen')->user()->nama_tanpa_gelar;
         $nip = Auth::guard('dosen')->user()->NIP_dosen;
         $date = Carbon::now();
 
