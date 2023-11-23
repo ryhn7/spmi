@@ -42,17 +42,17 @@
         </li>
         <li class="font-medium growing-underline mx-3">
             @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
-                <a href="/surveiTendik"> Cara Penggunaan </a>
+                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('kaprodi')->check())
-                <a href="/surveiDsn"> Cara Penggunaan </a>
+                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('dosen')->check())
-                <a href="/surveiDsn"> Cara Penggunaan </a>
+                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('tpmf')->check())
-                <a href="/surveiDsn"> Cara Penggunaan </a>
+                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('gpm')->check())
-                <a href="/surveiDsn"> Cara Penggunaan </a>
+                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
             @elseif (Auth::guard('mahasiswa')->check())
-                <a href="/surveiMhs"> Cara Penggunaan </a>
+                <a href="https://fsm.undip.ac.id/" target="_blank"> Cara Penggunaan </a>
             @endif
         </li>
     </ul>
