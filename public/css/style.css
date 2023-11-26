@@ -1232,6 +1232,10 @@ input[type="range"]:active::-webkit-slider-thumb{
   margin-top: 0.15rem;
 }
 
+.mb-24{
+  margin-bottom: 6rem;
+}
+
 .box-border{
   box-sizing: border-box;
 }
