@@ -103,13 +103,13 @@ class TanggapanDosenController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('tpmf')->check()) {
-            $namaDosen = Auth::guard('tpmf')->user()->nama_tanpa_gelar;
+            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
             $aktor = "TPMF";
         } else if (Auth::guard('dekan')->check()) {
-            $namaDosen = Auth::guard('dekan')->user()->nama_tanpa_gelar;
+            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
             $aktor = "Dekan";
         } else if (Auth::guard("wadek")->check()) {
-            $namaDosen = Auth::guard('wadek')->user()->nama_tanpa_gelar;
+            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
             $aktor = "Dekan";
         } else {
             $namaDosen = "Tidak ada";
