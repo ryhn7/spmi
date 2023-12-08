@@ -23,6 +23,17 @@
         .trix-button-group.trix-button-group {
             display: none;
         }
+
+        @media (max-width: 768px) {
+
+            /* Example for 'sm' breakpoint which is 640px in Tailwind */
+            .responsive-user-icon {
+                display: none;
+            }
+            .responsive-pointer-icon {
+                display: none;
+            }
+        }
     </style>
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
 </head>

@@ -5540,8 +5540,16 @@ input[type="range"]:active::-webkit-slider-thumb{
     margin-top: 0.25rem;
   }
 
+  .md\:mr-1{
+    margin-right: 0.25rem;
+  }
+
   .md\:block{
     display: block;
+  }
+
+  .md\:inline{
+    display: inline;
   }
 
   .md\:flex{

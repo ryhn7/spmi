@@ -85,8 +85,8 @@
             <ul class="flex flex-row justify-end pl-0 mb-0 list-none md-max:w-full">
                 <li class="flex items-center">
                     <div class="block px-0 py-2 font-open font-semibold transition-all ease-nav-brand text-sm">
-                        <i class="fa fa-user mr-1"></i>
-                        <span class="hidden sm:inline">
+                        <i class="fa fa-user mr-1 responsive-user-icon"></i>
+                        <span class="hidden md:inline">
                             @if (Auth::guard('mahasiswa')->check())
                                 {{ Auth::guard('mahasiswa')->user()->id_mahasiswa }}
                             @elseif (Auth::guard('dosen')->check())
@@ -135,7 +135,7 @@
                         <button x-ref="button" x-on:click="toggle()" :aria-expanded="open"
                             :aria-controls="$id('dropdown-button')" type="button"
                             class="block font-open p-0 transition-all text-sm ease-nav-brand">
-                            <i class="cursor-pointer fa fa-cog"></i>
+                            <i class="cursor-pointer fa fa-cog responsive-pointer-icon"></i>
                         </button>
 
                         <div x-ref="panel" x-show="open" x-transition.origin.top.left
@@ -236,7 +236,7 @@
             </button>
         </div>
     @endif
-    <div id="showMenu" class="md:hidden flex justify-center">
+    <div id="showMenu" class="flex justify-center md:hidden ">
         <img src='{{ asset('assets/logos/Menu.svg') }}' alt="Menu icon" />
     </div>
 </nav>
@@ -306,6 +306,40 @@
                     target="_blank"> Cara Penggunaan </a>
             @endif
         </li>
+        @if (Auth::guard('mahasiswa')->check() ||
+                Auth::guard('dosen')->check() ||
+                Auth::guard('tendik')->check() ||
+                Auth::guard('tpmf')->check() ||
+                Auth::guard('dekan')->check() ||
+                Auth::guard('wadek')->check() ||
+                Auth::guard('kaprodi')->check() ||
+                Auth::guard('gpm')->check())
+            <li class="flex items-center">
+                <div class="block px-0 py-2 font-open font-semibold transition-all ease-nav-brand text-sm">
+                    <i class="fa fa-user mr-1 "></i>
+                    <span class="inline text-lg">
+                        @if (Auth::guard('mahasiswa')->check())
+                            {{ Auth::guard('mahasiswa')->user()->id_mahasiswa }}
+                        @elseif (Auth::guard('dosen')->check())
+                            {{ Auth::guard('dosen')->user()->NIP_dosen }}
+                        @elseif (Auth::guard('tendik')->check())
+                            {{ Auth::guard('tendik')->user()->user_admin }}
+                        @elseif (Auth::guard('tpmf')->check())
+                            {{ Auth::guard('tpmf')->user()->NIP_dosen }}
+                        @elseif (Auth::guard('dekan')->check())
+                            {{ Auth::guard('dekan')->user()->NIP_dosen }}
+                        @elseif (Auth::guard('wadek')->check())
+                            {{ Auth::guard('wadek')->user()->NIP_dosen }}
+                        @elseif (Auth::guard('kaprodi')->check())
+                            {{ Auth::guard('kaprodi')->user()->NIP_dosen }}
+                        @elseif (Auth::guard('gpm')->check())
+                            {{ Auth::guard('gpm')->user()->NIP_dosen }}
+                        @endif
+                    </span>
+                </div>
+            </li>
+
+        @endif
     </ul>
 </div>
 
