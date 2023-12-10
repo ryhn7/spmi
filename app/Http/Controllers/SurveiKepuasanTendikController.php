@@ -27,7 +27,7 @@ class SurveiKepuasanTendikController extends Controller
             // dd($past, $current);
         }
 
-        $surveiTendik = kepuasan_tendik::whereBetween('created_at', [$past, $current])->where('NIP', Auth::guard('tendik')->user()->NIP_pegawai)->first();
+        $surveiTendik = kepuasan_tendik::whereBetween('created_at', [$past, $current])->where('NIP', Auth::guard('tendik')->user()->user_admin)->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_tendik')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -41,8 +41,8 @@ class SurveiKepuasanTendikController extends Controller
 
     public function store(Request $request)
     {
-        $namaTendik = Auth::guard('tendik')->user()->nama_pegawai;
-        $nip = Auth::guard('tendik')->user()->NIP_pegawai;
+        $namaTendik = Auth::guard('tendik')->user()->nama_admin;
+        $nip = Auth::guard('tendik')->user()->user_admin;
         $lokasi = Auth::guard('tendik')->user()->lokasi;
         $date = Carbon::now();
 
