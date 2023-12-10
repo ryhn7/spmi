@@ -26,9 +26,17 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
         }
         $mahasiswas = $mahasiswaQuery->get();
 
+        // //create variable for each mahasiswas to get all nama_mahasiswa
+        // $nama_mahasiswa = [];
+        // foreach ($mahasiswas as $mahasiswa) {
+        //     $nama_mahasiswas[] = $mahasiswa->nama_mahasiswa;
+        // }
+        $nama_mahasiswas = $mahasiswas->pluck('nama_mahasiswa');
+
         return view('survei.survei_pengguna_lulusan', [
             'mahasiswas' => $mahasiswas,
             'pernyataan' => $pernyataan,
+            'namamahasiswas' => $nama_mahasiswas,
         ]);
     }
 

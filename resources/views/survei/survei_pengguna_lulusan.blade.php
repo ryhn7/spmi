@@ -9,6 +9,7 @@
     <div class="pt-32">
         {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1"> --}}
         <form action="/surveiPenggunaLulusan" method="POST">
+            {{-- @dd($namamahasiswas); --}}
             @csrf
             <div class="flex justify-center items-center">
                 <div class="w-4/5 m-5 select-none rounded-lg border border-gray-100 p-6 shadow-lg ">
@@ -16,17 +17,18 @@
                         <p class="text-xl font-open font-bold">Identitas</p>
                         <label class="mt-3 ">Nama Lengkap:</label>
                         <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <input type="text" id="nama" name="nama" value=""
+                            <input type="text" id="nama" name="nama" value="{{ old('nama') }}"
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
                         <label class="mt-3 ">Jabatan:</label>
                         <label for="jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <input type="text" id="jabatan" name="jabatan" value=""
+                            <input type="text" id="jabatan" name="jabatan" value="{{ old('jabatan') }}"
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
                         <label class="mt-3 ">Nama Instansi/Perusahaan:</label>
                         <label for="nama_perusahaan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <input type="text" id="nama_perusahaan" name="nama_perusahaan" value=""
+                            <input type="text" id="nama_perusahaan" name="nama_perusahaan"
+                                value="{{ old('nama_perusahaan') }}"
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
                         <label class="mt-3">Program Studi:</label>
@@ -35,7 +37,8 @@
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="">Pilih Program Studi Alumni</option>
                                 @foreach ($mahasiswas->pluck('program_studi')->unique()->sort() as $programStudi)
-                                    <option value="{{ $programStudi }}">
+                                    <option value="{{ $programStudi }}"
+                                        {{ old('program_studi') == $programStudi ? 'selected' : '' }}>
                                         {{ $programStudi }}
                                     </option>
                                 @endforeach
@@ -46,6 +49,13 @@
                             <select name="alumni" id="alumni" required
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                                 <option value="" class="">Pilih Nama Alumni</option>
+                                @foreach ($namamahasiswas as $namamahasiswa)
+                                    @if (old('alumni') == null)
+                                        <option value="" class="" hidden>Pilih Nama Alumni</option>
+                                    @elseif (old('alumni', $namamahasiswa) == $namamahasiswa)
+                                        <option value="{{ $namamahasiswa }}" selected>{{ $namamahasiswa }}</option>
+                                    @endif
+                                @endforeach
                             </select>
                         </label>
                     </div>
@@ -107,9 +117,11 @@
                         program_studi: selectedProgramStudi
                     },
                     success: function(data) {
-                        $('#alumni').empty().append('<option value="">Pilih Nama Alumni</option>');
+                        $('#alumni').empty().append(
+                            '<option value="">Pilih Nama Alumni</option>');
                         $.each(data, function(key, value) {
-                            $('#alumni').append('<option value="' + value + '">' + value + '</option>');
+                            $('#alumni').append('<option value="' + value + '" >' +
+                                value + '</option>');
                         });
                         $('#alumni').select2();
                     }
