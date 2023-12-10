@@ -40,7 +40,11 @@ class FeedbackSurveiPenggunaLulusanController extends Controller
     public function Filter(Request $request)
     {
         $programStudi = $request->input('program_studi');
-
+        if (stripos($programStudi, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
+        }
+        dd($programStudi);
         $tahun = $request->input('tahun');
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         $feedbackKaprodi = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
