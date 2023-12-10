@@ -71,12 +71,22 @@
             </table>
     </div>
     <script>
+        const prodi = document.getElementById('program_studi');
         const tahun = document.getElementById('tahun');
         const form = document.getElementById('filter');
+
         tahun.addEventListener('change', () => {
             // Cek apakah tahun dan prodi sudah terpilih
             tahun.style.display = "block";
-            if (tahun.value) {
+            if (tahun.value && prodi.value) {
+                form.submit();
+            }
+        })
+
+        prodi.addEventListener('change', () => {
+            // Cek apakah tahun dan prodi sudah terpilih
+            tahun.style.display = "block";
+            if (tahun.value && prodi.value) {
                 form.submit();
             }
         })
