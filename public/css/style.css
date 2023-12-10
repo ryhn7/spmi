@@ -1047,11 +1047,6 @@ input[type="range"]:active::-webkit-slider-thumb{
   margin-bottom: 2.5rem;
 }
 
-.my-24{
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-}
-
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -1094,6 +1089,10 @@ input[type="range"]:active::-webkit-slider-thumb{
 
 .mb-2\.5{
   margin-bottom: 0.625rem;
+}
+
+.mb-24{
+  margin-bottom: 6rem;
 }
 
 .mb-3{
@@ -1230,10 +1229,6 @@ input[type="range"]:active::-webkit-slider-thumb{
 
 .mt-\[0\.15rem\]{
   margin-top: 0.15rem;
-}
-
-.mb-24{
-  margin-bottom: 6rem;
 }
 
 .box-border{
@@ -5468,10 +5463,6 @@ input[type="range"]:active::-webkit-slider-thumb{
 @media (min-width: 640px){
   .sm\:-mr-6{
     margin-right: -1.5rem;
-  }
-
-  .sm\:mr-1{
-    margin-right: 0.25rem;
   }
 
   .sm\:mr-6{

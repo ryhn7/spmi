@@ -14,10 +14,19 @@ class TanggapanMahasiswaController extends Controller
 {
     public function index(Request $request)
     {
-        // get desember current year -1
-        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
-        // get november current year 
-        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+        $today = Carbon::now();
+
+        if ($today->month == 12 && $today->day >= 1) {
+            // After 1 December, set the period for the next year
+            $past = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            $current = Carbon::create($today->year + 1, 12, 1)->toDateString(); // 1 December of the next year
+            // dd($past, $current);
+        } else {
+            // Before 1 December, set the period for the current year
+            $past = Carbon::create($today->year - 1, 12, 1)->toDateString(); // 1 December of the previous year
+            $current = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            // dd($past, $current);
+        }
 
 
         $roleAktor = null;
@@ -66,15 +75,15 @@ class TanggapanMahasiswaController extends Controller
         }
 
         if ($programStudi !== null) {
-            $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
-            $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
-            $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+            $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('updated_at', [$past, $current])->latest()->first();
+            $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->whereBetween('updated_at', [$past, $current])->latest()->first();
+            $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->whereBetween('updated_at', [$past, $current])->latest()->first();
         } else {
-            $feedbackgpm = ''; 
-            $feedbackDekan = ''; 
-            $feedbackKaprodi = ''; 
+            $feedbackgpm = '';
+            $feedbackDekan = '';
+            $feedbackKaprodi = '';
         }
-        
+
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -160,9 +169,9 @@ class TanggapanMahasiswaController extends Controller
             $feedbackKaprodi = feedback_mahasiswa::where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
             $feedbackDekan = feedback_mahasiswa::where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
         } else {
-            $feedbackgpm = ''; 
-            $feedbackDekan = ''; 
-            $feedbackKaprodi = ''; 
+            $feedbackgpm = '';
+            $feedbackDekan = '';
+            $feedbackKaprodi = '';
         }
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {

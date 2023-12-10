@@ -14,15 +14,19 @@ class TanggapanDosenController extends Controller
 {
     public function index()
     {
-        // get desember current year -1
-        // $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
-        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
-        
-        // get november current year 
-        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
-        // $current = Carbon::create(2023, 11, 16);
+        $today = Carbon::now();
 
-        // dd($past, $current);
+        if ($today->month == 12 && $today->day >= 1) {
+            // After 1 December, set the period for the next year
+            $past = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            $current = Carbon::create($today->year + 1, 12, 1)->toDateString(); // 1 December of the next year
+            // dd($past, $current);
+        } else {
+            // Before 1 December, set the period for the current year
+            $past = Carbon::create($today->year - 1, 12, 1)->toDateString(); // 1 December of the previous year
+            $current = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            // dd($past, $current);
+        }
 
         $roleAktor = null;
         if (Auth::guard('tpmf')->check()) {
@@ -46,10 +50,9 @@ class TanggapanDosenController extends Controller
 
         // dd($jabatanDosen);
 
-
-
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
+        // dd($namaJabatan);
 
         $tpmf = null;
         if (strpos($namaJabatan, 'Tim Penjaminan Mutu Fakultas Sains dan Matematika') !== false) {
@@ -61,8 +64,9 @@ class TanggapanDosenController extends Controller
             $ketua = true;
         }
 
-        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->where('status', 'LIKE', "%$tpmf%")->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
-        $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackTpmf = feedback_dosen::where('aktor', 'TPMF')->where('status', 'LIKE', "%$tpmf%")->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_dosen::where('aktor', 'Dekan')->whereBetween('updated_at', [$past, $current])->latest()->first();
+
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();
 
         if (!$feedbackTpmf) {
@@ -103,13 +107,13 @@ class TanggapanDosenController extends Controller
     public function store(Request $request)
     {
         if (Auth::guard('tpmf')->check()) {
-            $namaDosen = Auth::guard('tpmf')->user()->nama_dosen;
+            $namaDosen = Auth::guard('tpmf')->user()->nama_tanpa_gelar;
             $aktor = "TPMF";
         } else if (Auth::guard('dekan')->check()) {
-            $namaDosen = Auth::guard('dekan')->user()->nama_dosen;
+            $namaDosen = Auth::guard('dekan')->user()->nama_tanpa_gelar;
             $aktor = "Dekan";
         } else if (Auth::guard("wadek")->check()) {
-            $namaDosen = Auth::guard('wadek')->user()->nama_dosen;
+            $namaDosen = Auth::guard('wadek')->user()->nama_tanpa_gelar;
             $aktor = "Dekan";
         } else {
             $namaDosen = "Tidak ada";
@@ -120,7 +124,6 @@ class TanggapanDosenController extends Controller
             ->select('dosen.*', 'jabatan.jabatan')
             ->where('dosen.nama_tanpa_gelar', '=', $namaDosen)
             ->get();
-
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
