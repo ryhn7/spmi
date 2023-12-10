@@ -10,17 +10,17 @@
                         <p class="text-xl font-open font-bold">Identitas</p>
                         <label class="mt-3 ">Nama Lengkap:</label>
                         <label for="nama" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <input type="text" id="nama" name="nama" value=""
+                            <input type="text" id="nama" name="nama" value="{{ old('nama') }}"
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
                         <label class="mt-3 ">Jabatan:</label>
                         <label for="jabatan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <input type="text" id="jabatan" name="jabatan" value=""
+                            <input type="text" id="jabatan" name="jabatan" value="{{ old('jabatan') }}"
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
                         <label class="mt-3 ">Nama Instansi/Perusahaan:</label>
                         <label for="nama_perusahaan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                            <input type="text" id="nama_perusahaan" name="nama_perusahaan" value=""
+                            <input type="text" id="nama_perusahaan" name="nama_perusahaan" value="{{ old('nama_perusahaan') }}"
                                 class="mb-2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </label>
                     </div>
