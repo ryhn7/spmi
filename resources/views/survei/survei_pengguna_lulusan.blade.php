@@ -85,16 +85,15 @@
             @endfor
 
             <div class="flex justify-center items-center">
-                <button type="submit"
-                    class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
             </div><br>
 
         </form>
         {{-- </div> --}}
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
             // Ketika Program Studi berubah
@@ -116,9 +115,11 @@
                             $('#alumni').append('<option value="' + value + '">' +
                                 value + '</option>');
                         });
+                        $('#alumni').select2();
                     }
                 });
             });
+
         });
     </script>
 @endsection
