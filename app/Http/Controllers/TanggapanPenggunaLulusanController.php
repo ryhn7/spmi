@@ -56,7 +56,7 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+        if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[1];
         } else {
             // Handle the case where the pattern is not found
@@ -141,7 +141,7 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+        if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[1];
         } else {
             // Handle the case where the pattern is not found
@@ -332,7 +332,7 @@ class TanggapanPenggunaLulusanController extends Controller
             '9' => $validated['sembilan'],
         ];
 
-        
+
         $programStudi = $request->program_studi;
         // dd($programStudi);
         DB::table('feedback_stakeholder')
@@ -340,7 +340,7 @@ class TanggapanPenggunaLulusanController extends Controller
             ->update($tanggapan);
 
 
-            return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
+        return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
     }
 
 }

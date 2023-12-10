@@ -56,7 +56,7 @@ class TanggapanMahasiswaController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+        if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[1];
         } else {
             // Handle the case where the pattern is not found
@@ -154,7 +154,7 @@ class TanggapanMahasiswaController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
+        if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[1];
         } else {
             // Handle the case where the pattern is not found
