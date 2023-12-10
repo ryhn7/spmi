@@ -29,7 +29,7 @@
             @php
                 $jumlahPertanyaan = 10; // jumlah pertanyaan
                 $namaFor = ['satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh']; // id untuk setiap pertanyaan
-                $nilaiOptions = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang']; // option yang ada pada setiap pertanyaan
+                $nilaiOptions = ['Sangat Setuju', 'Setuju', 'Kurang Setuju', 'Tidak Setuju']; // option yang ada pada setiap pertanyaan
             @endphp
 
             @for ($i = 1; $i <= $jumlahPertanyaan; $i++)
