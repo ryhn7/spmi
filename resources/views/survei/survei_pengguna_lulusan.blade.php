@@ -96,10 +96,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Your existing script for Select2 initialization
-            // ...
-
-            // Additional script
             $('#program_studi').on('change', function() {
                 var selectedProgramStudi = $(this).val();
 
