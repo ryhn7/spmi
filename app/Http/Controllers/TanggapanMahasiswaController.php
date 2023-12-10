@@ -365,8 +365,9 @@ class TanggapanMahasiswaController extends Controller
         return redirect("/TanggapanMahasiswa/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
     }
 
-    public function edit($aktor)
+    public function edit($aktor, Request $request)
     {
+        $programStudi = $request->program_studi;
         $feedback = feedback_mahasiswa::where('aktor', $aktor)->latest()->first();
 
         if (!$feedback) {
@@ -382,12 +383,13 @@ class TanggapanMahasiswaController extends Controller
         return view('tanggapan.tanggapan_tpmf_gpm.edit_tanggapan_gpm_mahasiswa', [
             'feedback' => $feedback,
             'pernyataan' => $pernyataan,
+            'programStudi' => $programStudi,
         ]);
     }
 
     public function update(Request $request, feedback_mahasiswa $aktor)
     {
-
+        $programStudi = $request->program_studi;
         $validated = $request->validate([
             'satu' => 'required',
             'dua' => 'required',
@@ -488,7 +490,7 @@ class TanggapanMahasiswaController extends Controller
             ->where('Aktor', $aktor->Aktor)
             ->update($tanggapan);
 
-        return redirect('/TanggapanMahasiswa')->with('success', 'Tanggapan berhasil diperbarui');
+        return redirect("/TanggapanMahasiswa/filter?program_studi={$programStudi}")->with('success', 'Tanggapan berhasil diperbarui');
     }
 
 }
