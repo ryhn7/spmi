@@ -126,6 +126,10 @@ class TanggapanTendikController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
+        if ($namaJabatan == "Wakil Dekan Akademik dan Kemahasiswaan" || $namaJabatan == "Wakil Dekan Sumber Daya dan Inovasi") {
+            $namaJabatan = "Dekan Fakultas Sains dan Matematika";
+        }
+
 
         $validated = $request->validate([
             'satu' => 'required|string',

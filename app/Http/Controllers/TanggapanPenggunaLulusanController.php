@@ -239,6 +239,10 @@ class TanggapanPenggunaLulusanController extends Controller
         $programStudi = $request->program_studi;
         // dd($programStudi);
 
+        if ($namaJabatan == "Wakil Dekan Akademik dan Kemahasiswaan" || $namaJabatan == "Wakil Dekan Sumber Daya dan Inovasi") {
+            $namaJabatan = "Dekan Fakultas Sains dan Matematika";
+        }
+
         $validated = $request->validate([
             'satu' => 'required|string',
             "dua" => "required|string",

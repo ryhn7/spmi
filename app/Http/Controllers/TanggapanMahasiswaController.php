@@ -154,6 +154,10 @@ class TanggapanMahasiswaController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
+        if ($namaJabatan == "Wakil Dekan Akademik dan Kemahasiswaan" || $namaJabatan == "Wakil Dekan Sumber Daya dan Inovasi") {
+            $namaJabatan = "Dekan Fakultas Sains dan Matematika";
+        }
+
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[1];
         } else {
