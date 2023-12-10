@@ -56,8 +56,8 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
-            $jurusan = $matches[1];
+        if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[0];
         } else {
             // Handle the case where the pattern is not found
             $jurusan = "Tidak ada";
@@ -141,8 +141,8 @@ class TanggapanPenggunaLulusanController extends Controller
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if (preg_match('/Program Studi (\w+\s*\w*)/', $namaJabatan, $matches)) {
-            $jurusan = $matches[1];
+        if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
+            $jurusan = $matches[0];
         } else {
             // Handle the case where the pattern is not found
             $jurusan = "Tidak ada";
@@ -238,6 +238,10 @@ class TanggapanPenggunaLulusanController extends Controller
         $namaJabatan = $jabatanDosen[0]->jabatan;
         $programStudi = $request->program_studi;
         // dd($programStudi);
+
+        if ($namaJabatan == "Wakil Dekan Akademik dan Kemahasiswaan" || $namaJabatan == "Wakil Dekan Sumber Daya dan Inovasi") {
+            $namaJabatan = "Dekan Fakultas Sains dan Matematika";
+        }
 
         $validated = $request->validate([
             'satu' => 'required|string',
@@ -342,6 +346,8 @@ class TanggapanPenggunaLulusanController extends Controller
         // dd($programStudi);
 
 
+        $programStudi = $request->program_studi;
+        // dd($programStudi);
         DB::table('feedback_stakeholder')
             ->where('Aktor', $aktor->Aktor)
             ->update($tanggapan);

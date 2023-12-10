@@ -21,7 +21,7 @@ class AuthenticationController extends Controller
         ]);
 
         $isStudent = preg_match('/^\d{14}$/', $credentials['username']);
-        $isLecturer = preg_match('/^(?:\d{18}|H\.7\.\d{18})$/', $credentials['username']);
+        $isLecturer = preg_match('/^(?:\d{18}|H\.7\.\d{16})$/', $credentials['username']);
 
 
         $isStudentAuthenticated = false;
