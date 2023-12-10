@@ -332,14 +332,15 @@ class TanggapanPenggunaLulusanController extends Controller
             '9' => $validated['sembilan'],
         ];
 
-        // dd($tanggapan);
-
+        
+        $programStudi = $request->program_studi;
+        // dd($programStudi);
         DB::table('feedback_stakeholder')
             ->where('Aktor', $aktor->Aktor)
             ->update($tanggapan);
 
 
-        return redirect('/TanggapanPenggunaLulusan')->with('success', 'Tanggapan berhasil diperbarui');
+            return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
     }
 
 }
