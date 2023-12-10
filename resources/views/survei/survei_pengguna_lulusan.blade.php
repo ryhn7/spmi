@@ -91,35 +91,34 @@
         </form>
         {{-- </div> --}}
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script>
         $(document).ready(function() {
-            // Ketika Program Studi berubah
+            // Your existing script for Select2 initialization
+            // ...
+
+            // Additional script
             $('#program_studi').on('change', function() {
                 var selectedProgramStudi = $(this).val();
 
                 // Kirim permintaan Ajax untuk mendapatkan nama-nama mahasiswa berdasarkan Program Studi
                 $.ajax({
-                    url: '/get-mahasiswas', // Ganti dengan URL yang sesuai di Controller Anda
+                    url: '/get-mahasiswas',
                     method: 'GET',
                     data: {
                         program_studi: selectedProgramStudi
                     },
                     success: function(data) {
-                        // Hapus opsi sebelumnya dan tambahkan yang baru
-                        $('#alumni').empty().append(
-                            '<option value="">Pilih Nama Alumni</option>');
+                        $('#alumni').empty().append('<option value="">Pilih Nama Alumni</option>');
                         $.each(data, function(key, value) {
-                            $('#alumni').append('<option value="' + value + '">' +
-                                value + '</option>');
+                            $('#alumni').append('<option value="' + value + '">' + value + '</option>');
                         });
                         $('#alumni').select2();
                     }
                 });
             });
-
         });
     </script>
 @endsection
