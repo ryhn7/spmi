@@ -1,8 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\pernyataan;
 use App\Models\feedback_stakeholder;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+
 
 use Illuminate\Http\Request;
 
@@ -14,7 +19,7 @@ class FeedbackSurveiPenggunaLulusanController extends Controller
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         $feedbackKaprodi = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Kaprodi')->latest()->first();
         $feedbackDekan = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Dekan')->latest()->first();
-        $uniqueYears = feedback_stakeholder::selectRaw('YEAR(updated_at) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $uniqueYears = feedback_stakeholder::selectRaw('YEAR(updated_at) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
         if (!$feedbackKaprodi) {
             $feedbackKaprodi = new feedback_stakeholder();
         }
@@ -31,14 +36,16 @@ class FeedbackSurveiPenggunaLulusanController extends Controller
             'uniqueYears' => $uniqueYears
         ]);
     }
-    
+
     public function Filter(Request $request)
     {
+        $programStudi = $request->input('program_studi');
+
         $tahun = $request->input('tahun');
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
-        $feedbackKaprodi = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Kaprodi')->latest()->first();
-        $feedbackDekan = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Dekan')->latest()->first();
-        $uniqueYears = feedback_stakeholder::selectRaw('YEAR(updated_at) as year') ->distinct() ->orderBy('year', 'desc') ->get() ->pluck('year');
+        $feedbackKaprodi = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Kaprodi')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
+        $feedbackDekan = feedback_stakeholder::whereYear('updated_at', $tahun)->where('aktor', 'Dekan')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
+        $uniqueYears = feedback_stakeholder::selectRaw('YEAR(updated_at) as year')->distinct()->orderBy('year', 'desc')->get()->pluck('year');
         if (!$feedbackKaprodi) {
             $feedbackKaprodi = new feedback_stakeholder();
         }
