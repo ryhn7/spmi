@@ -13,10 +13,19 @@ class SurveiKepuasanDosenController extends Controller
 {
     public function create()
     {
-        // get desember current year -1
-        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
-        // get november current year 
-        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+        $today = Carbon::now();
+
+        if ($today->month == 12 && $today->day >= 1) {
+            // After 1 December, set the period for the next year
+            $past = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            $current = Carbon::create($today->year + 1, 12, 1)->toDateString(); // 1 December of the next year
+            // dd($past, $current);
+        } else {
+            // Before 1 December, set the period for the current year
+            $past = Carbon::create($today->year - 1, 12, 1)->toDateString(); // 1 December of the previous year
+            $current = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            // dd($past, $current);
+        }
 
         $surveiDsn = kepuasan_dosen::whereBetween('created_at', [$past, $current])->where('NIP', Auth::guard('dosen')->user()->NIP_dosen)->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_dosen')->first();

@@ -14,10 +14,19 @@ class TanggapanMitraController extends Controller
 {
     public function index()
     {
-        // get desember current year -1
-        $past = Carbon::now()->subYear()->month(12)->startOfMonth()->toDateString();
-        // get november current year 
-        $current = Carbon::now()->month(12)->startOfMonth()->toDateString();
+        $today = Carbon::now();
+
+        if ($today->month == 12 && $today->day >= 1) {
+            // After 1 December, set the period for the next year
+            $past = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            $current = Carbon::create($today->year + 1, 12, 1)->toDateString(); // 1 December of the next year
+            // dd($past, $current);
+        } else {
+            // Before 1 December, set the period for the current year
+            $past = Carbon::create($today->year - 1, 12, 1)->toDateString(); // 1 December of the previous year
+            $current = Carbon::create($today->year, 12, 1)->toDateString(); // 1 December of the current year
+            // dd($past, $current);
+        }
 
         $roleAktor = null;
         if (Auth::guard('tpmf')->check()) {
@@ -51,8 +60,8 @@ class TanggapanMitraController extends Controller
             $ketua = true;
         }
 
-        $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
-        $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->whereBetween('created_at', [$past, $current])->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackTpmf = feedback_mitra::where('aktor', 'TPMF')->whereBetween('updated_at', [$past, $current])->latest()->first();
+        $feedbackDekan = feedback_mitra::where('aktor', 'Dekan')->whereBetween('updated_at', [$past, $current])->latest()->first();
         $pernyataan = pernyataan::where('status', 'pernyataan_mitra')->first();
         $roleAktor = null;
 
@@ -145,6 +154,7 @@ class TanggapanMitraController extends Controller
             '9' => $validated['sembilan'],
             '10' => $validated['sepuluh'],
         ];
+
 
         // dd($tanggapan);
         if (strpos($namaJabatan, 'Ketua') !== false) {
