@@ -3,6 +3,7 @@
 <div class="pt-32">
     <form action="{{ route('tanggapanmahasiswa.update', $feedback->ID ) }}" method="POST" enctype="multipart/form-data" onsubmit="return validateWordCount();">
         @csrf
+        <input type="hidden" name="program_studi" value="{{ $programStudi }}">
         @method('PUT')
             <div class="flex justify-center items-center">
                 <p class="text-xl font-open font-bold">Survei Kepuasan Terkait Layanan Pengembangan Kompetensi</p>

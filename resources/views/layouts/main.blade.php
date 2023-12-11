@@ -19,6 +19,8 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     {{-- Trix Editor --}}
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    {{-- Select2 --}}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
     <style>
         .trix-button-group.trix-button-group {
             display: none;

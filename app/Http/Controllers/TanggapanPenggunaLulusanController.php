@@ -312,9 +312,12 @@ class TanggapanPenggunaLulusanController extends Controller
         return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
     }
 
-    public function edit($aktor)
+    public function edit($aktor, Request $request)
     {
+        $programStudi = $request->program_studi;
+        // dd($programStudi);
         $feedback = feedback_stakeholder::where('aktor', $aktor)->latest()->first();
+
 
         if (!$feedback) {
             return redirect('/TanggapanPenggunaLulusan')->with('error', 'Tanggapan tidak ditemukan');
@@ -329,11 +332,14 @@ class TanggapanPenggunaLulusanController extends Controller
         return view('tanggapan.tanggapan_tpmf_gpm.edit_tanggapan_gpm_pengguna_lulusan', [
             'feedback' => $feedback,
             'pernyataan' => $pernyataan,
+            'programStudi' => $programStudi,
         ]);
     }
-
+    
     public function update(Request $request, feedback_stakeholder $aktor)
     {
+        $programStudi = $request->program_studi;
+        // dd($programStudi);
 
         $validated = $request->validate([
             'satu' => 'required',
@@ -359,6 +365,9 @@ class TanggapanPenggunaLulusanController extends Controller
             '9' => $validated['sembilan'],
         ];
 
+        // dd($tanggapan);
+        // dd($programStudi);
+
 
         $programStudi = $request->program_studi;
         // dd($programStudi);
@@ -367,7 +376,7 @@ class TanggapanPenggunaLulusanController extends Controller
             ->update($tanggapan);
 
 
-        return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
+        return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'Tanggapan berhasil diperbarui');
     }
 
 }

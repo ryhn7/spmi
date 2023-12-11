@@ -7,7 +7,7 @@
                 Lulusan</h2>
                 @if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check())
                 @if ($feedbackDekan->toArray() != null)
-                    <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor]) }}"
+                    <a href="{{ route('tanggapanpenggunalulusan.edit', ['aktor' => $roleAktor, 'program_studi' => $programStudi]) }}" onclick="return checkProgramStudi()"
                         class="flex items-center p-3 text-base text-white rounded-lg bg-[#1f2f5f] hover:bg-[#324c99] group hover:shadow">
                         <span class="flex-1 ml-3 whitespace-nowrap">Edit tanggapan</span>
                     </a>
