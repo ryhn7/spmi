@@ -61,7 +61,7 @@ class TanggapanPenggunaLulusanController extends Controller
         }
 
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
-            $jurusan = $matches[1];
+            $jurusan = $matches[0];
         } else {
             // Handle the case where the pattern is not found
             $jurusan = "Tidak ada";
@@ -153,6 +153,8 @@ class TanggapanPenggunaLulusanController extends Controller
             $namaJabatan = str_ireplace('Program Studi Sarjana', 'Departemen', $namaJabatan);
         }
 
+        // dd($namaJabatan);
+
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[0];
         } else {
@@ -174,6 +176,7 @@ class TanggapanPenggunaLulusanController extends Controller
             // Ganti "program studi sarjana" menjadi "departemen"
             $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
         }
+        dd($programStudi);
 
         if ($programStudi !== null) {
             $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
