@@ -77,12 +77,13 @@ class TanggapanPenggunaLulusanController extends Controller
             $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
         }
 
+        // dd($programStudi);
+
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
             $ketua = true;
         }
 
-        $programStudi = $request->input('program_studi');
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         if ($programStudi !== null) {
             $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('updated_at', [$past, $current])->latest()->first();
@@ -176,7 +177,6 @@ class TanggapanPenggunaLulusanController extends Controller
             // Ganti "program studi sarjana" menjadi "departemen"
             $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
         }
-        dd($programStudi);
 
         if ($programStudi !== null) {
             $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->latest()->first();
