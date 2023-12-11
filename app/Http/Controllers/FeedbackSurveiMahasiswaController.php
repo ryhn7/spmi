@@ -34,7 +34,11 @@ class FeedbackSurveiMahasiswaController extends Controller
     public function Filter(Request $request)
     {
         $programStudi = $request->input('program_studi');
-
+        if (stripos($programStudi, 'sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('sarjana', 'Departemen', $programStudi);
+        }
+        // dd($programStudi);
 
         $tahun = $request->input('tahun');
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();

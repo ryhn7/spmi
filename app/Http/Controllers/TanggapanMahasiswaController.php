@@ -46,17 +46,19 @@ class TanggapanMahasiswaController extends Controller
             $namaDosen = "Tidak ada";
         }
 
-
         $jabatanDosen = DB::connection('mysql2')->table('dosen')
             ->leftJoin('jabatan', 'dosen.nama_tanpa_gelar', '=', 'jabatan.nama_pejabat')
             ->select('dosen.*', 'jabatan.jabatan')
             ->where('dosen.nama_tanpa_gelar', '=', $namaDosen)
             ->get();
 
-
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        // dd($namaJabatan);
+        // Periksa apakah $namaJabatan mengandung kata "program studi"
+        if (stripos($namaJabatan, 'Program Studi Sarjana') !== false) {
+            // Ganti "program studi" menjadi "departemen"
+            $namaJabatan = str_ireplace('Program Studi Sarjana', 'Departemen', $namaJabatan);
+        }
 
 
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
@@ -66,18 +68,22 @@ class TanggapanMahasiswaController extends Controller
             $jurusan = "Tidak ada";
         }
 
-        // dd($jurusan);
-
         if (Auth::guard('dekan')->check() || Auth::guard('wadek')->check()) {
             $programStudi = $request->input('program_studi');
         } else {
             $programStudi = $jurusan;
+        }
+        if (stripos($programStudi, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
         }
 
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
             $ketua = true;
         }
+        // dd($programStudi);
+
 
         if ($programStudi !== null) {
             $feedbackgpm = feedback_mahasiswa::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('updated_at', [$past, $current])->latest()->first();
@@ -148,20 +154,20 @@ class TanggapanMahasiswaController extends Controller
         } else {
             $namaDosen = "Tidak ada";
         }
-
-
         $jabatanDosen = DB::connection('mysql2')->table('dosen')
             ->leftJoin('jabatan', 'dosen.nama_tanpa_gelar', '=', 'jabatan.nama_pejabat')
             ->select('dosen.*', 'jabatan.jabatan')
             ->where('dosen.nama_tanpa_gelar', '=', $namaDosen)
             ->get();
 
-
         $namaJabatan = $jabatanDosen[0]->jabatan;
 
-        if ($namaJabatan == "Wakil Dekan Akademik dan Kemahasiswaan" || $namaJabatan == "Wakil Dekan Sumber Daya dan Inovasi") {
-            $namaJabatan = "Dekan Fakultas Sains dan Matematika";
+        // Periksa apakah $namaJabatan mengandung kata "program studi"
+        if (stripos($namaJabatan, 'Program Studi Sarjana') !== false) {
+            // Ganti "program studi" menjadi "departemen"
+            $namaJabatan = str_ireplace('Program Studi Sarjana', 'Departemen', $namaJabatan);
         }
+
 
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[0];
@@ -175,11 +181,16 @@ class TanggapanMahasiswaController extends Controller
         } else {
             $programStudi = $jurusan;
         }
+        if (stripos($programStudi, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
+        }
 
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
             $ketua = true;
         }
+        // dd($programStudi);
 
 
         if ($programStudi !== null) {
@@ -191,6 +202,7 @@ class TanggapanMahasiswaController extends Controller
             $feedbackDekan = '';
             $feedbackKaprodi = '';
         }
+
         $pernyataan = pernyataan::where('status', 'pernyataan_mahasiswa')->first();
         if (!$pernyataan) {
             $pernyataan = new pernyataan();
@@ -205,7 +217,6 @@ class TanggapanMahasiswaController extends Controller
         if (!$feedbackKaprodi) {
             $feedbackKaprodi = new feedback_mahasiswa();
         }
-
         return view('tanggapan.tanggapan_mahasiswa', [
             'feedbackGpm' => $feedbackgpm,
             'feedbackDekan' => $feedbackDekan,
@@ -256,7 +267,18 @@ class TanggapanMahasiswaController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
-        $programStudi = $request->program_studi;
+        // $programStudi = $request->program_studi;
+        $programStudi = $request->input('program_studi');
+
+        if (stripos($namaJabatan, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $namaJabatan = str_ireplace('program studi sarjana', 'Departemen', $namaJabatan);
+        }
+        if (stripos($programStudi, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
+        }
+        // dd($programStudi);
 
         $validated = $request->validate([
             'satu' => 'required|string',

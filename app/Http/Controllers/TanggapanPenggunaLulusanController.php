@@ -55,6 +55,10 @@ class TanggapanPenggunaLulusanController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
+        if (stripos($namaJabatan, 'Program Studi Sarjana') !== false) {
+            // Ganti "program studi" menjadi "departemen"
+            $namaJabatan = str_ireplace('Program Studi Sarjana', 'Departemen', $namaJabatan);
+        }
 
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[0];
@@ -68,13 +72,18 @@ class TanggapanPenggunaLulusanController extends Controller
         } else {
             $programStudi = $jurusan;
         }
+        if (stripos($programStudi, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
+        }
+
+        // dd($programStudi);
 
         $ketua = false;
         if (strpos($namaJabatan, 'Ketua') !== false) {
             $ketua = true;
         }
 
-        $programStudi = $request->input('program_studi');
         $pernyataan = pernyataan::where('status', 'pernyataan_pengguna_lulusan')->first();
         if ($programStudi !== null) {
             $feedbackgpm = feedback_stakeholder::where('aktor', 'GPM')->where('status', 'LIKE', "%$programStudi%")->whereBetween('updated_at', [$past, $current])->latest()->first();
@@ -140,6 +149,12 @@ class TanggapanPenggunaLulusanController extends Controller
 
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
+        if (stripos($namaJabatan, 'Program Studi Sarjana') !== false) {
+            // Ganti "program studi" menjadi "departemen"
+            $namaJabatan = str_ireplace('Program Studi Sarjana', 'Departemen', $namaJabatan);
+        }
+
+        // dd($namaJabatan);
 
         if (preg_match('/(Program Studi|Departemen) (\w+\s*\w*)/', $namaJabatan, $matches)) {
             $jurusan = $matches[0];
@@ -157,6 +172,10 @@ class TanggapanPenggunaLulusanController extends Controller
             $programStudi = $request->input('program_studi');
         } else {
             $programStudi = $jurusan;
+        }
+        if (stripos($programStudi, 'program studi sarjana') !== false) {
+            // Ganti "program studi sarjana" menjadi "departemen"
+            $programStudi = str_ireplace('program studi sarjana', 'Departemen', $programStudi);
         }
 
         if ($programStudi !== null) {
@@ -236,6 +255,10 @@ class TanggapanPenggunaLulusanController extends Controller
             ->get();
 
         $namaJabatan = $jabatanDosen[0]->jabatan;
+        if (stripos($namaJabatan, 'Program Studi Sarjana') !== false) {
+            // Ganti "program studi" menjadi "departemen"
+            $namaJabatan = str_ireplace('Program Studi Sarjana', 'Departemen', $namaJabatan);
+        }
         $programStudi = $request->program_studi;
         // dd($programStudi);
 
