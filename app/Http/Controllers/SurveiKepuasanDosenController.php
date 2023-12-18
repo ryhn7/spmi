@@ -142,6 +142,6 @@ class SurveiKepuasanDosenController extends Controller
 
         kepuasan_dosen::create($dosen);
 
-        return redirect('/')->with('success', 'berhasil save');
+        return redirect('/')->with('success', 'Survey berhasil disimpan');
     }
 }

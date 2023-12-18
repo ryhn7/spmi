@@ -77,10 +77,9 @@ class SurveiKepuasanPenggunaLulusanController extends Controller
             '8' => $validated['delapan'],
             '9' => $validated['sembilan'],
         ];
-
         kepuasan_pengguna_lulusan::create($alumni);
 
-        return redirect('/')->with('success', 'berhasil save');
+        return redirect('/')->with('success', 'Survey berhasil disimpan');
     }
     public function getMahasiswas(Request $request)
     {

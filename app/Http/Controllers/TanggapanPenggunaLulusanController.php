@@ -309,7 +309,7 @@ class TanggapanPenggunaLulusanController extends Controller
             abort(403);
         }
 
-        return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
+        return redirect("/TanggapanPenggunaLulusan/filter?program_studi={$programStudi}")->with('success', 'Tanggapan berhasil disimpan');
     }
 
     public function edit($aktor, Request $request)

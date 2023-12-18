@@ -173,7 +173,7 @@ class TanggapanTendikController extends Controller
             abort(403);
         }
 
-        return redirect('/TanggapanTendik')->with('success', 'berhasil save');
+        return redirect('/TanggapanTendik')->with('success', 'Tanggapan berhasil disimpan');
     }
 
     public function edit($aktor)

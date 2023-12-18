@@ -4,9 +4,29 @@
     @if ($surveys === null)
         <div class="pt-32">
             {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1"> --}}
-                <form action="/surveiTendik" method="POST">
-                    @csrf
-                    @php
+            <form action="/surveiTendik" method="POST">
+                @csrf
+                <div class="flex justify-center items-center">
+                    <div class="w-4/5 m-5 select-none   p-6  ">
+                        <div class="mt-3 flex flex-col justify-between space-y-1">
+                            <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 3000)"
+                                class="w-full px-3 overflow-hidden rounded-lg shadow-xs">
+                                @if ($errors->any())
+                                    <div alert
+                                        class="relative p-4 pr-12 mb-4 text-white border border-red-300 border-solid rounded-lg bg-gradient-to-tl from-red-600 to-rose-400"
+                                        role="alert">
+                                        {{-- <strong class="font-bold">Oops!</strong> --}}
+                                        <strong class="font-bold">{{ 'Periksa kembali isian anda' }}</strong>
+                                        <button type="button" alert-close
+                                            class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+                                        </button>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @php
                     $jumlahPertanyaan = 12; // jumlah pertanyaan
                     $namaFor = ['satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas', 'dua_belas']; // id untuk setiap pertanyaan
                     $nilaiOptions = ['Sangat Baik', 'Baik', 'Cukup', 'Kurang']; // option yang ada pada setiap pertanyaan
@@ -49,11 +69,11 @@
                 @endfor
 
 
-                    <div class="flex justify-center items-center">
-                        <button type="submit"
-                            class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
-                    </div><br>
-                </form>
+                <div class="flex justify-center items-center">
+                    <button type="submit"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
+                </div><br>
+            </form>
             {{-- </div> --}}
         </div>
     @else

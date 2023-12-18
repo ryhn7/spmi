@@ -85,6 +85,6 @@ class SurveiKepuasanTendikController extends Controller
 
         kepuasan_tendik::create($tendik);
 
-        return redirect('/')->with('success', 'berhasil save');
+        return redirect('/')->with('success', 'Survey berhasil disimpan');
     }
 }

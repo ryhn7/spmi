@@ -171,7 +171,7 @@ class TanggapanMitraController extends Controller
         }
 
 
-        return redirect('/TanggapanMitra')->with('success', 'berhasil save');
+        return redirect('/TanggapanMitra')->with('success', 'Tanggapan berhasil disimpan');
     }
 
     public function edit($aktor)

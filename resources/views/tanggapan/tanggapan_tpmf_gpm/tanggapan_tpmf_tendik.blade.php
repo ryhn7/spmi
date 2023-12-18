@@ -8,6 +8,26 @@
         <form action="/FeedbackTendik" method="POST" onsubmit="return validateWordCount();">
             @csrf
             <div class="flex justify-center items-center">
+                <div class="w-4/5 m-5 select-none   p-6  ">
+                    <div class="mt-3 flex flex-col justify-between space-y-1">
+                        <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 3000)"
+                            class="w-full px-3 overflow-hidden rounded-lg shadow-xs">
+                            @if ($errors->any())
+                                <div alert
+                                    class="relative p-4 pr-12 mb-4 text-white border border-red-300 border-solid rounded-lg bg-gradient-to-tl from-red-600 to-rose-400"
+                                    role="alert">
+                                    {{-- <strong class="font-bold">Oops!</strong> --}}
+                                    <strong class="font-bold">{{ 'Periksa kembali isian anda' }}</strong>
+                                    <button type="button" alert-close
+                                        class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+                                    </button>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center">
                 <p class="text-xl font-open font-bold">Survei Kepuasan Terkait
                     Layanan Pengembangan Kompetensi</p>
             </div>

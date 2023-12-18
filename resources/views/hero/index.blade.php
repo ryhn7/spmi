@@ -1,4 +1,19 @@
-<section id="beranda" class="pt-24 md:mt-0 md:h-screen justify-center text-center md:text-left md:flex-row md:justify-between md:items-center">
+<section id="beranda"
+    class="pt-24 md:mt-0 md:h-screen justify-center text-center md:text-left md:flex-row md:justify-between md:items-center">
+    <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 3000)"
+        class="w-full px-3 overflow-hidden rounded-lg shadow-xs">
+        @if (session()->has('success'))
+            <div alert
+                class="relative p-4 pr-12 mb-4 text-white border border-solid rounded-lg bg-gradient-to-tl from-green-600 to-lime-400 border-lime-300"
+                role="alert">
+                {{-- <strong class="font-bold">Woaa!</strong> --}}
+                <strong class="font-bold">{{ session('success') }}</strong>
+                <button type="button" alert-close
+                    class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+                </button>
+            </div>
+        @endif
+    </div>
     <div class="tpmf">
         <div class="w-full h-full bg-gradient-to-b from-black opacity-95 to-[rgba(0,0,0,0.6)] m-auto">
             <div class="flex flex-col items-center justify-center">

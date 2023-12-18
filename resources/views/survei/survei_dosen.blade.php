@@ -6,6 +6,26 @@
             {{-- <div class=" border rounded-lg px-8 py-6 mx-auto mb-8 max-w-6xl md:flex-1"> --}}
             <form action="/surveiDsn" method="POST">
                 @csrf
+                <div class="flex justify-center items-center">
+                    <div class="w-4/5 m-5 select-none   p-6  ">
+                        <div class="mt-3 flex flex-col justify-between space-y-1">
+                            <div x-data="{ showMessage: true }" x-show="showMessage" x-init="setTimeout(() => showMessage = false, 3000)"
+                                class="w-full px-3 overflow-hidden rounded-lg shadow-xs">
+                                @if ($errors->any())
+                                    <div alert
+                                        class="relative p-4 pr-12 mb-4 text-white border border-red-300 border-solid rounded-lg bg-gradient-to-tl from-red-600 to-rose-400"
+                                        role="alert">
+                                        {{-- <strong class="font-bold">Oops!</strong> --}}
+                                        <strong class="font-bold">{{ 'Periksa kembali isian anda' }}</strong>
+                                        <button type="button" alert-close
+                                            class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
+                                        </button>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 @php
                     $jumlahPertanyaan = 42; // jumlah pertanyaan
                     $namaFor = ['satu', 'dua', 'tiga', 'empat', 'lima', 'enam', 'tujuh', 'delapan', 'sembilan', 'sepuluh', 'sebelas', 'dua_belas', 'tiga_belas', 'empat_belas', 'lima_belas', 'enam_belas', 'tujuh_belas', 'delapan_belas', 'sembilan_belas', 'dua_puluh', 'dua_satu', 'dua_dua', 'dua_tiga', 'dua_empat', 'dua_lima', 'dua_enam', 'dua_tujuh', 'dua_delapan', 'dua_sembilan', 'tiga_puluh', 'tiga_satu', 'tiga_dua', 'tiga_tiga', 'tiga_empat', 'tiga_lima', 'tiga_enam', 'tiga_tujuh', 'tiga_delapan', 'tiga_sembilan', 'empat_puluh', 'empat_satu', 'empat_dua']; // id untuk setiap pertanyaan

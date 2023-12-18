@@ -234,7 +234,7 @@ class TanggapanDosenController extends Controller
             abort(403);
         }
 
-        return redirect('/TanggapanDosen')->with('success', 'berhasil save');
+        return redirect('/TanggapanDosen')->with('success', 'Tanggapan berhasil disimpan');
     }
 
     public function edit($aktor)

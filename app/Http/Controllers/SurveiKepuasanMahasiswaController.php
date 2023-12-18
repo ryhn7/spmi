@@ -150,6 +150,6 @@ class SurveiKepuasanMahasiswaController extends Controller
 
         kepuasan_mahasiswa::create($mahasiswa);
 
-        return redirect('/')->with('success', 'berhasil save');
+        return redirect('/')->with('success', 'Survey berhasil disimpan');
     }
 }

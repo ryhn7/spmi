@@ -393,7 +393,7 @@ class TanggapanMahasiswaController extends Controller
             // cannot create
             abort(403);
         }
-        return redirect("/TanggapanMahasiswa/filter?program_studi={$programStudi}")->with('success', 'berhasil save');
+        return redirect("/TanggapanMahasiswa/filter?program_studi={$programStudi}")->with('success', 'Tanggapan berhasil disimpan');
     }
 
     public function edit($aktor, Request $request)

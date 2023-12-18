@@ -59,6 +59,6 @@ class SurveiKepuasanMitraController extends Controller
 
         kepuasan_mitra_kerjasama::create($mitra);
 
-        return redirect('/')->with('success', 'berhasil save');
+        return redirect('/')->with('success', 'Survey berhasil disimpan');
     }
 }
