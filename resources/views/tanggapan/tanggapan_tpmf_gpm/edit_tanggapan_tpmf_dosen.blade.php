@@ -13,7 +13,7 @@
                                     class="relative p-4 pr-12 mb-4 text-white border border-red-300 border-solid rounded-lg bg-gradient-to-tl from-red-600 to-rose-400"
                                     role="alert">
                                     {{-- <strong class="font-bold">Oops!</strong> --}}
-                                    <strong class="font-bold">{{ 'Periksa kembali isian anda' }}</strong>
+                                    <strong class="font-bold">{{ 'Periksa kembali isian anda, ada isian yang kosong' }}</strong>
                                     <button type="button" alert-close
                                         class="box-content absolute top-0 right-0 p-4 text-sm text-white bg-transparent border-0 rounded w-4 h-4 z-2">
                                     </button>
